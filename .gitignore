@@ -1,0 +1,25 @@
+# エディタ・OS
+.idea/
+.vscode/*
+!.vscode/extensions.json
+.DS_Store
+
+# 環境変数
+.env
+.env.*
+!.env.example
+
+# 依存
+node_modules/
+.pnpm-store/
+
+# ビルド成果物
+dist/
+*.tsbuildinfo
+
+# Expo
+.expo/
+ios/
+android/
+
+scratchpad/

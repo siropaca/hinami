@@ -1,0 +1,6 @@
+# git hooks。`task setup` で有効化する。
+pre-commit:
+  commands:
+    biome:
+      glob: "*.{js,jsx,ts,tsx,json,jsonc,css,md}"
+      run: pnpm biome check --no-errors-on-unmatched --files-ignore-unknown=true {staged_files}

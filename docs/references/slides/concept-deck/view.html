@@ -1,0 +1,432 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>HINAMI 事業コンセプト提案</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Inter:wght@400;600;700&display=swap">
+<style>
+html{background:#2a2a2a} body{margin:0;padding:40px 0;zoom:0.5}
+:root{
+  --ink:#14213D; --soft:#4A5568; --muted:#7A8499; --paper:#F4F6F9; --white:#FBFBF8; --line:#D5DAE3;
+  --accent:#D9822B; --accent-soft:#F6E6D3; --navy2:#22335C;
+}
+body{font-family:'Noto Sans JP',Arial,sans-serif;color:var(--ink)}
+section{background:var(--paper);padding:128px 128px 160px;display:flex;flex-direction:column;gap:40px;counter-increment:page}
+section.dark{background:var(--ink);color:var(--white)}
+section.white{background:var(--white)}
+.eyebrow{font-family:'Inter','Noto Sans JP',Arial,sans-serif;font-size:24px;font-weight:700;letter-spacing:2px;color:var(--accent)}
+.head{display:flex;flex-direction:column;gap:16px}
+h2{font-size:56px;font-weight:700;line-height:1.3}
+h3{font-size:32px;font-weight:700;line-height:1.35}
+.lead{font-size:32px;color:var(--soft);line-height:1.55}
+.body{font-size:28px;color:var(--soft);line-height:1.6}
+.small{font-size:24px;color:var(--muted);line-height:1.5}
+.dark .lead,.dark .body{color:#C9D2E3}
+.foot{position:absolute;left:128px;bottom:64px;width:1664px;display:flex;justify-content:space-between;font-size:24px;color:var(--muted)}
+.dark .foot{color:#8C98B3}
+.tag{font-size:24px;font-weight:700;color:var(--accent);background:var(--accent-soft);border-radius:999px;padding:6px 20px;align-self:flex-start}
+.row{display:flex;gap:32px}
+.col{display:flex;flex-direction:column;gap:16px;flex:1;min-width:0}
+.card{background:var(--white);border:2px solid var(--line);border-radius:24px;padding:40px;display:flex;flex-direction:column;gap:16px;flex:1}
+.card.key{border-color:var(--accent);background:var(--white)}
+.card .num{font-family:'Inter',Arial,sans-serif;font-size:24px;font-weight:700;color:var(--accent)}
+.card .ok{font-size:28px;color:var(--ink);font-weight:500;line-height:1.5}
+.card .ng{font-size:28px;color:var(--soft);line-height:1.5}
+.label{font-size:24px;font-weight:700;color:var(--muted);letter-spacing:1px}
+.big{font-size:88px;font-weight:900;line-height:1.25}
+.big .hl{color:var(--accent)}
+.phone{width:380px;height:720px;background:var(--ink);border-radius:56px;padding:16px;display:flex}
+.scr{flex:1;background:var(--white);border-radius:42px;display:flex;flex-direction:column;gap:16px;padding:32px 24px;overflow:hidden}
+.scr .t{font-size:28px;font-weight:700;color:var(--ink)}
+.scr .m{font-size:24px;color:var(--soft);line-height:1.4}
+.scr .item{display:flex;align-items:center;gap:16px;border-bottom:2px solid var(--line);padding:12px 0}
+.scr .rk{font-family:'Inter',Arial,sans-serif;font-size:32px;font-weight:700;color:var(--accent);width:32px}
+.scr .nm{font-size:24px;font-weight:500;color:var(--ink);flex:1}
+.scr .sc{font-family:'Inter',Arial,sans-serif;font-size:24px;font-weight:700;color:var(--ink)}
+.scr .btn{background:var(--ink);color:var(--white);border-radius:999px;padding:14px;text-align:center;font-size:24px;font-weight:700}
+.scr .photo{height:220px;border-radius:24px;background:linear-gradient(135deg,#E9C08F,#C9773A)}
+.scr .fld{display:flex;justify-content:space-between;border:2px solid var(--line);border-radius:16px;padding:10px 16px;font-size:24px;color:var(--ink)}
+.scr .fld .k{color:var(--muted)}
+.scr .auto{font-size:24px;color:#2E8B62;font-weight:500}
+.shot-cap{font-size:28px;font-weight:700;text-align:center;color:var(--ink)}
+.shot-sub{font-size:24px;text-align:center;color:var(--soft)}
+table{font-size:28px;color:var(--ink);width:100%}
+th{font-weight:700;color:var(--muted)}
+.step{background:var(--white);border:2px solid var(--line);border-radius:24px;padding:32px;display:flex;flex-direction:column;gap:12px;flex:1}
+.step .n{font-family:'Inter',Arial,sans-serif;font-size:24px;font-weight:700;color:var(--accent)}
+.step.on{background:var(--ink);border-color:var(--ink)}
+.step.on h3{color:var(--white)}
+.step.on .body{color:#C9D2E3}
+.gate{font-size:24px;color:var(--ink);background:var(--accent-soft);border-radius:16px;padding:16px 20px;line-height:1.5}
+.reveal{animation:rise .6s ease both}
+@keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+
+section{width:1920px;height:1080px;box-sizing:border-box;position:relative;margin:0 auto 40px;overflow:hidden}
+x-shape{display:inline-block} x-shape[kind=diamond]{transform:rotate(45deg)} x-icon{display:inline-block}
+</style></head><body>
+<section id="cover" class="dark" style="justify-content:space-between">
+<p class="eyebrow">HINAMI 事業コンセプト提案</p>
+<div class="head">
+<h1 style="font-size:88px;font-weight:900;line-height:1.3;color:#FBFBF8">「おいしかった」一皿と一杯を、<br>自分だけの地図とランキングに。</h1>
+<p class="lead">覚えておきたい食と飲みの体験を、1 つのアプリで記録する個人向けサービスのご提案</p>
+</div>
+<p class="small" style="color:#8C98B3">2026 年 11 月 25 日 · コンセプト合意のための資料 · サービス名 HINAMI (日次)</p>
+
+</section>
+<section id="summary">
+<div class="head">
+<p class="eyebrow">エグゼクティブサマリー</p>
+<h2>「人に見せる食レビュー」ではなく、<br>「自分のための食と酒の記録帳」をつくります。</h2>
+</div>
+<div class="row" style="flex:1">
+<div class="card">
+<p class="num">課題</p>
+<h3>美味しかった体験が、残らない・探せない</h3>
+<p class="body">写真は撮るが、フォルダに埋もれる。グルメサイトは他人の評価で店を探す道具で、自分の記録にはならない。</p>
+</div>
+<div class="card key">
+<p class="num">提案</p>
+<h3>写真から残し、比べるだけで「自分のベスト」が育つ</h3>
+<p class="body">料理も酒も、撮った写真と場所から 1 つのアプリに記録。「どっちが好き?」の 2 択で、ジャンル別の自分ランキングと地図ができていく。</p>
+</div>
+<div class="card">
+<p class="num">勝ち筋と収益</p>
+<h3>「自分のため × 蓄積して育つ」は国内に空白</h3>
+<p class="body">米国で伸びる Beli の型を、手料理と日本の図鑑・スタンプラリー文化に広げる。まず個人課金で 1 円目を取る。</p>
+</div>
+</div>
+<div class="foot"><span>HINAMI 事業コンセプト提案</span><span>2</span></div>
+</section>
+<section id="problem" data-section="課題と機会">
+<div class="head">
+<p class="eyebrow">課題</p>
+<h2>美味しかった体験は、今の手段ではどこにも「自分の記録」として残らない</h2>
+</div>
+<div class="row" style="flex:1">
+<div class="card">
+<p class="label">写真フォルダ</p>
+<p class="ok">○ 誰でも撮っている</p>
+<p class="ng">× 日常の写真に埋もれる<br>× 店名も感想も残らない<br>× どれが一番だったか分からない</p>
+</div>
+<div class="card">
+<p class="label">グルメサイト・地図アプリ</p>
+<p class="ok">○ 店の情報が揃っている</p>
+<p class="ng">× 他人の評価で「探す」道具<br>× 自分の記録は付録扱い<br>× 手料理は対象外</p>
+</div>
+<div class="card">
+<p class="label">SNS</p>
+<p class="ok">○ 人に見せられる</p>
+<p class="ng">× 使わない人も多い<br>× 見せる前提で気軽に残せない<br>× あとから引き出しにくい</p>
+</div>
+</div>
+<p class="lead">「あの店どこだっけ」「あの時のワインは何だったか」に、どの手段も答えられない。</p>
+<div class="foot"><span>HINAMI 事業コンセプト提案</span><span>3</span></div>
+</section>
+<section id="position" class="white">
+<div class="head">
+<p class="eyebrow">機会</p>
+<h2>「自分のため」に「蓄積して育つ」食の記録は、国内では空いている</h2>
+</div>
+<div style="position:relative;width:1664px;height:560px">
+<div style="position:absolute;left:832px;top:0;width:832px;height:280px;background:#F6E6D3;border-radius:24px 24px 0 0"></div>
+<div style="position:absolute;left:831px;top:0;width:2px;height:560px;background:#B8C0CE"></div>
+<div style="position:absolute;left:0;top:279px;width:1664px;height:2px;background:#B8C0CE"></div>
+<p style="position:absolute;left:852px;top:8px;width:360px;font-size:24px;font-weight:700;color:#7A8499">↑ 蓄積して育つ</p>
+<p style="position:absolute;left:852px;top:516px;width:360px;font-size:24px;font-weight:700;color:#7A8499">↓ その場限り</p>
+<p style="position:absolute;left:140px;top:90px;width:520px;font-size:28px;font-weight:700;background:#FBFBF8;border:2px solid #D5DAE3;border-radius:16px;padding:16px 24px;color:#14213D">グルメサイト・地図アプリ<br><span style="color:#7A8499">他人の評価が溜まる</span></p>
+<p style="position:absolute;left:180px;top:360px;width:440px;font-size:28px;font-weight:700;background:#FBFBF8;border:2px solid #D5DAE3;border-radius:16px;padding:16px 24px;color:#14213D">SNS 投稿<br><span style="color:#7A8499">見せて流れていく</span></p>
+<p style="position:absolute;left:1040px;top:360px;width:460px;font-size:28px;font-weight:700;background:#FBFBF8;border:2px solid #D5DAE3;border-radius:16px;padding:16px 24px;color:#14213D">写真フォルダ・メモ<br><span style="color:#7A8499">残るが育たない</span></p>
+<p style="position:absolute;left:880px;top:176px;width:280px;box-sizing:border-box;font-size:24px;font-weight:700;background:#FBFBF8;border:2px dashed #B8C0CE;border-radius:16px;padding:12px 20px;color:#4A5568">Beli (米国)<br>外食のみ</p>
+<p style="position:absolute;left:1216px;top:40px;width:420px;box-sizing:border-box;font-size:32px;font-weight:900;background:#14213D;border-radius:16px;padding:20px 28px;color:#FBFBF8">本提案<br><span style="color:#F2B878;font-size:24px;font-weight:700">外食・手料理・お酒を自分の資産に</span></p>
+</div>
+<div style="display:flex;justify-content:space-between;width:1664px">
+<p class="small" style="font-weight:700">← 他人のため (発信・店探し)</p>
+<p class="small" style="font-weight:700">自分のため (記録・振り返り) →</p>
+</div>
+<div class="foot"><span>Beli の日本での普及状況は未確認 (推測)</span><span>4</span></div>
+</section>
+<section id="target">
+<div class="head">
+<p class="eyebrow">対象ユーザー (仮説)</p>
+<h2>狙うのは「食と酒にこだわる、少し余裕のある大人」</h2>
+</div>
+<div class="row" style="align-items:flex-start">
+<div class="card key" style="flex:0.9">
+<p class="label">人物像</p>
+<h3>食と酒にお金と時間をかける 30〜40 代</h3>
+<p class="body">予約の取りにくい店や、ワイン・日本酒の一杯を楽しみに働く。家でも食材や器にこだわる。良い体験は写真に残すが、口コミサイトに書くことはしない。</p>
+<p class="small">作り手自身がこの典型例。まず作り手が毎回使うかで検証する</p>
+</div>
+<div class="col" style="flex:1.1">
+<p class="label">よくある場面</p>
+<div class="card" style="flex:none;padding:28px 36px"><p class="ok">「あの店で合わせたワイン、何だったか」</p></div>
+<div class="card" style="flex:none;padding:28px 36px"><p class="ok">記念日や会食の店選びで、自分の記録から決めたい</p></div>
+<div class="card" style="flex:none;padding:28px 36px"><p class="ok">「おすすめある?」と聞かれ、自分のリストで答えたい</p></div>
+</div>
+</div>
+<div class="foot"><span>量より質。記録の数は少なくても、1 件あたりの思い入れと支出が大きい層 (推測)</span><span>5</span></div>
+</section>
+<section id="concept" class="dark" data-transition="fade">
+<p class="eyebrow">コンセプト</p>
+<p class="big reveal" style="color:#FBFBF8">自分だけの<br><span class="hl">「おいしかった」図鑑。</span></p>
+<div class="row reveal" style="animation-delay:200ms">
+<div class="col" style="border-top:2px solid #3A4A70;padding-top:24px">
+<h3 style="color:#FBFBF8">残す</h3>
+<p class="body" style="color:#C9D2E3">アプリで撮っても、撮った写真から選んでもよい。日時と場所から店を推定。手料理も一杯の酒も、同じように残せる。</p>
+</div>
+<div class="col" style="border-top:2px solid #3A4A70;padding-top:24px">
+<h3 style="color:#FBFBF8">育つ</h3>
+<p class="body" style="color:#C9D2E3">点数はつけず「どっちが好き?」の 2 択だけ。自分のベストと地図が勝手に育つ。</p>
+</div>
+<div class="col" style="border-top:2px solid #3A4A70;padding-top:24px">
+<h3 style="color:#FBFBF8">使える</h3>
+<p class="body" style="color:#C9D2E3">次に行く店を選ぶ、人に勧める、思い出を見返す。溜めた記録がそのまま役に立つ。</p>
+</div>
+</div>
+<div class="foot"><span>HINAMI 事業コンセプト提案</span><span>6</span></div>
+</section>
+<section id="drinks" class="white">
+<div class="head">
+<p class="eyebrow">食と飲み</p>
+<h2>一皿も一杯も、1 つのアプリで残す。食事はいつも両方だから</h2>
+</div>
+<div class="row" style="align-items:stretch">
+<div class="col" style="flex:1.3;gap:16px">
+<p class="label">1 品ずつ残すと、同じ日・同じ店の記録が 1 回の食事にまとまる</p>
+<div class="card key" style="padding:32px;gap:20px">
+<p class="num">11 月 21 日 · 鮨 はやし (自動でまとまった 2 件)</p>
+<div class="row" style="gap:16px">
+<div style="flex:1;background:#F6E6D3;border-radius:16px;padding:20px 24px;display:flex;flex-direction:column;gap:6px">
+<p style="font-size:24px;font-weight:700;color:#D9822B">一皿</p>
+<p style="font-size:28px;font-weight:700;color:#14213D">のどぐろの炙り</p>
+<p style="font-size:24px;color:#4A5568">鮨 BEST で 2 位</p>
+</div>
+<div style="flex:1;background:#14213D;border-radius:16px;padding:20px 24px;display:flex;flex-direction:column;gap:6px">
+<p style="font-size:24px;font-weight:700;color:#F2B878">合わせた一杯</p>
+<p style="font-size:28px;font-weight:700;color:#FBFBF8">而今 純米吟醸</p>
+<p style="font-size:24px;color:#C9D2E3">地酒図鑑 三重を獲得</p>
+</div>
+</div>
+<p class="body">料理だけ、酒だけでもよい。あとから足した一杯も、日時と店から同じ食事に自動でつながる</p>
+</div>
+</div>
+<div class="col" style="flex:1;gap:24px;margin-left:48px">
+<p class="label">1 つにまとめる理由</p>
+<p class="ok"><b>使う場面が同じ</b><br><span style="color:#4A5568">料理と酒は一緒に楽しむ。アプリを行き来させない</span></p>
+<p class="ok"><b>組み合わせが資産になる</b><br><span style="color:#4A5568">「この店でこの一杯」は、別々の記録では残らない</span></p>
+<p class="ok"><b>地図と図鑑が 1 つになる</b><br><span style="color:#4A5568">店の地図に、食の図鑑と銘柄の図鑑を重ねる</span></p>
+</div>
+</div>
+<div class="foot"><span>飲み物だけの記録 (家飲み、バー) も同じ画面で残せる。酒類の表示は年齢確認を前提にする (推測)</span><span>7</span></div>
+</section>
+<section id="journey">
+<div class="head">
+<p class="eyebrow">体験の流れ</p>
+<h2>記録が増えるほど、「次の一皿と一杯」を選びやすくなる</h2>
+</div>
+<div style="display:flex;align-items:stretch;gap:16px">
+<div class="step"><p class="n">01</p><h3>食べる・飲む</h3><p class="body">いつも通り。特別な操作はいらない</p></div>
+<div style="display:flex;align-items:center"><x-shape kind="arrow-right" style="background:#B8C0CE;width:40px;height:24px"></x-shape></div>
+<div class="step"><p class="n">02</p><h3>残す</h3><p class="body">アプリで撮るか、撮った写真から選ぶ</p></div>
+<div style="display:flex;align-items:center"><x-shape kind="arrow-right" style="background:#B8C0CE;width:40px;height:24px"></x-shape></div>
+<div class="step"><p class="n">03</p><h3>比べる</h3><p class="body">「前のものと、どっちが好き?」を 1 回選ぶ</p></div>
+<div style="display:flex;align-items:center"><x-shape kind="arrow-right" style="background:#B8C0CE;width:40px;height:24px"></x-shape></div>
+<div class="step on"><p class="n">04</p><h3>育つ</h3><p class="body">地図、ジャンル別ランキング、図鑑が埋まる</p></div>
+<div style="display:flex;align-items:center"><x-shape kind="arrow-right" style="background:#B8C0CE;width:40px;height:24px"></x-shape></div>
+<div class="step"><p class="n">05</p><h3>使う</h3><p class="body">次の店を選ぶ、人に勧める、見返す</p></div>
+</div>
+<div style="display:flex;align-items:center;gap:24px;border:2px dashed #D9822B;border-radius:24px;padding:24px 32px">
+<x-icon name="Activity" style="color:#D9822B;width:40px;height:40px"></x-icon>
+<p class="body" style="color:#14213D">05 で選んだ店に行くと 01 に戻る。記録するほど自分の好みがはっきりし、選ぶ精度が上がる。</p>
+</div>
+<div class="foot"><span>HINAMI 事業コンセプト提案</span><span>8</span></div>
+</section>
+<section id="screens" class="white" style="gap:32px">
+<div class="head">
+<p class="eyebrow">画面イメージ</p>
+<h2>主要な 3 画面: 残す、比べる、見返す</h2>
+</div>
+<div class="row" style="justify-content:space-around">
+<div class="col" style="flex:none;align-items:center;gap:12px">
+<div class="phone" style="width:340px;height:560px"><div class="scr" style="gap:12px;padding:28px 20px">
+<p class="t">記録する</p>
+<div class="photo" style="height:72px"></div>
+<div style="display:flex;gap:8px"><p class="fld" style="flex:1;justify-content:center;background:#14213D;color:#FBFBF8;border-color:#14213D">撮る</p><p class="fld" style="flex:1;justify-content:center">写真から</p></div>
+<div style="display:flex;gap:8px"><p class="fld" style="flex:1;justify-content:center;background:#F6E6D3;border-color:#D9822B;font-weight:700">一皿</p><p class="fld" style="flex:1;justify-content:center">一杯</p></div>
+<div class="fld"><span class="k">品名</span><span>醤油らーめん</span></div>
+<div class="fld"><span class="k">店</span><span>らーめん 一心</span></div>
+<p class="auto">撮影場所から店を推定</p>
+<p class="btn">記録する</p>
+</div></div>
+<p class="shot-cap">残す</p>
+<p class="shot-sub">一皿でも一杯でも、1 品ずつ残せる</p>
+</div>
+<div class="col" style="flex:none;align-items:center;gap:12px">
+<div class="phone" style="width:340px;height:560px"><div class="scr" style="gap:12px;padding:28px 20px">
+<p class="t">ラーメン BEST</p>
+<p class="m">12 杯から、自分の順位</p>
+<div class="item"><span class="rk">1</span><span class="nm">麺屋 ひかり</span><span class="sc">9.6</span></div>
+<div class="item"><span class="rk">2</span><span class="nm">中華そば 青葉</span><span class="sc">9.2</span></div>
+<div class="item" style="background:#F6E6D3"><span class="rk">3</span><span class="nm">らーめん 一心</span><span class="sc">8.9</span></div>
+<div class="item"><span class="rk">4</span><span class="nm">つけ麺 みなと</span><span class="sc">8.1</span></div>
+</div></div>
+<p class="shot-cap">比べる</p>
+<p class="shot-sub">2 択に答えると順位が決まる</p>
+</div>
+<div class="col" style="flex:none;align-items:center;gap:12px">
+<div class="phone" style="width:340px;height:560px"><div class="scr" style="gap:12px;padding:28px 20px">
+<p class="t">わたしの地図</p>
+<svg width="268" height="300" viewBox="0 0 268 300" aria-label="記録した店のピンが並ぶ地図"><rect width="268" height="300" rx="20" fill="#EEF1F5"/><path d="M0 110 C80 90 160 140 268 100" stroke="#FBFBF8" stroke-width="14" fill="none"/><path d="M110 0 C120 90 90 200 130 300" stroke="#FBFBF8" stroke-width="12" fill="none"/><path d="M0 230 C90 210 170 250 268 220" stroke="#FBFBF8" stroke-width="8" fill="none"/><circle cx="60" cy="70" r="12" fill="#D9822B"/><circle cx="180" cy="60" r="12" fill="#D9822B"/><circle cx="160" cy="170" r="12" fill="#D9822B"/><circle cx="200" cy="190" r="12" fill="#14213D"/><circle cx="50" cy="180" r="12" fill="#14213D"/><circle cx="90" cy="260" r="12" fill="#D9822B"/><circle cx="220" cy="270" r="12" fill="#14213D"/></svg>
+<p class="m">橙は外食、紺は手料理</p>
+</div></div>
+<p class="shot-cap">見返す</p>
+<p class="shot-sub">行った店と作った料理が地図に</p>
+</div>
+</div>
+<div class="foot"><span>画面はイメージ。デザインは今後詰める</span><span>9</span></div>
+</section>
+<section id="social" class="white">
+<div class="head">
+<p class="eyebrow">つながる (サブ機能)</p>
+<h2>記録は自分のため。見せたい一皿だけ、範囲を選んで公開する</h2>
+</div>
+<div class="row" style="align-items:flex-start;gap:80px">
+<div class="col" style="flex:none;width:840px;gap:16px">
+<p class="label">公開範囲は記録ごとに選ぶ</p>
+<div style="width:60%;background:#14213D;border-radius:20px;padding:24px 32px;display:flex;flex-direction:column;gap:6px">
+<p style="font-size:28px;font-weight:700;color:#FBFBF8">自分だけ <span style="color:#F2B878">(既定)</span></p>
+<p style="font-size:24px;color:#C9D2E3">記録の大半はここ。誰にも見られない</p>
+</div>
+<div style="width:80%;background:#F6E6D3;border-radius:20px;padding:24px 32px;display:flex;flex-direction:column;gap:6px">
+<p style="font-size:28px;font-weight:700;color:#14213D">フォロワー限定</p>
+<p style="font-size:24px;color:#4A5568">友人に「最近の当たり」を共有する</p>
+</div>
+<div style="width:100%;background:#FBFBF8;border:2px solid #D5DAE3;border-radius:20px;padding:24px 32px;display:flex;flex-direction:column;gap:6px">
+<p style="font-size:28px;font-weight:700;color:#14213D">全体公開</p>
+<p style="font-size:24px;color:#4A5568">誰でも見られる。同じ店や同じ図鑑を集める人とつながる</p>
+</div>
+</div>
+<div class="col" style="flex:1;min-width:0;gap:24px;margin-left:72px">
+<p class="label">つながるとできること</p>
+<p class="ok"><b>人のベストを見る</b><br><span style="color:#4A5568">フォローした人のジャンル別ランキング</span></p>
+<p class="ok"><b>行きたい店を保存</b><br><span style="color:#4A5568">見つけた店を自分の地図に残す</span></p>
+<p class="ok"><b>好みの近い人を見つける</b><br><span style="color:#4A5568">2 択の結果から好みの一致度を出す</span></p>
+</div>
+</div>
+<div class="foot"><span>いいね数は前面に出さない。「見せる前提で気軽に残せない」という課題に戻らないため</span><span>10</span></div>
+</section>
+<section id="engage">
+<div class="head">
+<p class="eyebrow">続けたくなる仕組み</p>
+<h2>「記録しなきゃ」ではなく「記録したい」と思える仕掛けを重ねる</h2>
+</div>
+<table>
+<tr><th style="width:24%">仕組み</th><th style="width:46%">ねらい</th><th style="width:30%">参考</th></tr>
+<tr><td>2 択ランキング</td><td>答えるだけで自分の好みがはっきりする</td><td>Beli (米国)</td></tr>
+<tr><td>図鑑・バッジ</td><td>「ラーメン 12 / 50」のように埋める楽しさ</td><td>Untappd (米国)</td></tr>
+<tr><td>スタンプラリー</td><td>「今月はこのエリアで 3 軒」が次の外食のきっかけに</td><td>駅や自治体のラリー</td></tr>
+<tr><td>年間ふりかえり</td><td>1 年分のベストを見返し、自然に人に見せたくなる</td><td>Spotify Wrapped</td></tr>
+<tr><td>友人との好み比較</td><td>「好みが 82% 一致」から店を教え合う</td><td>Beli (米国)</td></tr>
+</table>
+<p class="body">毎日の連続記録は使わない。覚えておきたい食は週に数回程度と見ており (推測)、義務感は逆効果になる。</p>
+<div class="foot"><span>HINAMI 事業コンセプト提案</span><span>11</span></div>
+</section>
+<section id="diff" class="white">
+<div class="head">
+<p class="eyebrow">海外事例からの示唆</p>
+<h2>成功した型を輸入し、「手料理」と「日本の集める文化」を足す</h2>
+</div>
+<table style="font-size:26px">
+<tr><th style="width:22%">事例</th><th style="width:30%">伸びた理由</th><th style="width:24%">取り入れる</th><th style="width:24%">日本向けに足す</th></tr>
+<tr><td>Beli<br>米国 · 飲食店</td><td>2 択で自分のランキングが育つ。累計 7,500 万件の評価 (2025 年 9 月)</td><td>2 択ランキング、好み比較</td><td>手料理も対象に</td></tr>
+<tr><td>Untappd<br>米国 · ビール</td><td>銘柄・店・地域のバッジで集める楽しさ</td><td>バッジと収集</td><td>都道府県・季節の図鑑</td></tr>
+<tr><td>Vivino<br>デンマーク · ワイン</td><td>ラベルを撮るだけで記録できる手軽さ</td><td>写真から始まる記録</td><td>撮影場所から店を推定</td></tr>
+<tr><td>SARAH<br>日本 · 料理単位</td><td>店ではなく一皿で評価する</td><td>一皿単位の記録</td><td>他人向けでなく自分用に</td></tr>
+</table>
+<div class="foot"><span>出典: Wikipedia「Beli (app)」「Untappd」「Vivino」、ニュースイッチ (2019-06-09)</span><span>12</span></div>
+</section>
+<section id="model" data-section="事業としての成り立ち">
+<div class="head">
+<p class="eyebrow">収益モデル</p>
+<h2>少人数でも成り立つ個人課金から始め、店への送客に広げる</h2>
+</div>
+<div style="display:flex;align-items:stretch;gap:16px">
+<div class="step on"><p class="n">STEP 1 · 公開初日から</p><h3>個人課金</h3><p class="body">プレミアム 月 800 円 (仮)。食と酒の組み合わせ記録、詳しい振り返り、地図とリストの共有・書き出し</p><p class="small" style="color:#8C98B3">参考: Untappd Supporter 月 $5.99</p></div>
+<div style="display:flex;align-items:center"><x-shape kind="arrow-right" style="background:#B8C0CE;width:40px;height:24px"></x-shape></div>
+<div class="step"><p class="n">STEP 2 · 地域に利用者が集まったら</p><h3>協賛ラリー</h3><p class="body">酒蔵・ワイナリー・レストランがラリーを主催し、掲載料を払う</p><p class="small">参考: Untappd の地域バッジ</p></div>
+<div style="display:flex;align-items:center"><x-shape kind="arrow-right" style="background:#B8C0CE;width:40px;height:24px"></x-shape></div>
+<div class="step"><p class="n">STEP 3 · 会員の好みが見えてきたら</p><h3>体験への送客</h3><p class="body">好みに合う店の特別コースや酒蔵見学を予約につなげ、手数料を得る</p><p class="small">参考: Vivino の販売モデル</p></div>
+</div>
+<div style="display:flex;gap:32px;align-items:center;background:#FBFBF8;border-radius:24px;padding:28px 36px">
+<p style="font-size:24px;font-weight:700;color:#7A8499;flex:none">目安 (すべて仮定)</p>
+<p class="body" style="color:#14213D">月 10 万円 = 有料会員 約 150 人 = 月間利用者 2,000〜3,000 人<br><span style="font-size:24px;color:#7A8499">有料率 5〜8% (こだわり層のため高めに仮定)、ストア手数料 15% 控除後。広告は入れない</span></p>
+</div>
+<div class="foot"><span>HINAMI 事業コンセプト提案</span><span>13</span></div>
+</section>
+<section id="roadmap" class="white">
+<div class="head">
+<p class="eyebrow">進め方</p>
+<h2>期間ではなく「関門」で進む。最初の関門は作り手自身が使い続けること</h2>
+</div>
+<div style="display:flex;align-items:stretch;gap:24px">
+<div class="step on"><p class="n">PHASE 1</p><h3>自分で使い込む</h3><p class="body">作り手 1 人で、記録・比べる・見返すを回す</p></div>
+<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;width:240px;flex:none">
+<x-shape kind="diamond" style="background:#D9822B;width:48px;height:48px"></x-shape>
+<p class="gate">4 週間、覚えておきたい食をすべて記録できた</p>
+</div>
+<div class="step"><p class="n">PHASE 2</p><h3>公開と最初の 1 円</h3><p class="body">日本向けに公開。プレミアムを置き、公開範囲を選べるつながる機能を追加</p></div>
+<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;width:240px;flex:none">
+<x-shape kind="diamond" style="background:#D9822B;width:48px;height:48px"></x-shape>
+<p class="gate">公開後 4 週の継続率 30% 以上 (仮)</p>
+</div>
+<div class="step"><p class="n">PHASE 3</p><h3>収益を広げる</h3><p class="body">地酒・ワイン図鑑の拡充、ラリーの協賛、傾向データ</p></div>
+</div>
+<div class="foot"><span>HINAMI 事業コンセプト提案</span><span>14</span></div>
+</section>
+<section id="naming" class="white">
+<div class="head">
+<p class="eyebrow">サービス名 (決定)</p>
+<h2>サービス名は「HINAMI」に決定</h2>
+</div>
+<div class="row" style="gap:32px;align-items:stretch">
+<div class="card key" style="padding:48px;gap:20px;flex:1.4">
+<p class="num">食と飲みを、1 つのアプリで</p>
+<h3 style="font-size:112px;line-height:1.1">HINAMI <span style="font-size:40px;font-weight:400;color:#4A5568">日次 · ひなみ</span></h3>
+<p class="body">日次は、日の並びや一日ごとを表す言葉。覚えておきたい一皿と一杯が日付順に並び、自分の食の暦になっていく</p>
+</div>
+<div class="col" style="flex:1;gap:20px;justify-content:center">
+<p class="label">選んだ理由</p>
+<p class="tag">ローマ字のまま読めて、声でも伝わる</p>
+<p class="tag">食にも飲みにも寄らず、両方を包める</p>
+<p class="tag">「記録」と言わずに、積み重なる日々を想像させる</p>
+</div>
+</div>
+<div class="foot"><span>ストアでは「HINAMI - 食と酒の記録帳」のように説明を添えて登録する。商標とストア名の正式な確認はこれから</span><span>15</span></div>
+</section>
+<section id="decide" class="dark" data-section="ご判断いただきたいこと">
+<div class="head">
+<p class="eyebrow">ご判断いただきたいこと</p>
+<h2 style="color:#FBFBF8">この方向性でよければ、次は「画面」を詰めます</h2>
+</div>
+<div class="row" style="flex:1">
+<div class="col" style="border-top:2px solid #D9822B;padding-top:24px">
+<p class="n" style="font-family:'Inter',Arial,sans-serif;font-size:24px;font-weight:700;color:#D9822B">01</p>
+<h3 style="color:#FBFBF8">コンセプト</h3>
+<p class="body">「自分のための、育つ食と酒の記録帳」で進めてよいか</p>
+</div>
+<div class="col" style="border-top:2px solid #D9822B;padding-top:24px">
+<p class="n" style="font-family:'Inter',Arial,sans-serif;font-size:24px;font-weight:700;color:#D9822B">02</p>
+<h3 style="color:#FBFBF8">対象ユーザー</h3>
+<p class="body">「食と酒にこだわる、少し余裕のある大人」で合っているか</p>
+</div>
+<div class="col" style="border-top:2px solid #D9822B;padding-top:24px">
+<p class="n" style="font-family:'Inter',Arial,sans-serif;font-size:24px;font-weight:700;color:#D9822B">03</p>
+<h3 style="color:#FBFBF8">外食と手料理の比重</h3>
+<p class="body">手料理を外食と同じ主役に置くか、脇役にするか</p>
+</div>
+<div class="col" style="border-top:2px solid #D9822B;padding-top:24px">
+<p class="n" style="font-family:'Inter',Arial,sans-serif;font-size:24px;font-weight:700;color:#D9822B">04</p>
+<h3 style="color:#FBFBF8">最初の図鑑</h3>
+<p class="body">公開時の図鑑を、料理 (ラーメン等) と地酒のどちらから始めるか</p>
+</div>
+</div>
+<div class="foot"><span>合意後: 画面デザイン (別資料) → 最初の図鑑とラリー</span><span>16</span></div>
+</section>
+
+</body></html>

@@ -1,0 +1,307 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>HINAMI デザインの方向性</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600;700&family=Cormorant+Garamond:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;700&display=swap">
+<style>
+html{background:#2a2a2a} body{margin:0;padding:40px 0;zoom:0.5}
+:root{
+  --ink:#16130F; --ink2:#221D17; --paper:#F2EDE4; --white:#FAF7F1; --mute:#8F877A; --soft:#5E574C;
+  --gold:#B8995F; --shu:#A23F2E; --line:#3A332A; --rule:#D9D1C3;
+}
+body{font-family:'Noto Sans JP',Arial,sans-serif;color:var(--ink)}
+section{background:var(--paper);padding:112px 128px 160px;display:flex;flex-direction:column;gap:40px}
+section.dark{background:var(--ink);color:var(--white)}
+.eyebrow{font-family:'Cormorant Garamond',Georgia,serif;font-size:28px;font-weight:600;letter-spacing:6px;color:var(--gold)}
+.head{display:flex;flex-direction:column;gap:12px}
+h2{font-family:'Shippori Mincho',Georgia,serif;font-size:52px;font-weight:600;line-height:1.4;color:var(--ink)}
+.dark h2{color:var(--white)}
+h3{font-family:'Shippori Mincho',Georgia,serif;font-size:32px;font-weight:600;line-height:1.45;color:var(--ink)}
+.dark h3{color:var(--white)}
+.body{font-size:26px;line-height:1.7;color:var(--soft)}
+.dark .body{color:#C8BFB1}
+.num{font-family:'Cormorant Garamond',Georgia,serif;font-size:36px;font-weight:600;color:var(--gold)}
+.label{font-size:24px;font-weight:700;letter-spacing:2px;color:var(--mute)}
+.foot{position:absolute;left:128px;bottom:64px;width:1664px;display:flex;justify-content:space-between;font-size:24px;color:var(--mute)}
+.row{display:flex;gap:48px}
+.col{display:flex;flex-direction:column;gap:16px;flex:1;min-width:0}
+.card{background:var(--white);border:1px solid var(--rule);border-radius:8px;padding:40px;display:flex;flex-direction:column;gap:16px;flex:1}
+.card.dk{background:var(--ink);border-color:var(--ink)}
+.card.dk h3{color:var(--white)}
+.card.dk .body{color:#C8BFB1}
+.li{font-size:26px;line-height:1.6;color:var(--soft);border-top:1px solid var(--rule);padding-top:14px}
+.card.dk .li{color:#C8BFB1;border-top-color:var(--line)}
+/* phones */
+.phones{display:flex;justify-content:space-between;align-items:flex-start}
+.shot{display:flex;flex-direction:column;align-items:center;gap:12px;width:380px}
+.ph{width:340px;height:580px;background:#0A0907;border-radius:52px;padding:12px;box-sizing:border-box;display:flex;box-shadow:0 24px 48px rgba(22,19,15,.28)}
+.sc{flex:1;background:var(--ink);border-radius:40px;overflow:hidden;display:flex;flex-direction:column;gap:14px;padding:30px 22px;box-sizing:border-box}
+.sc.bleed{padding:0;gap:0}
+.pad{display:flex;flex-direction:column;gap:12px;padding:20px 22px}
+.pic{background:linear-gradient(160deg,#5A4632,#1E1914);border-radius:6px}
+.logo-s{font-family:'Cormorant Garamond',Georgia,serif;font-size:24px;font-weight:600;letter-spacing:6px;color:var(--gold)}
+.date{font-family:'Cormorant Garamond',Georgia,serif;font-size:88px;font-weight:500;line-height:1;color:var(--white)}
+.st{font-family:'Shippori Mincho',Georgia,serif;font-size:30px;font-weight:600;color:var(--white);line-height:1.35}
+.sm{font-size:24px;color:#A79F92;line-height:1.4}
+.sg{font-size:24px;color:var(--gold);line-height:1.4}
+.kv{display:flex;justify-content:space-between;gap:8px;font-size:24px;color:var(--white);border-top:1px solid var(--line);padding-top:10px}
+.kv .k{color:#8F877A}
+.btn{background:var(--gold);color:var(--ink);border-radius:999px;padding:12px;text-align:center;font-size:24px;font-weight:700}
+.seg{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
+.seg p{flex:1;text-align:center;font-size:24px;color:#8F877A;padding:8px 0}
+.seg .on{background:var(--white);color:var(--ink);font-weight:700}
+.stamp{width:76px;height:76px;border-radius:50%;border:3px solid var(--shu);display:flex;align-items:center;justify-content:center;box-sizing:border-box}
+.stamp p{font-family:'Shippori Mincho',Georgia,serif;font-size:24px;font-weight:700;color:var(--white)}
+.stamp.on{background:var(--shu)}
+.stamp.off{border:2px dashed var(--line)}
+.stamp.off p{color:#5E574C}
+.cap{font-family:'Shippori Mincho',Georgia,serif;font-size:30px;font-weight:600;color:var(--ink)}
+.capsub{font-size:24px;color:var(--soft);text-align:center;line-height:1.45}
+.reveal{animation:rise .7s ease both}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+
+section{width:1920px;height:1080px;box-sizing:border-box;position:relative;margin:0 auto 40px;overflow:hidden}
+x-shape{display:inline-block} x-shape[kind=diamond]{transform:rotate(45deg)} x-icon{display:inline-block}
+</style></head><body>
+<section id="cover" class="dark" style="justify-content:space-between">
+<p class="eyebrow">APP DESIGN DIRECTION</p>
+<div style="display:flex;flex-direction:column;gap:20px">
+<p class="reveal" style="font-family:'Cormorant Garamond',Georgia,serif;font-size:200px;font-weight:500;letter-spacing:28px;line-height:1;color:#FAF7F1">HINAMI</p>
+<p style="font-family:'Shippori Mincho',Georgia,serif;font-size:32px;letter-spacing:12px;color:#B8995F">日次 · ひなみ</p>
+<div style="width:120px;height:1px;background:#B8995F;margin:24px 0"></div>
+<p style="font-family:'Shippori Mincho',Georgia,serif;font-size:48px;font-weight:600;color:#FAF7F1">一皿と一杯を、日々の帳面に。</p>
+</div>
+<p style="font-size:24px;color:#8F877A">2026 年 11 月 26 日 · アプリデザインの方向性 (たたき台)</p>
+<div style="position:absolute;left:1520px;top:112px;width:160px;height:160px;box-sizing:border-box;border:4px solid #A23F2E;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px">
+<p style="font-family:'Cormorant Garamond',Georgia,serif;font-size:56px;font-weight:600;line-height:1;color:#A23F2E">26</p>
+<p style="font-family:'Shippori Mincho',Georgia,serif;font-size:24px;font-weight:700;color:#A23F2E">十一月</p>
+</div>
+
+</section>
+<section id="concept" class="dark">
+<div class="head">
+<p class="eyebrow">CONCEPT</p>
+<h2>世界観は「夜の帳面」。写真を主役に、暦と印で個性を出す</h2>
+</div>
+<div class="row" style="flex:1;align-items:stretch">
+<div class="col reveal" style="border-top:1px solid #B8995F;padding-top:28px;gap:20px">
+<p class="num">01</p>
+<h3>写真が主役</h3>
+<p class="body">一覧も詳細も写真を大きく見せる。文字と線は細く小さく抑え、料理と酒の色を引き立てる。</p>
+</div>
+<div class="col reveal" style="border-top:1px solid #B8995F;padding-top:28px;gap:20px;animation-delay:150ms">
+<p class="num">02</p>
+<h3>墨と生成り、差し色は金と朱</h3>
+<p class="body">背景は墨色、文字は生成り。金は操作する所だけ、朱は「印」だけに使い、色数を絞る。</p>
+</div>
+<div class="col reveal" style="border-top:1px solid #B8995F;padding-top:28px;gap:20px;animation-delay:300ms">
+<p class="num">03</p>
+<h3>日次のモチーフ</h3>
+<p class="body">日付を大きな欧文数字で刻み、記録は帳面の 1 行のように並ぶ。図鑑は朱印を押して埋めていく。</p>
+</div>
+</div>
+<div class="foot"><span>HINAMI デザインの方向性</span><span>2</span></div>
+</section>
+<section id="reference">
+<div class="head">
+<p class="eyebrow">REFERENCE</p>
+<h2>sake flight が「旅」で世界観をつくったように、HINAMI は「暦」でつくる</h2>
+</div>
+<div class="row" style="flex:1;align-items:stretch;gap:32px">
+<div class="card">
+<p class="label">sake flight (参考)</p>
+<h3>晩酌を、旅に変える</h3>
+<p class="li">比喩: 旅。エアラインやホテルのような旅情</p>
+<p class="li">基調: 黒。ミステリアスさと高級感の同居</p>
+<p class="li">主役: タイポグラフィ</p>
+<p class="li">モチーフ: パスポート、搭乗券、翼</p>
+</div>
+<div class="card dk">
+<p class="label" style="color:#B8995F">HINAMI (本案)</p>
+<h3>一皿と一杯を、日々の帳面に</h3>
+<p class="li">比喩: 暦と帳面。日々が積み重なる静けさ</p>
+<p class="li">基調: 墨色。写真の色だけが光る</p>
+<p class="li">主役: 写真と、明朝・欧文数字の日付</p>
+<p class="li">モチーフ: 日付印、帳面の罫線、朱印</p>
+</div>
+</div>
+<p class="body" style="color:#16130F">学ぶのは「1 つの比喩をアプリ全体に通す」こと。比喩そのものは借りずに、HINAMI という名前から引き出す。</p>
+<div class="foot"><span>出典: TACTO 事例ページ「SAKEFLIGHT」(tacto-inc.com)。画像は未確認で、本文の記述から整理</span><span>3</span></div>
+</section>
+<section id="tokens" class="white" style="background:#FAF7F1">
+<div class="head">
+<p class="eyebrow">COLOR &amp; TYPE</p>
+<h2>色は墨・生成り・金・朱の 4 つ。書体は明朝と欧文セリフで品よく</h2>
+</div>
+<div class="row" style="flex:1;align-items:stretch;gap:64px">
+<div class="col" style="flex:1;gap:20px">
+<div style="display:flex;align-items:center;gap:24px"><div style="width:120px;height:80px;background:#16130F;border-radius:6px;flex:none"></div><div class="col" style="gap:4px"><p style="font-size:28px;font-weight:700">墨 <span style="color:#8F877A;font-weight:400">#16130F</span></p><p style="font-size:24px;color:#5E574C">背景。写真を引き立てる</p></div></div>
+<div style="display:flex;align-items:center;gap:24px"><div style="width:120px;height:80px;background:#F2EDE4;border:1px solid #D9D1C3;border-radius:6px;flex:none"></div><div class="col" style="gap:4px"><p style="font-size:28px;font-weight:700">生成り <span style="color:#8F877A;font-weight:400">#F2EDE4</span></p><p style="font-size:24px;color:#5E574C">文字と紙面</p></div></div>
+<div style="display:flex;align-items:center;gap:24px"><div style="width:120px;height:80px;background:#B8995F;border-radius:6px;flex:none"></div><div class="col" style="gap:4px"><p style="font-size:28px;font-weight:700">金 <span style="color:#8F877A;font-weight:400">#B8995F</span></p><p style="font-size:24px;color:#5E574C">ボタンや順位など、操作と強調だけ</p></div></div>
+<div style="display:flex;align-items:center;gap:24px"><div style="width:120px;height:80px;background:#A23F2E;border-radius:6px;flex:none"></div><div class="col" style="gap:4px"><p style="font-size:28px;font-weight:700">朱 <span style="color:#8F877A;font-weight:400">#A23F2E</span></p><p style="font-size:24px;color:#5E574C">印だけに使う。図鑑とラリーの達成</p></div></div>
+</div>
+<div class="col" style="flex:1.2;gap:28px;border-left:1px solid #D9D1C3;padding-left:64px">
+<div class="col" style="gap:6px"><p class="label">日付・数字 · Cormorant Garamond</p><p style="font-family:'Cormorant Garamond',Georgia,serif;font-size:96px;font-weight:500;line-height:1">26 · 11 · 2026</p></div>
+<div class="col" style="gap:6px"><p class="label">見出し・品名 · しっぽり明朝</p><p style="font-family:'Shippori Mincho',Georgia,serif;font-size:56px;font-weight:600">のどぐろの炙り</p></div>
+<div class="col" style="gap:6px"><p class="label">本文・操作 · Noto Sans JP</p><p style="font-size:28px;color:#5E574C">鮨 はやし · 撮影場所から店を推定</p></div>
+</div>
+</div>
+<div class="foot"><span>書体はすべて Google Fonts で使える無料書体</span><span>4</span></div>
+</section>
+<section id="motif" class="dark">
+<div class="head">
+<p class="eyebrow">MOTIF</p>
+<h2>3 つのモチーフで、記録が「日々の帳面」になる</h2>
+</div>
+<div class="row" style="flex:1;align-items:stretch;gap:40px">
+<div class="col" style="gap:24px">
+<div style="height:300px;background:#221D17;border-radius:8px;display:flex;flex-direction:column;justify-content:center;padding:0 40px;gap:8px">
+<p style="font-family:'Cormorant Garamond',Georgia,serif;font-size:140px;font-weight:500;line-height:1;color:#FAF7F1">21</p>
+<p style="font-family:'Shippori Mincho',Georgia,serif;font-size:28px;letter-spacing:6px;color:#B8995F">十一月 · 金曜日</p>
+</div>
+<h3>日付印</h3>
+<p class="body">記録のまとまりの頭に、日付を大きく刻む。アプリ名「日次」をそのまま形にする</p>
+</div>
+<div class="col" style="gap:24px">
+<div style="height:300px;background:#221D17;border-radius:8px;display:flex;flex-direction:column;justify-content:center;padding:0 40px;gap:0">
+<div style="display:flex;justify-content:space-between;border-top:1px solid #3A332A;padding:18px 0"><p style="font-size:24px;color:#8F877A">一皿</p><p style="font-family:'Shippori Mincho',Georgia,serif;font-size:28px;color:#FAF7F1">のどぐろの炙り</p></div>
+<div style="display:flex;justify-content:space-between;border-top:1px solid #3A332A;padding:18px 0"><p style="font-size:24px;color:#8F877A">一杯</p><p style="font-family:'Shippori Mincho',Georgia,serif;font-size:28px;color:#FAF7F1">而今 純米吟醸</p></div>
+<div style="display:flex;justify-content:space-between;border-top:1px solid #3A332A;border-bottom:1px solid #3A332A;padding:18px 0"><p style="font-size:24px;color:#8F877A">店</p><p style="font-family:'Shippori Mincho',Georgia,serif;font-size:28px;color:#FAF7F1">鮨 はやし</p></div>
+</div>
+<h3>帳面の罫線</h3>
+<p class="body">一皿と一杯を、細い罫で 1 行ずつ。枠やカードで囲まず、紙の帳面のように静かに並べる</p>
+</div>
+<div class="col" style="gap:24px">
+<div style="height:300px;background:#221D17;border-radius:8px;display:flex;align-items:center;justify-content:center;gap:28px">
+<div style="width:120px;height:120px;border-radius:50%;background:#A23F2E;display:flex;align-items:center;justify-content:center"><p style="font-family:'Shippori Mincho',Georgia,serif;font-size:36px;font-weight:700;color:#FAF7F1">三重</p></div>
+<div style="width:120px;height:120px;border-radius:50%;background:#A23F2E;display:flex;align-items:center;justify-content:center"><p style="font-family:'Shippori Mincho',Georgia,serif;font-size:36px;font-weight:700;color:#FAF7F1">新潟</p></div>
+<div style="width:120px;height:120px;box-sizing:border-box;border-radius:50%;border:2px dashed #5E574C;display:flex;align-items:center;justify-content:center"><p style="font-family:'Shippori Mincho',Georgia,serif;font-size:36px;font-weight:700;color:#5E574C">山形</p></div>
+</div>
+<h3>朱印</h3>
+<p class="body">図鑑とラリーは、御朱印帳のように朱の印で埋まる。朱はこの「達成」にだけ使う</p>
+</div>
+</div>
+<div class="foot"><span>HINAMI デザインの方向性</span><span>5</span></div>
+</section>
+<section id="screens1" style="padding-top:96px;gap:24px">
+<div class="head">
+<p class="eyebrow">SCREENS · 1</p>
+<h2>残す・見返す: 写真を大きく、文字は帳面のように静かに</h2>
+</div>
+<div class="phones" style="padding:0 64px">
+<div class="shot">
+<div class="ph"><div class="sc">
+<p class="logo-s">HINAMI</p>
+<div style="display:flex;align-items:flex-end;gap:14px"><p class="date">21</p><p class="sg" style="padding-bottom:10px">十一月 · 金</p></div>
+<div class="pic" style="height:180px"></div>
+<p class="st">鮨 はやし</p>
+<div class="kv"><span class="k">一皿</span><span>のどぐろの炙り</span></div>
+<div class="kv"><span class="k">一杯</span><span>而今 純米吟醸</span></div>
+<div style="display:flex;align-items:flex-end;gap:14px;padding-top:8px"><p class="date" style="font-size:56px;color:#8F877A">18</p><p class="sm" style="padding-bottom:4px">十一月 · 火</p></div>
+</div></div>
+<p class="cap">ホーム</p>
+<p class="capsub">日付ごとに一皿と一杯が並ぶ</p>
+</div>
+<div class="shot">
+<div class="ph"><div class="sc bleed">
+<div class="pic" style="height:230px;border-radius:0"></div>
+<div class="pad">
+<div class="seg"><p class="on">一皿</p><p>一杯</p></div>
+<div class="kv"><span class="k">品名</span><span>のどぐろの炙り</span></div>
+<div class="kv"><span class="k">店</span><span>鮨 はやし</span></div>
+<p class="sg">撮影場所から店を推定</p>
+<p class="btn">残す</p>
+</div>
+</div></div>
+<p class="cap">記録する</p>
+<p class="capsub">1 品ずつ、写真と品名だけ</p>
+</div>
+<div class="shot">
+<div class="ph"><div class="sc bleed">
+<div class="pic" style="height:330px;border-radius:0"></div>
+<div class="pad" style="gap:14px">
+<p class="sg">11.21 · 鮨 はやし</p>
+<p class="st" style="font-size:36px">のどぐろの炙り</p>
+<div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid #3A332A;padding-top:12px"><p class="sm">鮨 BEST</p><p style="font-family:'Cormorant Garamond',Georgia,serif;font-size:40px;font-weight:600;color:#B8995F;line-height:1">No. 2</p></div>
+</div>
+</div></div>
+<p class="cap">記録の詳細</p>
+<p class="capsub">写真を全面に、順位は控えめに</p>
+</div>
+</div>
+<div class="foot"><span>褐色の面は写真が入る場所 (仮)</span><span>6</span></div>
+</section>
+<section id="screens2" style="padding-top:96px;gap:24px">
+<div class="head">
+<p class="eyebrow">SCREENS · 2</p>
+<h2>比べる・集める: 2 択で順位が育ち、朱印で図鑑が埋まる</h2>
+</div>
+<div class="phones" style="padding:0 64px">
+<div class="shot">
+<div class="ph"><div class="sc" style="gap:12px">
+<p class="st">どちらが好き?</p>
+<div class="pic" style="height:160px"></div>
+<p class="sm" style="color:#FAF7F1">のどぐろの炙り</p>
+<div class="pic" style="height:160px"></div>
+<p class="sm" style="color:#FAF7F1">金目鯛の昆布締め</p>
+<p class="sg" style="text-align:center">同じくらい</p>
+</div></div>
+<p class="cap">比べる</p>
+<p class="capsub">好きな方を選ぶだけ</p>
+</div>
+<div class="shot">
+<div class="ph"><div class="sc">
+<p class="sm">12 皿から、自分の順位</p>
+<p class="st" style="font-size:36px">鮨 BEST</p>
+<div style="display:flex;align-items:center;gap:14px;border-top:1px solid #3A332A;padding-top:12px"><p class="num" style="width:36px">1</p><div class="pic" style="width:64px;height:64px;flex:none"></div><p style="font-size:24px;color:#FAF7F1">鮨 青</p></div>
+<div style="display:flex;align-items:center;gap:14px;border-top:1px solid #3A332A;padding-top:12px"><p class="num" style="width:36px">2</p><div class="pic" style="width:64px;height:64px;flex:none"></div><p style="font-size:24px;color:#FAF7F1">鮨 はやし</p></div>
+<div style="display:flex;align-items:center;gap:14px;border-top:1px solid #3A332A;padding-top:12px"><p class="num" style="width:36px">3</p><div class="pic" style="width:64px;height:64px;flex:none"></div><p style="font-size:24px;color:#FAF7F1">すし 松</p></div>
+<div style="display:flex;align-items:center;gap:14px;border-top:1px solid #3A332A;padding-top:12px"><p class="num" style="width:36px">4</p><div class="pic" style="width:64px;height:64px;flex:none"></div><p style="font-size:24px;color:#FAF7F1">鮨 みなと</p></div>
+</div></div>
+<p class="cap">自分のランキング</p>
+<p class="capsub">点数は見せず、順位だけ</p>
+</div>
+<div class="shot">
+<div class="ph"><div class="sc">
+<p class="sm">地酒図鑑</p>
+<div style="display:flex;align-items:baseline;gap:10px"><p class="date" style="font-size:72px">12</p><p class="sm">/ 47 都道府県</p></div>
+<div style="display:grid;grid-template-columns:repeat(3,76px);gap:18px 20px;justify-content:center;padding-top:8px">
+<div class="stamp on"><p>三重</p></div><div class="stamp on"><p>新潟</p></div><div class="stamp off"><p>山形</p></div>
+<div class="stamp on"><p>福井</p></div><div class="stamp off"><p>秋田</p></div><div class="stamp on"><p>京都</p></div>
+<div class="stamp off"><p>広島</p></div><div class="stamp on"><p>佐賀</p></div><div class="stamp off"><p>高知</p></div>
+</div>
+</div></div>
+<p class="cap">図鑑・ラリー</p>
+<p class="capsub">飲んだ県に朱印が押される</p>
+</div>
+</div>
+<div class="foot"><span>褐色の面は写真が入る場所 (仮)。店名と銘柄は架空の例を含む</span><span>7</span></div>
+</section>
+<section id="decide" class="dark">
+<div class="head">
+<p class="eyebrow">NEXT</p>
+<h2>この方向でよければ、写真を入れて画面を作り込みます</h2>
+</div>
+<div class="row" style="flex:1">
+<div class="col" style="border-top:1px solid #B8995F;padding-top:28px;gap:16px">
+<p class="num">01</p>
+<h3>世界観</h3>
+<p class="body">「夜の帳面」(墨色に写真、暦と印のモチーフ) で進めてよいか</p>
+</div>
+<div class="col" style="border-top:1px solid #B8995F;padding-top:28px;gap:16px">
+<p class="num">02</p>
+<h3>写真</h3>
+<p class="body">作り手自身が撮った料理と酒の写真で作り込むか、生成した写真で仮に組むか</p>
+</div>
+<div class="col" style="border-top:1px solid #B8995F;padding-top:28px;gap:16px">
+<p class="num">03</p>
+<h3>明るい画面</h3>
+<p class="body">昼に見る用の生成り背景版も用意するか、墨色の 1 本に絞るか</p>
+</div>
+<div class="col" style="border-top:1px solid #B8995F;padding-top:28px;gap:16px">
+<p class="num">04</p>
+<h3>残りの画面</h3>
+<p class="body">地図、年間ふりかえり、つながる (公開範囲) を同じ世界観で起こす</p>
+</div>
+</div>
+<div class="foot"><span>HINAMI デザインの方向性</span><span>8</span></div>
+</section>
+
+</body></html>

@@ -1,0 +1,54 @@
+:root{
+  --ink:#16130F; --ink2:#221D17; --paper:#F2EDE4; --white:#FAF7F1; --mute:#8F877A; --soft:#5E574C;
+  --gold:#B8995F; --shu:#A23F2E; --line:#3A332A; --rule:#D9D1C3;
+}
+body{font-family:'Noto Sans JP',Arial,sans-serif;color:var(--ink)}
+section{background:var(--paper);padding:112px 128px 160px;display:flex;flex-direction:column;gap:40px}
+section.dark{background:var(--ink);color:var(--white)}
+.eyebrow{font-family:'Cormorant Garamond',Georgia,serif;font-size:28px;font-weight:600;letter-spacing:6px;color:var(--gold)}
+.head{display:flex;flex-direction:column;gap:12px}
+h2{font-family:'Shippori Mincho',Georgia,serif;font-size:52px;font-weight:600;line-height:1.4;color:var(--ink)}
+.dark h2{color:var(--white)}
+h3{font-family:'Shippori Mincho',Georgia,serif;font-size:32px;font-weight:600;line-height:1.45;color:var(--ink)}
+.dark h3{color:var(--white)}
+.body{font-size:26px;line-height:1.7;color:var(--soft)}
+.dark .body{color:#C8BFB1}
+.num{font-family:'Cormorant Garamond',Georgia,serif;font-size:36px;font-weight:600;color:var(--gold)}
+.label{font-size:24px;font-weight:700;letter-spacing:2px;color:var(--mute)}
+.foot{position:absolute;left:128px;bottom:64px;width:1664px;display:flex;justify-content:space-between;font-size:24px;color:var(--mute)}
+.row{display:flex;gap:48px}
+.col{display:flex;flex-direction:column;gap:16px;flex:1;min-width:0}
+.card{background:var(--white);border:1px solid var(--rule);border-radius:8px;padding:40px;display:flex;flex-direction:column;gap:16px;flex:1}
+.card.dk{background:var(--ink);border-color:var(--ink)}
+.card.dk h3{color:var(--white)}
+.card.dk .body{color:#C8BFB1}
+.li{font-size:26px;line-height:1.6;color:var(--soft);border-top:1px solid var(--rule);padding-top:14px}
+.card.dk .li{color:#C8BFB1;border-top-color:var(--line)}
+/* phones */
+.phones{display:flex;justify-content:space-between;align-items:flex-start}
+.shot{display:flex;flex-direction:column;align-items:center;gap:12px;width:380px}
+.ph{width:340px;height:580px;background:#0A0907;border-radius:52px;padding:12px;box-sizing:border-box;display:flex;box-shadow:0 24px 48px rgba(22,19,15,.28)}
+.sc{flex:1;background:var(--ink);border-radius:40px;overflow:hidden;display:flex;flex-direction:column;gap:14px;padding:30px 22px;box-sizing:border-box}
+.sc.bleed{padding:0;gap:0}
+.pad{display:flex;flex-direction:column;gap:12px;padding:20px 22px}
+.pic{background:linear-gradient(160deg,#5A4632,#1E1914);border-radius:6px}
+.logo-s{font-family:'Cormorant Garamond',Georgia,serif;font-size:24px;font-weight:600;letter-spacing:6px;color:var(--gold)}
+.date{font-family:'Cormorant Garamond',Georgia,serif;font-size:88px;font-weight:500;line-height:1;color:var(--white)}
+.st{font-family:'Shippori Mincho',Georgia,serif;font-size:30px;font-weight:600;color:var(--white);line-height:1.35}
+.sm{font-size:24px;color:#A79F92;line-height:1.4}
+.sg{font-size:24px;color:var(--gold);line-height:1.4}
+.kv{display:flex;justify-content:space-between;gap:8px;font-size:24px;color:var(--white);border-top:1px solid var(--line);padding-top:10px}
+.kv .k{color:#8F877A}
+.btn{background:var(--gold);color:var(--ink);border-radius:999px;padding:12px;text-align:center;font-size:24px;font-weight:700}
+.seg{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
+.seg p{flex:1;text-align:center;font-size:24px;color:#8F877A;padding:8px 0}
+.seg .on{background:var(--white);color:var(--ink);font-weight:700}
+.stamp{width:76px;height:76px;border-radius:50%;border:3px solid var(--shu);display:flex;align-items:center;justify-content:center;box-sizing:border-box}
+.stamp p{font-family:'Shippori Mincho',Georgia,serif;font-size:24px;font-weight:700;color:var(--white)}
+.stamp.on{background:var(--shu)}
+.stamp.off{border:2px dashed var(--line)}
+.stamp.off p{color:#5E574C}
+.cap{font-family:'Shippori Mincho',Georgia,serif;font-size:30px;font-weight:600;color:var(--ink)}
+.capsub{font-size:24px;color:var(--soft);text-align:center;line-height:1.45}
+.reveal{animation:rise .7s ease both}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}

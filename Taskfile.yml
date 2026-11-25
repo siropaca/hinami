@@ -1,0 +1,27 @@
+version: "3"
+
+# 開発タスクはここに一元化する。アプリ追加時に dev / build などを足す。
+
+tasks:
+  default:
+    desc: タスク一覧を表示
+    cmds:
+      - task --list
+    silent: true
+
+  setup:
+    desc: ツールと依存を入れ、git hooks を設定する
+    cmds:
+      - mise install
+      - pnpm install
+      - pnpm lefthook install
+
+  check:
+    desc: lint とフォーマットを検査する
+    cmds:
+      - pnpm check
+
+  fix:
+    desc: lint とフォーマットを自動修正する
+    cmds:
+      - pnpm check:fix
