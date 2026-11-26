@@ -568,6 +568,7 @@
         font-size: 10px;
         color: #555;
         text-decoration: underline;
+        white-space: nowrap;
       }
       .viewfinder {
         flex: 1;
@@ -759,7 +760,7 @@
               <div class="top"><span class="x">×</span><span class="chip meal">新しい食事 ▾</span></div>
               <div class="ph" style="height: 168px"><span>写真</span><span class="retake">撮り直す</span></div>
               <div class="chips">
-                <span class="chip on">一皿</span><span class="chip">一杯</span><span class="hint">AI が判定</span>
+                <span class="chip">ラーメン ▾</span><span class="hint">AI が判定</span>
               </div>
               <div class="kv"><span class="k">店</span><span class="chip">麺屋 ひかり ▾</span></div>
               <div class="memo">メモ (任意)</div>
@@ -767,7 +768,7 @@
               <span class="btn primary block tap" data-tap="3">残す</span>
             </div>
             <ol class="notes">
-              <li>一皿・一杯は AI がその場で付ける (1 秒未満)。両方写っていれば両方。違えばタップで切り替える</li>
+              <li>種類は AI がその場で付ける (1 秒未満)。複数写っていれば複数。違えばタップで直す。食・飲は種類から裏で決まる</li>
               <li>店は、推定に自信があるときだけ店名を出す</li>
               <li>メモは任意。品名は書かなくてよい</li>
               <li><span class="plan-tag">案</span> × は記録をやめてホームへ。メモを書いていたときだけ確かめる</li>
@@ -785,7 +786,7 @@
               <span class="link">飛ばす</span>
             </div>
             <ol class="notes">
-              <li>保存したあとに 1 問だけ。比べる相手は同じジャンルの記録から出す</li>
+              <li>保存したあとに 1 問だけ。比べる相手は同じ種類の記録から出す</li>
               <li>飛ばした分は、後でまとめて答えられる</li>
             </ol>
           </div>
@@ -825,7 +826,7 @@
             <div class="phone">
               <div class="top"><span class="x">×</span><span class="chip meal">新しい食事 ▾</span></div>
               <div class="ph" style="height: 168px"><span>写真</span><span class="retake">撮り直す</span></div>
-              <div class="chips"><span class="chip on">一皿</span><span class="chip">一杯</span><span class="hint">AI が判定</span></div>
+              <div class="chips"><span class="chip">焼き鳥 ▾</span><span class="hint">AI が判定</span></div>
               <div class="kv"><span class="k">店</span><span class="chip ghost tap" data-tap="3">道玄坂 · 候補 3 件 ▾</span></div>
               <div class="memo">メモ (任意)</div>
               <div class="spacer"></div>
@@ -855,7 +856,7 @@
               </div>
             </div>
             <ol class="notes">
-              <li>候補は、近さ、行ったことがあるか、AI のジャンルと店の種類が合うか、で並べる</li>
+              <li>候補は、近さ、行ったことがあるか、AI が付けた種類と店の業種が合うか、で並べる</li>
               <li>候補にない店は検索する</li>
               <li>下に引くか外側をタップすると、店を変えずに閉じる</li>
               <li><span class="plan-tag">案</span> 初めて「家」を選んだ場所を覚え、次からはそこを家にする</li>
@@ -867,7 +868,7 @@
             <div class="phone">
               <div class="top"><span class="x">×</span><span class="chip meal">新しい食事 ▾</span></div>
               <div class="ph" style="height: 168px"><span>写真</span><span class="retake">撮り直す</span></div>
-              <div class="chips"><span class="chip on">一皿</span><span class="chip">一杯</span><span class="hint">AI が判定</span></div>
+              <div class="chips"><span class="chip">焼き鳥 ▾</span><span class="hint">AI が判定</span></div>
               <div class="kv"><span class="k">店</span><span class="chip">焼鳥 とり平 ▾</span></div>
               <div class="memo">メモ (任意)</div>
               <div class="spacer"></div>
@@ -892,7 +893,7 @@
             <div class="phone">
               <div class="top"><span class="x">×</span><span class="chip meal">同じ食事 · 2 品目 ▾</span></div>
               <div class="ph" style="height: 168px"><span>写真</span><span class="retake">撮り直す</span></div>
-              <div class="chips"><span class="chip">一皿</span><span class="chip on">一杯</span><span class="hint">AI が判定</span></div>
+              <div class="chips"><span class="chip">ビール ▾</span><span class="hint">AI が判定</span></div>
               <div class="kv"><span class="k">店</span><span class="chip">焼鳥 とり平 ▾</span></div>
               <div class="memo">メモ (任意)</div>
               <div class="spacer"></div>
@@ -909,7 +910,7 @@
             <div class="phone">
               <div class="top"><span class="x">×</span><span class="chip meal">同じ食事 · 3 品目 ▾</span></div>
               <div class="ph" style="height: 168px"><span>写真</span><span class="retake">撮り直す</span></div>
-              <div class="chips"><span class="chip">一皿</span><span class="chip on">一杯</span><span class="hint">AI が判定</span></div>
+              <div class="chips"><span class="chip">ウイスキー ▾</span><span class="hint">AI が判定</span></div>
               <div class="kv"><span class="k">店</span><span class="chip tap ring" data-tap="3">焼鳥 とり平 ▾</span></div>
               <div class="memo">メモ (任意)</div>
               <div class="spacer"></div>
@@ -948,7 +949,7 @@
             <div class="phone">
               <div class="top"><span class="x">×</span><span class="chip meal">新しい食事 ▾</span></div>
               <div class="ph" style="height: 168px"><span>写真</span><span class="retake">撮り直す</span></div>
-              <div class="chips"><span class="chip">一皿</span><span class="chip on">一杯</span><span class="hint">AI が判定</span></div>
+              <div class="chips"><span class="chip">ウイスキー ▾</span><span class="hint">AI が判定</span></div>
               <div class="kv"><span class="k">店</span><span class="chip">バー 灯 ▾</span></div>
               <div class="memo">メモ (任意)</div>
               <div class="spacer"></div>
@@ -972,7 +973,7 @@
             <div class="phone">
               <div class="top"><span class="x">×</span><span class="chip meal tap ring" data-tap="3">同じ食事 · 2 品目 ▾</span></div>
               <div class="ph" style="height: 168px"><span>写真</span><span class="retake">撮り直す</span></div>
-              <div class="chips"><span class="chip on">一皿</span><span class="chip">一杯</span><span class="hint">AI が判定</span></div>
+              <div class="chips"><span class="chip">パスタ ▾</span><span class="hint">AI が判定</span></div>
               <div class="kv"><span class="k">店</span><span class="chip">家 ▾</span></div>
               <div class="memo">メモ (任意)</div>
               <div class="spacer"></div>
@@ -1007,7 +1008,7 @@
             <div class="phone">
               <div class="top"><span class="x">×</span><span class="chip meal">新しい食事 ▾</span></div>
               <div class="ph" style="height: 168px"><span>写真</span><span class="retake">撮り直す</span></div>
-              <div class="chips"><span class="chip on">一皿</span><span class="chip">一杯</span><span class="hint">AI が判定</span></div>
+              <div class="chips"><span class="chip">パスタ ▾</span><span class="hint">AI が判定</span></div>
               <div class="kv"><span class="k">店</span><span class="chip">家 ▾</span></div>
               <div class="memo">メモ (任意)</div>
               <div class="spacer"></div>
@@ -1073,22 +1074,22 @@
                 <div class="gh"><span>11.21 金</span><span class="chip">鮨 はやし ▾</span></div>
                 <div class="item">
                   <div class="ph"></div>
-                  <span class="chip on">一皿</span><span class="chip">一杯</span><span class="remove">外す</span>
+                  <span class="chip">鮨 ▾</span><span class="remove">外す</span>
                 </div>
                 <div class="item">
                   <div class="ph"></div>
-                  <span class="chip">一皿</span><span class="chip on">一杯</span><span class="remove">外す</span>
+                  <span class="chip">日本酒 ▾</span><span class="remove">外す</span>
                 </div>
               </div>
               <div class="group">
                 <div class="gh"><span>11.22 土</span><span class="chip">家 ▾</span></div>
                 <div class="item">
                   <div class="ph"></div>
-                  <span class="chip on">一皿</span><span class="chip">一杯</span><span class="remove">外す</span>
+                  <span class="chip">カレー ▾</span><span class="remove">外す</span>
                 </div>
                 <div class="item">
                   <div class="ph"></div>
-                  <span class="chip on">一皿</span><span class="chip on">一杯</span><span class="remove">外す</span>
+                  <span class="chip">パン ▾</span><span class="chip">ワイン ▾</span><span class="remove">外す</span>
                 </div>
               </div>
               <div class="spacer"></div>
@@ -1120,7 +1121,7 @@
       <!-- States -->
       <section>
         <h2>欄の状態</h2>
-        <p class="desc">確認カードの「食事」「店」「一皿・一杯」が取りうる見え方。</p>
+        <p class="desc">確認カードの「食事」「店」「種類」が取りうる見え方。</p>
         <p class="scroll-hint">横にスクロールできます →</p>
         <div class="scroll">
           <table>
@@ -1191,7 +1192,7 @@
                 <td><span class="plan-tag">案</span></td>
               </tr>
               <tr>
-                <td rowspan="4">一皿・一杯</td>
+                <td rowspan="4">種類</td>
                 <td>判定中 (1 秒未満)</td>
                 <td><span class="chip ghost">判定中</span></td>
                 <td>その場で結果に変わる</td>
@@ -1199,14 +1200,14 @@
               </tr>
               <tr>
                 <td>判定済み</td>
-                <td><span class="chip on">一皿</span> <span class="chip on">一杯</span></td>
-                <td>両方写っていれば両方付く。タップで切り替える</td>
+                <td><span class="chip">焼き鳥 ▾</span> <span class="chip">ビール ▾</span></td>
+                <td>複数写っていれば複数付く。タップで直す</td>
                 <td>決まり</td>
               </tr>
               <tr>
                 <td>判定できない</td>
-                <td><span class="chip">一皿</span> <span class="chip">一杯</span></td>
-                <td>どちらも付けずに出し、手で選ぶ。選ばなくても残せる</td>
+                <td><span class="chip ghost">種類を選ぶ ▾</span></td>
+                <td>種類を付けずに出し、手で選ぶ。選ばなくても残せる</td>
                 <td><span class="plan-tag">案</span></td>
               </tr>
               <tr>
