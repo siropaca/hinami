@@ -9,7 +9,7 @@
   <body>
     <main>
       <h1>履歴と検索 — ワイヤーフレーム</h1>
-      <p class="status">状態: 合意 (2026-11-26)。「案」はまだ確かめていない。決まりの本文は <a href="history.md">history.md</a></p>
+      <p class="status">状態: 合意 (2026-11-26)。「案」はもうない。決まりの本文は <a href="history.md">history.md</a></p>
 
       <p class="lead">
         履歴は 1 つのタブで、カレンダーと検索を兼ねる。絞っていないときはカレンダー、種類か言葉で絞ったら食事単位の一覧に切り替える。
@@ -40,8 +40,6 @@
                   <path d="M150 130 H190 V42 H286" />
                   <path d="M150 130 H286" />
                   <path d="M150 130 H190 V218 H286" />
-                </g>
-                <g stroke="#444" stroke-width="1.8" fill="none" stroke-dasharray="6 4" marker-end="url(#ah)">
                   <path d="M430 130 H536" />
                   <path d="M430 218 H480 V140 H536" />
                   <path d="M680 130 H746" />
@@ -58,8 +56,6 @@
                   <rect x="290" y="20" width="140" height="44" rx="8" />
                   <rect x="290" y="108" width="140" height="44" rx="8" />
                   <rect x="290" y="196" width="140" height="44" rx="8" />
-                </g>
-                <g stroke="#444" stroke-width="2" fill="#fff" stroke-dasharray="6 4">
                   <rect x="540" y="108" width="140" height="44" rx="8" />
                   <rect x="750" y="108" width="160" height="44" rx="8" />
                 </g>
@@ -168,10 +164,10 @@
               <li>「美味しかった」は写真を見て見つける。店の好きな順は持たない</li>
             </ol>
           </div>
-          <div class="arrow plan"><span>食事をタップ</span><span class="line"></span></div>
+          <div class="arrow"><span>食事をタップ</span><span class="line"></span></div>
           <div class="screen">
-            <p class="cap">食事の詳細 <span class="plan-tag">案</span></p>
-            <div class="phone plan">
+            <p class="cap">食事の詳細</p>
+            <div class="phone">
               <div class="top"><span class="x">‹</span><span class="meta">11/21 土 · 19:10</span></div>
               <div class="kv"><span class="k">場所</span><span class="chip">鮨 はやし ▾</span></div>
               <div class="it"><div class="ph"></div><div class="body"><span class="chip">日本酒 ▾</span><span class="hl">獺祭 純米大吟醸 45</span></div></div>
@@ -182,7 +178,8 @@
             </div>
             <ol class="notes">
               <li>その食事の品が並ぶ。品をタップすると、確認カードと同じ形で直せる</li>
-              <li>場所は食事ごとにまとめて直せる</li>
+              <li>場所は食事ごとにまとめて直す。選んだ場所は、同じ食事の品すべてに入る</li>
+              <li>店が決まっていない食事は、場所に「道玄坂 · 候補 3 件」と出し、タップで確認カードと同じ候補から選ぶ</li>
             </ol>
           </div>
         </div>
@@ -301,7 +298,6 @@
           <li>タブバーのタブ構成 (検索を別のタブにしないので、5 つ以内に収まる見込み)</li>
           <li>ランキング、解除した実績の一覧、図鑑の画面の入口</li>
           <li>食事の詳細の中身 (写真の見せ方、品の並び)</li>
-          <li>図の中で「案」と付けたもの</li>
         </ul>
       </section>
     </main>
