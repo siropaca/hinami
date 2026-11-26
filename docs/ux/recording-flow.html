@@ -1,0 +1,1211 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>記録の流れ — ワイヤーフレーム | HINAMI</title>
+    <style>
+      :root {
+        --ink: #222;
+        --line: #444;
+        --mute: #666;
+        --fill: #e6e6e6;
+        --bg: #f6f6f4;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Noto Sans JP", sans-serif;
+        line-height: 1.6;
+      }
+      main {
+        max-width: 1520px;
+        margin: 0 auto;
+        padding: 24px 16px 64px;
+      }
+      h1 {
+        font-size: 22px;
+        margin: 0 0 2px;
+      }
+      .status {
+        font-size: 12px;
+        color: var(--mute);
+        margin: 0;
+      }
+      .lead {
+        font-size: 16px;
+        font-weight: 600;
+        margin: 16px 0 12px;
+        padding: 12px 14px;
+        background: #fff;
+        border-left: 4px solid var(--ink);
+      }
+      .legend {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px 20px;
+        font-size: 12px;
+        color: #555;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+      .legend li {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .legend-note {
+        font-size: 12px;
+        color: #555;
+        margin: 6px 0 0;
+      }
+      .sw {
+        display: inline-block;
+        width: 26px;
+        height: 14px;
+        border: 2px solid var(--line);
+        border-radius: 4px;
+        background: #fff;
+      }
+      .sw.plan {
+        border-style: dashed;
+      }
+      .sw.tapmark {
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        font-size: 10px;
+        font-weight: 700;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+      section {
+        margin-top: 40px;
+      }
+      h2 {
+        font-size: 18px;
+        margin: 0 0 2px;
+      }
+      .desc {
+        font-size: 13px;
+        color: #555;
+        margin: 0 0 8px;
+      }
+      .scroll-hint {
+        display: none;
+        font-size: 12px;
+        color: var(--mute);
+        margin: 0 0 2px;
+      }
+      .scroll {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+      .overview {
+        min-width: 860px;
+        background: #fff;
+        border-radius: 12px;
+        padding: 8px;
+      }
+      .overview svg {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+      .row {
+        display: flex;
+        align-items: flex-start;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x proximity;
+        padding: 8px 4px 16px;
+      }
+      .screen {
+        flex: none;
+        width: 220px;
+        scroll-snap-align: start;
+      }
+      .cap {
+        font-size: 13px;
+        font-weight: 600;
+        margin: 0 0 6px;
+        height: 22px;
+        display: flex;
+        gap: 6px;
+        align-items: center;
+      }
+      .plan-tag {
+        font-size: 10px;
+        border: 1px dashed var(--line);
+        padding: 0 6px;
+        border-radius: 4px;
+        font-weight: 400;
+        white-space: nowrap;
+      }
+      .notes {
+        margin: 8px 0 0;
+        padding-left: 18px;
+        font-size: 12px;
+        color: #444;
+      }
+      .notes li {
+        margin-bottom: 4px;
+      }
+      .arrow {
+        flex: none;
+        width: 92px;
+        height: 440px;
+        margin-top: 28px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        font-size: 11px;
+        color: #444;
+        text-align: center;
+        padding: 0 4px;
+      }
+      .arrow .line {
+        width: 68px;
+        height: 2px;
+        background: var(--line);
+        position: relative;
+      }
+      .arrow .line::after {
+        content: "";
+        position: absolute;
+        right: -2px;
+        top: -5px;
+        border-left: 9px solid var(--line);
+        border-top: 6px solid transparent;
+        border-bottom: 6px solid transparent;
+      }
+      .arrow.plan .line {
+        background: none;
+        height: 0;
+        border-top: 2px dashed var(--line);
+      }
+      .arrow.plan .line::after {
+        top: -7px;
+      }
+
+      /* Wireframe parts */
+      .phone {
+        position: relative;
+        width: 220px;
+        height: 440px;
+        background: #fff;
+        border: 2px solid var(--line);
+        border-radius: 26px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        padding: 14px 12px;
+        font-size: 11px;
+      }
+      .phone.plan {
+        border-style: dashed;
+      }
+      .top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-height: 24px;
+      }
+      .logo {
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        font-size: 12px;
+      }
+      .meta {
+        font-size: 11px;
+        color: var(--mute);
+      }
+      .x {
+        font-size: 15px;
+        line-height: 1;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border: 1.5px solid var(--line);
+        border-radius: 8px;
+        padding: 4px 10px;
+        font-size: 11px;
+        background: #fff;
+        white-space: nowrap;
+      }
+      .btn.primary {
+        background: var(--ink);
+        color: #fff;
+        border-color: var(--ink);
+      }
+      .btn.block {
+        display: flex;
+        width: 100%;
+        padding: 9px;
+        font-size: 13px;
+      }
+      .btn.side {
+        justify-self: start;
+        white-space: nowrap;
+        text-align: center;
+        line-height: 1.3;
+        padding: 4px 6px;
+        font-size: 10px;
+      }
+      .link {
+        text-align: center;
+        color: #555;
+        text-decoration: underline;
+        font-size: 11px;
+      }
+      .ph {
+        background:
+          linear-gradient(
+            to top right,
+            transparent calc(50% - 0.75px),
+            #c4c4c4 calc(50% - 0.75px),
+            #c4c4c4 calc(50% + 0.75px),
+            transparent calc(50% + 0.75px)
+          ),
+          linear-gradient(
+            to bottom right,
+            transparent calc(50% - 0.75px),
+            #c4c4c4 calc(50% - 0.75px),
+            #c4c4c4 calc(50% + 0.75px),
+            transparent calc(50% + 0.75px)
+          ),
+          var(--fill);
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #555;
+        font-size: 11px;
+        flex: none;
+        position: relative;
+      }
+      .ph span {
+        background: var(--fill);
+        padding: 0 6px;
+      }
+      .retake {
+        position: absolute;
+        right: 6px;
+        bottom: 6px;
+        background: #fff;
+        border: 1.5px dashed var(--line);
+        border-radius: 999px;
+        padding: 1px 8px;
+        font-size: 10px;
+      }
+      .chips {
+        display: flex;
+        gap: 6px;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        border: 1.5px solid var(--line);
+        border-radius: 999px;
+        padding: 2px 10px;
+        font-size: 11px;
+        background: #fff;
+        white-space: nowrap;
+      }
+      .chip.on {
+        background: var(--ink);
+        color: #fff;
+      }
+      .chip.ghost {
+        border-style: dashed;
+        color: #555;
+      }
+      .chip.meal {
+        font-size: 10.5px;
+        padding: 1px 8px;
+      }
+      .kv {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .k {
+        width: 26px;
+        flex: none;
+        color: var(--mute);
+        font-size: 11px;
+      }
+      .hint {
+        font-size: 10px;
+        color: var(--mute);
+      }
+      .memo {
+        border-bottom: 1.5px solid #bbb;
+        padding: 6px 2px;
+        color: #888;
+      }
+      .spacer {
+        flex: 1;
+      }
+      .placeholder {
+        flex: 1;
+        border: 1.5px dashed #aaa;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: #777;
+        font-size: 11px;
+        padding: 10px;
+      }
+      .actions {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        align-items: center;
+        gap: 6px;
+        padding-bottom: 4px;
+      }
+      .shoot {
+        width: 72px;
+        height: 72px;
+        border-radius: 50%;
+        background: var(--ink);
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 13px;
+        font-weight: 600;
+      }
+      .shutter {
+        width: 58px;
+        height: 58px;
+        border-radius: 50%;
+        border: 3px solid var(--ink);
+        background: #fff;
+        margin: 0 auto;
+      }
+      .tap {
+        position: relative;
+      }
+      .tap::after {
+        content: attr(data-tap);
+        position: absolute;
+        top: -9px;
+        right: -9px;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: #fff;
+        border: 2px solid var(--ink);
+        color: var(--ink);
+        font-size: 10px;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 2;
+      }
+      .tap.ring {
+        outline: 2px solid var(--ink);
+        outline-offset: 2px;
+      }
+      .toast {
+        border: 1.5px solid var(--line);
+        border-radius: 10px;
+        padding: 8px 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 6px;
+        background: #fff;
+        font-size: 11px;
+      }
+      .toast.plan {
+        border-style: dashed;
+      }
+      .dim {
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.28);
+      }
+      .sheet {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 74%;
+        background: #fff;
+        border-top: 2px solid var(--line);
+        border-radius: 18px 18px 0 0;
+        padding: 10px 12px;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+      .sheet.short {
+        height: 46%;
+      }
+      .sheet.plan {
+        border-top-style: dashed;
+      }
+      .grab {
+        width: 36px;
+        height: 4px;
+        background: #bbb;
+        border-radius: 2px;
+        margin: 0 auto 4px;
+      }
+      .search {
+        border: 1.5px solid #bbb;
+        border-radius: 8px;
+        padding: 4px 8px;
+        color: #888;
+      }
+      .li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px 2px;
+        border-bottom: 1px solid #e3e3e3;
+      }
+      .li small {
+        color: var(--mute);
+        font-size: 10px;
+      }
+      .li.sep {
+        border-top: 1.5px solid #ccc;
+        margin-top: 2px;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3px;
+      }
+      .grid .ph {
+        aspect-ratio: 1;
+        border-radius: 2px;
+      }
+      .grid .ph.sel::after {
+        content: "✓";
+        position: absolute;
+        top: 3px;
+        right: 3px;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: var(--ink);
+        color: #fff;
+        font-size: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .group {
+        border: 1.5px solid #bbb;
+        border-radius: 10px;
+        padding: 6px;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+      .gh {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 4px;
+        font-size: 11px;
+      }
+      .item {
+        display: flex;
+        gap: 5px;
+        align-items: center;
+      }
+      .item .ph {
+        width: 36px;
+        height: 36px;
+        border-radius: 4px;
+      }
+      .item .chip {
+        font-size: 10px;
+        padding: 1px 7px;
+      }
+      .item .remove {
+        margin-left: auto;
+        font-size: 10px;
+        color: #555;
+        text-decoration: underline;
+      }
+      .viewfinder {
+        flex: 1;
+        border-radius: 12px;
+      }
+
+      /* States table */
+      table {
+        border-collapse: collapse;
+        background: #fff;
+        font-size: 13px;
+        min-width: 680px;
+      }
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 8px 10px;
+        text-align: left;
+        vertical-align: middle;
+      }
+      th {
+        background: #f0f0ee;
+        font-weight: 600;
+      }
+      .open {
+        font-size: 13px;
+        background: #fff;
+        padding: 12px 14px 12px 32px;
+        border-radius: 10px;
+        margin: 0;
+      }
+      .open li {
+        margin-bottom: 6px;
+      }
+      a {
+        color: inherit;
+      }
+
+      @media (max-width: 600px) {
+        .row {
+          zoom: 1.15;
+        }
+        .scroll-hint {
+          display: block;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>記録の流れ — ワイヤーフレーム</h1>
+      <p class="status">状態: 検討中 (2026-11-26)。決まりの本文は <a href="recording.md">recording.md</a></p>
+
+      <p class="lead">
+        その場で撮るなら最短 3 タップ (撮る → シャッター → 残す)。必須の入力はなく、AI の判定と店の推定が違うときだけ直す。
+      </p>
+
+      <ul class="legend">
+        <li><span class="sw"></span>決まった流れ・機能</li>
+        <li><span class="sw plan"></span><span class="plan-tag">案</span> まだ確かめていない流れ・機能</li>
+        <li><span class="sw tapmark">1</span>タップの順番 (品ごとに数える)</li>
+      </ul>
+      <p class="legend-note">画面の中の配置や大きさは、すべて仮。</p>
+
+      <!-- Overview -->
+      <section>
+        <h2>全体の地図</h2>
+        <p class="desc">記録に関わる画面と、そのつながり。履歴はホームから 1 ステップ奥に置く。× で前の画面に戻る矢印は省いている。</p>
+        <p class="scroll-hint">横にスクロールできます →</p>
+        <div class="scroll">
+          <div class="overview">
+            <svg viewBox="0 0 900 340" role="img" aria-label="記録に関わる画面の遷移図">
+              <defs>
+                <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                  <path d="M0 0 L10 5 L0 10 z" fill="#444" />
+                </marker>
+              </defs>
+              <g font-size="13" font-family="-apple-system, 'Hiragino Sans', 'Noto Sans JP', sans-serif" fill="#222">
+                <!-- edges -->
+                <g stroke="#444" stroke-width="1.8" fill="none" marker-end="url(#ah)">
+                  <path d="M130 172 H145 V62 H226" />
+                  <path d="M130 172 H145 V242 H226" />
+                  <path d="M130 172 H145 V312 H226" />
+                  <path d="M350 62 H406" />
+                  <path d="M470 40 V16 H830 V36" />
+                  <path d="M455 84 V126" />
+                  <path d="M485 126 V88" />
+                  <path d="M350 242 H406" />
+                  <path d="M530 248 H766" />
+                  <path d="M455 220 V178" />
+                  <path d="M485 178 V216" />
+                </g>
+                <g stroke="#444" stroke-width="1.8" fill="none" stroke-dasharray="6 4" marker-end="url(#ah)">
+                  <path d="M530 62 H586" />
+                  <path d="M710 62 H766" />
+                  <path d="M530 230 H556 V78 H534" marker-start="url(#ah)" />
+                </g>
+                <!-- edge labels -->
+                <g font-size="11" fill="#555">
+                  <text x="152" y="54">撮る</text>
+                  <text x="152" y="234">写真から選ぶ</text>
+                  <text x="152" y="304">履歴</text>
+                  <text x="353" y="54">シャッター</text>
+                  <text x="590" y="12">残す (比べるを出さない場合)</text>
+                  <text x="536" y="54">残す</text>
+                  <text x="716" y="54">答える</text>
+                  <text x="716" y="80">飛ばす</text>
+                  <text x="449" y="110" text-anchor="end">店をタップ</text>
+                  <text x="492" y="110">選ぶ</text>
+                  <text x="356" y="234">完了</text>
+                  <text x="610" y="266">まとめて残す</text>
+                  <text x="449" y="204" text-anchor="end">店をタップ</text>
+                  <text x="492" y="204">選ぶ</text>
+                  <text x="562" y="150">品をタップ</text>
+                  <text x="562" y="164">/ 戻る</text>
+                </g>
+                <!-- nodes -->
+                <g stroke="#444" stroke-width="2" fill="#fff">
+                  <rect x="10" y="150" width="120" height="44" rx="8" />
+                  <rect x="230" y="40" width="120" height="44" rx="8" />
+                  <rect x="410" y="40" width="120" height="44" rx="8" />
+                  <rect x="770" y="40" width="120" height="44" rx="8" />
+                  <rect x="410" y="130" width="120" height="44" rx="8" />
+                  <rect x="230" y="220" width="120" height="44" rx="8" />
+                  <rect x="770" y="226" width="120" height="44" rx="8" />
+                  <rect x="230" y="290" width="120" height="44" rx="8" fill="#f2f2f2" />
+                </g>
+                <g stroke="#444" stroke-width="2" fill="#fff" stroke-dasharray="6 4">
+                  <rect x="590" y="40" width="120" height="44" rx="8" />
+                  <rect x="410" y="220" width="120" height="44" rx="8" />
+                </g>
+                <g text-anchor="middle" dominant-baseline="central">
+                  <text x="70" y="172" font-weight="700">ホーム</text>
+                  <text x="290" y="62">カメラ</text>
+                  <text x="470" y="62" font-weight="700">確認カード</text>
+                  <text x="650" y="62">比べる 1 問</text>
+                  <text x="830" y="62">ホーム</text>
+                  <text x="470" y="152">店を選ぶ</text>
+                  <text x="290" y="242">写真の選択</text>
+                  <text x="470" y="242">確認 (複数枚)</text>
+                  <text x="830" y="248">ホーム</text>
+                  <text x="290" y="312" fill="#666">履歴 (中身は未定)</text>
+                </g>
+              </g>
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <!-- Flow A -->
+      <section>
+        <h2>A. その場で撮る (1 品目)</h2>
+        <p class="desc">いつもの記録。AI の判定も店の推定も合っていれば、どこも触らずに終わる。</p>
+        <p class="scroll-hint">横にスクロールできます →</p>
+        <div class="row">
+          <div class="screen">
+            <p class="cap">ホーム</p>
+            <div class="phone">
+              <div class="top"><span class="logo">HINAMI</span><span class="btn">履歴</span></div>
+              <div class="placeholder">ここに置くものは<br />続けたくなる仕組みと<br />一緒に決める</div>
+              <div class="actions">
+                <span class="btn side">写真から<br />選ぶ</span>
+                <span class="shoot tap" data-tap="1">撮る</span>
+                <span></span>
+              </div>
+            </div>
+            <ol class="notes">
+              <li>[撮る] は親指が届く位置に置く</li>
+              <li>履歴はホームから 1 ステップ奥</li>
+            </ol>
+          </div>
+          <div class="arrow"><span>撮る</span><span class="line"></span></div>
+          <div class="screen">
+            <p class="cap">カメラ</p>
+            <div class="phone">
+              <div class="top"><span class="x">×</span><span></span></div>
+              <div class="ph viewfinder"><span>ファインダー</span></div>
+              <div class="shutter tap" data-tap="2"></div>
+            </div>
+            <ol class="notes">
+              <li>アプリ内のカメラ。撮ったらすぐ確認カードへ進む</li>
+            </ol>
+          </div>
+          <div class="arrow"><span>シャッター</span><span class="line"></span></div>
+          <div class="screen">
+            <p class="cap">確認カード</p>
+            <div class="phone">
+              <div class="top"><span class="x">×</span><span class="chip meal">新しい食事 ▾</span></div>
+              <div class="ph" style="height: 168px"><span>写真</span><span class="retake">撮り直す</span></div>
+              <div class="chips">
+                <span class="chip on">一皿</span><span class="chip">一杯</span><span class="hint">AI が判定</span>
+              </div>
+              <div class="kv"><span class="k">店</span><span class="chip">麺屋 ひかり ▾</span></div>
+              <div class="memo">メモ (任意)</div>
+              <div class="spacer"></div>
+              <span class="btn primary block tap" data-tap="3">残す</span>
+            </div>
+            <ol class="notes">
+              <li>一皿・一杯は AI がその場で付ける (1 秒未満)。両方写っていれば両方。違えばタップで切り替える</li>
+              <li>店は、推定に自信があるときだけ店名を出す</li>
+              <li>メモは任意。品名は書かなくてよい</li>
+              <li><span class="plan-tag">案</span> × は記録をやめてホームへ。メモを書いていたときだけ確かめる</li>
+              <li><span class="plan-tag">案</span> 撮り直しは写真の上から</li>
+            </ol>
+          </div>
+          <div class="arrow plan"><span>残す</span><span class="line"></span></div>
+          <div class="screen">
+            <p class="cap">比べる 1 問 <span class="plan-tag">案</span></p>
+            <div class="phone plan">
+              <div class="top"><span></span><span class="meta">ラーメン</span></div>
+              <p style="margin: 0; font-size: 13px; font-weight: 600; text-align: center">どちらが好き?</p>
+              <div class="ph" style="height: 136px"><span>今回: 麺屋 ひかり</span></div>
+              <div class="ph" style="height: 136px"><span>前の: 中華そば 青葉</span></div>
+              <span class="link">飛ばす</span>
+            </div>
+            <ol class="notes">
+              <li>保存したあとに 1 問だけ。比べる相手は同じジャンルの記録から出す</li>
+              <li>飛ばした分は、後でまとめて答えられる</li>
+            </ol>
+          </div>
+          <div class="arrow plan"><span>答える / 飛ばす</span><span class="line"></span></div>
+          <div class="screen">
+            <p class="cap">ホーム (保存後)</p>
+            <div class="phone">
+              <div class="top"><span class="logo">HINAMI</span><span class="btn">履歴</span></div>
+              <div class="placeholder">ここに置くものは<br />続けたくなる仕組みと<br />一緒に決める</div>
+              <div class="toast plan"><span>残しました · 麺屋 ひかり</span><span class="link">取り消す</span></div>
+              <div class="actions">
+                <span class="btn side">写真から<br />選ぶ</span>
+                <span class="shoot">撮る</span>
+                <span></span>
+              </div>
+            </div>
+            <ol class="notes">
+              <li>記録はここで終わり</li>
+              <li><span class="plan-tag">案</span> 取り消しを数秒だけ出す</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <!-- Flow B -->
+      <section>
+        <h2>B. 店を直す (ビルの中など)</h2>
+        <p class="desc">候補が複数あるときは店を決め打ちせず、地域名を出す。今選んでも、後でもよい。</p>
+        <p class="scroll-hint">横にスクロールできます →</p>
+        <div class="row">
+          <div class="screen">
+            <p class="cap">確認カード (自信がない)</p>
+            <div class="phone">
+              <div class="top"><span class="x">×</span><span class="chip meal">新しい食事 ▾</span></div>
+              <div class="ph" style="height: 168px"><span>写真</span><span class="retake">撮り直す</span></div>
+              <div class="chips"><span class="chip on">一皿</span><span class="chip">一杯</span><span class="hint">AI が判定</span></div>
+              <div class="kv"><span class="k">店</span><span class="chip ghost tap" data-tap="3">道玄坂 · 候補 3 件 ▾</span></div>
+              <div class="memo">メモ (任意)</div>
+              <div class="spacer"></div>
+              <span class="btn primary block">残す</span>
+            </div>
+            <ol class="notes">
+              <li>店名の代わりに地域名と候補数を出す</li>
+              <li>選ばずに残しても記録は残る。店のランキングと地図には、店が決まってから載る</li>
+            </ol>
+          </div>
+          <div class="arrow"><span>店をタップ</span><span class="line"></span></div>
+          <div class="screen">
+            <p class="cap">店を選ぶ</p>
+            <div class="phone">
+              <div class="top"><span class="x">×</span><span class="chip meal">新しい食事 ▾</span></div>
+              <div class="ph" style="height: 168px"><span>写真</span></div>
+              <div class="dim"></div>
+              <div class="sheet">
+                <div class="grab"></div>
+                <strong style="font-size: 12px">店を選ぶ</strong>
+                <div class="search">店名で検索</div>
+                <div class="li tap ring" data-tap="4"><span>焼鳥 とり平</span><small>20 m · 焼鳥</small></div>
+                <div class="li"><span>鮨 はやし</span><small>25 m · 鮨 · 行った</small></div>
+                <div class="li"><span>バー 灯</span><small>30 m · バー</small></div>
+                <div class="li sep"><span>家</span><small></small></div>
+                <div class="li"><span>店ではない</span><small></small></div>
+              </div>
+            </div>
+            <ol class="notes">
+              <li>候補は、近さ、行ったことがあるか、AI のジャンルと店の種類が合うか、で並べる</li>
+              <li>候補にない店は検索する</li>
+              <li>下に引くか外側をタップすると、店を変えずに閉じる</li>
+              <li><span class="plan-tag">案</span> 初めて「家」を選んだ場所を覚え、次からはそこを家にする</li>
+            </ol>
+          </div>
+          <div class="arrow"><span>選ぶ</span><span class="line"></span></div>
+          <div class="screen">
+            <p class="cap">確認カード (店が決まった)</p>
+            <div class="phone">
+              <div class="top"><span class="x">×</span><span class="chip meal">新しい食事 ▾</span></div>
+              <div class="ph" style="height: 168px"><span>写真</span><span class="retake">撮り直す</span></div>
+              <div class="chips"><span class="chip on">一皿</span><span class="chip">一杯</span><span class="hint">AI が判定</span></div>
+              <div class="kv"><span class="k">店</span><span class="chip">焼鳥 とり平 ▾</span></div>
+              <div class="memo">メモ (任意)</div>
+              <div class="spacer"></div>
+              <span class="btn primary block tap" data-tap="5">残す</span>
+            </div>
+            <ol class="notes">
+              <li>選んだ店は、同じ食事の次の品に引き継ぐ</li>
+              <li><span class="plan-tag">案</span> 同じ食事で店が決まっていない前の品にも、同じ店を入れる</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <!-- Flow C -->
+      <section>
+        <h2>C. 同じ食事の 2 品目と、はしご</h2>
+        <p class="desc">同じ食事と判定されたら、前の品で選んだ店を最初から入れておく。店が変わったときだけ選び直す。</p>
+        <p class="scroll-hint">横にスクロールできます →</p>
+        <div class="row">
+          <div class="screen">
+            <p class="cap">確認カード (2 品目)</p>
+            <div class="phone">
+              <div class="top"><span class="x">×</span><span class="chip meal">同じ食事 · 2 品目 ▾</span></div>
+              <div class="ph" style="height: 168px"><span>写真</span><span class="retake">撮り直す</span></div>
+              <div class="chips"><span class="chip">一皿</span><span class="chip on">一杯</span><span class="hint">AI が判定</span></div>
+              <div class="kv"><span class="k">店</span><span class="chip">焼鳥 とり平 ▾</span></div>
+              <div class="memo">メモ (任意)</div>
+              <div class="spacer"></div>
+              <span class="btn primary block tap" data-tap="3">残す</span>
+            </div>
+            <ol class="notes">
+              <li>前の品で選んだ店が入っている。合っていれば触らない</li>
+              <li>同じ食事: 直前の記録から数時間以内で、その食事の最初の記録から近い</li>
+            </ol>
+          </div>
+          <div class="arrow"><span>1 時間後、同じビルの別の店で<br />撮る → シャッター</span><span class="line"></span></div>
+          <div class="screen">
+            <p class="cap">確認カード (3 品目)</p>
+            <div class="phone">
+              <div class="top"><span class="x">×</span><span class="chip meal">同じ食事 · 3 品目 ▾</span></div>
+              <div class="ph" style="height: 168px"><span>写真</span><span class="retake">撮り直す</span></div>
+              <div class="chips"><span class="chip">一皿</span><span class="chip on">一杯</span><span class="hint">AI が判定</span></div>
+              <div class="kv"><span class="k">店</span><span class="chip tap ring" data-tap="3">焼鳥 とり平 ▾</span></div>
+              <div class="memo">メモ (任意)</div>
+              <div class="spacer"></div>
+              <span class="btn primary block">残す</span>
+            </div>
+            <ol class="notes">
+              <li>時間も場所も近いので同じ食事と判定され、前の店が入っている</li>
+              <li>店が違うので、店をタップする</li>
+            </ol>
+          </div>
+          <div class="arrow"><span>店をタップ</span><span class="line"></span></div>
+          <div class="screen">
+            <p class="cap">店を選ぶ</p>
+            <div class="phone">
+              <div class="top"><span class="x">×</span><span class="chip meal">同じ食事 · 3 品目 ▾</span></div>
+              <div class="ph" style="height: 168px"><span>写真</span></div>
+              <div class="dim"></div>
+              <div class="sheet">
+                <div class="grab"></div>
+                <strong style="font-size: 12px">店を選ぶ</strong>
+                <div class="search">店名で検索</div>
+                <div class="li"><span>焼鳥 とり平</span><small>いまの店</small></div>
+                <div class="li tap ring" data-tap="4"><span>バー 灯</span><small>30 m · バー</small></div>
+                <div class="li"><span>鮨 はやし</span><small>25 m · 鮨</small></div>
+                <div class="li sep"><span>家</span><small></small></div>
+                <div class="li"><span>店ではない</span><small></small></div>
+              </div>
+            </div>
+            <ol class="notes">
+              <li>同じビルの別の店も、ここで選べる</li>
+            </ol>
+          </div>
+          <div class="arrow"><span>選ぶ</span><span class="line"></span></div>
+          <div class="screen">
+            <p class="cap">確認カード (新しい食事)</p>
+            <div class="phone">
+              <div class="top"><span class="x">×</span><span class="chip meal">新しい食事 ▾</span></div>
+              <div class="ph" style="height: 168px"><span>写真</span><span class="retake">撮り直す</span></div>
+              <div class="chips"><span class="chip">一皿</span><span class="chip on">一杯</span><span class="hint">AI が判定</span></div>
+              <div class="kv"><span class="k">店</span><span class="chip">バー 灯 ▾</span></div>
+              <div class="memo">メモ (任意)</div>
+              <div class="spacer"></div>
+              <span class="btn primary block tap" data-tap="5">残す</span>
+            </div>
+            <ol class="notes">
+              <li>別の店を選ぶと、この品から新しい食事に分かれる</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <!-- Flow D -->
+      <section>
+        <h2>D. 自動のまとまりを直す <span class="plan-tag">案</span></h2>
+        <p class="desc">店で分けられないとき (家で朝と昼を食べた、など) は、食事の表示をタップして分ける。</p>
+        <p class="scroll-hint">横にスクロールできます →</p>
+        <div class="row">
+          <div class="screen">
+            <p class="cap">確認カード (家で昼)</p>
+            <div class="phone">
+              <div class="top"><span class="x">×</span><span class="chip meal tap ring" data-tap="3">同じ食事 · 2 品目 ▾</span></div>
+              <div class="ph" style="height: 168px"><span>写真</span><span class="retake">撮り直す</span></div>
+              <div class="chips"><span class="chip on">一皿</span><span class="chip">一杯</span><span class="hint">AI が判定</span></div>
+              <div class="kv"><span class="k">店</span><span class="chip">家 ▾</span></div>
+              <div class="memo">メモ (任意)</div>
+              <div class="spacer"></div>
+              <span class="btn primary block">残す</span>
+            </div>
+            <ol class="notes">
+              <li>朝食から数時間しか空いておらず、同じ食事と判定された</li>
+              <li>店も「家」で同じなので、店では分けられない</li>
+            </ol>
+          </div>
+          <div class="arrow plan"><span>食事をタップ</span><span class="line"></span></div>
+          <div class="screen">
+            <p class="cap">食事を選ぶ <span class="plan-tag">案</span></p>
+            <div class="phone plan">
+              <div class="top"><span class="x">×</span><span class="chip meal">同じ食事 · 2 品目 ▾</span></div>
+              <div class="ph" style="height: 168px"><span>写真</span></div>
+              <div class="dim"></div>
+              <div class="sheet short plan">
+                <div class="grab"></div>
+                <strong style="font-size: 12px">どの食事に入れるか</strong>
+                <div class="li"><span>前の食事に入れる</span><small>家 · 08:10 から</small></div>
+                <div class="li tap ring" data-tap="4"><span>新しい食事にする</span><small></small></div>
+              </div>
+            </div>
+            <ol class="notes">
+              <li>自動の判定が違うときだけ使う</li>
+            </ol>
+          </div>
+          <div class="arrow plan"><span>選ぶ</span><span class="line"></span></div>
+          <div class="screen">
+            <p class="cap">確認カード (分けた)</p>
+            <div class="phone">
+              <div class="top"><span class="x">×</span><span class="chip meal">新しい食事 ▾</span></div>
+              <div class="ph" style="height: 168px"><span>写真</span><span class="retake">撮り直す</span></div>
+              <div class="chips"><span class="chip on">一皿</span><span class="chip">一杯</span><span class="hint">AI が判定</span></div>
+              <div class="kv"><span class="k">店</span><span class="chip">家 ▾</span></div>
+              <div class="memo">メモ (任意)</div>
+              <div class="spacer"></div>
+              <span class="btn primary block tap" data-tap="5">残す</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Flow E -->
+      <section>
+        <h2>E. 落ち着いてから、写真から選ぶ</h2>
+        <p class="desc">撮った写真に残った位置と日時を使う。その場で撮ったときと同じく、店と食事のまとまりは自動で入る。</p>
+        <p class="scroll-hint">横にスクロールできます →</p>
+        <div class="row">
+          <div class="screen">
+            <p class="cap">ホーム</p>
+            <div class="phone">
+              <div class="top"><span class="logo">HINAMI</span><span class="btn">履歴</span></div>
+              <div class="placeholder">ここに置くものは<br />続けたくなる仕組みと<br />一緒に決める</div>
+              <div class="actions">
+                <span class="btn side tap" data-tap="1">写真から<br />選ぶ</span>
+                <span class="shoot">撮る</span>
+                <span></span>
+              </div>
+            </div>
+          </div>
+          <div class="arrow"><span>写真から選ぶ</span><span class="line"></span></div>
+          <div class="screen">
+            <p class="cap">写真の選択</p>
+            <div class="phone">
+              <div class="top"><span class="x">×</span><span class="btn primary tap" data-tap="2">完了 (4)</span></div>
+              <div class="grid">
+                <div class="ph"></div>
+                <div class="ph sel"></div>
+                <div class="ph sel"></div>
+                <div class="ph"></div>
+                <div class="ph"></div>
+                <div class="ph"></div>
+                <div class="ph sel"></div>
+                <div class="ph"></div>
+                <div class="ph sel"></div>
+                <div class="ph"></div>
+                <div class="ph"></div>
+                <div class="ph"></div>
+                <div class="ph"></div>
+                <div class="ph"></div>
+                <div class="ph"></div>
+              </div>
+            </div>
+            <ol class="notes">
+              <li>端末の写真選択を使う。複数枚まとめて選べる</li>
+              <li><span class="plan-tag">案</span> 1 枚だけ選んだときは、確認カードへ進む</li>
+            </ol>
+          </div>
+          <div class="arrow"><span>完了</span><span class="line"></span></div>
+          <div class="screen">
+            <p class="cap">確認 (複数枚) <span class="plan-tag">案</span></p>
+            <div class="phone plan">
+              <div class="top"><span class="x">×</span><span class="meta">4 枚 · 2 回の食事</span></div>
+              <div class="group">
+                <div class="gh"><span>11.21 金</span><span class="chip">鮨 はやし ▾</span></div>
+                <div class="item">
+                  <div class="ph"></div>
+                  <span class="chip on">一皿</span><span class="chip">一杯</span><span class="remove">外す</span>
+                </div>
+                <div class="item">
+                  <div class="ph"></div>
+                  <span class="chip">一皿</span><span class="chip on">一杯</span><span class="remove">外す</span>
+                </div>
+              </div>
+              <div class="group">
+                <div class="gh"><span>11.22 土</span><span class="chip">家 ▾</span></div>
+                <div class="item">
+                  <div class="ph"></div>
+                  <span class="chip on">一皿</span><span class="chip">一杯</span><span class="remove">外す</span>
+                </div>
+                <div class="item">
+                  <div class="ph"></div>
+                  <span class="chip on">一皿</span><span class="chip on">一杯</span><span class="remove">外す</span>
+                </div>
+              </div>
+              <div class="spacer"></div>
+              <span class="btn primary block tap" data-tap="3">4 件を残す</span>
+            </div>
+            <ol class="notes">
+              <li>写真の位置と日時で、食事ごとに自動でまとめて見せる</li>
+              <li>店は食事ごとにまとめて直せる。品をタップすると確認カードで 1 品ずつ直せる (メモもそこで)</li>
+              <li>AI の判定は一覧の中で直せる。いらない品は外す</li>
+            </ol>
+          </div>
+          <div class="arrow"><span>まとめて残す</span><span class="line"></span></div>
+          <div class="screen">
+            <p class="cap">ホーム (保存後)</p>
+            <div class="phone">
+              <div class="top"><span class="logo">HINAMI</span><span class="btn">履歴</span></div>
+              <div class="placeholder">ここに置くものは<br />続けたくなる仕組みと<br />一緒に決める</div>
+              <div class="toast plan"><span>4 件を残しました</span><span class="link">取り消す</span></div>
+              <div class="actions">
+                <span class="btn side">写真から<br />選ぶ</span>
+                <span class="shoot">撮る</span>
+                <span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- States -->
+      <section>
+        <h2>欄の状態</h2>
+        <p class="desc">確認カードの「食事」「店」「一皿・一杯」が取りうる見え方。</p>
+        <p class="scroll-hint">横にスクロールできます →</p>
+        <div class="scroll">
+          <table>
+            <thead>
+              <tr>
+                <th>欄</th>
+                <th>場面</th>
+                <th>見え方</th>
+                <th>説明</th>
+                <th>状態</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td rowspan="2">食事</td>
+                <td>新しい食事</td>
+                <td><span class="chip meal">新しい食事 ▾</span></td>
+                <td>時刻と場所で自動に決まる</td>
+                <td>決まり</td>
+              </tr>
+              <tr>
+                <td>同じ食事</td>
+                <td><span class="chip meal">同じ食事 · 2 品目 ▾</span></td>
+                <td>タップで「新しい食事にする / 前の食事に入れる」を選べる</td>
+                <td><span class="plan-tag">案</span></td>
+              </tr>
+              <tr>
+                <td rowspan="7">店</td>
+                <td>推定に自信がある</td>
+                <td><span class="chip">麺屋 ひかり ▾</span></td>
+                <td>店名を出す。合っていれば触らない</td>
+                <td>決まり</td>
+              </tr>
+              <tr>
+                <td>自信がない (ビルの中など)</td>
+                <td><span class="chip ghost">道玄坂 · 候補 3 件 ▾</span></td>
+                <td>店を決め打ちせず、地域名と候補数を出す</td>
+                <td>決まり</td>
+              </tr>
+              <tr>
+                <td>同じ食事の 2 品目から</td>
+                <td><span class="chip">焼鳥 とり平 ▾</span></td>
+                <td>前の品で選んだ店を入れておく</td>
+                <td>決まり</td>
+              </tr>
+              <tr>
+                <td>家で撮った</td>
+                <td><span class="chip">家 ▾</span></td>
+                <td>店の候補を出さない</td>
+                <td>決まり</td>
+              </tr>
+              <tr>
+                <td>推定中</td>
+                <td><span class="chip ghost">店を推定中</span></td>
+                <td>その場で結果に変わる</td>
+                <td><span class="plan-tag">案</span></td>
+              </tr>
+              <tr>
+                <td>電波がない</td>
+                <td><span class="chip ghost">道玄坂 · 電波が戻ったら推定</span></td>
+                <td>保存は先に済ませる。地域名は端末の位置から出す</td>
+                <td><span class="plan-tag">案</span></td>
+              </tr>
+              <tr>
+                <td>位置がない (受け取った写真、スクリーンショット、位置情報オフ)</td>
+                <td><span class="chip ghost">店を検索 ▾</span></td>
+                <td>推定できないので検索だけ。食事のまとまりは時刻だけで決める</td>
+                <td><span class="plan-tag">案</span></td>
+              </tr>
+              <tr>
+                <td rowspan="4">一皿・一杯</td>
+                <td>判定中 (1 秒未満)</td>
+                <td><span class="chip ghost">判定中</span></td>
+                <td>その場で結果に変わる</td>
+                <td>決まり</td>
+              </tr>
+              <tr>
+                <td>判定済み</td>
+                <td><span class="chip on">一皿</span> <span class="chip on">一杯</span></td>
+                <td>両方写っていれば両方付く。タップで切り替える</td>
+                <td>決まり</td>
+              </tr>
+              <tr>
+                <td>判定できない</td>
+                <td><span class="chip">一皿</span> <span class="chip">一杯</span></td>
+                <td>どちらも付けずに出し、手で選ぶ。選ばなくても残せる</td>
+                <td><span class="plan-tag">案</span></td>
+              </tr>
+              <tr>
+                <td>電波がない</td>
+                <td><span class="chip ghost">電波が戻ったら判定</span></td>
+                <td>保存は先に済ませる</td>
+                <td>決まり</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section>
+        <h2>この図で決めていないこと</h2>
+        <ul class="open">
+          <li>アプリで撮った写真を、端末の写真アプリにも保存するか。保存する場合、あとで写真から選ぶと同じ品を二重に記録できてしまうので、記録済みの写真は外して見せる</li>
+          <li>店が決まっていない記録を、あとでどこで直すか (履歴の中身と一緒に決める)</li>
+          <li>ホームの残りの場所に何を置くか (続けたくなる仕組みと一緒に決める)</li>
+          <li>保存後に「比べる」を 1 問出すか。写真から複数枚を残したときにどう出すか</li>
+          <li>図の中で「案」と付けたもの</li>
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>
