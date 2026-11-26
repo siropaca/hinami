@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>履歴と検索 — ワイヤーフレーム | HINAMI</title>
+    <link rel="stylesheet" href="wireframe.css" />
+  </head>
+  <body>
+    <main>
+      <h1>履歴と検索 — ワイヤーフレーム</h1>
+      <p class="status">状態: 合意 (2026-11-26)。「案」はまだ確かめていない。決まりの本文は <a href="history.md">history.md</a></p>
+
+      <p class="lead">
+        履歴は 1 つのタブで、カレンダーと検索を兼ねる。絞っていないときはカレンダー、種類か言葉で絞ったら食事単位の一覧に切り替える。
+      </p>
+
+      <ul class="legend">
+        <li><span class="sw"></span>決まった流れ・機能</li>
+        <li><span class="sw plan"></span><span class="plan-tag">案</span> まだ確かめていない流れ・機能</li>
+        <li><span class="sw tapmark">1</span>タップの順番</li>
+      </ul>
+      <p class="legend-note">画面の中の配置や大きさは、すべて仮。下のタブバーは、構成が決まるまでの仮。</p>
+
+      <!-- Overview -->
+      <section>
+        <h2>全体の地図</h2>
+        <p class="desc">履歴タブの中の画面と、そのつながり。戻る矢印は省いている。</p>
+        <p class="scroll-hint">横にスクロールできます →</p>
+        <div class="scroll">
+          <div class="overview">
+            <svg viewBox="0 0 940 260" role="img" aria-label="履歴タブの画面の遷移図">
+              <defs>
+                <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                  <path d="M0 0 L10 5 L0 10 z" fill="#444" />
+                </marker>
+              </defs>
+              <g font-size="13" font-family="-apple-system, 'Hiragino Sans', 'Noto Sans JP', sans-serif" fill="#222">
+                <g stroke="#444" stroke-width="1.8" fill="none" marker-end="url(#ah)">
+                  <path d="M150 130 H190 V42 H286" />
+                  <path d="M150 130 H286" />
+                  <path d="M150 130 H190 V218 H286" />
+                </g>
+                <g stroke="#444" stroke-width="1.8" fill="none" stroke-dasharray="6 4" marker-end="url(#ah)">
+                  <path d="M430 130 H536" />
+                  <path d="M430 218 H480 V140 H536" />
+                  <path d="M680 130 H746" />
+                </g>
+                <g font-size="11" fill="#555">
+                  <text x="198" y="34">年に切り替え</text>
+                  <text x="198" y="122">日付をタップ</text>
+                  <text x="198" y="210">種類・言葉で絞る</text>
+                  <text x="440" y="122">食事をタップ</text>
+                  <text x="686" y="122">品をタップ</text>
+                </g>
+                <g stroke="#444" stroke-width="2" fill="#fff">
+                  <rect x="10" y="108" width="140" height="44" rx="8" />
+                  <rect x="290" y="20" width="140" height="44" rx="8" />
+                  <rect x="290" y="108" width="140" height="44" rx="8" />
+                  <rect x="290" y="196" width="140" height="44" rx="8" />
+                </g>
+                <g stroke="#444" stroke-width="2" fill="#fff" stroke-dasharray="6 4">
+                  <rect x="540" y="108" width="140" height="44" rx="8" />
+                  <rect x="750" y="108" width="160" height="44" rx="8" />
+                </g>
+                <g text-anchor="middle" dominant-baseline="central">
+                  <text x="80" y="130" font-weight="700">履歴 (カレンダー)</text>
+                  <text x="360" y="42">年のまとめ</text>
+                  <text x="360" y="130">その日の食事</text>
+                  <text x="360" y="218">一覧 (食事単位)</text>
+                  <text x="610" y="130">食事の詳細</text>
+                  <text x="830" y="130">確認カードで直す</text>
+                </g>
+              </g>
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <!-- Flow A -->
+      <section>
+        <h2>A. 最近の、美味しかった日本酒は (種類で絞る)</h2>
+        <p class="desc">日本酒で絞ると、日本酒を記録した食事が新しい順に並ぶ。写真を見れば分かる。</p>
+        <p class="scroll-hint">横にスクロールできます →</p>
+        <div class="row">
+          <div class="screen">
+            <p class="cap">履歴 (カレンダー)</p>
+            <div class="phone">
+              <div class="search">店名・メモ・地域で検索</div>
+              <div class="fchips"><span class="chip on">すべて</span><span class="chip tap" data-tap="1">日本酒</span><span class="chip">ラーメン</span><span class="chip">コーヒー</span><span class="chip">▾</span></div>
+              <div class="cal-h"><strong>‹ 2026 年 11 月 ›</strong><span class="link">年</span></div>
+              <div class="sum">記録 18 件 · 外食 9 回 · 7 軒</div>
+              <div class="cal">
+                <span>日</span>
+                <span>月</span>
+                <span>火</span>
+                <span>水</span>
+                <span>木</span>
+                <span>金</span>
+                <span>土</span>
+                <span class="d p">1<span class="n">2</span></span>
+                <span class="d">2</span>
+                <span class="d p">3</span>
+                <span class="d">4</span>
+                <span class="d">5</span>
+                <span class="d p">6<span class="n">2</span></span>
+                <span class="d">7</span>
+                <span class="d p">8</span>
+                <span class="d">9</span>
+                <span class="d">10</span>
+                <span class="d p">11</span>
+                <span class="d">12</span>
+                <span class="d p">13<span class="n">3</span></span>
+                <span class="d">14</span>
+                <span class="d p">15</span>
+                <span class="d">16</span>
+                <span class="d">17</span>
+                <span class="d p">18</span>
+                <span class="d">19</span>
+                <span class="d">20</span>
+                <span class="d p">21<span class="n">3</span></span>
+                <span class="d p">22</span>
+                <span class="d">23</span>
+                <span class="d">24</span>
+                <span class="d p">25<span class="n">2</span></span>
+                <span class="d">26</span>
+                <span class="d">27</span>
+                <span class="d">28</span>
+                <span class="d">29</span>
+                <span class="d">30</span>
+              </div>
+              <div class="spacer"></div>
+              <div class="tabbar"><span>ホーム</span><span class="on">履歴</span><span>未定</span><span>未定</span><span>未定</span></div>
+            </div>
+            <ol class="notes">
+              <li>絞っていないときの最初の画面。日付ごとに、その日最後の食事の 1 枚目と件数を出す</li>
+              <li>日付をタップすると、その日の記録が食事ごとに出る</li>
+              <li>月のまとめ: 外食は食事単位で数え、家は数えない。店が決まっていない食事は回数に入れ、軒数には入れない</li>
+              <li>種類はよく記録する順に並べる。▾ で階層つきの一覧から選べる</li>
+            </ol>
+          </div>
+          <div class="arrow"><span>日本酒</span><span class="line"></span></div>
+          <div class="screen">
+            <p class="cap">一覧 (日本酒で絞った)</p>
+            <div class="phone">
+              <div class="search">店名・メモ・地域で検索</div>
+              <div class="cal-h"><span class="chip on">日本酒 ×</span><span class="sum">日本酒 26 件</span></div>
+              <div class="ml-month">11 月</div>
+              <div class="ml">
+                <div class="ml-h"><span>11/21 土</span><span>鮨 はやし</span></div>
+                <div class="ml-th"><div class="ph hit tap" data-tap="2"></div><div class="ph"></div><div class="ph"></div></div>
+              </div>
+              <div class="ml">
+                <div class="ml-h"><span>11/08 日</span><span>家</span></div>
+                <div class="ml-th"><div class="ph hit"></div></div>
+              </div>
+              <div class="ml-month">10 月</div>
+              <div class="ml">
+                <div class="ml-h"><span>10/30 金</span><span>バー 灯</span></div>
+                <div class="ml-th"><div class="ph hit"></div><div class="ph"></div></div>
+              </div>
+              <div class="spacer"></div>
+              <div class="tabbar"><span>ホーム</span><span class="on">履歴</span><span>未定</span><span>未定</span><span>未定</span></div>
+            </div>
+            <ol class="notes">
+              <li>食事単位で、新しい順に並ぶ。期間で区切らず、月の見出しで区切る</li>
+              <li>日本酒の品を先頭にし、印 (太い枠) を付ける。同じ食事のほかの品もサムネイルで見える</li>
+              <li>「美味しかった」は写真を見て見つける。店の好きな順は持たない</li>
+            </ol>
+          </div>
+          <div class="arrow plan"><span>食事をタップ</span><span class="line"></span></div>
+          <div class="screen">
+            <p class="cap">食事の詳細 <span class="plan-tag">案</span></p>
+            <div class="phone plan">
+              <div class="top"><span class="x">‹</span><span class="meta">11/21 土 · 19:10</span></div>
+              <div class="kv"><span class="k">場所</span><span class="chip">鮨 はやし ▾</span></div>
+              <div class="it"><div class="ph"></div><div class="body"><span class="chip">日本酒 ▾</span><span class="hl">獺祭 純米大吟醸 45</span></div></div>
+              <div class="it"><div class="ph"></div><div class="body"><span class="chip">鮨 ▾</span><span class="hl">メモなし</span></div></div>
+              <div class="it"><div class="ph"></div><div class="body"><span class="chip">鮨 ▾</span><span class="hl">中トロ</span></div></div>
+              <div class="spacer"></div>
+              <div class="tabbar"><span>ホーム</span><span class="on">履歴</span><span>未定</span><span>未定</span><span>未定</span></div>
+            </div>
+            <ol class="notes">
+              <li>その食事の品が並ぶ。品をタップすると、確認カードと同じ形で直せる</li>
+              <li>場所は食事ごとにまとめて直せる</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <!-- Flow B -->
+      <section>
+        <h2>B. 名前や店で探す (フリーワード)</h2>
+        <p class="desc">言葉を入れると、合う食事が新しい順に並ぶ。探す先はメモ、店名、地域名、種類名。</p>
+        <p class="scroll-hint">横にスクロールできます →</p>
+        <div class="row">
+          <div class="screen">
+            <p class="cap">一覧 (「獺祭」で探した)</p>
+            <div class="phone">
+              <div class="search" style="color: var(--ink)">獺祭 ×</div>
+              <div class="sum">2 件の食事</div>
+              <div class="ml-month">11 月</div>
+              <div class="ml">
+                <div class="ml-h"><span>11/21 土</span><span>鮨 はやし</span></div>
+                <div class="ml-th"><div class="ph hit"></div><div class="ph"></div><div class="ph"></div></div>
+                <span class="hl">メモ: <b>獺祭</b> 純米大吟醸 45</span>
+              </div>
+              <div class="ml-month">8 月</div>
+              <div class="ml">
+                <div class="ml-h"><span>8/14 金</span><span>家</span></div>
+                <div class="ml-th"><div class="ph hit"></div></div>
+                <span class="hl">メモ: <b>獺祭</b> にごり 帰省のおみやげ</span>
+              </div>
+              <div class="spacer"></div>
+              <div class="tabbar"><span>ホーム</span><span class="on">履歴</span><span>未定</span><span>未定</span><span>未定</span></div>
+            </div>
+            <ol class="notes">
+              <li>どこに合ったかを、合った部分を強調して見せる</li>
+              <li>ひらがな・カタカナ・全角半角・長音の違いはそろえて探す。メモの候補を入れたときは、読み (だっさい) も一緒に持つ</li>
+              <li>電波がなくても、端末の中で探せる</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <!-- Flow C -->
+      <section>
+        <h2>C. 今年はどれだけ (年に切り替える)</h2>
+        <p class="desc">年に切り替えると、月ごとの件数と年のまとめが出る。種類で絞っていれば、その種類の件数も出る。</p>
+        <p class="scroll-hint">横にスクロールできます →</p>
+        <div class="row">
+          <div class="screen">
+            <p class="cap">年のまとめ</p>
+            <div class="phone">
+              <div class="search">店名・メモ・地域で検索</div>
+              <div class="fchips"><span class="chip on">すべて</span><span class="chip">日本酒</span><span class="chip">ラーメン</span><span class="chip">コーヒー</span><span class="chip">▾</span></div>
+              <div class="cal-h"><strong>‹ 2026 年 ›</strong><span class="link">月</span></div>
+              <div class="sum">記録 214 件 · 外食 96 回 · 38 軒</div>
+              <div class="months">
+                <span>1 月</span><span class="bar" style="width: 50%"></span><span>12 件</span>
+                <span>2 月</span><span class="bar" style="width: 40%"></span><span>10 件</span>
+                <span>3 月</span><span class="bar" style="width: 72%"></span><span>18 件</span>
+                <span>4 月</span><span class="bar" style="width: 84%"></span><span>21 件</span>
+                <span>5 月</span><span class="bar" style="width: 64%"></span><span>16 件</span>
+                <span>6 月</span><span class="bar" style="width: 56%"></span><span>14 件</span>
+                <span>7 月</span><span class="bar" style="width: 88%"></span><span>22 件</span>
+                <span>8 月</span><span class="bar" style="width: 100%"></span><span>25 件</span>
+                <span>9 月</span><span class="bar" style="width: 76%"></span><span>19 件</span>
+                <span>10 月</span><span class="bar" style="width: 92%"></span><span>23 件</span>
+                <span>11 月</span><span class="bar" style="width: 72%"></span><span>18 件</span>
+                <span>12 月</span><span class="bar" style="width: 0%"></span><span>—</span>
+              </div>
+              <div class="spacer"></div>
+              <div class="tabbar"><span>ホーム</span><span class="on">履歴</span><span>未定</span><span>未定</span><span>未定</span></div>
+            </div>
+            <ol class="notes">
+              <li>「今年何軒」「先月何件」はここと月の見出しで答える</li>
+              <li>月をタップすると、その月のカレンダーに戻る</li>
+              <li>種類で絞っていれば「日本酒 26 件」のように出し、タップで一覧に移る</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <!-- Flow D -->
+      <section>
+        <h2>D. 何もないとき</h2>
+        <p class="desc">記録がまだないときと、絞り込みに合う記録がないときを分ける。</p>
+        <p class="scroll-hint">横にスクロールできます →</p>
+        <div class="row">
+          <div class="screen">
+            <p class="cap">記録が 0 件</p>
+            <div class="phone">
+              <div class="search">店名・メモ・地域で検索</div>
+              <div class="cal-h"><strong>‹ 2026 年 11 月 ›</strong><span class="link">年</span></div>
+              <div class="placeholder">まだ記録がない<br />ホームの [撮る] か<br />[写真から選ぶ] から残す</div>
+              <div class="tabbar"><span>ホーム</span><span class="on">履歴</span><span>未定</span><span>未定</span><span>未定</span></div>
+            </div>
+            <ol class="notes">
+              <li>記録の入り口へ案内する</li>
+            </ol>
+          </div>
+          <div class="arrow"><span></span><span class="line" style="visibility: hidden"></span></div>
+          <div class="screen">
+            <p class="cap">絞り込みに合わない</p>
+            <div class="phone">
+              <div class="search" style="color: var(--ink)">獺祭 ×</div>
+              <div class="placeholder">「獺祭」に合う記録はない<br /><span class="link">言葉を消す</span></div>
+              <div class="tabbar"><span>ホーム</span><span class="on">履歴</span><span>未定</span><span>未定</span><span>未定</span></div>
+            </div>
+            <ol class="notes">
+              <li>合うものがないことを出し、絞り込みや言葉を外せるようにする</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>この図で決めていないこと</h2>
+        <ul class="open">
+          <li>タブバーのタブ構成 (検索を別のタブにしないので、5 つ以内に収まる見込み)</li>
+          <li>ランキング、解除した実績の一覧、図鑑の画面の入口</li>
+          <li>食事の詳細の中身 (写真の見せ方、品の並び)</li>
+          <li>図の中で「案」と付けたもの</li>
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>
