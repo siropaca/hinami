@@ -675,6 +675,24 @@ a {
   color: var(--ink);
   font-weight: 700;
 }
+.tabbar .rec {
+  position: relative;
+  z-index: 0;
+  color: #fff;
+  font-weight: 700;
+}
+.tabbar .rec::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -17px;
+  width: 38px;
+  height: 38px;
+  margin-left: -19px;
+  border-radius: 50%;
+  background: var(--ink);
+  z-index: -1;
+}
 .fchips {
   display: flex;
   gap: 4px;

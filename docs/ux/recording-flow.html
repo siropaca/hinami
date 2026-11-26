@@ -9,10 +9,10 @@
   <body>
     <main>
       <h1>記録の流れ — ワイヤーフレーム</h1>
-      <p class="status">状態: 合意 (2026-11-26)。「案」はもうない。決まりの本文は <a href="recording.md">recording.md</a>。2026-11-27 に、記録の入り口をホームのボタンからタブバーの真ん中に移すと決めた。図はまだ直していない</p>
+      <p class="status">状態: 合意 (2026-11-26)。2026-11-27 に、記録の入り口をタブバーの真ん中に移し、保存したあとはトーストで知らせる形に直した。「案」はもうない。決まりの本文は <a href="recording.md">recording.md</a></p>
 
       <p class="lead">
-        その場で撮るなら最短 3 タップ (撮る → シャッター → 残す)。必須の入力はなく、AI の判定と場所の推定が違うときだけ直す。
+        その場で撮るなら最短 3 タップ (記録 → シャッター → 残す)。記録はタブバーの真ん中から、どの画面でも始められる。必須の入力はなく、AI の判定と場所の推定が違うときだけ直す。
       </p>
 
       <ul class="legend">
@@ -25,11 +25,11 @@
       <!-- Overview -->
       <section>
         <h2>全体の地図</h2>
-        <p class="desc">記録に関わる画面と、そのつながり。履歴はホームから 1 ステップ奥に置く。× で前の画面に戻る矢印は省いている。</p>
+        <p class="desc">記録に関わる画面と、そのつながり。× で前の画面に戻る矢印は省いている。</p>
         <p class="scroll-hint">横にスクロールできます →</p>
         <div class="scroll">
           <div class="overview">
-            <svg viewBox="0 0 900 340" role="img" aria-label="記録に関わる画面の遷移図">
+            <svg viewBox="0 0 900 280" role="img" aria-label="記録に関わる画面の遷移図">
               <defs>
                 <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
                   <path d="M0 0 L10 5 L0 10 z" fill="#444" />
@@ -39,8 +39,7 @@
                 <!-- edges -->
                 <g stroke="#444" stroke-width="1.8" fill="none" marker-end="url(#ah)">
                   <path d="M130 172 H145 V62 H226" />
-                  <path d="M130 172 H145 V242 H226" />
-                  <path d="M130 172 H145 V312 H226" />
+                  <path d="M290 84 V216" />
                   <path d="M350 62 H406" />
                   <path d="M455 84 V126" />
                   <path d="M485 126 V88" />
@@ -54,9 +53,8 @@
                 </g>
                 <!-- edge labels -->
                 <g font-size="11" fill="#555">
-                  <text x="152" y="54">撮る</text>
-                  <text x="152" y="234">写真から選ぶ</text>
-                  <text x="152" y="304">履歴</text>
+                  <text x="152" y="54">記録</text>
+                  <text x="298" y="154">写真から選ぶ</text>
                   <text x="353" y="54">シャッター</text>
                   <text x="560" y="54">残す</text>
                   <text x="820" y="104" text-anchor="end">食べたあと、</text>
@@ -79,21 +77,19 @@
                   <rect x="410" y="130" width="120" height="44" rx="8" />
                   <rect x="230" y="220" width="120" height="44" rx="8" />
                   <rect x="770" y="226" width="120" height="44" rx="8" />
-                  <rect x="230" y="290" width="120" height="44" rx="8" fill="#f2f2f2" />
                   <rect x="410" y="220" width="120" height="44" rx="8" />
                   <rect x="770" y="130" width="120" height="44" rx="8" />
                 </g>
                 <g text-anchor="middle" dominant-baseline="central">
-                  <text x="70" y="172" font-weight="700">ホーム</text>
+                  <text x="70" y="172" font-weight="700">記録 (タブバー)</text>
                   <text x="290" y="62">カメラ</text>
                   <text x="470" y="62" font-weight="700">確認カード</text>
-                  <text x="830" y="152">比べる 1 問</text>
-                  <text x="830" y="62">ホーム</text>
+                  <text x="830" y="152">比べる (ホーム)</text>
+                  <text x="830" y="62">もとの画面</text>
                   <text x="470" y="152">場所を選ぶ</text>
                   <text x="290" y="242">写真の選択</text>
                   <text x="470" y="242">確認 (複数枚)</text>
-                  <text x="830" y="248">ホーム</text>
-                  <text x="290" y="312" fill="#666">履歴 (中身は未定)</text>
+                  <text x="830" y="248">もとの画面</text>
                 </g>
               </g>
             </svg>
@@ -108,31 +104,33 @@
         <p class="scroll-hint">横にスクロールできます →</p>
         <div class="row">
           <div class="screen">
-            <p class="cap">ホーム</p>
+            <p class="cap">ホーム (どの画面でもよい)</p>
             <div class="phone">
-              <div class="top"><span class="logo">HINAMI</span><span class="btn">履歴</span></div>
-              <div class="placeholder">ここに置くものは<br />まだ決めていない</div>
-              <div class="actions">
-                <span class="btn side">写真から<br />選ぶ</span>
-                <span class="shoot tap" data-tap="1">撮る</span>
-                <span></span>
-              </div>
+              <div class="top"><span class="logo">HINAMI</span><span class="hint">お知らせ　設定</span></div>
+              <div class="placeholder">ホームの中身は<br />まだ決めていない</div>
+              <div class="tabbar"><span class="on">ホーム</span><span>履歴</span><span class="rec tap" data-tap="1">記録</span><span>図鑑</span><span>友だち</span></div>
             </div>
             <ol class="notes">
-              <li>[撮る] は親指が届く位置に置く</li>
-              <li>履歴はホームから 1 ステップ奥</li>
+              <li>記録はタブバーの真ん中。ほかのタブより大きく、親指が届く位置に置く</li>
+              <li>どのタブからでも記録を始められる</li>
+              <li>お知らせと設定はホームの右上</li>
             </ol>
           </div>
-          <div class="arrow"><span>撮る</span><span class="line"></span></div>
+          <div class="arrow"><span>記録</span><span class="line"></span></div>
           <div class="screen">
             <p class="cap">カメラ</p>
             <div class="phone">
               <div class="top"><span class="x">×</span><span></span></div>
               <div class="ph viewfinder"><span>ファインダー</span></div>
-              <div class="shutter tap" data-tap="2"></div>
+              <div class="actions">
+                <span class="btn side">写真から<br />選ぶ</span>
+                <div class="shutter tap" data-tap="2"></div>
+                <span></span>
+              </div>
             </div>
             <ol class="notes">
-              <li>アプリ内のカメラ。撮ったらすぐ確認カードへ進む</li>
+              <li>アプリ内のカメラ。記録を押すとすぐ開く。撮ったらすぐ確認カードへ進む</li>
+              <li>左下から、端末の写真を選べる (E)</li>
               <li>撮った写真は端末の写真アプリにも残す。ほかの SNS にはそこから上げる</li>
             </ol>
           </div>
@@ -154,16 +152,16 @@
               <li>種類は AI がその場で付ける (1 秒未満)。複数写っていれば複数。違えばタップで直す。食・飲は種類から裏で決まる</li>
               <li>場所には、店の推定に自信があるときだけ店名を出す</li>
               <li>メモは任意。品名は書かなくてよい</li>
-              <li>× は記録をやめてホームへ。メモを書いていたときだけ確かめる</li>
+              <li>× は記録をやめて、記録を始めた画面へ戻る。メモを書いていたときだけ確かめる</li>
               <li>撮り直しは写真の上から</li>
             </ol>
           </div>
           <div class="arrow"><span>残す</span><span class="line"></span></div>
           <div class="screen">
-            <p class="cap">ホーム (保存後)</p>
+            <p class="cap">もとの画面 (保存後)</p>
             <div class="phone">
-              <div class="top"><span class="logo">HINAMI</span><span class="btn">履歴</span></div>
-              <div class="placeholder">ここに置くものは<br />まだ決めていない</div>
+              <div class="top"><span class="logo">HINAMI</span><span class="hint">お知らせ　設定</span></div>
+              <div class="placeholder">ホームの中身は<br />まだ決めていない</div>
               <div class="toast">
                 <span>残しました<br />麺屋 ひかり</span><span class="link">取り消す</span>
                 <div class="unlock">
@@ -171,15 +169,11 @@
                   <span class="k">図鑑</span><span>渋谷区 を追加</span>
                 </div>
               </div>
-              <div class="actions">
-                <span class="btn side">写真から<br />選ぶ</span>
-                <span class="shoot">撮る</span>
-                <span></span>
-              </div>
+              <div class="tabbar"><span class="on">ホーム</span><span>履歴</span><span class="rec">記録</span><span>図鑑</span><span>友だち</span></div>
             </div>
             <ol class="notes">
-              <li>記録はここで終わり</li>
-              <li>解除した実績と図鑑への追加は「残しました」と同じ 1 枚に出す。タップは増えない (<a href="achievements.md">achievements.md</a>)</li>
+              <li>記録を始めた画面に戻り、トーストで「残しました」を出す。記録はここで終わり</li>
+              <li>解除した実績と図鑑への追加は、同じトーストに出す。タップは増えない (<a href="achievements.md">achievements.md</a>)</li>
               <li>はじめての種類・地域は実績にせず、図鑑への追加として出す</li>
               <li>取り消しを数秒だけ出す。取り消すと実績の解除も消える</li>
               <li>比べるはここでは聞かない。食べたあと、次に開いたときに聞く (F)</li>
@@ -401,22 +395,34 @@
         <p class="scroll-hint">横にスクロールできます →</p>
         <div class="row">
           <div class="screen">
-            <p class="cap">ホーム</p>
+            <p class="cap">ホーム (どの画面でもよい)</p>
             <div class="phone">
-              <div class="top"><span class="logo">HINAMI</span><span class="btn">履歴</span></div>
-              <div class="placeholder">ここに置くものは<br />まだ決めていない</div>
+              <div class="top"><span class="logo">HINAMI</span><span class="hint">お知らせ　設定</span></div>
+              <div class="placeholder">ホームの中身は<br />まだ決めていない</div>
+              <div class="tabbar"><span class="on">ホーム</span><span>履歴</span><span class="rec tap" data-tap="1">記録</span><span>図鑑</span><span>友だち</span></div>
+            </div>
+          </div>
+          <div class="arrow"><span>記録</span><span class="line"></span></div>
+          <div class="screen">
+            <p class="cap">カメラ</p>
+            <div class="phone">
+              <div class="top"><span class="x">×</span><span></span></div>
+              <div class="ph viewfinder"><span>ファインダー</span></div>
               <div class="actions">
-                <span class="btn side tap" data-tap="1">写真から<br />選ぶ</span>
-                <span class="shoot">撮る</span>
+                <span class="btn side tap" data-tap="2">写真から<br />選ぶ</span>
+                <div class="shutter"></div>
                 <span></span>
               </div>
             </div>
+            <ol class="notes">
+              <li>写真から選ぶ入り口は、カメラの左下</li>
+            </ol>
           </div>
           <div class="arrow"><span>写真から選ぶ</span><span class="line"></span></div>
           <div class="screen">
             <p class="cap">写真の選択</p>
             <div class="phone">
-              <div class="top"><span class="x">×</span><span class="btn primary tap" data-tap="2">完了 (4)</span></div>
+              <div class="top"><span class="x">×</span><span class="btn primary tap" data-tap="3">完了 (4)</span></div>
               <div class="grid">
                 <div class="ph"></div>
                 <div class="ph sel"></div>
@@ -469,7 +475,7 @@
                 </div>
               </div>
               <div class="spacer"></div>
-              <span class="btn primary block tap" data-tap="3">4 件を残す</span>
+              <span class="btn primary block tap" data-tap="4">4 件を残す</span>
             </div>
             <ol class="notes">
               <li>写真の位置と日時で、食事ごとに自動でまとめて見せる</li>
@@ -479,17 +485,16 @@
           </div>
           <div class="arrow"><span>まとめて残す</span><span class="line"></span></div>
           <div class="screen">
-            <p class="cap">ホーム (保存後)</p>
+            <p class="cap">もとの画面 (保存後)</p>
             <div class="phone">
-              <div class="top"><span class="logo">HINAMI</span><span class="btn">履歴</span></div>
-              <div class="placeholder">ここに置くものは<br />まだ決めていない</div>
+              <div class="top"><span class="logo">HINAMI</span><span class="hint">お知らせ　設定</span></div>
+              <div class="placeholder">ホームの中身は<br />まだ決めていない</div>
               <div class="toast"><span>4 件を残しました</span><span class="link">取り消す</span></div>
-              <div class="actions">
-                <span class="btn side">写真から<br />選ぶ</span>
-                <span class="shoot">撮る</span>
-                <span></span>
-              </div>
+              <div class="tabbar"><span class="on">ホーム</span><span>履歴</span><span class="rec">記録</span><span>図鑑</span><span>友だち</span></div>
             </div>
+            <ol class="notes">
+              <li>記録を始めた画面に戻り、トーストで知らせる</li>
+            </ol>
           </div>
         </div>
       </section>
@@ -504,8 +509,7 @@
           <div class="screen">
             <p class="cap">ホーム (食べたあと)</p>
             <div class="phone">
-              <div class="top"><span class="logo">HINAMI</span><span class="btn">履歴</span></div>
-              <div class="placeholder">ここに置くものは<br />まだ決めていない</div>
+              <div class="top"><span class="logo">HINAMI</span><span class="hint">お知らせ　設定</span></div>
               <div class="cmp">
                 <div class="cmp-h"><span>どちらが好き?</span><span class="meta">ラーメン</span></div>
                 <div class="cmp-row">
@@ -513,16 +517,13 @@
                   <div class="ph"><span>前の<br />中華そば 青葉</span></div>
                 </div>
               </div>
-              <div class="actions">
-                <span class="btn side">写真から<br />選ぶ</span>
-                <span class="shoot">撮る</span>
-                <span></span>
-              </div>
+              <div class="placeholder">ホームの中身は<br />まだ決めていない</div>
+              <div class="tabbar"><span class="on">ホーム</span><span>履歴</span><span class="rec">記録</span><span>図鑑</span><span>友だち</span></div>
             </div>
             <ol class="notes">
               <li>開いたときに 1 問だけ。プッシュ通知は使わない</li>
               <li>聞くのは、順位の幅がいちばん広い品。同じ種類に相手がいる品だけ</li>
-              <li>「残しました」のカードとは同時に出さない</li>
+              <li>「残しました」のトーストとは同時に出さない</li>
               <li>触らなければ流れる。「未回答 N 件」はためない</li>
             </ol>
           </div>
@@ -530,21 +531,17 @@
           <div class="screen">
             <p class="cap">ホーム (答えたあと)</p>
             <div class="phone">
-              <div class="top"><span class="logo">HINAMI</span><span class="btn">履歴</span></div>
-              <div class="placeholder">ここに置くものは<br />まだ決めていない</div>
+              <div class="top"><span class="logo">HINAMI</span><span class="hint">お知らせ　設定</span></div>
               <div class="toast"><span>3〜4 位まで<br />絞れました</span><span class="link">続けて比べる</span></div>
-              <div class="actions">
-                <span class="btn side">写真から<br />選ぶ</span>
-                <span class="shoot">撮る</span>
-                <span></span>
-              </div>
+              <div class="placeholder">ホームの中身は<br />まだ決めていない</div>
+              <div class="tabbar"><span class="on">ホーム</span><span>履歴</span><span class="rec">記録</span><span>図鑑</span><span>友だち</span></div>
             </div>
             <ol class="notes">
               <li>続けて比べるは押さなくてよい。押せばその場で順位を決めきれる</li>
-              <li>写真から選んで残した記録 (もう食べ終えている) は、保存後のカードが消えたらすぐに聞いてよい</li>
+              <li>写真から選んで残した記録 (もう食べ終えている) は、保存後のトーストが消えたらすぐに聞いてよい</li>
             </ol>
           </div>
-          <div class="arrow"><span>入口は未定</span><span class="line"></span></div>
+          <div class="arrow"><span>図鑑のタブから</span><span class="line"></span></div>
           <div class="screen">
             <p class="cap">ランキング (ラーメン)</p>
             <div class="phone">
@@ -563,7 +560,7 @@
             <ol class="notes">
               <li>順位が決まった品は番号、決まっていない品は幅で見せる</li>
               <li>いつでも比べられる。手で並べ替えられる (好みが変わったとき、答えを間違えたとき)</li>
-              <li>入口は履歴の中身と一緒に決める</li>
+              <li>図鑑のタブから開く。中の分け方は図鑑の画面で決める</li>
             </ol>
           </div>
         </div>
@@ -674,9 +671,8 @@
       <section>
         <h2>この図で決めていないこと</h2>
         <ul class="open">
-          <li>ホームに何を置くか。記録の入り口をタブバーに移したので、ホームは空く。友だちのタブへの軽い動線は置いてよい</li>
-          <li>ランキングの画面への入口 (履歴の中身と一緒に決める)</li>
-          <li>タブバーのタブ構成。画面の移動は基本的にタブバーで行う。ホーム、履歴、友だちのタブを置く。図のホームにある「履歴」ボタンは仮</li>
+          <li>ホームの中身。記録の入り口をタブバーに移したので空いている。友だちのタブへの軽い動線は置いてよい</li>
+          <li>図鑑のタブの中の分け方 (図鑑、ランキング、実績)</li>
         </ul>
       </section>
     </main>
