@@ -1,0 +1,539 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>つながる — ワイヤーフレーム | HINAMI</title>
+    <link rel="stylesheet" href="wireframe.css" />
+  </head>
+  <body>
+    <main>
+      <h1>つながる — ワイヤーフレーム</h1>
+      <p class="status">状態: 検討中 (2026-11-26)。「案」と付けたものはまだ確かめていない。決まりの本文は <a href="connect.md">connect.md</a></p>
+
+      <p class="lead">
+        お互いに承認した友だちとだけつながる。友だちの機能はまずはお試しとして、友だち専用のタブに閉じる。友だちに見えるのは写真とメモだけ。
+      </p>
+
+      <ul class="legend">
+        <li><span class="sw"></span>決まった流れ・機能</li>
+        <li><span class="sw plan"></span><span class="plan-tag">案</span> まだ確かめていない流れ・機能</li>
+        <li><span class="sw tapmark">1</span>タップの順番</li>
+      </ul>
+      <p class="legend-note">画面の中の配置や大きさは、すべて仮。下のタブバーは、構成が決まるまでの仮 (並び順も仮)。スタンプの ◯ は、種類が決まるまでの仮。</p>
+
+      <!-- Overview -->
+      <section>
+        <h2>全体の地図</h2>
+        <p class="desc">友だちのタブを中心にした画面のつながり。戻る矢印は省いている。</p>
+        <p class="scroll-hint">横にスクロールできます →</p>
+        <div class="scroll">
+          <div class="overview">
+            <svg viewBox="0 0 860 350" role="img" aria-label="つながるの画面の遷移図">
+              <defs>
+                <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                  <path d="M0 0 L10 5 L0 10 z" fill="#444" />
+                </marker>
+              </defs>
+              <g font-size="13" font-family="-apple-system, 'Hiragino Sans', 'Noto Sans JP', sans-serif" fill="#222">
+                <g stroke="#444" stroke-width="1.8" fill="none" marker-end="url(#ah)">
+                  <path d="M150 42 H180 V122 H226" />
+                  <path d="M150 222 H200 V142 H226" />
+                  <path d="M300 110 V42 H446" />
+                  <path d="M370 132 H446" />
+                  <path d="M300 154 V312 H446" />
+                  <path d="M525 244 V286" />
+                  <path d="M600 42 H686" />
+                  <path d="M600 52 H645 V122 H686" />
+                  <path d="M600 132 H686" />
+                  <path d="M600 222 H686" />
+                </g>
+                <g stroke="#444" stroke-width="1.8" fill="none" stroke-dasharray="6 4" marker-end="url(#ah)">
+                  <path d="M370 146 H410 V222 H446" />
+                </g>
+                <g font-size="11" fill="#555">
+                  <text x="156" y="34">友だちに見せる</text>
+                  <text x="156" y="214">タップ</text>
+                  <text x="308" y="34">食事をタップ</text>
+                  <text x="378" y="126">メッセージ</text>
+                  <text x="414" y="190">友だち N 人</text>
+                  <text x="308" y="304">友だちがいないとき</text>
+                  <text x="533" y="270">友だちを足す</text>
+                  <text x="612" y="34">通報</text>
+                  <text x="650" y="94">ひとこと</text>
+                  <text x="606" y="150">タップ</text>
+                  <text x="612" y="214">…</text>
+                </g>
+                <g stroke="#444" stroke-width="2" fill="#fff">
+                  <rect x="10" y="20" width="140" height="44" rx="8" />
+                  <rect x="10" y="200" width="140" height="44" rx="8" />
+                  <rect x="230" y="110" width="140" height="44" rx="8" />
+                  <rect x="450" y="110" width="150" height="44" rx="8" />
+                  <rect x="450" y="200" width="150" height="44" rx="8" />
+                  <rect x="450" y="290" width="150" height="44" rx="8" />
+                  <rect x="690" y="20" width="150" height="44" rx="8" />
+                  <rect x="690" y="110" width="150" height="44" rx="8" />
+                  <rect x="690" y="200" width="150" height="44" rx="8" />
+                </g>
+                <g stroke="#444" stroke-width="2" fill="#fff" stroke-dasharray="6 4">
+                  <rect x="450" y="20" width="150" height="44" rx="8" />
+                </g>
+                <g text-anchor="middle" dominant-baseline="central">
+                  <text x="80" y="42">確認カード</text>
+                  <text x="80" y="222">通知 (ロック画面)</text>
+                  <text x="300" y="132" font-weight="700">友だちのタブ</text>
+                  <text x="525" y="42">友だちの食事の詳細</text>
+                  <text x="525" y="132">メッセージの一覧</text>
+                  <text x="525" y="222">友だちの一覧</text>
+                  <text x="525" y="312">QR コードで友だちに</text>
+                  <text x="765" y="42">通報</text>
+                  <text x="765" y="132">スレッド</text>
+                  <text x="765" y="222">やめる・ブロック</text>
+                </g>
+              </g>
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <!-- Flow A -->
+      <section>
+        <h2>A. 友だちになる (QR コード)</h2>
+        <p class="desc">会っているときに、QR コードを読み取ってもらう。読み取った側が「友だちになる」を押せば、その場で友だちになる。</p>
+        <p class="scroll-hint">横にスクロールできます →</p>
+        <div class="row">
+          <div class="screen">
+            <p class="cap">友だちのタブ (友だちがいない)</p>
+            <div class="phone">
+              <div class="top"><strong>友だち</strong><span></span></div>
+              <div class="placeholder">友だちに食事を見せて、<br />スタンプやメッセージを<br />受け取れます</div>
+              <span class="btn block tap" data-tap="1">QR コードを見せる</span>
+              <span class="btn block">読み取る</span>
+              <div class="tabbar"><span>ホーム</span><span>履歴</span><span class="on">友だち</span><span>未定</span><span>未定</span></div>
+            </div>
+            <ol class="notes">
+              <li>友だちがいないあいだは、空の一覧ではなく友だちを足す入り口を出す</li>
+              <li>見つけ方は、まずは QR コードだけ。招待リンク、ID 検索、連絡先からは探さない</li>
+            </ol>
+          </div>
+          <div class="arrow"><span>QR コードを見せる</span><span class="line"></span></div>
+          <div class="screen">
+            <p class="cap">QR コード (はるか)</p>
+            <div class="phone">
+              <div class="top"><span class="x">×</span><span></span></div>
+              <div class="spacer"></div>
+              <div class="qr"></div>
+              <p class="center">相手に読み取ってもらう</p>
+              <p class="center hint">しばらくすると変わります</p>
+              <div class="spacer"></div>
+            </div>
+            <ol class="notes">
+              <li>見せるたびに変わり、短い時間で切れる。スクリーンショットが広まっても、知らない人が入ってこない</li>
+              <li>アプリを入れていない相手がスマホのカメラで読むと、アプリを入れる案内に進む。入れたら、もう一度読み取ってもらう</li>
+            </ol>
+          </div>
+          <div class="arrow"><span>相手のスマホで<br />読み取る</span><span class="line"></span></div>
+          <div class="screen">
+            <p class="cap">読み取った側 (けんた)</p>
+            <div class="phone">
+              <div class="top"><span class="x">×</span><span></span></div>
+              <div class="spacer"></div>
+              <div class="av" style="width: 56px; height: 56px; margin: 0 auto"></div>
+              <p class="center">はるか さんと<br />友だちになりますか?</p>
+              <div class="spacer"></div>
+              <span class="btn primary block tap" data-tap="2">友だちになる</span>
+            </div>
+            <ol class="notes">
+              <li>QR コードを見せることが申請、ここで押すことが承認。承認待ちは残らない</li>
+              <li>見せた側 (はるか) には「友だちになりました」と通知が届く</li>
+            </ol>
+          </div>
+          <div class="arrow"><span>はじめての友だち</span><span class="line"></span></div>
+          <div class="screen">
+            <p class="cap">通知の許可</p>
+            <div class="phone">
+              <div class="top"><strong>友だち</strong><span></span></div>
+              <div class="ml">
+                <div class="ml-h"><span>はるか · 11/26</span></div>
+                <div class="ml-th"><div class="ph"></div><div class="ph"></div></div>
+              </div>
+              <div class="spacer"></div>
+              <div class="tabbar"><span>ホーム</span><span>履歴</span><span class="on">友だち</span><span>未定</span><span>未定</span></div>
+              <div class="dim"></div>
+              <div class="alert">
+                <strong>"HINAMI" は通知を<br />送信します</strong>
+                <p class="hint" style="margin: 6px 0 0">友だちからのメッセージや、<br />新しい食事を知らせます</p>
+                <div class="acts"><span class="act">許可しない</span><span class="act">許可</span></div>
+              </div>
+            </div>
+            <ol class="notes">
+              <li>通知の許可は、はじめて友だちができたときに求める。アプリを入れた直後には求めない</li>
+              <li>一人で使う人には、要らない許可を求めない</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <!-- Flow B -->
+      <section>
+        <h2>B. 食事を見せる</h2>
+        <p class="desc">友だちがいると、確認カードに「見せる」の欄が出る。既定は「友だち」なので、見せる食事でも最短 3 タップのまま。</p>
+        <p class="scroll-hint">横にスクロールできます →</p>
+        <div class="row">
+          <div class="screen">
+            <p class="cap">確認カード</p>
+            <div class="phone">
+              <div class="top"><span class="x">×</span><span class="chip meal">新しい食事 ▾</span></div>
+              <div class="ph" style="height: 150px"><span>写真</span><span class="retake">撮り直す</span></div>
+              <div class="chips">
+                <span class="chip">日本酒 ▾</span><span class="hint">AI が判定</span>
+              </div>
+              <div class="kv"><span class="k">場所</span><span class="chip">鮨 はやし ▾</span></div>
+              <div class="kv"><span class="k">見せる</span><span class="chip tap" data-tap="1">友だち ▾</span></div>
+              <div class="memo">獺祭 純米大吟醸 45</div>
+              <div class="spacer"></div>
+              <span class="btn primary block">残す</span>
+            </div>
+            <ol class="notes">
+              <li>「見せる」は、友だちが 1 人もいないあいだは出さない。一人で使うときの画面は変わらない</li>
+              <li>既定は「友だち」。見せたくない食事だけ切り替える</li>
+            </ol>
+          </div>
+          <div class="arrow"><span>見せる</span><span class="line"></span></div>
+          <div class="screen">
+            <p class="cap">見せる相手を選ぶ</p>
+            <div class="phone">
+              <div class="top"><span class="x">×</span><span class="chip meal">新しい食事 ▾</span></div>
+              <div class="ph" style="height: 150px"><span>写真</span></div>
+              <div class="dim"></div>
+              <div class="sheet short">
+                <div class="grab"></div>
+                <strong>この食事を見せる相手</strong>
+                <div class="li"><span>友だち</span><span>✓</span></div>
+                <div class="li"><span>自分だけ</span><span></span></div>
+                <p class="hint">この食事の品すべてに効きます</p>
+              </div>
+            </div>
+            <ol class="notes">
+              <li>見せるかどうかは食事単位。どの品のカードで変えても、同じ食事の品すべてに効く</li>
+              <li>保存したあとも、食事の詳細で変えられる。「自分だけ」にすれば友だちから見えなくなる</li>
+            </ol>
+          </div>
+          <div class="arrow"><span>残すと<br />友だちのスマホに</span><span class="line"></span></div>
+          <div class="screen">
+            <p class="cap">ロック画面 (けんた)</p>
+            <div class="phone lock">
+              <div class="clock">21:04</div>
+              <p class="center meta" style="margin: 0">11 月 26 日 木曜日</p>
+              <div class="notif tap" data-tap="2">
+                <span class="app">HINAMI</span>
+                <span>はるか さんが食事を見せました</span>
+              </div>
+              <div class="spacer"></div>
+            </div>
+            <ol class="notes">
+              <li>友だちが食事を見せたら通知する。1 回の食事で 1 回だけ。品が増えても送り直さない</li>
+              <li>どの通知も、種類ごとに止められる</li>
+            </ol>
+          </div>
+          <div class="arrow"><span>タップ</span><span class="line"></span></div>
+          <div class="screen">
+            <p class="cap">友だちのタブ (けんた)</p>
+            <div class="phone">
+              <div class="top"><strong>友だち</strong><span class="link">メッセージ</span></div>
+              <div class="ml">
+                <div class="ml-h"><span>はるか · 11/26</span></div>
+                <div class="ml-th"><div class="ph"></div><div class="ph"></div><div class="ph"></div></div>
+                <span class="hl">獺祭 純米大吟醸 45</span>
+              </div>
+              <div class="ml">
+                <div class="ml-h"><span>まい · 11/25</span></div>
+                <div class="ml-th"><div class="ph"></div></div>
+                <span class="hl" style="color: var(--mute)">メモなし</span>
+              </div>
+              <div class="ml">
+                <div class="ml-h"><span>はるか · 11/22</span></div>
+                <div class="ml-th"><div class="ph"></div><div class="ph"></div></div>
+                <span class="hl">はじめての燗酒</span>
+              </div>
+              <div class="spacer"></div>
+              <div class="tabbar"><span>ホーム</span><span>履歴</span><span class="on">友だち</span><span>未定</span><span>未定</span></div>
+            </div>
+            <ol class="notes">
+              <li>友だちが見せた食事を、新しい順に並べる</li>
+              <li>見えるのは写真とメモだけ。種類と場所は見せない。誰の、いつの食事かは出す</li>
+              <li>ホームには出さない。お試しの機能を 1 つのタブに閉じる</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <!-- Flow C -->
+      <section>
+        <h2>C. 反応する</h2>
+        <p class="desc">友だちの食事に、スタンプかひとことを送る。どちらも、その人とのスレッドに食事の写真を添えて流れる。</p>
+        <p class="scroll-hint">横にスクロールできます →</p>
+        <div class="row">
+          <div class="screen">
+            <p class="cap">友だちの食事の詳細 <span class="plan-tag">案</span></p>
+            <div class="phone plan">
+              <div class="top"><span class="x">‹</span><span class="meta">はるか · 11/26</span><span>…</span></div>
+              <div class="it"><div class="ph"></div><div class="body"><span>獺祭 純米大吟醸 45</span></div></div>
+              <div class="it"><div class="ph"></div><div class="body"><span class="hl" style="color: var(--mute)">メモなし</span></div></div>
+              <div class="it"><div class="ph"></div><div class="body"><span>中トロ</span></div></div>
+              <div class="spacer"></div>
+              <div class="stamps"><span class="stamp">◯</span><span class="stamp">◯</span><span class="stamp">◯</span><span class="stamp">◯</span></div>
+              <div class="input tap" data-tap="1">ひとことを送る</div>
+            </div>
+            <ol class="notes">
+              <li>品ごとに写真とメモが並ぶ。種類と場所は出さない</li>
+              <li>スタンプは数種類から 1 つ。種類は見た目のデザインと一緒に決める</li>
+              <li>右上の … から通報できる (E)</li>
+            </ol>
+          </div>
+          <div class="arrow"><span>ひとことを送る</span><span class="line"></span></div>
+          <div class="screen">
+            <p class="cap">はるかとのスレッド</p>
+            <div class="phone">
+              <div class="top"><span class="x">‹</span><strong>はるか</strong><span>…</span></div>
+              <div class="ref me"><div class="ph"></div><div class="ph"></div><span>11/22 の食事</span></div>
+              <div class="msg me">◯</div>
+              <div class="ref me"><div class="ph"></div><div class="ph"></div><div class="ph"></div><span>11/26 の食事</span></div>
+              <div class="msg me">これどこのお店?</div>
+              <div class="msg">恵比寿の鮨 はやし。おすすめ</div>
+              <div class="spacer"></div>
+              <div class="input">メッセージ</div>
+            </div>
+            <ol class="notes">
+              <li>スレッドは友だちごとに 1 つ (インスタの DM と同じ)</li>
+              <li>食事から送ったスタンプやひとことには、その食事の写真が添えられ、どの食事への反応か分かる</li>
+              <li>スレッドの中では、食事と関係なく自由に送れる</li>
+              <li>見えるのは当事者の 2 人だけ。ほかの友だちには件数も中身も見せない</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <!-- Flow D -->
+      <section>
+        <h2>D. 反応が届く</h2>
+        <p class="desc">自分あてのスタンプやメッセージは通知で届く。あとから、自分の食事の詳細でも見返せる。</p>
+        <p class="scroll-hint">横にスクロールできます →</p>
+        <div class="row">
+          <div class="screen">
+            <p class="cap">ロック画面 (はるか)</p>
+            <div class="phone lock">
+              <div class="clock">21:12</div>
+              <p class="center meta" style="margin: 0">11 月 26 日 木曜日</p>
+              <div class="notif tap" data-tap="1">
+                <span class="app">HINAMI</span>
+                <span>けんた: これどこのお店?</span>
+              </div>
+              <div class="spacer"></div>
+            </div>
+            <ol class="notes">
+              <li>自分あてのスタンプとメッセージは通知する</li>
+              <li>タップすると、その人とのスレッドを開く</li>
+            </ol>
+          </div>
+          <div class="arrow"><span>タップ</span><span class="line"></span></div>
+          <div class="screen">
+            <p class="cap">けんたとのスレッド</p>
+            <div class="phone">
+              <div class="top"><span class="x">‹</span><strong>けんた</strong><span>…</span></div>
+              <div class="ref"><div class="ph"></div><div class="ph"></div><span>11/22 の食事</span></div>
+              <div class="msg">◯</div>
+              <div class="ref"><div class="ph"></div><div class="ph"></div><div class="ph"></div><span>11/26 の食事</span></div>
+              <div class="msg">これどこのお店?</div>
+              <div class="spacer"></div>
+              <div class="input tap" data-tap="2">メッセージ</div>
+            </div>
+            <ol class="notes">
+              <li>場所は友だちに見せていないので、「どこ?」はここで聞いて答える</li>
+            </ol>
+          </div>
+          <div class="arrow"><span>ほかの入り口</span><span class="line" style="visibility: hidden"></span></div>
+          <div class="screen">
+            <p class="cap">メッセージの一覧</p>
+            <div class="phone">
+              <div class="top"><span class="x">‹</span><strong>メッセージ</strong><span></span></div>
+              <div class="li">
+                <span class="who"><span class="av"></span><span class="two"><span>けんた</span><small>これどこのお店?</small></span></span><span class="dot"></span>
+              </div>
+              <div class="li">
+                <span class="who"><span class="av"></span><span class="two"><span>まい</span><small>◯ を送りました</small></span></span><span class="dot"></span>
+              </div>
+              <div class="li">
+                <span class="who"><span class="av"></span><span class="two"><span>そうた</span><small>今度行こう</small></span></span><span></span>
+              </div>
+              <div class="spacer"></div>
+              <div class="tabbar"><span>ホーム</span><span>履歴</span><span class="on">友だち ②</span><span>未定</span><span>未定</span></div>
+            </div>
+            <ol class="notes">
+              <li>友だちのタブの「メッセージ」から開く。友だちごとに 1 行で、タップするとスレッドを開く</li>
+              <li>友だちのタブのアイコンに、自分あての未読の数を出す</li>
+            </ol>
+          </div>
+          <div class="arrow"><span>あとから見返す</span><span class="line" style="visibility: hidden"></span></div>
+          <div class="screen">
+            <p class="cap">自分の食事の詳細 (履歴)</p>
+            <div class="phone">
+              <div class="top"><span class="x">‹</span><span class="meta">11/26 木 · 19:10</span></div>
+              <div class="kv"><span class="k">場所</span><span class="chip">鮨 はやし ▾</span></div>
+              <div class="kv"><span class="k">見せる</span><span class="chip">友だち ▾</span></div>
+              <div class="it"><div class="ph"></div><div class="body"><span class="chip">日本酒 ▾</span><span class="hl">獺祭 純米大吟醸 45</span></div></div>
+              <div class="it"><div class="ph"></div><div class="body"><span class="chip">鮨 ▾</span><span class="hl">中トロ</span></div></div>
+              <div class="ml-month">反応</div>
+              <div class="li"><span class="who"><span class="av"></span>まい</span><span>◯</span></div>
+              <div class="li"><span class="who"><span class="av"></span>けんた</span><span class="hl">これどこのお店?</span></div>
+              <div class="spacer"></div>
+            </div>
+            <ol class="notes">
+              <li>その食事に届いたスタンプとひとことを並べる。見えるのは自分だけ</li>
+              <li>タップすると、その人とのスレッドに移る</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <!-- Flow E -->
+      <section>
+        <h2>E. 友だちをやめる・ブロック・通報</h2>
+        <p class="desc">App Store の審査ガイドライン 1.2 が求める、通報とブロック。どれも相手には知らせない。</p>
+        <p class="scroll-hint">横にスクロールできます →</p>
+        <div class="row">
+          <div class="screen">
+            <p class="cap">友だちの一覧 <span class="plan-tag">案: 入口</span></p>
+            <div class="phone">
+              <div class="top"><span class="x">‹</span><strong>友だち 3 人</strong><span></span></div>
+              <div class="li"><span class="who"><span class="av"></span>はるか</span><span class="tap" data-tap="1">…</span></div>
+              <div class="li"><span class="who"><span class="av"></span>まい</span><span>…</span></div>
+              <div class="li"><span class="who"><span class="av"></span>そうた</span><span>…</span></div>
+              <div class="spacer"></div>
+              <span class="btn block">QR コードを見せる</span>
+              <span class="btn block">読み取る</span>
+            </div>
+            <ol class="notes">
+              <li>入口は、友だちのタブの見出しに「友だち N 人」を置く案</li>
+              <li>友だちを足すときも、ここから QR コードを使う</li>
+            </ol>
+          </div>
+          <div class="arrow"><span>…</span><span class="line"></span></div>
+          <div class="screen">
+            <p class="cap">やめる・ブロック</p>
+            <div class="phone">
+              <div class="top"><span class="x">‹</span><strong>友だち 3 人</strong><span></span></div>
+              <div class="li"><span class="who"><span class="av"></span>はるか</span><span>…</span></div>
+              <div class="dim"></div>
+              <div class="sheet short">
+                <div class="grab"></div>
+                <strong>はるか</strong>
+                <div class="li"><span>友だちをやめる</span></div>
+                <div class="li"><span>ブロック</span></div>
+                <p class="hint">相手には知らせません</p>
+              </div>
+            </div>
+            <ol class="notes">
+              <li>友だちをやめると、お互いの食事とスレッドが見えなくなる</li>
+              <li>ブロックは、友だちをやめたうえで、その人の QR コードで二度と友だちになれなくする。設定から解除できる</li>
+            </ol>
+          </div>
+          <div class="arrow"><span>通報は、友だちの<br />食事の … から</span><span class="line" style="visibility: hidden"></span></div>
+          <div class="screen">
+            <p class="cap">通報</p>
+            <div class="phone">
+              <div class="top"><span class="x">‹</span><span class="meta">はるか · 11/26</span><span>…</span></div>
+              <div class="it"><div class="ph"></div><div class="body"><span>獺祭 純米大吟醸 45</span></div></div>
+              <div class="dim"></div>
+              <div class="sheet short">
+                <div class="grab"></div>
+                <strong>この食事を通報する</strong>
+                <p class="hint" style="margin: 0">運営に届きます。通報した食事は、あなたから見えなくなります</p>
+                <div class="spacer"></div>
+                <span class="btn primary block">通報する</span>
+              </div>
+            </div>
+            <ol class="notes">
+              <li>友だちの食事と、メッセージから通報できる</li>
+              <li>運営は中身を確かめて、消す、利用を止めるなどの対応をする</li>
+              <li>運営への問い合わせ先は、アプリの中に載せる</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <!-- Flow F -->
+      <section>
+        <h2>F. 通知を止める</h2>
+        <p class="desc">どの通知も、種類ごとに止められる。既定はどれも送る。</p>
+        <p class="scroll-hint">横にスクロールできます →</p>
+        <div class="row">
+          <div class="screen">
+            <p class="cap">通知の設定</p>
+            <div class="phone">
+              <div class="top"><span class="x">‹</span><strong>通知</strong><span></span></div>
+              <div class="li"><span>友だちになった</span><span class="tg"></span></div>
+              <div class="li"><span>スタンプ・メッセージ</span><span class="tg"></span></div>
+              <div class="li"><span>友だちの新しい食事</span><span class="tg"></span></div>
+              <div class="spacer"></div>
+            </div>
+            <ol class="notes">
+              <li>設定の置き場所は、タブの構成と一緒に決める</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <!-- States -->
+      <section>
+        <h2>友だちがいるとき・いないとき</h2>
+        <p class="desc">一人で使っても成り立つように、友だちがいないあいだは、つながる機能を表に出さない。</p>
+        <div class="scroll">
+          <table>
+            <thead>
+              <tr>
+                <th>場所</th>
+                <th>友だちがいないとき</th>
+                <th>友だちがいるとき</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>確認カード</td>
+                <td>「見せる」の欄を出さない</td>
+                <td>「見せる 友だち ▾」を出す。食事ごと</td>
+              </tr>
+              <tr>
+                <td>友だちのタブ</td>
+                <td>QR コードを見せる・読み取るの入り口</td>
+                <td>友だちが見せた食事の一覧</td>
+              </tr>
+              <tr>
+                <td>通知の許可</td>
+                <td>求めない</td>
+                <td>はじめて友だちができたときに求める</td>
+              </tr>
+              <tr>
+                <td>食事の詳細 (自分)</td>
+                <td>「見せる」と「反応」を出さない</td>
+                <td>「見せる」と、届いた「反応」を出す</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section>
+        <h2>この図で決めていないこと</h2>
+        <ul class="open">
+          <li>友だちの食事の詳細の中身 (図の「案」)</li>
+          <li>友だちの一覧の入口 (図の「案」)</li>
+          <li>スタンプの種類 (見た目のデザインと一緒に決める)</li>
+          <li>通知の設定の置き場所と、タブバーのタブ構成</li>
+          <li>アカウントの作り方と削除 (App Store の審査ガイドライン 5.1.1)</li>
+          <li>投稿前に不適切なものを弾く仕組みの中身 (App Store の審査ガイドライン 1.2)</li>
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>
