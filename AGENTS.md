@@ -18,6 +18,7 @@ HINAMI (日次 / ひなみ) は、食と飲みの「覚えておきたい体験�
 | 続けたくなる仕組み (実績)                   | [`docs/ux/achievements.md`](docs/ux/achievements.md)   |
 | 比べる (ランキング)                         | [`docs/ux/compare.md`](docs/ux/compare.md)             |
 | 履歴と検索                                  | [`docs/ux/history.md`](docs/ux/history.md)             |
+| つながる (SNS)                              | [`docs/ux/connect.md`](docs/ux/connect.md)             |
 | デザインの方向性                            | [`docs/design/direction.md`](docs/design/direction.md) |
 | 判断待ち・未確認のこと                      | [`docs/open-questions.md`](docs/open-questions.md)     |
 | 意思決定の理由 (ADR)                        | [`docs/adr/index.md`](docs/adr/index.md)               |
