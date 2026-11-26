@@ -770,18 +770,6 @@ a {
 .hl b {
   background: #e2e2e2;
 }
-.months {
-  display: grid;
-  grid-template-columns: 28px 1fr 30px;
-  gap: 4px 6px;
-  align-items: center;
-  font-size: 10px;
-}
-.months .bar {
-  height: 6px;
-  border-radius: 3px;
-  background: #bbb;
-}
 .it {
   display: flex;
   gap: 8px;

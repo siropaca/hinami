@@ -29,7 +29,7 @@
         <p class="scroll-hint">横にスクロールできます →</p>
         <div class="scroll">
           <div class="overview">
-            <svg viewBox="0 0 940 260" role="img" aria-label="履歴タブの画面の遷移図">
+            <svg viewBox="0 96 940 156" role="img" aria-label="履歴タブの画面の遷移図">
               <defs>
                 <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
                   <path d="M0 0 L10 5 L0 10 z" fill="#444" />
@@ -37,7 +37,6 @@
               </defs>
               <g font-size="13" font-family="-apple-system, 'Hiragino Sans', 'Noto Sans JP', sans-serif" fill="#222">
                 <g stroke="#444" stroke-width="1.8" fill="none" marker-end="url(#ah)">
-                  <path d="M150 130 H190 V42 H286" />
                   <path d="M150 130 H286" />
                   <path d="M150 130 H190 V218 H286" />
                   <path d="M430 130 H536" />
@@ -45,7 +44,6 @@
                   <path d="M680 130 H746" />
                 </g>
                 <g font-size="11" fill="#555">
-                  <text x="198" y="34">年に切り替え</text>
                   <text x="198" y="122">日付をタップ</text>
                   <text x="198" y="210">種類・言葉で絞る</text>
                   <text x="440" y="122">食事をタップ</text>
@@ -53,7 +51,6 @@
                 </g>
                 <g stroke="#444" stroke-width="2" fill="#fff">
                   <rect x="10" y="108" width="140" height="44" rx="8" />
-                  <rect x="290" y="20" width="140" height="44" rx="8" />
                   <rect x="290" y="108" width="140" height="44" rx="8" />
                   <rect x="290" y="196" width="140" height="44" rx="8" />
                   <rect x="540" y="108" width="140" height="44" rx="8" />
@@ -61,7 +58,6 @@
                 </g>
                 <g text-anchor="middle" dominant-baseline="central">
                   <text x="80" y="130" font-weight="700">履歴 (カレンダー)</text>
-                  <text x="360" y="42">年のまとめ</text>
                   <text x="360" y="130">その日の食事</text>
                   <text x="360" y="218">一覧 (食事単位)</text>
                   <text x="610" y="130">食事の詳細</text>
@@ -84,7 +80,7 @@
             <div class="phone">
               <div class="search">店名・メモ・地域で検索</div>
               <div class="fchips"><span class="chip on">すべて</span><span class="chip tap" data-tap="1">日本酒</span><span class="chip">ラーメン</span><span class="chip">コーヒー</span><span class="chip">▾</span></div>
-              <div class="cal-h"><strong>‹ 2026 年 11 月 ›</strong><span class="link">年</span></div>
+              <div class="cal-h"><strong>‹ 2026 年 11 月 ›</strong></div>
               <div class="sum">記録 18 件 · 外食 9 回 · 7 軒</div>
               <div class="cal">
                 <span>日</span>
@@ -222,46 +218,7 @@
 
       <!-- Flow C -->
       <section>
-        <h2>C. 今年はどれだけ (年に切り替える)</h2>
-        <p class="desc">年に切り替えると、月ごとの件数と年のまとめが出る。種類で絞っていれば、その種類の件数も出る。</p>
-        <p class="scroll-hint">横にスクロールできます →</p>
-        <div class="row">
-          <div class="screen">
-            <p class="cap">年のまとめ</p>
-            <div class="phone">
-              <div class="search">店名・メモ・地域で検索</div>
-              <div class="fchips"><span class="chip on">すべて</span><span class="chip">日本酒</span><span class="chip">ラーメン</span><span class="chip">コーヒー</span><span class="chip">▾</span></div>
-              <div class="cal-h"><strong>‹ 2026 年 ›</strong><span class="link">月</span></div>
-              <div class="sum">記録 214 件 · 外食 96 回 · 38 軒</div>
-              <div class="months">
-                <span>1 月</span><span class="bar" style="width: 50%"></span><span>12 件</span>
-                <span>2 月</span><span class="bar" style="width: 40%"></span><span>10 件</span>
-                <span>3 月</span><span class="bar" style="width: 72%"></span><span>18 件</span>
-                <span>4 月</span><span class="bar" style="width: 84%"></span><span>21 件</span>
-                <span>5 月</span><span class="bar" style="width: 64%"></span><span>16 件</span>
-                <span>6 月</span><span class="bar" style="width: 56%"></span><span>14 件</span>
-                <span>7 月</span><span class="bar" style="width: 88%"></span><span>22 件</span>
-                <span>8 月</span><span class="bar" style="width: 100%"></span><span>25 件</span>
-                <span>9 月</span><span class="bar" style="width: 76%"></span><span>19 件</span>
-                <span>10 月</span><span class="bar" style="width: 92%"></span><span>23 件</span>
-                <span>11 月</span><span class="bar" style="width: 72%"></span><span>18 件</span>
-                <span>12 月</span><span class="bar" style="width: 0%"></span><span>—</span>
-              </div>
-              <div class="spacer"></div>
-              <div class="tabbar"><span>ホーム</span><span class="on">履歴</span><span>未定</span><span>未定</span><span>未定</span></div>
-            </div>
-            <ol class="notes">
-              <li>「今年何軒」「先月何件」はここと月の見出しで答える</li>
-              <li>月をタップすると、その月のカレンダーに戻る</li>
-              <li>種類で絞っていれば「日本酒 26 件」のように出し、タップで一覧に移る</li>
-            </ol>
-          </div>
-        </div>
-      </section>
-
-      <!-- Flow D -->
-      <section>
-        <h2>D. 何もないとき</h2>
+        <h2>C. 何もないとき</h2>
         <p class="desc">記録がまだないときと、絞り込みに合う記録がないときを分ける。</p>
         <p class="scroll-hint">横にスクロールできます →</p>
         <div class="row">
@@ -269,7 +226,7 @@
             <p class="cap">記録が 0 件</p>
             <div class="phone">
               <div class="search">店名・メモ・地域で検索</div>
-              <div class="cal-h"><strong>‹ 2026 年 11 月 ›</strong><span class="link">年</span></div>
+              <div class="cal-h"><strong>‹ 2026 年 11 月 ›</strong></div>
               <div class="placeholder">まだ記録がない<br />ホームの [撮る] か<br />[写真から選ぶ] から残す</div>
               <div class="tabbar"><span>ホーム</span><span class="on">履歴</span><span>未定</span><span>未定</span><span>未定</span></div>
             </div>
@@ -298,6 +255,7 @@
           <li>タブバーのタブ構成 (検索を別のタブにしないので、5 つ以内に収まる見込み)</li>
           <li>ランキング、解除した実績の一覧、図鑑の画面の入口</li>
           <li>食事の詳細の中身 (写真の見せ方、品の並び)</li>
+          <li>年単位で見る画面 (「今年はどれだけ」)。一旦入れない</li>
         </ul>
       </section>
     </main>
