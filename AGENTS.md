@@ -6,7 +6,7 @@ HINAMI (日次 / ひなみ) は、食と飲みの「覚えておきたい体験�
 ## 現在地
 
 - 構想段階を終え、リポジトリを整備した段階。アプリのコードはまだない
-- 次はアプリデザインを詰める ([`docs/design/direction.md`](docs/design/direction.md))
+- 見た目のデザイン ([`docs/design/direction.md`](docs/design/direction.md)) の前に、ワイヤーフレームの画面遷移図で UX を詰めている ([`docs/ux/`](docs/ux/recording.md))。最初は「ホームからいつもの記録」の流れ
 - 最初の関門 (PHASE 1): 作り手自身が 4 週間、覚えておきたい食をすべて記録できること
 
 ## ドキュメントマップ
@@ -14,6 +14,7 @@ HINAMI (日次 / ひなみ) は、食と飲みの「覚えておきたい体験�
 | 知りたいこと                                | 場所                                                   |
 | ------------------------------------------- | ------------------------------------------------------ |
 | 何を作るか (コンセプト・前提・収益・進め方) | [`docs/concept.md`](docs/concept.md)                   |
+| 画面の流れ (UX)                             | [`docs/ux/`](docs/ux/recording.md)                     |
 | デザインの方向性                            | [`docs/design/direction.md`](docs/design/direction.md) |
 | 判断待ち・未確認のこと                      | [`docs/open-questions.md`](docs/open-questions.md)     |
 | 意思決定の理由 (ADR)                        | [`docs/adr/index.md`](docs/adr/index.md)               |
