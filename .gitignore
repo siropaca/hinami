@@ -23,3 +23,6 @@ ios/
 android/
 
 scratchpad/
+
+# 作り手個人の指示 (エージェント向け)
+CLAUDE.local.md
