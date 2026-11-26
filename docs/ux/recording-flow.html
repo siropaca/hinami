@@ -496,6 +496,46 @@
         padding: 4px 8px;
         color: #888;
       }
+      .cmp {
+        border: 1.5px solid var(--line);
+        border-radius: 10px;
+        padding: 8px;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        background: #fff;
+        font-size: 11px;
+      }
+      .cmp-h {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-weight: 600;
+      }
+      .cmp-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 6px;
+      }
+      .cmp-row .ph {
+        height: 84px;
+      }
+      .cmp-row .ph span {
+        font-size: 10px;
+        text-align: center;
+      }
+      .rank .li {
+        display: grid;
+        grid-template-columns: 34px 1fr auto;
+        gap: 4px;
+      }
+      .rank .li span:first-child {
+        font-weight: 600;
+      }
+      .rank .li.range span:first-child {
+        font-weight: 400;
+        color: var(--mute);
+      }
       .li {
         display: flex;
         justify-content: space-between;
@@ -621,7 +661,7 @@
   <body>
     <main>
       <h1>記録の流れ — ワイヤーフレーム</h1>
-      <p class="status">状態: 合意 (2026-11-26)。「案」は比べる 1 問だけで、まだ確かめていない。決まりの本文は <a href="recording.md">recording.md</a></p>
+      <p class="status">状態: 合意 (2026-11-26)。「案」はもうない。決まりの本文は <a href="recording.md">recording.md</a></p>
 
       <p class="lead">
         その場で撮るなら最短 3 タップ (撮る → シャッター → 残す)。必須の入力はなく、AI の判定と場所の推定が違うときだけ直す。
@@ -654,18 +694,15 @@
                   <path d="M130 172 H145 V242 H226" />
                   <path d="M130 172 H145 V312 H226" />
                   <path d="M350 62 H406" />
-                  <path d="M470 40 V16 H830 V36" />
                   <path d="M455 84 V126" />
                   <path d="M485 126 V88" />
                   <path d="M350 242 H406" />
                   <path d="M530 248 H766" />
                   <path d="M455 220 V178" />
                   <path d="M485 178 V216" />
+                  <path d="M530 62 H766" />
+                  <path d="M830 84 V126" />
                   <path d="M530 230 H556 V78 H534" marker-start="url(#ah)" />
-                </g>
-                <g stroke="#444" stroke-width="1.8" fill="none" stroke-dasharray="6 4" marker-end="url(#ah)">
-                  <path d="M530 62 H586" />
-                  <path d="M710 62 H766" />
                 </g>
                 <!-- edge labels -->
                 <g font-size="11" fill="#555">
@@ -673,10 +710,9 @@
                   <text x="152" y="234">写真から選ぶ</text>
                   <text x="152" y="304">履歴</text>
                   <text x="353" y="54">シャッター</text>
-                  <text x="590" y="12">残す (比べるを出さない場合)</text>
-                  <text x="536" y="54">残す</text>
-                  <text x="716" y="54">答える</text>
-                  <text x="716" y="80">飛ばす</text>
+                  <text x="560" y="54">残す</text>
+                  <text x="820" y="104" text-anchor="end">食べたあと、</text>
+                  <text x="820" y="118" text-anchor="end">次に開いたとき</text>
                   <text x="449" y="110" text-anchor="end">場所をタップ</text>
                   <text x="492" y="110">選ぶ</text>
                   <text x="356" y="234">完了</text>
@@ -697,15 +733,13 @@
                   <rect x="770" y="226" width="120" height="44" rx="8" />
                   <rect x="230" y="290" width="120" height="44" rx="8" fill="#f2f2f2" />
                   <rect x="410" y="220" width="120" height="44" rx="8" />
-                </g>
-                <g stroke="#444" stroke-width="2" fill="#fff" stroke-dasharray="6 4">
-                  <rect x="590" y="40" width="120" height="44" rx="8" />
+                  <rect x="770" y="130" width="120" height="44" rx="8" />
                 </g>
                 <g text-anchor="middle" dominant-baseline="central">
                   <text x="70" y="172" font-weight="700">ホーム</text>
                   <text x="290" y="62">カメラ</text>
                   <text x="470" y="62" font-weight="700">確認カード</text>
-                  <text x="650" y="62">比べる 1 問</text>
+                  <text x="830" y="152">比べる 1 問</text>
                   <text x="830" y="62">ホーム</text>
                   <text x="470" y="152">場所を選ぶ</text>
                   <text x="290" y="242">写真の選択</text>
@@ -776,22 +810,7 @@
               <li>撮り直しは写真の上から</li>
             </ol>
           </div>
-          <div class="arrow plan"><span>残す</span><span class="line"></span></div>
-          <div class="screen">
-            <p class="cap">比べる 1 問 <span class="plan-tag">案</span></p>
-            <div class="phone plan">
-              <div class="top"><span></span><span class="meta">ラーメン</span></div>
-              <p style="margin: 0; font-size: 13px; font-weight: 600; text-align: center">どちらが好き?</p>
-              <div class="ph" style="height: 136px"><span>今回: 麺屋 ひかり</span></div>
-              <div class="ph" style="height: 136px"><span>前の: 中華そば 青葉</span></div>
-              <span class="link">飛ばす</span>
-            </div>
-            <ol class="notes">
-              <li>保存したあとに 1 問だけ。比べる相手は同じ種類の記録から出す</li>
-              <li>飛ばした分は、後でまとめて答えられる</li>
-            </ol>
-          </div>
-          <div class="arrow plan"><span>答える / 飛ばす</span><span class="line"></span></div>
+          <div class="arrow"><span>残す</span><span class="line"></span></div>
           <div class="screen">
             <p class="cap">ホーム (保存後)</p>
             <div class="phone">
@@ -815,6 +834,7 @@
               <li>解除した実績と図鑑への追加は「残しました」と同じ 1 枚に出す。タップは増えない (<a href="achievements.md">achievements.md</a>)</li>
               <li>はじめての種類・地域は実績にせず、図鑑への追加として出す</li>
               <li>取り消しを数秒だけ出す。取り消すと実績の解除も消える</li>
+              <li>比べるはここでは聞かない。食べたあと、次に開いたときに聞く (F)</li>
             </ol>
           </div>
         </div>
@@ -1123,6 +1143,80 @@
         </div>
       </section>
 
+
+      <!-- Flow F -->
+      <section>
+        <h2>F. 比べる (食べたあと)</h2>
+        <p class="desc">保存した直後には聞かない。食べたあと、次にアプリを開いたときに、ホームのカードで 1 問だけ聞く。詳しくは <a href="compare.md">compare.md</a>。</p>
+        <p class="scroll-hint">横にスクロールできます →</p>
+        <div class="row">
+          <div class="screen">
+            <p class="cap">ホーム (食べたあと)</p>
+            <div class="phone">
+              <div class="top"><span class="logo">HINAMI</span><span class="btn">履歴</span></div>
+              <div class="placeholder">ここに置くものは<br />まだ決めていない</div>
+              <div class="cmp">
+                <div class="cmp-h"><span>どちらが好き?</span><span class="meta">ラーメン</span></div>
+                <div class="cmp-row">
+                  <div class="ph tap" data-tap="1"><span>今回<br />麺屋 ひかり</span></div>
+                  <div class="ph"><span>前の<br />中華そば 青葉</span></div>
+                </div>
+              </div>
+              <div class="actions">
+                <span class="btn side">写真から<br />選ぶ</span>
+                <span class="shoot">撮る</span>
+                <span></span>
+              </div>
+            </div>
+            <ol class="notes">
+              <li>開いたときに 1 問だけ。プッシュ通知は使わない</li>
+              <li>聞くのは、順位の幅がいちばん広い品。同じ種類に相手がいる品だけ</li>
+              <li>「残しました」のカードとは同時に出さない</li>
+              <li>触らなければ流れる。「未回答 N 件」はためない</li>
+            </ol>
+          </div>
+          <div class="arrow"><span>答える</span><span class="line"></span></div>
+          <div class="screen">
+            <p class="cap">ホーム (答えたあと)</p>
+            <div class="phone">
+              <div class="top"><span class="logo">HINAMI</span><span class="btn">履歴</span></div>
+              <div class="placeholder">ここに置くものは<br />まだ決めていない</div>
+              <div class="toast"><span>3〜4 位まで<br />絞れました</span><span class="link">続けて比べる</span></div>
+              <div class="actions">
+                <span class="btn side">写真から<br />選ぶ</span>
+                <span class="shoot">撮る</span>
+                <span></span>
+              </div>
+            </div>
+            <ol class="notes">
+              <li>続けて比べるは押さなくてよい。押せばその場で順位を決めきれる</li>
+              <li>写真から選んで残した記録 (もう食べ終えている) は、保存後のカードが消えたらすぐに聞いてよい</li>
+            </ol>
+          </div>
+          <div class="arrow"><span>入口は未定</span><span class="line"></span></div>
+          <div class="screen">
+            <p class="cap">ランキング (ラーメン)</p>
+            <div class="phone">
+              <div class="top"><span class="x">‹</span><span class="btn">比べる</span></div>
+              <div class="rank">
+                <div class="li"><span>1</span><span>中華そば 青葉</span><small></small></div>
+                <div class="li"><span>2</span><span>らーめん 凪</span><small></small></div>
+                <div class="li range"><span>3〜4</span><span>麺屋 ひかり</span><small>決まっていない</small></div>
+                <div class="li range"><span>3〜4</span><span>麺処 さわ</span><small>決まっていない</small></div>
+                <div class="li"><span>5</span><span>つけ麺 環</span><small></small></div>
+                <div class="li"><span>6</span><span>中華 宝来</span><small></small></div>
+              </div>
+              <div class="spacer"></div>
+              <span class="link">並べ替える</span>
+            </div>
+            <ol class="notes">
+              <li>順位が決まった品は番号、決まっていない品は幅で見せる</li>
+              <li>いつでも比べられる。手で並べ替えられる (好みが変わったとき、答えを間違えたとき)</li>
+              <li>入口は履歴の中身と一緒に決める</li>
+            </ol>
+          </div>
+        </div>
+      </section>
       <!-- States -->
       <section>
         <h2>欄の状態</h2>
@@ -1231,7 +1325,7 @@
         <ul class="open">
           <li>店が決まっていない記録を、あとでどこで直すか (履歴の中身と一緒に決める)</li>
           <li>ホームの残りの場所に何を置くか。つながっている人の記録をどこに出すかと一緒に決める</li>
-          <li>保存後に「比べる」を 1 問出すか。写真から複数枚を残したときにどう出すか</li>
+          <li>ランキングの画面への入口 (履歴の中身と一緒に決める)</li>
                   </ul>
       </section>
     </main>
