@@ -623,7 +623,7 @@
       <p class="status">状態: 一旦合意 (2026-11-26)。「案」はまだ確かめていない。決まりの本文は <a href="recording.md">recording.md</a></p>
 
       <p class="lead">
-        その場で撮るなら最短 3 タップ (撮る → シャッター → 残す)。必須の入力はなく、AI の判定と店の推定が違うときだけ直す。
+        その場で撮るなら最短 3 タップ (撮る → シャッター → 残す)。必須の入力はなく、AI の判定と場所の推定が違うときだけ直す。
       </p>
 
       <ul class="legend">
@@ -676,11 +676,11 @@
                   <text x="536" y="54">残す</text>
                   <text x="716" y="54">答える</text>
                   <text x="716" y="80">飛ばす</text>
-                  <text x="449" y="110" text-anchor="end">店をタップ</text>
+                  <text x="449" y="110" text-anchor="end">場所をタップ</text>
                   <text x="492" y="110">選ぶ</text>
                   <text x="356" y="234">完了</text>
                   <text x="610" y="266">まとめて残す</text>
-                  <text x="449" y="204" text-anchor="end">店をタップ</text>
+                  <text x="449" y="204" text-anchor="end">場所をタップ</text>
                   <text x="492" y="204">選ぶ</text>
                   <text x="562" y="150">品をタップ</text>
                   <text x="562" y="164">/ 戻る</text>
@@ -706,7 +706,7 @@
                   <text x="470" y="62" font-weight="700">確認カード</text>
                   <text x="650" y="62">比べる 1 問</text>
                   <text x="830" y="62">ホーム</text>
-                  <text x="470" y="152">店を選ぶ</text>
+                  <text x="470" y="152">場所を選ぶ</text>
                   <text x="290" y="242">写真の選択</text>
                   <text x="470" y="242">確認 (複数枚)</text>
                   <text x="830" y="248">ホーム</text>
@@ -721,7 +721,7 @@
       <!-- Flow A -->
       <section>
         <h2>A. その場で撮る (1 品目)</h2>
-        <p class="desc">いつもの記録。AI の判定も店の推定も合っていれば、どこも触らずに終わる。</p>
+        <p class="desc">いつもの記録。AI の判定も場所の推定も合っていれば、どこも触らずに終わる。</p>
         <p class="scroll-hint">横にスクロールできます →</p>
         <div class="row">
           <div class="screen">
@@ -762,14 +762,14 @@
               <div class="chips">
                 <span class="chip">ラーメン ▾</span><span class="hint">AI が判定</span>
               </div>
-              <div class="kv"><span class="k">店</span><span class="chip">麺屋 ひかり ▾</span></div>
+              <div class="kv"><span class="k">場所</span><span class="chip">麺屋 ひかり ▾</span></div>
               <div class="memo">メモ (任意)</div>
               <div class="spacer"></div>
               <span class="btn primary block tap" data-tap="3">残す</span>
             </div>
             <ol class="notes">
               <li>種類は AI がその場で付ける (1 秒未満)。複数写っていれば複数。違えばタップで直す。食・飲は種類から裏で決まる</li>
-              <li>店は、推定に自信があるときだけ店名を出す</li>
+              <li>場所には、店の推定に自信があるときだけ店名を出す</li>
               <li>メモは任意。品名は書かなくてよい</li>
               <li><span class="plan-tag">案</span> × は記録をやめてホームへ。メモを書いていたときだけ確かめる</li>
               <li><span class="plan-tag">案</span> 撮り直しは写真の上から</li>
@@ -817,7 +817,7 @@
 
       <!-- Flow B -->
       <section>
-        <h2>B. 店を直す (ビルの中など)</h2>
+        <h2>B. 場所を直す (ビルの中の店など)</h2>
         <p class="desc">候補が複数あるときは店を決め打ちせず、地域名を出す。今選んでも、後でもよい。</p>
         <p class="scroll-hint">横にスクロールできます →</p>
         <div class="row">
@@ -827,7 +827,7 @@
               <div class="top"><span class="x">×</span><span class="chip meal">新しい食事 ▾</span></div>
               <div class="ph" style="height: 168px"><span>写真</span><span class="retake">撮り直す</span></div>
               <div class="chips"><span class="chip">焼き鳥 ▾</span><span class="hint">AI が判定</span></div>
-              <div class="kv"><span class="k">店</span><span class="chip ghost tap" data-tap="3">道玄坂 · 候補 3 件 ▾</span></div>
+              <div class="kv"><span class="k">場所</span><span class="chip ghost tap" data-tap="3">道玄坂 · 候補 3 件 ▾</span></div>
               <div class="memo">メモ (任意)</div>
               <div class="spacer"></div>
               <span class="btn primary block">残す</span>
@@ -837,16 +837,16 @@
               <li>選ばずに残しても記録は残る。店のランキングと地図には、店が決まってから載る</li>
             </ol>
           </div>
-          <div class="arrow"><span>店をタップ</span><span class="line"></span></div>
+          <div class="arrow"><span>場所をタップ</span><span class="line"></span></div>
           <div class="screen">
-            <p class="cap">店を選ぶ</p>
+            <p class="cap">場所を選ぶ</p>
             <div class="phone">
               <div class="top"><span class="x">×</span><span class="chip meal">新しい食事 ▾</span></div>
               <div class="ph" style="height: 168px"><span>写真</span></div>
               <div class="dim"></div>
               <div class="sheet">
                 <div class="grab"></div>
-                <strong style="font-size: 12px">店を選ぶ</strong>
+                <strong style="font-size: 12px">場所を選ぶ</strong>
                 <div class="search">店名で検索</div>
                 <div class="li tap ring" data-tap="4"><span>焼鳥 とり平</span><small>20 m · 焼鳥</small></div>
                 <div class="li"><span>鮨 はやし</span><small>25 m · 鮨 · 行った</small></div>
@@ -858,7 +858,7 @@
             <ol class="notes">
               <li>候補は、近さ、行ったことがあるか、AI が付けた種類と店の業種が合うか、で並べる</li>
               <li>候補にない店は検索する</li>
-              <li>下に引くか外側をタップすると、店を変えずに閉じる</li>
+              <li>下に引くか外側をタップすると、場所を変えずに閉じる</li>
               <li><span class="plan-tag">案</span> 初めて「家」を選んだ場所を覚え、次からはそこを家にする</li>
             </ol>
           </div>
@@ -869,7 +869,7 @@
               <div class="top"><span class="x">×</span><span class="chip meal">新しい食事 ▾</span></div>
               <div class="ph" style="height: 168px"><span>写真</span><span class="retake">撮り直す</span></div>
               <div class="chips"><span class="chip">焼き鳥 ▾</span><span class="hint">AI が判定</span></div>
-              <div class="kv"><span class="k">店</span><span class="chip">焼鳥 とり平 ▾</span></div>
+              <div class="kv"><span class="k">場所</span><span class="chip">焼鳥 とり平 ▾</span></div>
               <div class="memo">メモ (任意)</div>
               <div class="spacer"></div>
               <span class="btn primary block tap" data-tap="5">残す</span>
@@ -894,7 +894,7 @@
               <div class="top"><span class="x">×</span><span class="chip meal">同じ食事 · 2 品目 ▾</span></div>
               <div class="ph" style="height: 168px"><span>写真</span><span class="retake">撮り直す</span></div>
               <div class="chips"><span class="chip">ビール ▾</span><span class="hint">AI が判定</span></div>
-              <div class="kv"><span class="k">店</span><span class="chip">焼鳥 とり平 ▾</span></div>
+              <div class="kv"><span class="k">場所</span><span class="chip">焼鳥 とり平 ▾</span></div>
               <div class="memo">メモ (任意)</div>
               <div class="spacer"></div>
               <span class="btn primary block tap" data-tap="3">残す</span>
@@ -911,26 +911,26 @@
               <div class="top"><span class="x">×</span><span class="chip meal">同じ食事 · 3 品目 ▾</span></div>
               <div class="ph" style="height: 168px"><span>写真</span><span class="retake">撮り直す</span></div>
               <div class="chips"><span class="chip">ウイスキー ▾</span><span class="hint">AI が判定</span></div>
-              <div class="kv"><span class="k">店</span><span class="chip tap ring" data-tap="3">焼鳥 とり平 ▾</span></div>
+              <div class="kv"><span class="k">場所</span><span class="chip tap ring" data-tap="3">焼鳥 とり平 ▾</span></div>
               <div class="memo">メモ (任意)</div>
               <div class="spacer"></div>
               <span class="btn primary block">残す</span>
             </div>
             <ol class="notes">
               <li>時間も場所も近いので同じ食事と判定され、前の店が入っている</li>
-              <li>店が違うので、店をタップする</li>
+              <li>店が違うので、場所をタップする</li>
             </ol>
           </div>
-          <div class="arrow"><span>店をタップ</span><span class="line"></span></div>
+          <div class="arrow"><span>場所をタップ</span><span class="line"></span></div>
           <div class="screen">
-            <p class="cap">店を選ぶ</p>
+            <p class="cap">場所を選ぶ</p>
             <div class="phone">
               <div class="top"><span class="x">×</span><span class="chip meal">同じ食事 · 3 品目 ▾</span></div>
               <div class="ph" style="height: 168px"><span>写真</span></div>
               <div class="dim"></div>
               <div class="sheet">
                 <div class="grab"></div>
-                <strong style="font-size: 12px">店を選ぶ</strong>
+                <strong style="font-size: 12px">場所を選ぶ</strong>
                 <div class="search">店名で検索</div>
                 <div class="li"><span>焼鳥 とり平</span><small>いまの店</small></div>
                 <div class="li tap ring" data-tap="4"><span>バー 灯</span><small>30 m · バー</small></div>
@@ -950,7 +950,7 @@
               <div class="top"><span class="x">×</span><span class="chip meal">新しい食事 ▾</span></div>
               <div class="ph" style="height: 168px"><span>写真</span><span class="retake">撮り直す</span></div>
               <div class="chips"><span class="chip">ウイスキー ▾</span><span class="hint">AI が判定</span></div>
-              <div class="kv"><span class="k">店</span><span class="chip">バー 灯 ▾</span></div>
+              <div class="kv"><span class="k">場所</span><span class="chip">バー 灯 ▾</span></div>
               <div class="memo">メモ (任意)</div>
               <div class="spacer"></div>
               <span class="btn primary block tap" data-tap="5">残す</span>
@@ -965,7 +965,7 @@
       <!-- Flow D -->
       <section>
         <h2>D. 自動のまとまりを直す <span class="plan-tag">案</span></h2>
-        <p class="desc">店で分けられないとき (家で朝と昼を食べた、など) は、食事の表示をタップして分ける。</p>
+        <p class="desc">場所で分けられないとき (家で朝と昼を食べた、など) は、食事の表示をタップして分ける。</p>
         <p class="scroll-hint">横にスクロールできます →</p>
         <div class="row">
           <div class="screen">
@@ -974,14 +974,14 @@
               <div class="top"><span class="x">×</span><span class="chip meal tap ring" data-tap="3">同じ食事 · 2 品目 ▾</span></div>
               <div class="ph" style="height: 168px"><span>写真</span><span class="retake">撮り直す</span></div>
               <div class="chips"><span class="chip">パスタ ▾</span><span class="hint">AI が判定</span></div>
-              <div class="kv"><span class="k">店</span><span class="chip">家 ▾</span></div>
+              <div class="kv"><span class="k">場所</span><span class="chip">家 ▾</span></div>
               <div class="memo">メモ (任意)</div>
               <div class="spacer"></div>
               <span class="btn primary block">残す</span>
             </div>
             <ol class="notes">
               <li>朝食から数時間しか空いておらず、同じ食事と判定された</li>
-              <li>店も「家」で同じなので、店では分けられない</li>
+              <li>場所も「家」で同じなので、場所では分けられない</li>
             </ol>
           </div>
           <div class="arrow plan"><span>食事をタップ</span><span class="line"></span></div>
@@ -1009,7 +1009,7 @@
               <div class="top"><span class="x">×</span><span class="chip meal">新しい食事 ▾</span></div>
               <div class="ph" style="height: 168px"><span>写真</span><span class="retake">撮り直す</span></div>
               <div class="chips"><span class="chip">パスタ ▾</span><span class="hint">AI が判定</span></div>
-              <div class="kv"><span class="k">店</span><span class="chip">家 ▾</span></div>
+              <div class="kv"><span class="k">場所</span><span class="chip">家 ▾</span></div>
               <div class="memo">メモ (任意)</div>
               <div class="spacer"></div>
               <span class="btn primary block tap" data-tap="5">残す</span>
@@ -1021,7 +1021,7 @@
       <!-- Flow E -->
       <section>
         <h2>E. 落ち着いてから、写真から選ぶ</h2>
-        <p class="desc">撮った写真に残った位置と日時を使う。その場で撮ったときと同じく、店と食事のまとまりは自動で入る。</p>
+        <p class="desc">撮った写真に残った位置と日時を使う。その場で撮ったときと同じく、場所と食事のまとまりは自動で入る。</p>
         <p class="scroll-hint">横にスクロールできます →</p>
         <div class="row">
           <div class="screen">
@@ -1097,7 +1097,7 @@
             </div>
             <ol class="notes">
               <li>写真の位置と日時で、食事ごとに自動でまとめて見せる</li>
-              <li>店は食事ごとにまとめて直せる。品をタップすると確認カードで 1 品ずつ直せる (メモもそこで)</li>
+              <li>場所は食事ごとにまとめて直せる。品をタップすると確認カードで 1 品ずつ直せる (メモもそこで)</li>
               <li>AI の判定は一覧の中で直せる。いらない品は外す</li>
             </ol>
           </div>
@@ -1121,7 +1121,7 @@
       <!-- States -->
       <section>
         <h2>欄の状態</h2>
-        <p class="desc">確認カードの「食事」「店」「種類」が取りうる見え方。</p>
+        <p class="desc">確認カードの「食事」「場所」「種類」が取りうる見え方。</p>
         <p class="scroll-hint">横にスクロールできます →</p>
         <div class="scroll">
           <table>
@@ -1149,7 +1149,7 @@
                 <td><span class="plan-tag">案</span></td>
               </tr>
               <tr>
-                <td rowspan="7">店</td>
+                <td rowspan="7">場所</td>
                 <td>推定に自信がある</td>
                 <td><span class="chip">麺屋 ひかり ▾</span></td>
                 <td>店名を出す。合っていれば触らない</td>
@@ -1175,7 +1175,7 @@
               </tr>
               <tr>
                 <td>推定中</td>
-                <td><span class="chip ghost">店を推定中</span></td>
+                <td><span class="chip ghost">推定中</span></td>
                 <td>その場で結果に変わる</td>
                 <td><span class="plan-tag">案</span></td>
               </tr>
