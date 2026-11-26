@@ -439,6 +439,24 @@
       .toast.plan {
         border-style: dashed;
       }
+      .toast {
+        flex-wrap: wrap;
+      }
+      .toast > span:first-child {
+        flex: 1 1 0;
+        min-width: 0;
+      }
+      .toast .unlock {
+        flex-basis: 100%;
+        display: flex;
+        gap: 8px;
+        border-top: 1px solid #ddd;
+        padding-top: 6px;
+        line-height: 1.5;
+      }
+      .toast .unlock .k {
+        font-weight: 600;
+      }
       .dim {
         position: absolute;
         inset: 0;
@@ -709,7 +727,7 @@
             <p class="cap">ホーム</p>
             <div class="phone">
               <div class="top"><span class="logo">HINAMI</span><span class="btn">履歴</span></div>
-              <div class="placeholder">ここに置くものは<br />続けたくなる仕組みと<br />一緒に決める</div>
+              <div class="placeholder">ここに置くものは<br />まだ決めていない</div>
               <div class="actions">
                 <span class="btn side">写真から<br />選ぶ</span>
                 <span class="shoot tap" data-tap="1">撮る</span>
@@ -776,8 +794,11 @@
             <p class="cap">ホーム (保存後)</p>
             <div class="phone">
               <div class="top"><span class="logo">HINAMI</span><span class="btn">履歴</span></div>
-              <div class="placeholder">ここに置くものは<br />続けたくなる仕組みと<br />一緒に決める</div>
-              <div class="toast plan"><span>残しました · 麺屋 ひかり</span><span class="link">取り消す</span></div>
+              <div class="placeholder">ここに置くものは<br />まだ決めていない</div>
+              <div class="toast">
+                <span>残しました<br />麺屋 ひかり</span><span class="link">取り消す</span>
+                <div class="unlock"><span class="k">実績</span><span>はじめての渋谷区<br />同じ店に 3 回</span></div>
+              </div>
               <div class="actions">
                 <span class="btn side">写真から<br />選ぶ</span>
                 <span class="shoot">撮る</span>
@@ -786,7 +807,8 @@
             </div>
             <ol class="notes">
               <li>記録はここで終わり</li>
-              <li><span class="plan-tag">案</span> 取り消しを数秒だけ出す</li>
+              <li>解除した実績は「残しました」と同じ 1 枚に出す。タップは増えない (<a href="achievements.md">achievements.md</a>)</li>
+              <li><span class="plan-tag">案</span> 取り消しを数秒だけ出す。取り消すと実績の解除も消える</li>
             </ol>
           </div>
         </div>
@@ -1005,7 +1027,7 @@
             <p class="cap">ホーム</p>
             <div class="phone">
               <div class="top"><span class="logo">HINAMI</span><span class="btn">履歴</span></div>
-              <div class="placeholder">ここに置くものは<br />続けたくなる仕組みと<br />一緒に決める</div>
+              <div class="placeholder">ここに置くものは<br />まだ決めていない</div>
               <div class="actions">
                 <span class="btn side tap" data-tap="1">写真から<br />選ぶ</span>
                 <span class="shoot">撮る</span>
@@ -1083,7 +1105,7 @@
             <p class="cap">ホーム (保存後)</p>
             <div class="phone">
               <div class="top"><span class="logo">HINAMI</span><span class="btn">履歴</span></div>
-              <div class="placeholder">ここに置くものは<br />続けたくなる仕組みと<br />一緒に決める</div>
+              <div class="placeholder">ここに置くものは<br />まだ決めていない</div>
               <div class="toast plan"><span>4 件を残しました</span><span class="link">取り消す</span></div>
               <div class="actions">
                 <span class="btn side">写真から<br />選ぶ</span>
@@ -1202,7 +1224,7 @@
         <h2>この図で決めていないこと</h2>
         <ul class="open">
           <li>店が決まっていない記録を、あとでどこで直すか (履歴の中身と一緒に決める)</li>
-          <li>ホームの残りの場所に何を置くか (続けたくなる仕組みと一緒に決める)</li>
+          <li>ホームの残りの場所に何を置くか。あとから気の知れた人の記録を置ける場所は残す</li>
           <li>保存後に「比べる」を 1 問出すか。写真から複数枚を残したときにどう出すか</li>
           <li>図の中で「案」と付けたもの</li>
         </ul>
