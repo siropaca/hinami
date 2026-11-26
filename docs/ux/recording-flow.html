@@ -496,6 +496,21 @@
         padding: 4px 8px;
         color: #888;
       }
+      .li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px 2px;
+        border-bottom: 1px solid #e3e3e3;
+      }
+      .li small {
+        color: var(--mute);
+        font-size: 10px;
+      }
+      .li.sep {
+        border-top: 1.5px solid #ccc;
+        margin-top: 2px;
+      }
       .cmp {
         border: 1.5px solid var(--line);
         border-radius: 10px;
@@ -535,21 +550,6 @@
       .rank .li.range span:first-child {
         font-weight: 400;
         color: var(--mute);
-      }
-      .li {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 5px 2px;
-        border-bottom: 1px solid #e3e3e3;
-      }
-      .li small {
-        color: var(--mute);
-        font-size: 10px;
-      }
-      .li.sep {
-        border-top: 1.5px solid #ccc;
-        margin-top: 2px;
       }
       .grid {
         display: grid;
