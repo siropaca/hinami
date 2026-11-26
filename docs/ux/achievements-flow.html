@@ -3,16 +3,16 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>実績のタブ — ワイヤーフレーム | HINAMI</title>
+    <title>スタンプのタブ — ワイヤーフレーム | HINAMI</title>
     <link rel="stylesheet" href="wireframe.css" />
   </head>
   <body>
     <main>
-      <h1>実績のタブ — ワイヤーフレーム</h1>
-      <p class="status">状態: 検討中 (2026-11-27)。タブの名前は「実績」(はじめは「図鑑」)。タブの中を「実績 / マップ」に分けることと、ランキングの入口は決めた。実績の画面は一旦この形 (詰めるところは残っている)。マップの中身は案。決まりの本文は <a href="navigation.md">navigation.md</a></p>
+      <h1>スタンプのタブ — ワイヤーフレーム</h1>
+      <p class="status">状態: 検討中 (2026-11-27)。タブの名前は「スタンプ」(はじめは「図鑑」、次に「実績」)。タブの中を「スタンプ / マップ」に分けることと、ランキングの入口は決めた。スタンプの画面とマップの中身は案。決まりの本文は <a href="navigation.md">navigation.md</a></p>
 
       <p class="lead">
-        実績のタブは、左に実績、右にマップ。種類の一覧は置かない (種類で探すのは記録のタブ)。マップには食べた場所を並べる。
+        スタンプのタブは、左にスタンプ (実績)、右にマップ。種類の一覧は置かない (種類で探すのは記録のタブ)。マップには食べた場所を並べる。
       </p>
 
       <ul class="legend">
@@ -25,11 +25,11 @@
       <!-- Overview -->
       <section>
         <h2>全体の地図</h2>
-        <p class="desc">実績のタブの中の画面と、そのつながり。上の切り替えで「実績 / マップ」を移る。戻る矢印は省いている。</p>
+        <p class="desc">スタンプのタブの中の画面と、そのつながり。上の切り替えで「スタンプ / マップ」を移る。戻る矢印は省いている。</p>
         <p class="scroll-hint">横にスクロールできます →</p>
         <div class="scroll">
           <div class="overview">
-            <svg viewBox="0 0 860 270" role="img" aria-label="実績のタブの画面の遷移図">
+            <svg viewBox="0 0 860 270" role="img" aria-label="スタンプのタブの画面の遷移図">
               <defs>
                 <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
                   <path d="M0 0 L10 5 L0 10 z" fill="#444" />
@@ -47,7 +47,7 @@
                   <text x="368" y="124">タップ</text>
                   <text x="576" y="124">記録を見る</text>
                   <text x="386" y="214">入口</text>
-                  <text x="200" y="262">ランキングの入口 (実績のタブの外)</text>
+                  <text x="200" y="262">ランキングの入口 (スタンプのタブの外)</text>
                 </g>
                 <g stroke="#444" stroke-width="2" fill="#fff">
                   <rect x="10" y="65" width="150" height="44" rx="8" />
@@ -61,8 +61,8 @@
                   <rect x="420" y="110" width="150" height="44" rx="8" />
                 </g>
                 <g text-anchor="middle" dominant-baseline="central">
-                  <text x="85" y="87" font-weight="700">実績のタブ</text>
-                  <text x="285" y="42">実績</text>
+                  <text x="85" y="87" font-weight="700">スタンプのタブ</text>
+                  <text x="285" y="42">スタンプ</text>
                   <text x="285" y="132">マップ</text>
                   <text x="495" y="132">場所のシート</text>
                   <text x="730" y="132">記録のタブ (場所で絞る)</text>
@@ -77,84 +77,63 @@
 
       <!-- Flow A -->
       <section>
-        <h2>A. 実績</h2>
-        <p class="desc">ゲームの実績のように見せる。進行中のクエスト、段階のある実績はスタンプカード、一度きりの実績はバッジにする。</p>
+        <h2>A. スタンプ</h2>
+        <p class="desc">ゲームの実績やスタンプラリーのように、すべてを同じ形のスタンプで見せる。押したものは塗りつぶし、進行中のものは輪で進み具合、ひみつは「?」。空いた枠を埋めたくなるようにする。</p>
         <p class="scroll-hint">横にスクロールできます →</p>
         <div class="row">
           <div class="screen">
-            <p class="cap">実績のタブ (実績) <span class="plan-tag">一旦この形</span></p>
-            <div class="phone">
-              <div class="top"><strong>実績</strong><span></span></div>
-              <div class="seg"><span class="on">実績</span><span>マップ</span></div>
-              <div class="sum">解除 18 · 隠し あと 2</div>
-              <div class="ml-month">進行中のクエスト</div>
-              <div class="quest"><span>ラーメンを 25 回</span><span class="prog"><i style="width: 48%"></i></span><span>12/25</span></div>
-              <div class="quest"><span>10 軒をめぐる</span><span class="prog"><i style="width: 50%"></i></span><span>5/10</span></div>
-              <div class="ml-month">スタンプカード</div>
-              <div class="scard tap" data-tap="1">
-                <div class="cal-h"><strong>ラーメン</strong><span class="sum">4 / 7</span></div>
-                <div class="srow"><span class="st on">2</span><span class="st on">3</span><span class="st on">5</span><span class="st on">10</span><span class="st">25</span><span class="st">50</span><span class="st">100</span></div>
-              </div>
-              <div class="scard">
-                <div class="cal-h"><strong>都道府県</strong><span class="sum">2 / 5</span></div>
-                <div class="srow"><span class="st on">2</span><span class="st on">5</span><span class="st">10</span><span class="st">20</span><span class="st">47</span></div>
-              </div>
+            <p class="cap">スタンプのタブ (スタンプ) <span class="plan-tag">案</span></p>
+            <div class="phone plan">
+              <div class="top"><strong>スタンプ</strong><span></span></div>
+              <div class="seg"><span class="on">スタンプ</span><span>マップ</span></div>
+              <div class="sum">押したスタンプ 18 · ひみつ あと 2</div>
+              <div class="ml-month">食べる</div>
+              <div class="stpgrid"><span class="stp arc tap" data-tap="1" style="--p: 48"><b>麺</b>ラーメン<small class="sub">12/25</small></span><span class="stp arc" style="--p: 52"><b>酒</b>日本酒<small class="sub">26/50</small></span><span class="stp arc" style="--p: 50"><b>串</b>焼き鳥<small class="sub">5/10</small></span><span class="stp arc" style="--p: 80"><b>珈</b>コーヒー<small class="sub">8/10</small></span></div>
+              <div class="ml-month">めぐる</div>
+              <div class="stpgrid"><span class="stp arc" style="--p: 50"><b>軒</b>お店<small class="sub">5/10</small></span><span class="stp arc tap" data-tap="2" style="--p: 9"><b>県</b>都道府県<small class="sub">4/47</small></span><span class="stp on"><b>常</b>常連<small class="sub">3 店</small></span><span class="stp on"><b>家</b>家ごはん<small class="sub">押した</small></span></div>
+              <div class="ml-month">ひみつ</div>
+              <div class="stpgrid"><span class="stp on"><b>◎</b>0 時のシメ<small class="sub">押した</small></span><span class="stp"><b>?</b>ひみつ<small class="sub"></small></span><span class="stp"><b>?</b>ひみつ<small class="sub"></small></span></div>
               <div class="spacer"></div>
-              <div class="fab-gap"></div>
-              <div class="tabbar"><span>ホーム</span><span>記録</span><span class="on">実績</span><span>友だち</span></div>
+              <div class="tabbar"><span>ホーム</span><span>記録</span><span class="on">スタンプ</span><span>友だち</span></div>
               <span class="fab">＋</span>
             </div>
             <ol class="notes">
-              <li>左が実績、右がマップ。開いたときは実績</li>
-              <li>進行中のクエスト: 次の段まで近いものを、進み具合のバーで出す</li>
-              <li>スタンプカード: 段階のある実績 (〇〇 N 回、N の都道府県、N 軒) を 1 枚のカードにし、解除した段にスタンプが押される</li>
-              <li>「あと N」と次の段は、ホームには出さず、ここでだけ見せる (<a href="achievements.md">achievements.md</a>)</li>
+              <li>どの実績も、同じ形のスタンプ 1 つで見せる。表示の種類を混ぜない</li>
+              <li>段階のある実績 (ラーメン N 回など) は 1 つのスタンプにまとめ、周りの輪で次の段までの進み具合を見せる</li>
+              <li>押したスタンプは塗りつぶし。ひみつは解除するまで「?」を残りの数だけ並べる</li>
+              <li>「食べる」「めぐる」「ひみつ」の並びは固定し、空いた枠が見えるようにする</li>
+              <li>種類のスタンプは、その種類をはじめて記録したときに現れる</li>
             </ol>
           </div>
-          <div class="arrow"><span>下へ<br />スクロール</span><span class="line" style="visibility: hidden"></span></div>
+          <div class="arrow plan"><span>ラーメンを<br />タップ</span><span class="line"></span></div>
           <div class="screen">
-            <p class="cap">実績のタブ (実績の続き) <span class="plan-tag">一旦この形</span></p>
-            <div class="phone">
-              <div class="top"><strong>実績</strong><span></span></div>
-              <div class="scard">
-                <div class="cal-h"><strong>軒</strong><span class="sum">1 / 5</span></div>
-                <div class="srow"><span class="st on">5</span><span class="st">10</span><span class="st">20</span><span class="st">50</span><span class="st">100</span></div>
-              </div>
-              <div class="ml-month">バッジ</div>
-              <div class="badges">
-                <span class="badge"><i>◎</i>はじめての<br />京都府</span>
-                <span class="badge"><i>◎</i>はじめての<br />家ごはん</span>
-                <span class="badge"><i>◎</i>0 時を<br />過ぎたシメ</span>
-                <span class="badge lock"><i>?</i>隠し</span>
-                <span class="badge lock"><i>?</i>隠し</span>
-              </div>
-              <div class="spacer"></div>
-              <div class="fab-gap"></div>
-              <div class="tabbar"><span>ホーム</span><span>記録</span><span class="on">実績</span><span>友だち</span></div>
-              <span class="fab">＋</span>
-            </div>
-            <ol class="notes">
-              <li>バッジ: 一度きりの実績 (はじめての〇〇、隠し実績)。解除したものを塗りつぶしで並べる</li>
-              <li>隠し実績は、解除するまで名前も条件も伏せ、「?」を残りの数だけ出す</li>
-              <li>期間の実績 (運営が足す季節もの) は、前もって知らせないので、解除するまで出さない</li>
-              <li>店ごとの実績 (〇〇に N 回) は数が多いので、カードにはせず、行った店の多い順に別の一覧にする案</li>
-            </ol>
-          </div>
-          <div class="arrow"><span>カードを<br />タップ</span><span class="line"></span></div>
-          <div class="screen">
-            <p class="cap">スタンプカード (ラーメン) <span class="plan-tag">一旦この形</span></p>
-            <div class="phone">
+            <p class="cap">スタンプ (ラーメン) <span class="plan-tag">案</span></p>
+            <div class="phone plan">
               <div class="top"><span class="x">‹</span><strong>ラーメン</strong><span></span></div>
-              <div class="srow" style="flex-wrap: wrap; gap: 8px; justify-content: center"><span style="width: 40px; height: 40px; font-size: 11px" class="st on">2</span><span style="width: 40px; height: 40px; font-size: 11px" class="st on">3</span><span style="width: 40px; height: 40px; font-size: 11px" class="st on">5</span><span style="width: 40px; height: 40px; font-size: 11px" class="st on">10</span><span style="width: 40px; height: 40px; font-size: 11px" class="st">25</span><span style="width: 40px; height: 40px; font-size: 11px" class="st">50</span><span style="width: 40px; height: 40px; font-size: 11px" class="st">100</span></div>
-              <div class="li"><span>2 回</span><small>9/02 解除</small></div>
-              <div class="li"><span>3 回</span><small>9/20 解除</small></div>
-              <div class="li"><span>5 回</span><small>10/14 解除</small></div>
-              <div class="li"><span>10 回</span><small>11/26 解除</small></div>
-              <div class="li"><span>25 回</span><small>あと 13</small></div>
+              <div class="stpgrid" style="grid-template-columns: 1fr"><span class="stp arc big" style="--p: 48"><b>麺</b>ラーメン<small class="sub">12 回 · 次の 25 回まで あと 13</small></span></div>
+              <div class="stpgrid"><span class="stp on"><b>2</b>2 回<small class="sub">9/02</small></span><span class="stp on"><b>3</b>3 回<small class="sub">9/20</small></span><span class="stp on"><b>5</b>5 回<small class="sub">10/14</small></span><span class="stp on"><b>10</b>10 回<small class="sub">11/26</small></span><span class="stp"><b>25</b>25 回<small class="sub"></small></span><span class="stp"><b>50</b>50 回<small class="sub"></small></span><span class="stp"><b>100</b>100 回<small class="sub"></small></span></div>
               <div class="spacer"></div>
             </div>
             <ol class="notes">
-              <li>どの段をいつ解除したかを見返せる</li>
+              <li>開くと段ごとの枠が並ぶ。押した段には日付が付き、まだの段は空いた枠のまま</li>
+              <li>「あと N」は、ホームには出さず、ここでだけ見せる (<a href="achievements.md">achievements.md</a>)</li>
+            </ol>
+          </div>
+          <div class="arrow plan"><span>都道府県を<br />タップ</span><span class="line"></span></div>
+          <div class="screen">
+            <p class="cap">スタンプ (都道府県) <span class="plan-tag">案</span></p>
+            <div class="phone plan">
+              <div class="top"><span class="x">‹</span><strong>都道府県</strong><span></span></div>
+              <div class="stpgrid" style="grid-template-columns: 1fr"><span class="stp arc big" style="--p: 9"><b>県</b>都道府県<small class="sub">4 / 47</small></span></div>
+              <div class="pref"><span class="c"></span><span class="c"></span><span class="c"></span><span class="c"></span><span class="c"></span><span class="c"></span><span class="c"></span><span class="c"></span><span class="c"></span><span class="c"></span><span class="c"></span><span class="c"></span><span class="c on"></span><span class="c on"></span><span class="c"></span><span class="c"></span><span class="c"></span><span class="c"></span><span class="c"></span><span class="c"></span><span class="c"></span><span class="c on"></span><span class="c"></span><span class="c"></span><span class="c"></span><span class="c on"></span><span class="c"></span><span class="c"></span><span class="c"></span><span class="c"></span><span class="c"></span><span class="c"></span><span class="c"></span><span class="c"></span><span class="c"></span><span class="c"></span><span class="c"></span><span class="c"></span><span class="c"></span><span class="c"></span><span class="c"></span><span class="c"></span><span class="c"></span><span class="c"></span><span class="c"></span><span class="c"></span><span class="c"></span></div>
+              <div class="li"><span>東京都</span><small>はじめ 2025/04</small></div>
+              <div class="li"><span>神奈川県</span><small>はじめ 2025/08</small></div>
+              <div class="li"><span>静岡県</span><small>はじめ 2025/09</small></div>
+              <div class="spacer"></div>
+            </div>
+            <ol class="notes">
+              <li>47 の枠を埋めていく。はじめての都道府県で、その枠にスタンプが押される</li>
+              <li>枠の並べ方 (地図の形にするか) は、見た目のデザインで決める</li>
             </ol>
           </div>
         </div>
@@ -167,10 +146,10 @@
         <p class="scroll-hint">横にスクロールできます →</p>
         <div class="row">
           <div class="screen">
-            <p class="cap">実績のタブ (マップ) <span class="plan-tag">案: 中身</span></p>
+            <p class="cap">スタンプのタブ (マップ) <span class="plan-tag">案: 中身</span></p>
             <div class="phone">
-              <div class="top"><strong>実績</strong><span></span></div>
-              <div class="seg"><span>実績</span><span class="on">マップ</span></div>
+              <div class="top"><strong>スタンプ</strong><span></span></div>
+              <div class="seg"><span>スタンプ</span><span class="on">マップ</span></div>
               <div class="sum">7 都道府県 · 38 軒</div>
               <div class="map">
                 <span class="pin" style="top: 18%; left: 20%">4</span>
@@ -181,7 +160,7 @@
                 <span class="pin" style="top: 52%; left: 12%"></span>
               </div>
               <div class="fab-gap"></div>
-              <div class="tabbar"><span>ホーム</span><span>記録</span><span class="on">実績</span><span>友だち</span></div>
+              <div class="tabbar"><span>ホーム</span><span>記録</span><span class="on">スタンプ</span><span>友だち</span></div>
               <span class="fab">＋</span>
             </div>
             <ol class="notes">
@@ -195,8 +174,8 @@
           <div class="screen">
             <p class="cap">場所のシート <span class="plan-tag">案</span></p>
             <div class="phone plan">
-              <div class="top"><strong>実績</strong><span></span></div>
-              <div class="seg"><span>実績</span><span class="on">マップ</span></div>
+              <div class="top"><strong>スタンプ</strong><span></span></div>
+              <div class="seg"><span>スタンプ</span><span class="on">マップ</span></div>
               <div class="map">
                 <span class="pin" style="top: 30%; left: 50%">3</span>
               </div>
@@ -232,7 +211,7 @@
               </div>
               <div class="spacer"></div>
               <div class="fab-gap"></div>
-              <div class="tabbar"><span>ホーム</span><span class="on">記録</span><span>実績</span><span>友だち</span></div>
+              <div class="tabbar"><span>ホーム</span><span class="on">記録</span><span>スタンプ</span><span>友だち</span></div>
               <span class="fab">＋</span>
             </div>
             <ol class="notes">
@@ -246,7 +225,7 @@
       <!-- Flow C -->
       <section>
         <h2>C. ランキングの入口</h2>
-        <p class="desc">実績のタブには種類の一覧を置かないので、ランキングは、記録のタブを種類で絞ったときに入口を出す。</p>
+        <p class="desc">スタンプのタブには種類の一覧を置かないので、ランキングは、記録のタブを種類で絞ったときに入口を出す。</p>
         <p class="scroll-hint">横にスクロールできます →</p>
         <div class="row">
           <div class="screen">
@@ -266,7 +245,7 @@
               </div>
               <div class="spacer"></div>
               <div class="fab-gap"></div>
-              <div class="tabbar"><span>ホーム</span><span class="on">記録</span><span>実績</span><span>友だち</span></div>
+              <div class="tabbar"><span>ホーム</span><span class="on">記録</span><span>スタンプ</span><span>友だち</span></div>
               <span class="fab">＋</span>
             </div>
             <ol class="notes">
@@ -299,7 +278,7 @@
       <section>
         <h2>この図で決めていないこと</h2>
         <ul class="open">
-          <li>実績の画面の細部 (一旦この形。詰めるところが残っている)</li>
+          <li>スタンプの画面の中身 (図の「案」)</li>
           <li>マップの画面の中身 (図の「案」)</li>
           <li>保存したときの「図鑑に追加」の言い方。図鑑をなくし、地域をマップにしたため</li>
           <li>マップを開いたときの範囲</li>
