@@ -664,7 +664,7 @@ a {
   flex: none;
   margin: auto -12px -14px;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   border-top: 1.5px solid #bbb;
   padding: 6px 0 10px;
   font-size: 9px;
@@ -674,24 +674,6 @@ a {
 .tabbar .on {
   color: var(--ink);
   font-weight: 700;
-}
-.tabbar .rec {
-  position: relative;
-  z-index: 0;
-  color: #fff;
-  font-weight: 700;
-}
-.tabbar .rec::before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: -17px;
-  width: 38px;
-  height: 38px;
-  margin-left: -19px;
-  border-radius: 50%;
-  background: var(--ink);
-  z-index: -1;
 }
 .fchips {
   display: flex;
@@ -989,4 +971,24 @@ a {
 }
 .avs .av + .av {
   margin-left: -7px;
+}
+.fab-gap {
+  flex: none;
+  height: 44px;
+}
+.fab {
+  position: absolute;
+  right: 12px;
+  bottom: 40px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--ink);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  line-height: 1;
+  z-index: 2;
 }

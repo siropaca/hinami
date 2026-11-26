@@ -9,10 +9,10 @@
   <body>
     <main>
       <h1>記録の流れ — ワイヤーフレーム</h1>
-      <p class="status">状態: 合意 (2026-11-26)。2026-11-27 に、記録の入り口をタブバーの真ん中に移し、保存したあとはトーストで知らせる形に直した。「案」はもうない。決まりの本文は <a href="recording.md">recording.md</a></p>
+      <p class="status">状態: 合意 (2026-11-26)。2026-11-27 に、記録の入り口を右下の ＋ に移し、保存したあとはトーストで知らせる形に直した。「案」はもうない。決まりの本文は <a href="recording.md">recording.md</a></p>
 
       <p class="lead">
-        その場で撮るなら最短 3 タップ (記録 → シャッター → 残す)。記録はタブバーの真ん中から、どの画面でも始められる。必須の入力はなく、AI の判定と場所の推定が違うときだけ直す。
+        その場で撮るなら最短 3 タップ (＋ → シャッター → 残す)。記録は右下の ＋ から、どの画面でも始められる。必須の入力はなく、AI の判定と場所の推定が違うときだけ直す。
       </p>
 
       <ul class="legend">
@@ -53,7 +53,7 @@
                 </g>
                 <!-- edge labels -->
                 <g font-size="11" fill="#555">
-                  <text x="152" y="54">記録</text>
+                  <text x="152" y="54">＋</text>
                   <text x="298" y="154">写真から選ぶ</text>
                   <text x="353" y="54">シャッター</text>
                   <text x="560" y="54">残す</text>
@@ -81,7 +81,7 @@
                   <rect x="770" y="130" width="120" height="44" rx="8" />
                 </g>
                 <g text-anchor="middle" dominant-baseline="central">
-                  <text x="70" y="172" font-weight="700">記録 (タブバー)</text>
+                  <text x="70" y="172" font-weight="700">＋ (右下)</text>
                   <text x="290" y="62">カメラ</text>
                   <text x="470" y="62" font-weight="700">確認カード</text>
                   <text x="830" y="152">比べる (ホーム)</text>
@@ -111,16 +111,18 @@
               <div class="ml"><div class="ml-h"><span>11/25</span><span>家</span></div><div class="ml-th"><div class="ph"></div></div></div>
               <div class="ml"><div class="ml-h"><span>11/24</span><span>鮨 はやし</span></div><div class="ml-th"><div class="ph"></div><div class="ph"></div><div class="ph"></div></div></div>
               <div class="spacer"></div>
-              <div class="tabbar"><span class="on">ホーム</span><span>履歴</span><span class="rec tap" data-tap="1">記録</span><span>図鑑</span><span>友だち</span></div>
+              <div class="fab-gap"></div>
+              <div class="tabbar"><span class="on">ホーム</span><span>記録</span><span>図鑑</span><span>友だち</span></div>
+              <span class="fab tap" data-tap="1">＋</span>
             </div>
             <ol class="notes">
-              <li>記録はタブバーの真ん中。ほかのタブより大きく、親指が届く位置に置く</li>
+              <li>記録を残すボタン (＋) は右下に浮かせる。タブバーには入れない</li>
               <li>どのタブからでも記録を始められる</li>
               <li>ホームには自分の最近の記録が並ぶ (<a href="navigation.md">navigation.md</a>)</li>
               <li>お知らせと設定はホームの右上</li>
             </ol>
           </div>
-          <div class="arrow"><span>記録</span><span class="line"></span></div>
+          <div class="arrow"><span>＋</span><span class="line"></span></div>
           <div class="screen">
             <p class="cap">カメラ</p>
             <div class="phone">
@@ -133,7 +135,7 @@
               </div>
             </div>
             <ol class="notes">
-              <li>アプリ内のカメラ。記録を押すとすぐ開く。撮ったらすぐ確認カードへ進む</li>
+              <li>アプリ内のカメラ。＋ を押すとすぐ開く。撮ったらすぐ確認カードへ進む</li>
               <li>左下から、端末の写真を選べる (E)</li>
               <li>撮った写真は端末の写真アプリにも残す。ほかの SNS にはそこから上げる</li>
             </ol>
@@ -176,7 +178,9 @@
                   <span class="k">図鑑</span><span>渋谷区 を追加</span>
                 </div>
               </div>
-              <div class="tabbar"><span class="on">ホーム</span><span>履歴</span><span class="rec">記録</span><span>図鑑</span><span>友だち</span></div>
+              <div class="fab-gap"></div>
+              <div class="tabbar"><span class="on">ホーム</span><span>記録</span><span>図鑑</span><span>友だち</span></div>
+              <span class="fab">＋</span>
             </div>
             <ol class="notes">
               <li>記録を始めた画面に戻り、トーストで「残しました」を出す。記録はここで終わり</li>
@@ -251,7 +255,7 @@
             <ol class="notes">
               <li>選んだ店は、同じ食事の次の品に引き継ぐ</li>
               <li>同じ食事で店が決まっていない前の品にも、同じ店を入れる</li>
-              <li>保存したあとは、履歴の食事の詳細で選ぶ (<a href="history-flow.html">history-flow.html</a>)</li>
+              <li>保存したあとは、記録のタブの食事の詳細で選ぶ (<a href="history-flow.html">history-flow.html</a>)</li>
             </ol>
           </div>
         </div>
@@ -409,10 +413,12 @@
               <div class="ml"><div class="ml-h"><span>11/25</span><span>家</span></div><div class="ml-th"><div class="ph"></div></div></div>
               <div class="ml"><div class="ml-h"><span>11/24</span><span>鮨 はやし</span></div><div class="ml-th"><div class="ph"></div><div class="ph"></div><div class="ph"></div></div></div>
               <div class="spacer"></div>
-              <div class="tabbar"><span class="on">ホーム</span><span>履歴</span><span class="rec tap" data-tap="1">記録</span><span>図鑑</span><span>友だち</span></div>
+              <div class="fab-gap"></div>
+              <div class="tabbar"><span class="on">ホーム</span><span>記録</span><span>図鑑</span><span>友だち</span></div>
+              <span class="fab tap" data-tap="1">＋</span>
             </div>
           </div>
-          <div class="arrow"><span>記録</span><span class="line"></span></div>
+          <div class="arrow"><span>＋</span><span class="line"></span></div>
           <div class="screen">
             <p class="cap">カメラ</p>
             <div class="phone">
@@ -503,7 +509,9 @@
               <div class="ml"><div class="ml-h"><span>11/24</span><span>鮨 はやし</span></div><div class="ml-th"><div class="ph"></div><div class="ph"></div><div class="ph"></div></div></div>
               <div class="spacer"></div>
               <div class="toast"><span>4 件を残しました</span><span class="link">取り消す</span></div>
-              <div class="tabbar"><span class="on">ホーム</span><span>履歴</span><span class="rec">記録</span><span>図鑑</span><span>友だち</span></div>
+              <div class="fab-gap"></div>
+              <div class="tabbar"><span class="on">ホーム</span><span>記録</span><span>図鑑</span><span>友だち</span></div>
+              <span class="fab">＋</span>
             </div>
             <ol class="notes">
               <li>記録を始めた画面に戻り、トーストで知らせる</li>
@@ -534,7 +542,9 @@
               <div class="ml"><div class="ml-h"><span>11/26</span><span>麺屋 ひかり</span></div><div class="ml-th"><div class="ph"></div></div></div>
               <div class="ml"><div class="ml-h"><span>11/25</span><span>家</span></div><div class="ml-th"><div class="ph"></div></div></div>
               <div class="spacer"></div>
-              <div class="tabbar"><span class="on">ホーム</span><span>履歴</span><span class="rec">記録</span><span>図鑑</span><span>友だち</span></div>
+              <div class="fab-gap"></div>
+              <div class="tabbar"><span class="on">ホーム</span><span>記録</span><span>図鑑</span><span>友だち</span></div>
+              <span class="fab">＋</span>
             </div>
             <ol class="notes">
               <li>開いたときに 1 問だけ。プッシュ通知は使わない</li>
@@ -553,7 +563,9 @@
               <div class="ml"><div class="ml-h"><span>11/26</span><span>麺屋 ひかり</span></div><div class="ml-th"><div class="ph"></div></div></div>
               <div class="ml"><div class="ml-h"><span>11/25</span><span>家</span></div><div class="ml-th"><div class="ph"></div></div></div>
               <div class="spacer"></div>
-              <div class="tabbar"><span class="on">ホーム</span><span>履歴</span><span class="rec">記録</span><span>図鑑</span><span>友だち</span></div>
+              <div class="fab-gap"></div>
+              <div class="tabbar"><span class="on">ホーム</span><span>記録</span><span>図鑑</span><span>友だち</span></div>
+              <span class="fab">＋</span>
             </div>
             <ol class="notes">
               <li>続けて比べるは押さなくてよい。押せばその場で順位を決めきれる</li>
