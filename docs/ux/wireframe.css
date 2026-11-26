@@ -996,7 +996,8 @@ a {
 /* Collection (collection-flow.html) */
 .seg {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
   border: 1.5px solid var(--line);
   border-radius: 8px;
   overflow: hidden;
@@ -1017,4 +1018,32 @@ a {
 }
 .stat strong {
   font-size: 18px;
+}
+.map {
+  flex: 1;
+  position: relative;
+  border-radius: 10px;
+  background:
+    linear-gradient(90deg, transparent 46%, #fff 46%, #fff 50%, transparent 50%),
+    linear-gradient(0deg, transparent 32%, #fff 32%, #fff 35%, transparent 35%),
+    linear-gradient(35deg, transparent 62%, #fff 62%, #fff 65%, transparent 65%),
+    #e4e7df;
+}
+.pin {
+  position: absolute;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 4px;
+  border-radius: 9px;
+  background: var(--ink);
+  color: #fff;
+  font-size: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pin.home {
+  background: #fff;
+  color: var(--ink);
+  border: 1.5px solid var(--ink);
 }

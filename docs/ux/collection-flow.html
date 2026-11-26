@@ -3,16 +3,16 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>図鑑のタブ — ワイヤーフレーム (案) | HINAMI</title>
+    <title>図鑑のタブ — ワイヤーフレーム | HINAMI</title>
     <link rel="stylesheet" href="wireframe.css" />
   </head>
   <body>
     <main>
-      <h1>図鑑のタブ — ワイヤーフレーム (案)</h1>
-      <p class="status">状態: 検討中 (2026-11-27)。このページはすべて案。タブの中の分け方を決めるために描いた</p>
+      <h1>図鑑のタブ — ワイヤーフレーム</h1>
+      <p class="status">状態: 検討中 (2026-11-27)。タブの中を「実績 / マップ」に分けることは決めた。画面の中身と、ランキングの入口は案。決まりの本文は <a href="navigation.md">navigation.md</a></p>
 
       <p class="lead">
-        図鑑のタブを「種類 / 地域 / 実績」の 3 つに分ける。ランキングは種類のページの中に置く。一覧の本体は記録のタブで、図鑑は目次にする。
+        図鑑のタブは、左に実績、右にマップ。種類の一覧は置かない (種類で探すのは記録のタブ)。マップには食べた場所を並べる。
       </p>
 
       <ul class="legend">
@@ -20,58 +20,56 @@
         <li><span class="sw plan"></span><span class="plan-tag">案</span> まだ確かめていない流れ・機能</li>
         <li><span class="sw tapmark">1</span>タップの順番</li>
       </ul>
-      <p class="legend-note">画面の中の配置や大きさは、すべて仮。種類の名前と階層は例 (種類の一覧の中身はまだ決めていない)。</p>
+      <p class="legend-note">画面の中の配置や大きさは、すべて仮。</p>
 
       <!-- Overview -->
       <section>
         <h2>全体の地図</h2>
-        <p class="desc">図鑑のタブの中の画面と、そのつながり。上の切り替えで「種類 / 地域 / 実績」を移る。戻る矢印は省いている。</p>
+        <p class="desc">図鑑のタブの中の画面と、そのつながり。上の切り替えで「実績 / マップ」を移る。戻る矢印は省いている。</p>
         <p class="scroll-hint">横にスクロールできます →</p>
         <div class="scroll">
           <div class="overview">
-            <svg viewBox="0 0 820 260" role="img" aria-label="図鑑のタブの画面の遷移図">
+            <svg viewBox="0 0 860 270" role="img" aria-label="図鑑のタブの画面の遷移図">
               <defs>
                 <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
                   <path d="M0 0 L10 5 L0 10 z" fill="#444" />
                 </marker>
               </defs>
               <g font-size="13" font-family="-apple-system, 'Hiragino Sans', 'Noto Sans JP', sans-serif" fill="#222">
-                <g stroke="#444" stroke-width="1.8" fill="none" stroke-dasharray="6 4" marker-end="url(#ah)">
-                  <path d="M160 132 H185 V42 H206" />
-                  <path d="M160 132 H206" />
-                  <path d="M160 132 H185 V222 H206" />
-                  <path d="M360 42 H416" />
+                <g stroke="#444" stroke-width="1.8" fill="none" marker-end="url(#ah)">
+                  <path d="M160 87 H185 V42 H206" />
+                  <path d="M160 87 H185 V132 H206" />
                   <path d="M360 132 H416" />
-                  <path d="M570 42 H626" />
                   <path d="M570 132 H626" />
                 </g>
-                <g font-size="11" fill="#555">
-                  <text x="368" y="34">タップ</text>
-                  <text x="368" y="124">タップ</text>
-                  <text x="576" y="34">記録を見る</text>
-                  <text x="576" y="124">記録を見る</text>
+                <g stroke="#444" stroke-width="1.8" fill="none" stroke-dasharray="6 4" marker-end="url(#ah)">
+                  <path d="M380 222 H436" />
                 </g>
-                <g stroke="#444" stroke-width="2" fill="#fff" stroke-dasharray="6 4">
-                  <rect x="10" y="110" width="150" height="44" rx="8" />
-                  <rect x="210" y="20" width="150" height="44" rx="8" />
-                  <rect x="210" y="110" width="150" height="44" rx="8" />
-                  <rect x="210" y="200" width="150" height="44" rx="8" />
-                  <rect x="420" y="20" width="150" height="44" rx="8" />
-                  <rect x="420" y="110" width="150" height="44" rx="8" />
+                <g font-size="11" fill="#555">
+                  <text x="368" y="124">タップ</text>
+                  <text x="576" y="124">記録を見る</text>
+                  <text x="386" y="214">入口</text>
+                  <text x="200" y="262">ランキングの入口の案 (図鑑のタブの外)</text>
                 </g>
                 <g stroke="#444" stroke-width="2" fill="#fff">
-                  <rect x="630" y="20" width="180" height="44" rx="8" />
-                  <rect x="630" y="110" width="180" height="44" rx="8" />
+                  <rect x="10" y="65" width="150" height="44" rx="8" />
+                  <rect x="210" y="20" width="150" height="44" rx="8" />
+                  <rect x="210" y="110" width="150" height="44" rx="8" />
+                  <rect x="630" y="110" width="200" height="44" rx="8" />
+                  <rect x="200" y="200" width="180" height="44" rx="8" />
+                </g>
+                <g stroke="#444" stroke-width="2" fill="#fff" stroke-dasharray="6 4">
+                  <rect x="420" y="110" width="150" height="44" rx="8" />
+                  <rect x="440" y="200" width="150" height="44" rx="8" />
                 </g>
                 <g text-anchor="middle" dominant-baseline="central">
-                  <text x="85" y="132" font-weight="700">図鑑のタブ</text>
-                  <text x="285" y="42">種類</text>
-                  <text x="285" y="132">地域</text>
-                  <text x="285" y="222">実績</text>
-                  <text x="495" y="42">種類のページ</text>
-                  <text x="495" y="132">都道府県のページ</text>
-                  <text x="720" y="42">記録のタブ (種類で絞る)</text>
-                  <text x="720" y="132">記録のタブ (地域で絞る)</text>
+                  <text x="85" y="87" font-weight="700">図鑑のタブ</text>
+                  <text x="285" y="42">実績</text>
+                  <text x="285" y="132">マップ</text>
+                  <text x="495" y="132">場所のシート</text>
+                  <text x="730" y="132">記録のタブ (場所で絞る)</text>
+                  <text x="290" y="222">記録のタブ (種類で絞る)</text>
+                  <text x="515" y="222">ランキング</text>
                 </g>
               </g>
             </svg>
@@ -81,148 +79,15 @@
 
       <!-- Flow A -->
       <section>
-        <h2>A. 種類 (ラーメンを見る)</h2>
-        <p class="desc">集めた種類から 1 つを開くと、回数と軒数、その種類のランキングが 1 ページにまとまっている。記録の一覧は記録のタブで見る。</p>
+        <h2>A. 実績</h2>
+        <p class="desc">図鑑のタブを開くと、左の実績が出る。解除した実績を新しい順に並べ、次の段もここでだけ見せる。</p>
         <p class="scroll-hint">横にスクロールできます →</p>
         <div class="row">
           <div class="screen">
-            <p class="cap">図鑑のタブ (種類) <span class="plan-tag">案</span></p>
-            <div class="phone plan">
-              <div class="top"><strong>図鑑</strong><span></span></div>
-              <div class="seg"><span class="on">種類</span><span>地域</span><span>実績</span></div>
-              <div class="sum">集めた種類 14</div>
-              <div class="ml-month">麺</div>
-              <div class="chips"><span class="chip tap" data-tap="1">ラーメン 12</span><span class="chip">そば 3</span><span class="chip">うどん 1</span></div>
-              <div class="ml-month">酒</div>
-              <div class="chips"><span class="chip">日本酒 26</span><span class="chip">ビール 9</span><span class="chip">ワイン 4</span><span class="chip">ウイスキー 2</span></div>
-              <div class="ml-month">肉</div>
-              <div class="chips"><span class="chip">焼き鳥 5</span><span class="chip">焼肉 2</span></div>
-              <div class="spacer"></div>
-              <div class="fab-gap"></div>
-              <div class="tabbar"><span>ホーム</span><span>記録</span><span class="on">図鑑</span><span>友だち</span></div>
-              <span class="fab">＋</span>
-            </div>
-            <ol class="notes">
-              <li>集めた種類を、階層の上の段 (麺、酒など) ごとにまとめる</li>
-              <li>数は記録した回数</li>
-              <li>まだ集めていない枠を見せるかは、別に決める</li>
-            </ol>
-          </div>
-          <div class="arrow plan"><span>ラーメン</span><span class="line"></span></div>
-          <div class="screen">
-            <p class="cap">種類のページ (ラーメン) <span class="plan-tag">案</span></p>
-            <div class="phone plan">
-              <div class="top"><span class="x">‹</span><strong>ラーメン</strong><span></span></div>
-              <div class="stat"><span><strong>12</strong> 回</span><span><strong>7</strong> 軒</span></div>
-              <div class="cal-h"><strong>ランキング</strong><span class="link">比べる</span></div>
-              <div class="rank">
-                <div class="li"><span>1</span><span>中華そば 青葉</span><small></small></div>
-                <div class="li"><span>2</span><span>らーめん 凪</span><small></small></div>
-                <div class="li range"><span>3〜4</span><span>麺屋 ひかり</span><small>決まっていない</small></div>
-                <div class="li range"><span>3〜4</span><span>麺処 さわ</span><small>決まっていない</small></div>
-                <div class="li"><span>5</span><span>つけ麺 環</span><small></small></div>
-              </div>
-              <span class="link">ランキングをすべて見る</span>
-              <div class="spacer"></div>
-              <span class="btn block tap" data-tap="2">記録を見る (12)</span>
-            </div>
-            <ol class="notes">
-              <li>ランキングは種類ごとなので、種類のページの中に置く。ランキング専用の一覧は作らない</li>
-              <li>「比べる」からいつでも比べられる。手でも並べ替えられる (<a href="compare.md">compare.md</a>)</li>
-              <li>同じ種類に相手がいないうちは、ランキングを出さない</li>
-            </ol>
-          </div>
-          <div class="arrow plan"><span>記録を見る</span><span class="line"></span></div>
-          <div class="screen">
-            <p class="cap">記録のタブ (ラーメンで絞った)</p>
+            <p class="cap">図鑑のタブ (実績) <span class="plan-tag">案: 中身</span></p>
             <div class="phone">
-              <div class="search">店名・メモ・地域で検索</div>
-              <div class="cal-h"><span class="chip on">ラーメン ×</span><span class="sum">ラーメン 12 件</span></div>
-              <div class="ml-month">11 月</div>
-              <div class="ml">
-                <div class="ml-h"><span>11/26 木</span><span>麺屋 ひかり</span></div>
-                <div class="ml-th"><div class="ph hit"></div><div class="ph"></div></div>
-              </div>
-              <div class="ml">
-                <div class="ml-h"><span>11/12 木</span><span>らーめん 凪</span></div>
-                <div class="ml-th"><div class="ph hit"></div></div>
-              </div>
-              <div class="ml-month">10 月</div>
-              <div class="ml">
-                <div class="ml-h"><span>10/28 水</span><span>中華そば 青葉</span></div>
-                <div class="ml-th"><div class="ph hit"></div><div class="ph"></div></div>
-              </div>
-              <div class="spacer"></div>
-              <div class="fab-gap"></div>
-              <div class="tabbar"><span>ホーム</span><span class="on">記録</span><span>図鑑</span><span>友だち</span></div>
-              <span class="fab">＋</span>
-            </div>
-            <ol class="notes">
-              <li>一覧の本体は記録のタブ。図鑑からは、その種類で絞った状態で移る (<a href="history.md">history.md</a>)</li>
-            </ol>
-          </div>
-        </div>
-      </section>
-
-      <!-- Flow B -->
-      <section>
-        <h2>B. 地域</h2>
-        <p class="desc">集めた都道府県と区市町村を並べる。都道府県を開くと区市町村が並び、記録のタブへ移れる。</p>
-        <p class="scroll-hint">横にスクロールできます →</p>
-        <div class="row">
-          <div class="screen">
-            <p class="cap">図鑑のタブ (地域) <span class="plan-tag">案</span></p>
-            <div class="phone plan">
               <div class="top"><strong>図鑑</strong><span></span></div>
-              <div class="seg"><span>種類</span><span class="on">地域</span><span>実績</span></div>
-              <div class="sum">都道府県 4 · 区市町村 11</div>
-              <div class="li tap" data-tap="1"><span>東京都</span><small>8 区市町村 · 61 回</small></div>
-              <div class="li"><span>神奈川県</span><small>1 区市町村 · 5 回</small></div>
-              <div class="li"><span>京都府</span><small>1 区市町村 · 3 回</small></div>
-              <div class="li"><span>静岡県</span><small>1 区市町村 · 2 回</small></div>
-              <div class="spacer"></div>
-              <div class="fab-gap"></div>
-              <div class="tabbar"><span>ホーム</span><span>記録</span><span class="on">図鑑</span><span>友だち</span></div>
-              <span class="fab">＋</span>
-            </div>
-            <ol class="notes">
-              <li>集めた都道府県を、記録の多い順に並べる</li>
-              <li>家も含める (帰省先など)</li>
-              <li>地図で見せるか、一覧で見せるかは別に決める</li>
-            </ol>
-          </div>
-          <div class="arrow plan"><span>東京都</span><span class="line"></span></div>
-          <div class="screen">
-            <p class="cap">都道府県のページ (東京都) <span class="plan-tag">案</span></p>
-            <div class="phone plan">
-              <div class="top"><span class="x">‹</span><strong>東京都</strong><span></span></div>
-              <div class="stat"><span><strong>61</strong> 回</span><span><strong>8</strong> 区市町村</span></div>
-              <div class="li"><span>渋谷区</span><small>24 回</small></div>
-              <div class="li"><span>目黒区</span><small>15 回</small></div>
-              <div class="li"><span>港区</span><small>9 回</small></div>
-              <div class="li"><span>新宿区</span><small>6 回</small></div>
-              <div class="li"><span>ほか 4</span><small>7 回</small></div>
-              <div class="spacer"></div>
-              <span class="btn block">記録を見る (61)</span>
-            </div>
-            <ol class="notes">
-              <li>区市町村をタップすると、その地域で絞った記録のタブに移る</li>
-            </ol>
-          </div>
-        </div>
-      </section>
-
-      <!-- Flow C -->
-      <section>
-        <h2>C. 実績</h2>
-        <p class="desc">解除した実績を新しい順に並べる。種類・店・地域・時刻をまたぐので、種類のページには入れず、ここにまとめる。</p>
-        <p class="scroll-hint">横にスクロールできます →</p>
-        <div class="row">
-          <div class="screen">
-            <p class="cap">図鑑のタブ (実績) <span class="plan-tag">案</span></p>
-            <div class="phone plan">
-              <div class="top"><strong>図鑑</strong><span></span></div>
-              <div class="seg"><span>種類</span><span>地域</span><span class="on">実績</span></div>
+              <div class="seg"><span class="on">実績</span><span>マップ</span></div>
               <div class="sum">解除 18 · 隠し あと 2 個</div>
               <div class="li"><span>5 軒</span><small>11/26</small></div>
               <div class="li"><span>ラーメン 10 回</span><small>11/26</small></div>
@@ -237,6 +102,7 @@
               <span class="fab">＋</span>
             </div>
             <ol class="notes">
+              <li>左が実績、右がマップ。開いたときは実績</li>
               <li>解除した実績を新しい順に並べる</li>
               <li>隠し実績は、解除するまで「あと N 個」とだけ出す</li>
               <li>次の段と「あと N」は、ホームには出さず、ここでだけ見せる (<a href="achievements.md">achievements.md</a>)</li>
@@ -245,13 +111,150 @@
         </div>
       </section>
 
+      <!-- Flow B -->
+      <section>
+        <h2>B. マップ</h2>
+        <p class="desc">食べた場所を地図に並べる。ピンを開くと、その場所の回数と写真が出て、記録のタブへ移れる。</p>
+        <p class="scroll-hint">横にスクロールできます →</p>
+        <div class="row">
+          <div class="screen">
+            <p class="cap">図鑑のタブ (マップ) <span class="plan-tag">案: 中身</span></p>
+            <div class="phone">
+              <div class="top"><strong>図鑑</strong><span></span></div>
+              <div class="seg"><span>実績</span><span class="on">マップ</span></div>
+              <div class="sum">7 都道府県 · 38 軒</div>
+              <div class="map">
+                <span class="pin" style="top: 18%; left: 20%">4</span>
+                <span class="pin tap" data-tap="1" style="top: 40%; left: 55%">3</span>
+                <span class="pin" style="top: 26%; left: 70%">12</span>
+                <span class="pin" style="top: 62%; left: 30%"></span>
+                <span class="pin home" style="top: 70%; left: 62%">家</span>
+                <span class="pin" style="top: 52%; left: 12%"></span>
+              </div>
+              <div class="fab-gap"></div>
+              <div class="tabbar"><span>ホーム</span><span>記録</span><span class="on">図鑑</span><span>友だち</span></div>
+              <span class="fab">＋</span>
+            </div>
+            <ol class="notes">
+              <li>食べた場所にピンを立てる。数字はその場所の回数。近いピンは、縮めるとまとまる</li>
+              <li>店が決まっていない食事は、地域のあたりに置く</li>
+              <li>家も自分のマップには出す (自分にしか見えない)</li>
+              <li>開いたときの範囲 (いまいる辺りか、全体か) は別に決める</li>
+            </ol>
+          </div>
+          <div class="arrow plan"><span>ピンをタップ</span><span class="line"></span></div>
+          <div class="screen">
+            <p class="cap">場所のシート <span class="plan-tag">案</span></p>
+            <div class="phone plan">
+              <div class="top"><strong>図鑑</strong><span></span></div>
+              <div class="seg"><span>実績</span><span class="on">マップ</span></div>
+              <div class="map">
+                <span class="pin" style="top: 30%; left: 50%">3</span>
+              </div>
+              <div class="sheet short plan">
+                <div class="grab"></div>
+                <strong>麺屋 ひかり</strong>
+                <span class="sum">渋谷区 · 3 回 · 最後 11/26</span>
+                <div class="ml-th"><div class="ph"></div><div class="ph"></div><div class="ph"></div></div>
+                <div class="spacer"></div>
+                <span class="btn block tap" data-tap="2">記録を見る (3)</span>
+              </div>
+            </div>
+            <ol class="notes">
+              <li>その場所の回数、最後に行った日、写真を出す</li>
+              <li>「記録を見る」で、その場所で絞った記録のタブに移る</li>
+            </ol>
+          </div>
+          <div class="arrow plan"><span>記録を見る</span><span class="line"></span></div>
+          <div class="screen">
+            <p class="cap">記録のタブ (場所で絞った)</p>
+            <div class="phone">
+              <div class="search">店名・メモ・地域で検索</div>
+              <div class="cal-h"><span class="chip on">麺屋 ひかり ×</span><span class="sum">3 件</span></div>
+              <div class="ml-month">11 月</div>
+              <div class="ml">
+                <div class="ml-h"><span>11/26 木</span><span>麺屋 ひかり</span></div>
+                <div class="ml-th"><div class="ph"></div><div class="ph"></div></div>
+              </div>
+              <div class="ml-month">9 月</div>
+              <div class="ml">
+                <div class="ml-h"><span>9/14 月</span><span>麺屋 ひかり</span></div>
+                <div class="ml-th"><div class="ph"></div></div>
+              </div>
+              <div class="spacer"></div>
+              <div class="fab-gap"></div>
+              <div class="tabbar"><span>ホーム</span><span class="on">記録</span><span>図鑑</span><span>友だち</span></div>
+              <span class="fab">＋</span>
+            </div>
+            <ol class="notes">
+              <li>一覧の本体は記録のタブ。マップからは、その場所で絞った状態で移る</li>
+              <li>場所で絞るのは、言葉で探すのとは別の条件 (同じ名前の別の店を混ぜない)</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <!-- Flow C -->
+      <section>
+        <h2>C. ランキングの入口 (案)</h2>
+        <p class="desc">図鑑から種類をなくしたので、ランキングは、記録のタブを種類で絞ったときに入口を出す。</p>
+        <p class="scroll-hint">横にスクロールできます →</p>
+        <div class="row">
+          <div class="screen">
+            <p class="cap">記録のタブ (ラーメンで絞った) <span class="plan-tag">案</span></p>
+            <div class="phone">
+              <div class="search">店名・メモ・地域で検索</div>
+              <div class="cal-h"><span class="chip on">ラーメン ×</span><span class="sum">ラーメン 12 件</span></div>
+              <div class="toast plan tap" data-tap="1"><span>ランキング<br /><span class="sum">1 位 中華そば 青葉</span></span><span>›</span></div>
+              <div class="ml-month">11 月</div>
+              <div class="ml">
+                <div class="ml-h"><span>11/26 木</span><span>麺屋 ひかり</span></div>
+                <div class="ml-th"><div class="ph hit"></div><div class="ph"></div></div>
+              </div>
+              <div class="ml">
+                <div class="ml-h"><span>11/12 木</span><span>らーめん 凪</span></div>
+                <div class="ml-th"><div class="ph hit"></div></div>
+              </div>
+              <div class="spacer"></div>
+              <div class="fab-gap"></div>
+              <div class="tabbar"><span>ホーム</span><span class="on">記録</span><span>図鑑</span><span>友だち</span></div>
+              <span class="fab">＋</span>
+            </div>
+            <ol class="notes">
+              <li>種類で絞ったときだけ、一覧の上にその種類のランキングの入口を出す</li>
+              <li>同じ種類に比べる相手がいないうちは出さない</li>
+            </ol>
+          </div>
+          <div class="arrow plan"><span>ランキング</span><span class="line"></span></div>
+          <div class="screen">
+            <p class="cap">ランキング (ラーメン)</p>
+            <div class="phone">
+              <div class="top"><span class="x">‹</span><span class="btn">比べる</span></div>
+              <div class="rank">
+                <div class="li"><span>1</span><span>中華そば 青葉</span><small></small></div>
+                <div class="li"><span>2</span><span>らーめん 凪</span><small></small></div>
+                <div class="li range"><span>3〜4</span><span>麺屋 ひかり</span><small>決まっていない</small></div>
+                <div class="li range"><span>3〜4</span><span>麺処 さわ</span><small>決まっていない</small></div>
+                <div class="li"><span>5</span><span>つけ麺 環</span><small></small></div>
+              </div>
+              <div class="spacer"></div>
+              <span class="link">並べ替える</span>
+            </div>
+            <ol class="notes">
+              <li>中身は決めたとおり (<a href="compare.md">compare.md</a>)。いつでも比べられ、手でも並べ替えられる</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
       <section>
         <h2>この図で決めていないこと</h2>
         <ul class="open">
-          <li>タブの中の分け方 (この図の全体)</li>
-          <li>まだ集めていない枠 (空欄) を見せるか。「地酒図鑑 12 / 47」のような分母のある見せ方をするか</li>
-          <li>地域を地図で見せるか、一覧で見せるか</li>
-          <li>種類の一覧の中身 (階層と、どこまで細かく分けるか)</li>
+          <li>実績とマップの画面の中身 (図の「案」)</li>
+          <li>ランキングの画面への入口 (図の C は案)</li>
+          <li>保存したときの「図鑑に追加」の言い方。図鑑から種類をなくし、地域をマップにしたため</li>
+          <li>タブの名前を「図鑑」のままにするか (中身が実績とマップになったため)</li>
+          <li>マップを開いたときの範囲</li>
         </ul>
       </section>
     </main>
