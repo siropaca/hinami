@@ -9,7 +9,7 @@
   <body>
     <main>
       <h1>つながる — ワイヤーフレーム</h1>
-      <p class="status">状態: 検討中 (2026-11-26)。「案」と付けたものはまだ確かめていない。決まりの本文は <a href="connect.md">connect.md</a></p>
+      <p class="status">状態: 合意 (2026-11-26)。「案」はもうない。決まりの本文は <a href="connect.md">connect.md</a></p>
 
       <p class="lead">
         お互いに承認した友だちとだけつながる。友だちの機能はまずはお試しとして、友だち専用のタブに閉じる。友だちに見えるのは写真とメモだけ。
@@ -47,8 +47,6 @@
                   <path d="M600 52 H645 V122 H686" />
                   <path d="M600 132 H686" />
                   <path d="M600 222 H686" />
-                </g>
-                <g stroke="#444" stroke-width="1.8" fill="none" stroke-dasharray="6 4" marker-end="url(#ah)">
                   <path d="M370 146 H410 V222 H446" />
                 </g>
                 <g font-size="11" fill="#555">
@@ -74,8 +72,6 @@
                   <rect x="690" y="20" width="150" height="44" rx="8" />
                   <rect x="690" y="110" width="150" height="44" rx="8" />
                   <rect x="690" y="200" width="150" height="44" rx="8" />
-                </g>
-                <g stroke="#444" stroke-width="2" fill="#fff" stroke-dasharray="6 4">
                   <rect x="450" y="20" width="150" height="44" rx="8" />
                 </g>
                 <g text-anchor="middle" dominant-baseline="central">
@@ -217,7 +213,7 @@
           <div class="screen">
             <p class="cap">友だちのタブ (けんた)</p>
             <div class="phone">
-              <div class="top"><strong>友だち</strong><span class="link">メッセージ</span></div>
+              <div class="top"><span><strong>友だち</strong> <span class="link">3 人</span></span><span class="link">メッセージ</span></div>
               <div class="ml">
                 <div class="ml-h"><span>はるか · 11/26</span></div>
                 <div class="ml-th"><div class="ph"></div><div class="ph"></div><div class="ph"></div></div>
@@ -240,6 +236,7 @@
               <li>友だちがシェアした食事を、新しい順に並べる</li>
               <li>見えるのは写真とメモだけ。種類と場所は見せない。誰の、いつの食事かは出す</li>
               <li>ホームには出さない。お試しの機能を 1 つのタブに閉じる</li>
+              <li>見出しの「3 人」から友だちの一覧 (E)、「メッセージ」からメッセージの一覧 (D) を開く</li>
             </ol>
           </div>
         </div>
@@ -252,8 +249,8 @@
         <p class="scroll-hint">横にスクロールできます →</p>
         <div class="row">
           <div class="screen">
-            <p class="cap">友だちの食事の詳細 <span class="plan-tag">案</span></p>
-            <div class="phone plan">
+            <p class="cap">友だちの食事の詳細</p>
+            <div class="phone">
               <div class="top"><span class="x">‹</span><span class="meta">はるか · 11/26</span><span>…</span></div>
               <div class="it"><div class="ph"></div><div class="body"><span>獺祭 純米大吟醸 45</span></div></div>
               <div class="it"><div class="ph"></div><div class="body"><span class="hl" style="color: var(--mute)">メモなし</span></div></div>
@@ -380,7 +377,7 @@
         <p class="scroll-hint">横にスクロールできます →</p>
         <div class="row">
           <div class="screen">
-            <p class="cap">友だちの一覧 <span class="plan-tag">案: 入口</span></p>
+            <p class="cap">友だちの一覧</p>
             <div class="phone">
               <div class="top"><span class="x">‹</span><strong>友だち 3 人</strong><span></span></div>
               <div class="li"><span class="who"><span class="av"></span>はるか</span><span class="tap" data-tap="1">…</span></div>
@@ -391,7 +388,7 @@
               <span class="btn block">読み取る</span>
             </div>
             <ol class="notes">
-              <li>入口は、友だちのタブの見出しに「友だち N 人」を置く案</li>
+              <li>友だちのタブの見出しの「友だち N 人」から開く</li>
               <li>友だちを足すときも、ここから QR コードを使う</li>
             </ol>
           </div>
@@ -518,8 +515,6 @@
       <section>
         <h2>この図で決めていないこと</h2>
         <ul class="open">
-          <li>友だちの食事の詳細の中身 (図の「案」)</li>
-          <li>友だちの一覧の入口 (図の「案」)</li>
           <li>スタンプの種類 (見た目のデザインと一緒に決める)</li>
           <li>通知の設定の置き場所と、タブバーのタブ構成</li>
           <li>アカウントの作り方と削除 (App Store の審査ガイドライン 5.1.1)</li>
