@@ -12,7 +12,7 @@
 
 ## UX (画面の流れ)
 
-1. 最初に入れる実績の一覧と、段階の数 ([`ux/achievements.md`](ux/achievements.md))
+1. 種類の一覧の中身 (どこまで細かく分けるか)。比べる、図鑑、実績の「N 種類」の段階がこれで決まる ([`ux/recording.md`](ux/recording.md))
 
 ## 技術 (未確認)
 
