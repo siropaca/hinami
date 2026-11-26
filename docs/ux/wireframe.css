@@ -993,7 +993,7 @@ a {
   z-index: 2;
 }
 
-/* Collection (collection-flow.html) */
+/* Achievements tab (achievements-flow.html) */
 .seg {
   display: grid;
   grid-auto-flow: column;

@@ -3,16 +3,16 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>図鑑のタブ — ワイヤーフレーム | HINAMI</title>
+    <title>実績のタブ — ワイヤーフレーム | HINAMI</title>
     <link rel="stylesheet" href="wireframe.css" />
   </head>
   <body>
     <main>
-      <h1>図鑑のタブ — ワイヤーフレーム</h1>
-      <p class="status">状態: 検討中 (2026-11-27)。タブの中を「実績 / マップ」に分けることは決めた。実績の画面は一旦この形 (詰めるところは残っている)。マップの中身と、ランキングの入口は案。決まりの本文は <a href="navigation.md">navigation.md</a></p>
+      <h1>実績のタブ — ワイヤーフレーム</h1>
+      <p class="status">状態: 検討中 (2026-11-27)。タブの名前は「実績」(はじめは「図鑑」)。タブの中を「実績 / マップ」に分けることと、ランキングの入口は決めた。実績の画面は一旦この形 (詰めるところは残っている)。マップの中身は案。決まりの本文は <a href="navigation.md">navigation.md</a></p>
 
       <p class="lead">
-        図鑑のタブは、左に実績、右にマップ。種類の一覧は置かない (種類で探すのは記録のタブ)。マップには食べた場所を並べる。
+        実績のタブは、左に実績、右にマップ。種類の一覧は置かない (種類で探すのは記録のタブ)。マップには食べた場所を並べる。
       </p>
 
       <ul class="legend">
@@ -25,11 +25,11 @@
       <!-- Overview -->
       <section>
         <h2>全体の地図</h2>
-        <p class="desc">図鑑のタブの中の画面と、そのつながり。上の切り替えで「実績 / マップ」を移る。戻る矢印は省いている。</p>
+        <p class="desc">実績のタブの中の画面と、そのつながり。上の切り替えで「実績 / マップ」を移る。戻る矢印は省いている。</p>
         <p class="scroll-hint">横にスクロールできます →</p>
         <div class="scroll">
           <div class="overview">
-            <svg viewBox="0 0 860 270" role="img" aria-label="図鑑のタブの画面の遷移図">
+            <svg viewBox="0 0 860 270" role="img" aria-label="実績のタブの画面の遷移図">
               <defs>
                 <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
                   <path d="M0 0 L10 5 L0 10 z" fill="#444" />
@@ -41,15 +41,13 @@
                   <path d="M160 87 H185 V132 H206" />
                   <path d="M360 132 H416" />
                   <path d="M570 132 H626" />
-                </g>
-                <g stroke="#444" stroke-width="1.8" fill="none" stroke-dasharray="6 4" marker-end="url(#ah)">
                   <path d="M380 222 H436" />
                 </g>
                 <g font-size="11" fill="#555">
                   <text x="368" y="124">タップ</text>
                   <text x="576" y="124">記録を見る</text>
                   <text x="386" y="214">入口</text>
-                  <text x="200" y="262">ランキングの入口の案 (図鑑のタブの外)</text>
+                  <text x="200" y="262">ランキングの入口 (実績のタブの外)</text>
                 </g>
                 <g stroke="#444" stroke-width="2" fill="#fff">
                   <rect x="10" y="65" width="150" height="44" rx="8" />
@@ -57,13 +55,13 @@
                   <rect x="210" y="110" width="150" height="44" rx="8" />
                   <rect x="630" y="110" width="200" height="44" rx="8" />
                   <rect x="200" y="200" width="180" height="44" rx="8" />
+                  <rect x="440" y="200" width="150" height="44" rx="8" />
                 </g>
                 <g stroke="#444" stroke-width="2" fill="#fff" stroke-dasharray="6 4">
                   <rect x="420" y="110" width="150" height="44" rx="8" />
-                  <rect x="440" y="200" width="150" height="44" rx="8" />
                 </g>
                 <g text-anchor="middle" dominant-baseline="central">
-                  <text x="85" y="87" font-weight="700">図鑑のタブ</text>
+                  <text x="85" y="87" font-weight="700">実績のタブ</text>
                   <text x="285" y="42">実績</text>
                   <text x="285" y="132">マップ</text>
                   <text x="495" y="132">場所のシート</text>
@@ -84,9 +82,9 @@
         <p class="scroll-hint">横にスクロールできます →</p>
         <div class="row">
           <div class="screen">
-            <p class="cap">図鑑のタブ (実績) <span class="plan-tag">一旦この形</span></p>
+            <p class="cap">実績のタブ (実績) <span class="plan-tag">一旦この形</span></p>
             <div class="phone">
-              <div class="top"><strong>図鑑</strong><span></span></div>
+              <div class="top"><strong>実績</strong><span></span></div>
               <div class="seg"><span class="on">実績</span><span>マップ</span></div>
               <div class="sum">解除 18 · 隠し あと 2</div>
               <div class="ml-month">進行中のクエスト</div>
@@ -103,7 +101,7 @@
               </div>
               <div class="spacer"></div>
               <div class="fab-gap"></div>
-              <div class="tabbar"><span>ホーム</span><span>記録</span><span class="on">図鑑</span><span>友だち</span></div>
+              <div class="tabbar"><span>ホーム</span><span>記録</span><span class="on">実績</span><span>友だち</span></div>
               <span class="fab">＋</span>
             </div>
             <ol class="notes">
@@ -115,9 +113,9 @@
           </div>
           <div class="arrow"><span>下へ<br />スクロール</span><span class="line" style="visibility: hidden"></span></div>
           <div class="screen">
-            <p class="cap">図鑑のタブ (実績の続き) <span class="plan-tag">一旦この形</span></p>
+            <p class="cap">実績のタブ (実績の続き) <span class="plan-tag">一旦この形</span></p>
             <div class="phone">
-              <div class="top"><strong>図鑑</strong><span></span></div>
+              <div class="top"><strong>実績</strong><span></span></div>
               <div class="scard">
                 <div class="cal-h"><strong>軒</strong><span class="sum">1 / 5</span></div>
                 <div class="srow"><span class="st on">5</span><span class="st">10</span><span class="st">20</span><span class="st">50</span><span class="st">100</span></div>
@@ -132,7 +130,7 @@
               </div>
               <div class="spacer"></div>
               <div class="fab-gap"></div>
-              <div class="tabbar"><span>ホーム</span><span>記録</span><span class="on">図鑑</span><span>友だち</span></div>
+              <div class="tabbar"><span>ホーム</span><span>記録</span><span class="on">実績</span><span>友だち</span></div>
               <span class="fab">＋</span>
             </div>
             <ol class="notes">
@@ -169,9 +167,9 @@
         <p class="scroll-hint">横にスクロールできます →</p>
         <div class="row">
           <div class="screen">
-            <p class="cap">図鑑のタブ (マップ) <span class="plan-tag">案: 中身</span></p>
+            <p class="cap">実績のタブ (マップ) <span class="plan-tag">案: 中身</span></p>
             <div class="phone">
-              <div class="top"><strong>図鑑</strong><span></span></div>
+              <div class="top"><strong>実績</strong><span></span></div>
               <div class="seg"><span>実績</span><span class="on">マップ</span></div>
               <div class="sum">7 都道府県 · 38 軒</div>
               <div class="map">
@@ -183,7 +181,7 @@
                 <span class="pin" style="top: 52%; left: 12%"></span>
               </div>
               <div class="fab-gap"></div>
-              <div class="tabbar"><span>ホーム</span><span>記録</span><span class="on">図鑑</span><span>友だち</span></div>
+              <div class="tabbar"><span>ホーム</span><span>記録</span><span class="on">実績</span><span>友だち</span></div>
               <span class="fab">＋</span>
             </div>
             <ol class="notes">
@@ -197,7 +195,7 @@
           <div class="screen">
             <p class="cap">場所のシート <span class="plan-tag">案</span></p>
             <div class="phone plan">
-              <div class="top"><strong>図鑑</strong><span></span></div>
+              <div class="top"><strong>実績</strong><span></span></div>
               <div class="seg"><span>実績</span><span class="on">マップ</span></div>
               <div class="map">
                 <span class="pin" style="top: 30%; left: 50%">3</span>
@@ -234,7 +232,7 @@
               </div>
               <div class="spacer"></div>
               <div class="fab-gap"></div>
-              <div class="tabbar"><span>ホーム</span><span class="on">記録</span><span>図鑑</span><span>友だち</span></div>
+              <div class="tabbar"><span>ホーム</span><span class="on">記録</span><span>実績</span><span>友だち</span></div>
               <span class="fab">＋</span>
             </div>
             <ol class="notes">
@@ -247,16 +245,16 @@
 
       <!-- Flow C -->
       <section>
-        <h2>C. ランキングの入口 (案)</h2>
-        <p class="desc">図鑑から種類をなくしたので、ランキングは、記録のタブを種類で絞ったときに入口を出す。</p>
+        <h2>C. ランキングの入口</h2>
+        <p class="desc">実績のタブには種類の一覧を置かないので、ランキングは、記録のタブを種類で絞ったときに入口を出す。</p>
         <p class="scroll-hint">横にスクロールできます →</p>
         <div class="row">
           <div class="screen">
-            <p class="cap">記録のタブ (ラーメンで絞った) <span class="plan-tag">案</span></p>
+            <p class="cap">記録のタブ (ラーメンで絞った)</p>
             <div class="phone">
               <div class="search">店名・メモ・地域で検索</div>
               <div class="cal-h"><span class="chip on">ラーメン ×</span><span class="sum">ラーメン 12 件</span></div>
-              <div class="toast plan tap" data-tap="1"><span>ランキング<br /><span class="sum">1 位 中華そば 青葉</span></span><span>›</span></div>
+              <div class="toast tap" data-tap="1"><span>ランキング<br /><span class="sum">1 位 中華そば 青葉</span></span><span>›</span></div>
               <div class="ml-month">11 月</div>
               <div class="ml">
                 <div class="ml-h"><span>11/26 木</span><span>麺屋 ひかり</span></div>
@@ -268,7 +266,7 @@
               </div>
               <div class="spacer"></div>
               <div class="fab-gap"></div>
-              <div class="tabbar"><span>ホーム</span><span class="on">記録</span><span>図鑑</span><span>友だち</span></div>
+              <div class="tabbar"><span>ホーム</span><span class="on">記録</span><span>実績</span><span>友だち</span></div>
               <span class="fab">＋</span>
             </div>
             <ol class="notes">
@@ -276,7 +274,7 @@
               <li>同じ種類に比べる相手がいないうちは出さない</li>
             </ol>
           </div>
-          <div class="arrow plan"><span>ランキング</span><span class="line"></span></div>
+          <div class="arrow"><span>ランキング</span><span class="line"></span></div>
           <div class="screen">
             <p class="cap">ランキング (ラーメン)</p>
             <div class="phone">
@@ -303,9 +301,7 @@
         <ul class="open">
           <li>実績の画面の細部 (一旦この形。詰めるところが残っている)</li>
           <li>マップの画面の中身 (図の「案」)</li>
-          <li>ランキングの画面への入口 (図の C は案)</li>
-          <li>保存したときの「図鑑に追加」の言い方。図鑑から種類をなくし、地域をマップにしたため</li>
-          <li>タブの名前を「図鑑」のままにするか (中身が実績とマップになったため)</li>
+          <li>保存したときの「図鑑に追加」の言い方。図鑑をなくし、地域をマップにしたため</li>
           <li>マップを開いたときの範囲</li>
         </ul>
       </section>
