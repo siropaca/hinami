@@ -621,7 +621,7 @@
   <body>
     <main>
       <h1>記録の流れ — ワイヤーフレーム</h1>
-      <p class="status">状態: 一旦合意 (2026-11-26)。「案」はまだ確かめていない。決まりの本文は <a href="recording.md">recording.md</a></p>
+      <p class="status">状態: 合意 (2026-11-26)。「案」は比べる 1 問だけで、まだ確かめていない。決まりの本文は <a href="recording.md">recording.md</a></p>
 
       <p class="lead">
         その場で撮るなら最短 3 タップ (撮る → シャッター → 残す)。必須の入力はなく、AI の判定と場所の推定が違うときだけ直す。
@@ -661,11 +661,11 @@
                   <path d="M530 248 H766" />
                   <path d="M455 220 V178" />
                   <path d="M485 178 V216" />
+                  <path d="M530 230 H556 V78 H534" marker-start="url(#ah)" />
                 </g>
                 <g stroke="#444" stroke-width="1.8" fill="none" stroke-dasharray="6 4" marker-end="url(#ah)">
                   <path d="M530 62 H586" />
                   <path d="M710 62 H766" />
-                  <path d="M530 230 H556 V78 H534" marker-start="url(#ah)" />
                 </g>
                 <!-- edge labels -->
                 <g font-size="11" fill="#555">
@@ -696,10 +696,10 @@
                   <rect x="230" y="220" width="120" height="44" rx="8" />
                   <rect x="770" y="226" width="120" height="44" rx="8" />
                   <rect x="230" y="290" width="120" height="44" rx="8" fill="#f2f2f2" />
+                  <rect x="410" y="220" width="120" height="44" rx="8" />
                 </g>
                 <g stroke="#444" stroke-width="2" fill="#fff" stroke-dasharray="6 4">
                   <rect x="590" y="40" width="120" height="44" rx="8" />
-                  <rect x="410" y="220" width="120" height="44" rx="8" />
                 </g>
                 <g text-anchor="middle" dominant-baseline="central">
                   <text x="70" y="172" font-weight="700">ホーム</text>
@@ -772,8 +772,8 @@
               <li>種類は AI がその場で付ける (1 秒未満)。複数写っていれば複数。違えばタップで直す。食・飲は種類から裏で決まる</li>
               <li>場所には、店の推定に自信があるときだけ店名を出す</li>
               <li>メモは任意。品名は書かなくてよい</li>
-              <li><span class="plan-tag">案</span> × は記録をやめてホームへ。メモを書いていたときだけ確かめる</li>
-              <li><span class="plan-tag">案</span> 撮り直しは写真の上から</li>
+              <li>× は記録をやめてホームへ。メモを書いていたときだけ確かめる</li>
+              <li>撮り直しは写真の上から</li>
             </ol>
           </div>
           <div class="arrow plan"><span>残す</span><span class="line"></span></div>
@@ -814,7 +814,7 @@
               <li>記録はここで終わり</li>
               <li>解除した実績と図鑑への追加は「残しました」と同じ 1 枚に出す。タップは増えない (<a href="achievements.md">achievements.md</a>)</li>
               <li>はじめての種類・地域は実績にせず、図鑑への追加として出す</li>
-              <li><span class="plan-tag">案</span> 取り消しを数秒だけ出す。取り消すと実績の解除も消える</li>
+              <li>取り消しを数秒だけ出す。取り消すと実績の解除も消える</li>
             </ol>
           </div>
         </div>
@@ -864,7 +864,7 @@
               <li>候補は、近さ、行ったことがあるか、AI が付けた種類と店の業種が合うか、で並べる</li>
               <li>候補にない店は検索する</li>
               <li>下に引くか外側をタップすると、場所を変えずに閉じる</li>
-              <li><span class="plan-tag">案</span> 初めて「家」を選んだ場所を覚え、次からはそこを家にする</li>
+              <li>「家」を選んだ場所を覚え、次からその近くでは家にする。家は複数覚えられる (実家など)</li>
             </ol>
           </div>
           <div class="arrow"><span>選ぶ</span><span class="line"></span></div>
@@ -881,7 +881,7 @@
             </div>
             <ol class="notes">
               <li>選んだ店は、同じ食事の次の品に引き継ぐ</li>
-              <li><span class="plan-tag">案</span> 同じ食事で店が決まっていない前の品にも、同じ店を入れる</li>
+              <li>同じ食事で店が決まっていない前の品にも、同じ店を入れる</li>
             </ol>
           </div>
         </div>
@@ -969,7 +969,7 @@
 
       <!-- Flow D -->
       <section>
-        <h2>D. 自動のまとまりを直す <span class="plan-tag">案</span></h2>
+        <h2>D. 自動のまとまりを直す</h2>
         <p class="desc">場所で分けられないとき (家で朝と昼を食べた、など) は、食事の表示をタップして分ける。</p>
         <p class="scroll-hint">横にスクロールできます →</p>
         <div class="row">
@@ -989,14 +989,14 @@
               <li>場所も「家」で同じなので、場所では分けられない</li>
             </ol>
           </div>
-          <div class="arrow plan"><span>食事をタップ</span><span class="line"></span></div>
+          <div class="arrow"><span>食事をタップ</span><span class="line"></span></div>
           <div class="screen">
-            <p class="cap">食事を選ぶ <span class="plan-tag">案</span></p>
-            <div class="phone plan">
+            <p class="cap">食事を選ぶ</p>
+            <div class="phone">
               <div class="top"><span class="x">×</span><span class="chip meal">同じ食事 · 2 品目 ▾</span></div>
               <div class="ph" style="height: 168px"><span>写真</span></div>
               <div class="dim"></div>
-              <div class="sheet short plan">
+              <div class="sheet short">
                 <div class="grab"></div>
                 <strong style="font-size: 12px">どの食事に入れるか</strong>
                 <div class="li"><span>前の食事に入れる</span><small>家 · 08:10 から</small></div>
@@ -1007,7 +1007,7 @@
               <li>自動の判定が違うときだけ使う</li>
             </ol>
           </div>
-          <div class="arrow plan"><span>選ぶ</span><span class="line"></span></div>
+          <div class="arrow"><span>選ぶ</span><span class="line"></span></div>
           <div class="screen">
             <p class="cap">確認カード (分けた)</p>
             <div class="phone">
@@ -1066,14 +1066,14 @@
             </div>
             <ol class="notes">
               <li>端末の写真選択を使う。複数枚まとめて選べる</li>
-              <li><span class="plan-tag">案</span> 1 枚だけ選んだときは、確認カードへ進む</li>
-              <li><span class="plan-tag">案</span> HINAMI で記録済みの写真は外して見せる (二重に記録しないため)</li>
+              <li>1 枚だけ選んだときは、確認カードへ進む</li>
+              <li>HINAMI で記録済みの写真は外して見せる (二重に記録しないため)</li>
             </ol>
           </div>
           <div class="arrow"><span>完了</span><span class="line"></span></div>
           <div class="screen">
-            <p class="cap">確認 (複数枚) <span class="plan-tag">案</span></p>
-            <div class="phone plan">
+            <p class="cap">確認 (複数枚)</p>
+            <div class="phone">
               <div class="top"><span class="x">×</span><span class="meta">4 枚 · 2 回の食事</span></div>
               <div class="group">
                 <div class="gh"><span>11.21 金</span><span class="chip">鮨 はやし ▾</span></div>
@@ -1112,7 +1112,7 @@
             <div class="phone">
               <div class="top"><span class="logo">HINAMI</span><span class="btn">履歴</span></div>
               <div class="placeholder">ここに置くものは<br />まだ決めていない</div>
-              <div class="toast plan"><span>4 件を残しました</span><span class="link">取り消す</span></div>
+              <div class="toast"><span>4 件を残しました</span><span class="link">取り消す</span></div>
               <div class="actions">
                 <span class="btn side">写真から<br />選ぶ</span>
                 <span class="shoot">撮る</span>
@@ -1151,7 +1151,7 @@
                 <td>同じ食事</td>
                 <td><span class="chip meal">同じ食事 · 2 品目 ▾</span></td>
                 <td>タップで「新しい食事にする / 前の食事に入れる」を選べる</td>
-                <td><span class="plan-tag">案</span></td>
+                <td>決まり</td>
               </tr>
               <tr>
                 <td rowspan="7">場所</td>
@@ -1182,19 +1182,19 @@
                 <td>推定中</td>
                 <td><span class="chip ghost">推定中</span></td>
                 <td>その場で結果に変わる</td>
-                <td><span class="plan-tag">案</span></td>
+                <td>決まり</td>
               </tr>
               <tr>
                 <td>電波がない</td>
                 <td><span class="chip ghost">道玄坂 · 電波が戻ったら推定</span></td>
                 <td>保存は先に済ませる。地域名は端末の位置から出す</td>
-                <td><span class="plan-tag">案</span></td>
+                <td>決まり</td>
               </tr>
               <tr>
                 <td>位置がない (受け取った写真、スクリーンショット、位置情報オフ)</td>
                 <td><span class="chip ghost">店を検索 ▾</span></td>
                 <td>推定できないので検索だけ。食事のまとまりは時刻だけで決める</td>
-                <td><span class="plan-tag">案</span></td>
+                <td>決まり</td>
               </tr>
               <tr>
                 <td rowspan="4">種類</td>
@@ -1213,7 +1213,7 @@
                 <td>判定できない</td>
                 <td><span class="chip ghost">種類を選ぶ ▾</span></td>
                 <td>種類を付けずに出し、手で選ぶ。選ばなくても残せる</td>
-                <td><span class="plan-tag">案</span></td>
+                <td>決まり</td>
               </tr>
               <tr>
                 <td>電波がない</td>
@@ -1230,10 +1230,9 @@
         <h2>この図で決めていないこと</h2>
         <ul class="open">
           <li>店が決まっていない記録を、あとでどこで直すか (履歴の中身と一緒に決める)</li>
-          <li>ホームの残りの場所に何を置くか。あとから気の知れた人の記録を置ける場所は残す</li>
+          <li>ホームの残りの場所に何を置くか。つながっている人の記録をどこに出すかと一緒に決める</li>
           <li>保存後に「比べる」を 1 問出すか。写真から複数枚を残したときにどう出すか</li>
-          <li>図の中で「案」と付けたもの</li>
-        </ul>
+                  </ul>
       </section>
     </main>
   </body>
