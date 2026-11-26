@@ -1003,7 +1003,7 @@ a {
   font-size: 10px;
   text-align: center;
 }
-.seg span {
+.seg > * {
   padding: 3px 0;
 }
 .seg .on {
