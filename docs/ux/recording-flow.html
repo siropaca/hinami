@@ -375,10 +375,9 @@
               <div class="dim"></div>
               <div class="sheet short">
                 <div class="grab"></div>
-                <strong style="font-size: 12px">どこに入れるか</strong>
+                <strong style="font-size: 12px">どの食事に入れるか</strong>
                 <div class="li"><span>前の食事に入れる</span><small>家 · 08:10 から</small></div>
                 <div class="li tap ring" data-tap="4"><span>新しい食事にする</span><small></small></div>
-                <div class="li"><span>買ったもの</span><small>口にする前</small></div>
               </div>
             </div>
             <ol class="notes">
@@ -598,70 +597,6 @@
           </div>
         </div>
       </section>
-      <!-- Flow G -->
-      <section>
-        <h2>G. 買ったもの (買ったボトルなど)</h2>
-        <p class="desc">まだ口にしていないものは、食事ではなく「買ったもの」として残す。酒屋などで撮ると、最初から「買ったもの」になる。</p>
-        <p class="scroll-hint">横にスクロールできます →</p>
-        <div class="row">
-          <div class="screen">
-            <p class="cap">確認カード (酒屋で撮った)</p>
-            <div class="phone">
-              <div class="top"><span class="x">×</span><span class="chip meal tap ring" data-tap="1">買ったもの ▾</span></div>
-              <div class="ph" style="height: 168px"><span>写真</span><span class="retake">撮り直す</span></div>
-              <div class="chips"><span class="chip">日本酒 ▾</span><span class="hint">AI が判定</span></div>
-              <div class="kv"><span class="k">場所</span><span class="chip">はせがわ酒店 ▾</span></div>
-              <div class="memo">メモ (任意)</div>
-              <div class="spacer"></div>
-              <span class="btn primary block tap" data-tap="3">残す</span>
-            </div>
-            <ol class="notes">
-              <li>ものを買う店で撮ったので、最初から「買ったもの」にしておく (推定)</li>
-              <li>銘柄を読めたときは、ふつうの記録と同じくメモの候補に出す</li>
-            </ol>
-          </div>
-          <div class="arrow"><span>違うときだけ<br />タップ</span><span class="line"></span></div>
-          <div class="screen">
-            <p class="cap">まとまりを選ぶ</p>
-            <div class="phone">
-              <div class="top"><span class="x">×</span><span class="chip meal">買ったもの ▾</span></div>
-              <div class="ph" style="height: 168px"><span>写真</span></div>
-              <div class="dim"></div>
-              <div class="sheet short">
-                <div class="grab"></div>
-                <strong style="font-size: 12px">どこに入れるか</strong>
-                <div class="li"><span>前の食事に入れる</span><small>道玄坂 · 19:10 から</small></div>
-                <div class="li"><span>新しい食事にする</span><small></small></div>
-                <div class="li tap ring" data-tap="2"><span>買ったもの</span><small>口にする前</small></div>
-              </div>
-            </div>
-            <ol class="notes">
-              <li>D の「食事を選ぶ」に「買ったもの」を足す。推定が違ったとき、ここで直す</li>
-              <li>ネットで買って家に届いたボトルなどは、ここで「買ったもの」を選ぶ</li>
-            </ol>
-          </div>
-          <div class="arrow"><span>残す</span><span class="line"></span></div>
-          <div class="screen">
-            <p class="cap">もとの画面 (保存後)</p>
-            <div class="phone">
-              <div class="top"><span class="logo">HINAMI</span><span class="hint">お知らせ　設定</span></div>
-              <div class="cal-h"><strong>最近の記録</strong><span class="link">すべて</span></div>
-              <div class="ml"><div class="ml-h"><span>11/27</span><span>はせがわ酒店 · 買った</span></div><div class="ml-th"><div class="ph"></div></div></div>
-              <div class="ml"><div class="ml-h"><span>11/26</span><span>麺屋 ひかり</span></div><div class="ml-th"><div class="ph"></div></div></div>
-              <div class="spacer"></div>
-              <div class="toast"><span>残しました<br />はせがわ酒店</span><span class="link">取り消す</span></div>
-              <div class="fab-gap"></div>
-              <div class="tabbar"><span class="on">ホーム</span><span>記録</span><span>実績</span><span>友だち</span></div>
-              <span class="fab">＋</span>
-            </div>
-            <ol class="notes">
-              <li>買ったものは、ホームと記録のタブに 1 品ずつ並び、「買った」の印が付く</li>
-              <li>スタンプ、はじめての種類・地域、比べる、マップには入れない。まだ味わっていないため</li>
-              <li>あとで飲んだときは、そのときに撮ってふつうに記録する。買ったものとはつなげない</li>
-            </ol>
-          </div>
-        </div>
-      </section>
       <!-- States -->
       <section>
         <h2>欄の状態</h2>
@@ -680,7 +615,7 @@
             </thead>
             <tbody>
               <tr>
-                <td rowspan="3">食事</td>
+                <td rowspan="2">食事</td>
                 <td>新しい食事</td>
                 <td><span class="chip meal">新しい食事 ▾</span></td>
                 <td>時刻と場所で自動に決まる</td>
@@ -689,13 +624,7 @@
               <tr>
                 <td>同じ食事</td>
                 <td><span class="chip meal">同じ食事 · 2 品目 ▾</span></td>
-                <td>タップで「新しい食事にする / 前の食事に入れる / 買ったもの」を選べる</td>
-                <td>決まり</td>
-              </tr>
-              <tr>
-                <td>買ったもの (酒屋などで撮った)</td>
-                <td><span class="chip meal">買ったもの ▾</span></td>
-                <td>まだ口にしていないもの。食事にまとめず 1 品ずつ残す (G)</td>
+                <td>タップで「新しい食事にする / 前の食事に入れる」を選べる</td>
                 <td>決まり</td>
               </tr>
               <tr>
