@@ -17,6 +17,7 @@ HINAMI (日次 / ひなみ) は、食と飲みの「覚えておきたい体験�
 | 画面の流れ (UX)                             | [`docs/ux/`](docs/ux/recording.md)                     |
 | 続けたくなる仕組み (実績)                   | [`docs/ux/achievements.md`](docs/ux/achievements.md)   |
 | 比べる (ランキング)                         | [`docs/ux/compare.md`](docs/ux/compare.md)             |
+| 種類の一覧                                  | [`docs/ux/kinds.md`](docs/ux/kinds.md)                 |
 | 最初のチュートリアルとアカウント            | [`docs/ux/onboarding.md`](docs/ux/onboarding.md)       |
 | 画面の構成 (タブとホーム)                   | [`docs/ux/navigation.md`](docs/ux/navigation.md)       |
 | 記録のタブ (履歴と検索)                     | [`docs/ux/history.md`](docs/ux/history.md)             |
