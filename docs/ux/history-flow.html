@@ -9,10 +9,10 @@
   <body>
     <main>
       <h1>記録のタブ (履歴と検索) — ワイヤーフレーム</h1>
-      <p class="status">状態: 合意 (2026-11-26)。「案」はもうない。決まりの本文は <a href="history.md">history.md</a></p>
+      <p class="status">状態: 合意 (2026-11-26)。2026-11-27 に、マップをこのタブに移した。決まりの本文は <a href="history.md">history.md</a></p>
 
       <p class="lead">
-        記録のタブ 1 つで、カレンダーと検索を兼ねる (タブの名前ははじめ「履歴」だった)。絞っていないときはカレンダー、種類か言葉で絞ったら食事単位の一覧に切り替える。
+        記録のタブ 1 つで、カレンダーと検索とマップを兼ねる (タブの名前ははじめ「履歴」だった)。絞っていないときはカレンダー、種類か言葉で絞ったら食事単位の一覧に切り替える。カレンダー・一覧とマップは、上の切り替えで行き来する。
       </p>
 
       <ul class="legend">
@@ -29,7 +29,7 @@
         <p class="scroll-hint">横にスクロールできます →</p>
         <div class="scroll">
           <div class="overview">
-            <svg viewBox="0 96 940 156" role="img" aria-label="記録のタブの画面の遷移図">
+            <svg viewBox="0 96 940 246" role="img" aria-label="記録のタブの画面の遷移図">
               <defs>
                 <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
                   <path d="M0 0 L10 5 L0 10 z" fill="#444" />
@@ -42,12 +42,20 @@
                   <path d="M430 130 H536" />
                   <path d="M430 218 H480 V140 H536" />
                   <path d="M680 130 H746" />
+                  <path d="M150 130 H170 V306 H286" />
+                  <path d="M360 240 V280" />
+                  <path d="M430 306 H536" />
+                  <path d="M610 284 V156" />
                 </g>
                 <g font-size="11" fill="#555">
                   <text x="198" y="122">日付をタップ</text>
                   <text x="198" y="210">種類・言葉で絞る</text>
                   <text x="440" y="122">食事をタップ</text>
                   <text x="686" y="122">品をタップ</text>
+                  <text x="176" y="298">切り替え</text>
+                  <text x="366" y="266">切り替え</text>
+                  <text x="440" y="298">ピンをタップ</text>
+                  <text x="616" y="230">食事をタップ</text>
                 </g>
                 <g stroke="#444" stroke-width="2" fill="#fff">
                   <rect x="10" y="108" width="140" height="44" rx="8" />
@@ -55,6 +63,8 @@
                   <rect x="290" y="196" width="140" height="44" rx="8" />
                   <rect x="540" y="108" width="140" height="44" rx="8" />
                   <rect x="750" y="108" width="160" height="44" rx="8" />
+                  <rect x="290" y="284" width="140" height="44" rx="8" />
+                  <rect x="540" y="284" width="140" height="44" rx="8" />
                 </g>
                 <g text-anchor="middle" dominant-baseline="central">
                   <text x="80" y="130" font-weight="700">記録 (カレンダー)</text>
@@ -62,6 +72,8 @@
                   <text x="360" y="218">一覧 (食事単位)</text>
                   <text x="610" y="130">食事の詳細</text>
                   <text x="830" y="130">確認カードで直す</text>
+                  <text x="360" y="306">マップ</text>
+                  <text x="610" y="306">場所の一覧 (シート)</text>
                 </g>
               </g>
             </svg>
@@ -80,6 +92,7 @@
             <div class="phone">
               <div class="search">店名・メモ・地域で検索</div>
               <div class="fchips"><span class="chip on">すべて</span><span class="chip tap" data-tap="1">日本酒</span><span class="chip">ラーメン</span><span class="chip">コーヒー</span><span class="chip">▾</span></div>
+              <div class="seg"><span class="on">カレンダー</span><span>マップ</span></div>
               <div class="cal-h"><strong>‹ 2026 年 11 月 ›</strong></div>
               <div class="sum">記録 18 件 · 外食 9 回 · 7 軒</div>
               <div class="cal">
@@ -123,7 +136,7 @@
               </div>
               <div class="spacer"></div>
               <div class="fab-gap"></div>
-              <div class="tabbar"><span>ホーム</span><span class="on">記録</span><span>実績</span><span>マップ</span><span>友だち</span></div>
+              <div class="tabbar"><span>ホーム</span><span class="on">記録</span><span>実績</span><span>友だち</span></div>
               <span class="fab">＋</span>
             </div>
             <ol class="notes">
@@ -131,6 +144,7 @@
               <li>日付をタップすると、その日の記録が食事ごとに出る</li>
               <li>月のまとめ: 外食は食事単位で数え、家は数えない。店が決まっていない食事は回数に入れ、軒数には入れない</li>
               <li>種類はよく記録する順に並べる。▾ で階層つきの一覧から選べる</li>
+              <li>上の切り替えで、同じ記録をマップで見られる (下の D)</li>
             </ol>
           </div>
           <div class="arrow"><span>日本酒</span><span class="line"></span></div>
@@ -139,6 +153,7 @@
             <div class="phone">
               <div class="search">店名・メモ・地域で検索</div>
               <div class="cal-h"><span class="chip on">日本酒 ×</span><span class="sum">日本酒 26 件</span></div>
+              <div class="seg"><span class="on">一覧</span><span>マップ</span></div>
               <div class="toast"><span>ランキング<br /><span class="sum">1 位 獺祭 純米大吟醸 45</span></span><span>›</span></div>
               <div class="ml-month">11 月</div>
               <div class="ml">
@@ -151,7 +166,7 @@
               </div>
               <div class="spacer"></div>
               <div class="fab-gap"></div>
-              <div class="tabbar"><span>ホーム</span><span class="on">記録</span><span>実績</span><span>マップ</span><span>友だち</span></div>
+              <div class="tabbar"><span>ホーム</span><span class="on">記録</span><span>実績</span><span>友だち</span></div>
               <span class="fab">＋</span>
             </div>
             <ol class="notes">
@@ -159,6 +174,7 @@
               <li>日本酒の品を先頭にし、印 (太い枠) を付ける。同じ食事のほかの品もサムネイルで見える</li>
               <li>「美味しかった」は写真を見て見つける。店の好きな順は持たない</li>
               <li>種類で絞ったときだけ、一覧の上にその種類のランキングの入口を出す (<a href="compare.md">compare.md</a>)</li>
+              <li>絞ったまま、マップに切り替えられる (下の D)</li>
             </ol>
           </div>
           <div class="arrow"><span>食事をタップ</span><span class="line"></span></div>
@@ -175,7 +191,7 @@
               <div class="li"><span class="who"><span class="av"></span>まい</span><span>◯</span></div>
               <div class="spacer"></div>
               <div class="fab-gap"></div>
-              <div class="tabbar"><span>ホーム</span><span class="on">記録</span><span>実績</span><span>マップ</span><span>友だち</span></div>
+              <div class="tabbar"><span>ホーム</span><span class="on">記録</span><span>実績</span><span>友だち</span></div>
               <span class="fab">＋</span>
             </div>
             <ol class="notes">
@@ -199,6 +215,7 @@
             <p class="cap">一覧 (「獺祭」で探した)</p>
             <div class="phone">
               <div class="search" style="color: var(--ink)">獺祭 ×</div>
+              <div class="seg"><span class="on">一覧</span><span>マップ</span></div>
               <div class="sum">2 件の食事</div>
               <div class="ml-month">11 月</div>
               <div class="ml">
@@ -214,7 +231,7 @@
               </div>
               <div class="spacer"></div>
               <div class="fab-gap"></div>
-              <div class="tabbar"><span>ホーム</span><span class="on">記録</span><span>実績</span><span>マップ</span><span>友だち</span></div>
+              <div class="tabbar"><span>ホーム</span><span class="on">記録</span><span>実績</span><span>友だち</span></div>
               <span class="fab">＋</span>
             </div>
             <ol class="notes">
@@ -236,10 +253,11 @@
             <p class="cap">記録が 0 件</p>
             <div class="phone">
               <div class="search">店名・メモ・地域で検索</div>
+              <div class="seg"><span class="on">カレンダー</span><span>マップ</span></div>
               <div class="cal-h"><strong>‹ 2026 年 11 月 ›</strong></div>
               <div class="placeholder">まだ記録がない<br />右下の [＋] から残す</div>
               <div class="fab-gap"></div>
-              <div class="tabbar"><span>ホーム</span><span class="on">記録</span><span>実績</span><span>マップ</span><span>友だち</span></div>
+              <div class="tabbar"><span>ホーム</span><span class="on">記録</span><span>実績</span><span>友だち</span></div>
               <span class="fab">＋</span>
             </div>
             <ol class="notes">
@@ -251,13 +269,102 @@
             <p class="cap">絞り込みに合わない</p>
             <div class="phone">
               <div class="search" style="color: var(--ink)">獺祭 ×</div>
+              <div class="seg"><span class="on">一覧</span><span>マップ</span></div>
               <div class="placeholder">「獺祭」に合う記録はない<br /><span class="link">言葉を消す</span></div>
               <div class="fab-gap"></div>
-              <div class="tabbar"><span>ホーム</span><span class="on">記録</span><span>実績</span><span>マップ</span><span>友だち</span></div>
+              <div class="tabbar"><span>ホーム</span><span class="on">記録</span><span>実績</span><span>友だち</span></div>
               <span class="fab">＋</span>
             </div>
             <ol class="notes">
               <li>合うものがないことを出し、絞り込みや言葉を外せるようにする</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <!-- Flow D -->
+      <section>
+        <h2>D. 地図で見る (マップ)</h2>
+        <p class="desc">カレンダー・一覧と同じ記録を、地図で見る。上の切り替えで行き来する。種類や言葉で絞ると、マップにも効く。</p>
+        <p class="scroll-hint">横にスクロールできます →</p>
+        <div class="row">
+          <div class="screen">
+            <p class="cap">記録のタブ (マップ)</p>
+            <div class="phone">
+              <div class="search">店名・メモ・地域で検索</div>
+              <div class="fchips"><span class="chip on">すべて</span><span class="chip tap" data-tap="1">日本酒</span><span class="chip">ラーメン</span><span class="chip">コーヒー</span><span class="chip">▾</span></div>
+              <div class="seg"><span>カレンダー</span><span class="on">マップ</span></div>
+              <div class="map">
+                <span class="pin" style="top: 18%; left: 20%">4</span>
+                <span class="pin" style="top: 40%; left: 55%">3</span>
+                <span class="pin" style="top: 26%; left: 70%">12</span>
+                <span class="pin" style="top: 62%; left: 30%"></span>
+                <span class="pin home" style="top: 70%; left: 62%">家</span>
+                <span class="pin" style="top: 52%; left: 12%"></span>
+                <span class="pin home" style="top: 46%; left: 42%; min-width: 10px; height: 10px; padding: 0; border-radius: 50%; background: #fff"></span>
+              </div>
+              <div class="fab-gap"></div>
+              <div class="tabbar"><span>ホーム</span><span class="on">記録</span><span>実績</span><span>友だち</span></div>
+              <span class="fab">＋</span>
+            </div>
+            <ol class="notes">
+              <li>食べた場所にピンを立てる。数字はその場所の回数。近いピンは、縮めるとまとまる</li>
+              <li>店が決まっていない食事は、地域のあたりに置く。家も自分のマップには出す (自分にしか見えない)</li>
+              <li>毎回、現在地 (白い小さな点) を中心に、近くのピンが見える広さで開く。位置情報が使えないときは、すべてのピンが入る範囲で開く</li>
+              <li>期間では区切らない。カレンダーの月とは連動しない</li>
+            </ol>
+          </div>
+          <div class="arrow"><span>日本酒</span><span class="line"></span></div>
+          <div class="screen">
+            <p class="cap">マップ (日本酒で絞った)</p>
+            <div class="phone">
+              <div class="search">店名・メモ・地域で検索</div>
+              <div class="cal-h"><span class="chip on">日本酒 ×</span><span class="sum">日本酒 26 件</span></div>
+              <div class="seg"><span>一覧</span><span class="on">マップ</span></div>
+              <div class="map">
+                <span class="pin tap" data-tap="2" style="top: 40%; left: 55%">2</span>
+                <span class="pin" style="top: 26%; left: 70%">5</span>
+                <span class="pin home" style="top: 70%; left: 62%">家</span>
+                <span class="pin home" style="top: 46%; left: 42%; min-width: 10px; height: 10px; padding: 0; border-radius: 50%; background: #fff"></span>
+              </div>
+              <div class="fab-gap"></div>
+              <div class="tabbar"><span>ホーム</span><span class="on">記録</span><span>実績</span><span>友だち</span></div>
+              <span class="fab">＋</span>
+            </div>
+            <ol class="notes">
+              <li>日本酒を記録した食事のピンだけが残る。言葉で探したときも同じ</li>
+              <li>「一覧」に戻すと、絞り込みを残したまま、食事単位の一覧になる (A)</li>
+            </ol>
+          </div>
+          <div class="arrow"><span>ピンをタップ</span><span class="line"></span></div>
+          <div class="screen">
+            <p class="cap">場所の一覧 (シート)</p>
+            <div class="phone">
+              <div class="search">店名・メモ・地域で検索</div>
+              <div class="cal-h"><span class="chip on">日本酒 ×</span><span class="sum">日本酒 26 件</span></div>
+              <div class="map">
+                <span class="pin" style="top: 30%; left: 50%">2</span>
+              </div>
+              <div class="sheet" style="height: 66%">
+                <div class="grab"></div>
+                <div class="cal-h"><strong>鮨 はやし</strong><span class="sum">渋谷区 · 日本酒 2 回</span></div>
+                <div class="ml-month">11 月</div>
+                <div class="ml">
+                  <div class="ml-h"><span>11/21 土</span><span>鮨 はやし</span></div>
+                  <div class="ml-th"><div class="ph hit tap" data-tap="3"></div><div class="ph"></div><div class="ph"></div></div>
+                </div>
+                <div class="ml-month">6 月</div>
+                <div class="ml">
+                  <div class="ml-h"><span>6/12 金</span><span>鮨 はやし</span></div>
+                  <div class="ml-th"><div class="ph hit"></div><div class="ph"></div></div>
+                </div>
+              </div>
+            </div>
+            <ol class="notes">
+              <li>その場所で食べた日を、新しい順に並べる。一覧と同じ形 (日付、場所、写真)</li>
+              <li>絞っているときは、合う食事だけを出し、合う品に印を付ける</li>
+              <li>シートを上に引くと全体に広がる</li>
+              <li>食事をタップすると、A と同じ食事の詳細</li>
             </ol>
           </div>
         </div>

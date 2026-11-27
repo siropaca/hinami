@@ -3,16 +3,16 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>実績とマップのタブ — ワイヤーフレーム | HINAMI</title>
+    <title>実績のタブ — ワイヤーフレーム | HINAMI</title>
     <link rel="stylesheet" href="wireframe.css" />
   </head>
   <body>
     <main>
-      <h1>実績とマップのタブ — ワイヤーフレーム</h1>
-      <p class="status">状態: 合意 (2026-11-27)。タブの名前は「実績」(はじめは「図鑑」)。同じ日に、マップを実績のタブの中の切り替えから、別のタブに分けた。実績の画面は一旦この形で、実績の種類はあとで詰める。決まりの本文は <a href="navigation.md">navigation.md</a></p>
+      <h1>実績のタブ — ワイヤーフレーム</h1>
+      <p class="status">状態: 合意 (2026-11-27)。タブの名前は「実績」(はじめは「図鑑」)。マップは、はじめこのタブの中の切り替えで、同じ日に別のタブにし、そのあと記録のタブに移した (<a href="history-flow.html">history-flow.html</a> の D)。実績の画面は一旦この形で、実績の種類はあとで詰める。決まりの本文は <a href="achievements.md">achievements.md</a></p>
 
       <p class="lead">
-        実績とマップは別々のタブ。実績のタブには解除した実績を並べ、種類の一覧は置かない (種類で探すのは記録のタブ)。マップのタブには食べた場所を並べる。
+        実績のタブには解除した実績を並べ、種類の一覧は置かない (種類で探すのは記録のタブ)。食べた場所のマップは、記録のタブの中にある。
       </p>
 
       <ul class="legend">
@@ -25,11 +25,11 @@
       <!-- Overview -->
       <section>
         <h2>全体の地図</h2>
-        <p class="desc">実績とマップのタブの中の画面と、そのつながり。どちらもタブバーから開く。戻る矢印は省いている。</p>
+        <p class="desc">実績のタブの中の画面と、ランキングの入口。戻る矢印は省いている。</p>
         <p class="scroll-hint">横にスクロールできます →</p>
         <div class="scroll">
           <div class="overview">
-            <svg viewBox="0 0 860 270" role="img" aria-label="実績とマップのタブの画面の遷移図">
+            <svg viewBox="0 0 420 190" style="max-width: 420px" role="img" aria-label="実績のタブの画面の遷移図">
               <defs>
                 <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
                   <path d="M0 0 L10 5 L0 10 z" fill="#444" />
@@ -37,35 +37,24 @@
               </defs>
               <g font-size="13" font-family="-apple-system, 'Hiragino Sans', 'Noto Sans JP', sans-serif" fill="#222">
                 <g stroke="#444" stroke-width="1.8" fill="none" marker-end="url(#ah)">
-                  <path d="M160 87 H185 V42 H206" />
-                  <path d="M160 87 H185 V132 H206" />
-                  <path d="M360 132 H416" />
-                  <path d="M570 132 H626" />
-                  <path d="M380 222 H436" />
+                  <path d="M160 42 H236" />
+                  <path d="M190 132 H236" />
                 </g>
                 <g font-size="11" fill="#555">
-                  <text x="368" y="124">タップ</text>
-                  <text x="576" y="124">食事をタップ</text>
-                  <text x="386" y="214">入口</text>
-                  <text x="200" y="262">ランキングの入口 (実績とマップのタブの外)</text>
+                  <text x="196" y="124">入口</text>
+                  <text x="10" y="182">ランキングの入口 (実績のタブの外)</text>
                 </g>
                 <g stroke="#444" stroke-width="2" fill="#fff">
-                  <rect x="10" y="65" width="150" height="44" rx="8" />
-                  <rect x="210" y="20" width="150" height="44" rx="8" />
-                  <rect x="210" y="110" width="150" height="44" rx="8" />
-                  <rect x="630" y="110" width="200" height="44" rx="8" />
-                  <rect x="200" y="200" width="180" height="44" rx="8" />
-                  <rect x="440" y="200" width="150" height="44" rx="8" />
-                  <rect x="420" y="110" width="150" height="44" rx="8" />
+                  <rect x="10" y="20" width="150" height="44" rx="8" />
+                  <rect x="240" y="20" width="150" height="44" rx="8" />
+                  <rect x="10" y="110" width="180" height="44" rx="8" />
+                  <rect x="240" y="110" width="150" height="44" rx="8" />
                 </g>
                 <g text-anchor="middle" dominant-baseline="central">
-                  <text x="85" y="87" font-weight="700">タブバー</text>
-                  <text x="285" y="42">実績のタブ</text>
-                  <text x="285" y="132">マップのタブ</text>
-                  <text x="495" y="132">場所の一覧 (シート)</text>
-                  <text x="730" y="132">食事の詳細</text>
-                  <text x="290" y="222">記録のタブ (種類で絞る)</text>
-                  <text x="515" y="222">ランキング</text>
+                  <text x="85" y="42" font-weight="700">タブバー</text>
+                  <text x="315" y="42">実績のタブ</text>
+                  <text x="100" y="132">記録のタブ (種類で絞る)</text>
+                  <text x="315" y="132">ランキング</text>
                 </g>
               </g>
             </svg>
@@ -91,7 +80,7 @@
               <div class="ml-month">シークレット</div>
               <div class="stpgrid"><span class="stp on"><b>◎</b>0 時のシメ<small class="sub">押した</small></span><span class="stp"><b>?</b>シークレット<small class="sub"></small></span><span class="stp"><b>?</b>シークレット<small class="sub"></small></span></div>
               <div class="spacer"></div>
-              <div class="tabbar"><span>ホーム</span><span>記録</span><span class="on">実績</span><span>マップ</span><span>友だち</span></div>
+              <div class="tabbar"><span>ホーム</span><span>記録</span><span class="on">実績</span><span>友だち</span></div>
               <span class="fab">＋</span>
             </div>
             <ol class="notes">
@@ -145,87 +134,7 @@
 
       <!-- Flow B -->
       <section>
-        <h2>B. マップ</h2>
-        <p class="desc">食べた場所を地図に並べる。ピンをタップすると、その場所で食べた日の一覧がボトムシートで出る (記録のタブの一覧と同じ形)。</p>
-        <p class="scroll-hint">横にスクロールできます →</p>
-        <div class="row">
-          <div class="screen">
-            <p class="cap">マップのタブ</p>
-            <div class="phone">
-              <div class="top"><strong>マップ</strong><span></span></div>
-              <div class="sum">7 都道府県 · 38 軒</div>
-              <div class="map">
-                <span class="pin" style="top: 18%; left: 20%">4</span>
-                <span class="pin tap" data-tap="1" style="top: 40%; left: 55%">3</span>
-                <span class="pin" style="top: 26%; left: 70%">12</span>
-                <span class="pin" style="top: 62%; left: 30%"></span>
-                <span class="pin home" style="top: 70%; left: 62%">家</span>
-                <span class="pin" style="top: 52%; left: 12%"></span>
-                <span class="pin home" style="top: 46%; left: 42%; min-width: 10px; height: 10px; padding: 0; border-radius: 50%; background: #fff"></span>
-              </div>
-              <div class="fab-gap"></div>
-              <div class="tabbar"><span>ホーム</span><span>記録</span><span>実績</span><span class="on">マップ</span><span>友だち</span></div>
-              <span class="fab">＋</span>
-            </div>
-            <ol class="notes">
-              <li>食べた場所にピンを立てる。数字はその場所の回数。近いピンは、縮めるとまとまる</li>
-              <li>店が決まっていない食事は、地域のあたりに置く</li>
-              <li>家も自分のマップには出す (自分にしか見えない)</li>
-              <li>毎回、現在地 (白い小さな点) を中心に、近くのピンが見える広さで開く。位置情報が使えないときは、すべてのピンが入る範囲で開く</li>
-            </ol>
-          </div>
-          <div class="arrow"><span>ピンをタップ</span><span class="line"></span></div>
-          <div class="screen">
-            <p class="cap">場所の一覧 (シート)</p>
-            <div class="phone">
-              <div class="top"><strong>マップ</strong><span></span></div>
-              <div class="map">
-                <span class="pin" style="top: 30%; left: 50%">3</span>
-              </div>
-              <div class="sheet" style="height: 72%">
-                <div class="grab"></div>
-                <div class="cal-h"><strong>麺屋 ひかり</strong><span class="sum">渋谷区 · 3 回</span></div>
-                <div class="ml-month">11 月</div>
-                <div class="ml">
-                  <div class="ml-h"><span>11/26 木</span><span>麺屋 ひかり</span></div>
-                  <div class="ml-th"><div class="ph tap" data-tap="2"></div><div class="ph"></div></div>
-                </div>
-                <div class="ml-month">9 月</div>
-                <div class="ml">
-                  <div class="ml-h"><span>9/14 月</span><span>麺屋 ひかり</span></div>
-                  <div class="ml-th"><div class="ph"></div></div>
-                </div>
-                <div class="ml">
-                  <div class="ml-h"><span>9/02 水</span><span>麺屋 ひかり</span></div>
-                  <div class="ml-th"><div class="ph"></div><div class="ph"></div></div>
-                </div>
-              </div>
-            </div>
-            <ol class="notes">
-              <li>その場所で食べた日を、新しい順に並べる。記録のタブの一覧と同じ形 (日付、場所、写真)</li>
-              <li>シートを上に引くと全体に広がる</li>
-            </ol>
-          </div>
-          <div class="arrow"><span>食事をタップ</span><span class="line"></span></div>
-          <div class="screen">
-            <p class="cap">食事の詳細</p>
-            <div class="phone">
-              <div class="top"><span class="x">‹</span><span class="meta">11/26 木 · 12:40</span></div>
-              <div class="kv"><span class="k">場所</span><span class="chip">麺屋 ひかり ▾</span></div>
-              <div class="it"><div class="ph"></div><div class="body"><span class="chip">ラーメン ▾</span><span class="hl">特製醤油</span></div></div>
-              <div class="it"><div class="ph"></div><div class="body"><span class="chip">ビール ▾</span><span class="hl">メモなし</span></div></div>
-              <div class="spacer"></div>
-            </div>
-            <ol class="notes">
-              <li>記録のタブから開くときと同じ食事の詳細 (<a href="history.md">history.md</a>)</li>
-            </ol>
-          </div>
-        </div>
-      </section>
-
-      <!-- Flow C -->
-      <section>
-        <h2>C. ランキングの入口</h2>
+        <h2>B. ランキングの入口</h2>
         <p class="desc">実績のタブには種類の一覧を置かないので、ランキングは、記録のタブを種類で絞ったときに入口を出す。</p>
         <p class="scroll-hint">横にスクロールできます →</p>
         <div class="row">
@@ -246,7 +155,7 @@
               </div>
               <div class="spacer"></div>
               <div class="fab-gap"></div>
-              <div class="tabbar"><span>ホーム</span><span class="on">記録</span><span>実績</span><span>マップ</span><span>友だち</span></div>
+              <div class="tabbar"><span>ホーム</span><span class="on">記録</span><span>実績</span><span>友だち</span></div>
               <span class="fab">＋</span>
             </div>
             <ol class="notes">
