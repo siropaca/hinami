@@ -1,8 +1,30 @@
 # 調査: iOS の新しい仕組みと AI の最新の手法 (2026-11-28)
 
-エージェントが Web で調べた報告。数字や仕様は出典のものを写しただけで、一次情報はまだ確かめていない。とくに iOS 27 と WWDC26 の内容は、作業したエージェントが報告したもので、技術の確認のときに一次情報で確かめる。施策の候補は調査担当の意見で、決まりではない。まとめは [`README.md`](README.md)。
+エージェントが Web で調べた報告。数字や仕様は出典のものを写しただけで、一次情報はまだ確かめていない。iOS 27 と WWDC26 の内容の多くは、技術のレビューで一次情報に照らした (下の「レビューで確かめたこと」)。施策の候補は調査担当の意見で、決まりではない。まとめは [`README.md`](README.md)。
 
 前提 (報告より): 最新の OS は iOS 27 (2026-09-14 公開)。Expo は iOS 27 に対応した SDK 58 (2026-10) が最新。
+
+## レビューで確かめたこと (2026-11-28)
+
+技術のレビュー (別のエージェント) で、Apple と Expo の一次情報に照らした結果。
+
+- **合っていた**:
+  - iOS 27 の端末のモデルの画像入力 (`Attachment`)。対応端末 (iPhone 15 Pro、16 以降、Air、Duo。8〜14GB の空きが要る)
+  - PCC を開発者が使えること (通信が要る。文脈 32K。TestFlight で試せる。将来は有料の枠ができる)
+  - Claude と Gemini に同じ API で差し替えられること
+  - `expo-ai` (alpha)、`expo-widgets` (SDK 56 で stable)、`expo-app-intents` (alpha)
+  - LockedCameraCapture の制約 (通信も App Group も使えない。申請の要る entitlement はない。`expo-apple-targets` は対応していない)
+  - Place ID は保存の制限を受けない
+  - PhotosPicker は埋め込めて、許可が要らない
+- **違っていた・補足**:
+  - 端末のモデルの文脈長「4K 前後」は iOS 26 の値。WWDC26 の例では 8192。実行時に `contextSize` で取る
+  - PCC を無料で使うには、Small Business Program に加えて、初回のダウンロードが 200 万未満であることと、申請して受ける entitlement が要る
+  - Journaling Suggestions の entitlement は Xcode で付けられ、申請制ではない。ただし、写真の候補で渡るのは画像と日時だけで、位置がない
+  - Place ID は 1 つの店に複数付くことがある。別の ID (alternateIdentifiers) を見て重複を除く
+  - Live Activity は、動くのが 8 時間まで、そのあとロック画面に最長 4 時間残る。「8 時間」と「12 時間」はどちらも正しい
+  - Live Activity のデータは 4KB まで
+- **確かめられなかった**: PCC が画像を受けるか。1 日の上限の数値。撮影の拡張で位置を取れるか。日本の飲食店の MapKit の網羅度
+- **出典**: [WWDC26 #241](https://developer.apple.com/videos/play/wwdc2026/241)、[画像の入力](https://developer.apple.com/documentation/foundationmodels/analyzing-images-with-multimodal-prompting)、[対応端末](https://support.apple.com/en-us/121115)、[PCC](https://developer.apple.com/private-cloud-compute/)、[LockedCameraCapture](https://developer.apple.com/documentation/lockedcameracapture/creating-a-camera-experience-for-the-lock-screen)、[Journaling Suggestions の写真](https://developer.apple.com/documentation/journalingsuggestions/journalingsuggestion/photo)、[Place ID](https://developer.apple.com/documentation/mapkit/identifying-unique-locations-with-place-ids)、[Live Activities](https://developer.apple.com/documentation/activitykit/displaying-live-data-with-live-activities)、[Expo SDK 58](https://expo.dev/changelog/sdk-58)、[iPhone の機種の割合 (MMD 研究所)](https://www.watch.impress.co.jp/docs/news/2141787.html)
 
 ## 項目ごとの要点
 
