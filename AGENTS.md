@@ -6,7 +6,7 @@ HINAMI (日次 / ひなみ) は、食と飲みの「覚えておきたい体験�
 ## 現在地
 
 - 構想段階を終え、リポジトリを整備した段階。アプリのコードはまだない
-- 見た目のデザイン ([`docs/design/direction.md`](docs/design/direction.md)) の前に、ワイヤーフレームの画面遷移図で UX を詰めている ([`docs/ux/`](docs/ux/recording.md))。「ホームからいつもの記録」の流れ、続けたくなる仕組み (実績) の最初の一覧、比べる (ランキング)、履歴と検索、つながる (SNS)、画面の構成 (タブとホーム)、実績のタブ (スタンプとマップ) まで合意した
+- 見た目のデザイン ([`docs/design/direction.md`](docs/design/direction.md)) の前に、ワイヤーフレームの画面遷移図で UX を詰めている ([`docs/ux/`](docs/ux/recording.md))。「ホームからいつもの記録」の流れ、続けたくなる仕組み (実績) の最初の一覧、比べる (ランキング)、履歴と検索、つながる (SNS)、画面の構成 (タブとホーム)、実績のタブ (スタンプとマップ)、最初のチュートリアルとアカウントまで決めた
 - 最初の関門 (PHASE 1): 作り手自身が 4 週間、覚えておきたい食をすべて記録できること
 
 ## ドキュメントマップ
@@ -17,6 +17,7 @@ HINAMI (日次 / ひなみ) は、食と飲みの「覚えておきたい体験�
 | 画面の流れ (UX)                             | [`docs/ux/`](docs/ux/recording.md)                     |
 | 続けたくなる仕組み (実績)                   | [`docs/ux/achievements.md`](docs/ux/achievements.md)   |
 | 比べる (ランキング)                         | [`docs/ux/compare.md`](docs/ux/compare.md)             |
+| 最初のチュートリアルとアカウント            | [`docs/ux/onboarding.md`](docs/ux/onboarding.md)       |
 | 画面の構成 (タブとホーム)                   | [`docs/ux/navigation.md`](docs/ux/navigation.md)       |
 | 記録のタブ (履歴と検索)                     | [`docs/ux/history.md`](docs/ux/history.md)             |
 | つながる (SNS)                              | [`docs/ux/connect.md`](docs/ux/connect.md)             |

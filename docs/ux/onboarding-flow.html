@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>最初のチュートリアルとアカウント — ワイヤーフレーム | HINAMI</title>
+    <link rel="stylesheet" href="wireframe.css" />
+  </head>
+  <body>
+    <main>
+      <h1>最初のチュートリアルとアカウント — ワイヤーフレーム</h1>
+      <p class="status">状態: 決めた (2026-11-27)。作り手から任されて決めた。決まりの本文は <a href="onboarding.md">onboarding.md</a></p>
+
+      <p class="lead">
+        はじめて開いてから最初の記録までを短くする。アカウントは最初に Apple か Google で 1 タップで作る。許可は使う場面で聞き、通知だけはチュートリアルで聞く。
+      </p>
+
+      <ul class="legend">
+        <li><span class="sw"></span>決まった流れ・機能</li>
+        <li><span class="sw plan"></span><span class="plan-tag">案</span> まだ確かめていない流れ・機能</li>
+        <li><span class="sw tapmark">1</span>タップの順番</li>
+      </ul>
+      <p class="legend-note">画面の中の配置や大きさは、すべて仮。言葉も仮。</p>
+
+      <!-- Flow A -->
+      <section>
+        <h2>A. はじめて開く</h2>
+        <p class="desc">ようこそは 1 枚だけ。アカウントを作り、通知のお願いをしたら、すぐホームに入る。</p>
+        <p class="scroll-hint">横にスクロールできます →</p>
+        <div class="row">
+          <div class="screen">
+            <p class="cap">ようこそ</p>
+            <div class="phone">
+              <div class="spacer"></div>
+              <p class="center logo" style="font-size: 18px; margin: 0">HINAMI</p>
+              <p class="center" style="margin: 0">覚えておきたい食を、1 品ずつ</p>
+              <div class="spacer"></div>
+              <div class="li"><span>写真だけで残る。種類と場所は自動</span></div>
+              <div class="li"><span>あとから日付・種類・言葉で探せる</span></div>
+              <div class="li"><span>食べるほどスタンプが集まる</span></div>
+              <div class="spacer"></div>
+              <span class="btn primary block tap" data-tap="1">Apple で続ける</span>
+              <span class="btn block">Google で続ける</span>
+              <p class="legal">続けると、<u>利用規約</u>と<u>プライバシーポリシー</u>に<br />同意したことになります</p>
+            </div>
+            <ol class="notes">
+              <li>何ができるかを 3 行で見せる (言葉は仮)</li>
+              <li>アカウントは最初に作る。Apple か Google で 1 タップ。メールアドレスとパスワードは使わない</li>
+              <li>名前はここでは聞かない。友だちの機能をはじめて使うときに決める</li>
+            </ol>
+          </div>
+          <div class="arrow"><span>続ける</span><span class="line"></span></div>
+          <div class="screen">
+            <p class="cap">通知のお願い</p>
+            <div class="phone">
+              <div class="spacer"></div>
+              <div class="av" style="width: 64px; height: 64px; margin: 0 auto"></div>
+              <p class="center" style="margin: 0"><strong>通知を受け取りますか?</strong></p>
+              <div class="li"><span>友だちからのスタンプやメッセージ</span></div>
+              <div class="li"><span>友だちが食事をシェアしたとき</span></div>
+              <div class="li"><span>運営からのお知らせ</span></div>
+              <p class="hint center">種類ごとに、あとから設定で止められます</p>
+              <div class="spacer"></div>
+              <span class="btn primary block tap" data-tap="2">受け取る</span>
+              <span class="link">あとで</span>
+            </div>
+            <ol class="notes">
+              <li>先に HINAMI の画面で、何を知らせるかを見せる</li>
+              <li>「受け取る」を押したときだけ OS の許可を出す。「あとで」なら OS の許可は出さない (OS の許可は 1 回しか出せないため)</li>
+              <li>運営からのお知らせが宣伝を含むなら、ここに受け取るかどうかの同意を別に置く (既定はオフ。App Store の審査ガイドライン 4.5.4)</li>
+            </ol>
+          </div>
+          <div class="arrow"><span>受け取る</span><span class="line"></span></div>
+          <div class="screen">
+            <p class="cap">OS の通知の許可</p>
+            <div class="phone">
+              <div class="spacer"></div>
+              <div class="dim"></div>
+              <div class="alert">
+                <strong>"HINAMI" は通知を<br />送信します</strong>
+                <p class="hint" style="margin: 6px 0 0">友だちからのメッセージや、<br />運営からのお知らせを届けます</p>
+                <div class="acts"><span class="act">許可しない</span><span class="act tap" data-tap="3">許可</span></div>
+              </div>
+            </div>
+            <ol class="notes">
+              <li>どちらを選んでも、ホームに進む</li>
+            </ol>
+          </div>
+          <div class="arrow"><span>許可</span><span class="line"></span></div>
+          <div class="screen">
+            <p class="cap">ホーム (記録が 0 件)</p>
+            <div class="phone">
+              <div class="top"><span class="logo">HINAMI</span><span class="hint">お知らせ　設定</span></div>
+              <div class="placeholder">まだ記録がない<br />右下の [＋] から残す</div>
+              <div class="fab-gap"></div>
+              <div class="tabbar"><span class="on">ホーム</span><span>記録</span><span>実績</span><span>友だち</span></div>
+              <span class="fab">＋</span>
+            </div>
+            <ol class="notes">
+              <li>チュートリアルはここで終わり。すぐ記録できる</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <!-- Flow B -->
+      <section>
+        <h2>B. はじめての記録</h2>
+        <p class="desc">カメラと位置情報は、はじめて ＋ を押したときに聞く。はじめての確認カードでだけ、ヒントを 1 つ出す。</p>
+        <p class="scroll-hint">横にスクロールできます →</p>
+        <div class="row">
+          <div class="screen">
+            <p class="cap">はじめての ＋</p>
+            <div class="phone">
+              <div class="top"><span class="x">×</span><span></span></div>
+              <div class="ph viewfinder"><span>ファインダー</span></div>
+              <div class="dim"></div>
+              <div class="alert">
+                <strong>"HINAMI" がカメラへの<br />アクセスを求めています</strong>
+                <p class="hint" style="margin: 6px 0 0">食べたものを撮って記録します</p>
+                <div class="acts"><span class="act">許可しない</span><span class="act tap" data-tap="1">OK</span></div>
+              </div>
+            </div>
+            <ol class="notes">
+              <li>はじめて ＋ を押したときに、カメラの許可を聞く</li>
+              <li>許可されなければ、写真から選ぶだけで記録できる</li>
+            </ol>
+          </div>
+          <div class="arrow"><span>OK</span><span class="line"></span></div>
+          <div class="screen">
+            <p class="cap">位置情報の許可</p>
+            <div class="phone">
+              <div class="top"><span class="x">×</span><span></span></div>
+              <div class="ph viewfinder"><span>ファインダー</span></div>
+              <div class="dim"></div>
+              <div class="alert">
+                <strong>"HINAMI" に位置情報の<br />使用を許可しますか?</strong>
+                <p class="hint" style="margin: 6px 0 0">撮った場所を記録し、<br />マップに現在地を出します</p>
+                <div class="acts"><span class="act">許可しない</span><span class="act tap" data-tap="2">使用中のみ</span></div>
+              </div>
+            </div>
+            <ol class="notes">
+              <li>続けて、位置情報の許可を聞く (使っているあいだだけ)</li>
+              <li>許可されなければ、場所は検索で入れる</li>
+            </ol>
+          </div>
+          <div class="arrow"><span>シャッター</span><span class="line"></span></div>
+          <div class="screen">
+            <p class="cap">はじめての確認カード</p>
+            <div class="phone">
+              <div class="top"><span class="x">×</span><span class="chip meal">新しい食事 ▾</span></div>
+              <div class="ph" style="height: 150px"><span>写真</span></div>
+              <div class="chips">
+                <span class="chip">ラーメン ▾</span><span class="hint">AI が判定</span>
+              </div>
+              <div class="kv"><span class="k">場所</span><span class="chip">麺屋 ひかり ▾</span></div>
+              <div class="hintbox">種類と場所は自動で入ります。<br />違うときだけ直してください <span class="link">OK</span></div>
+              <div class="memo">メモ (任意)</div>
+              <div class="spacer"></div>
+              <span class="btn primary block tap" data-tap="3">残す</span>
+            </div>
+            <ol class="notes">
+              <li>はじめての確認カードで 1 回だけヒントを出す。2 回目からは出さない</li>
+              <li>はじめて「残す」を押したときに、撮った写真を端末に残すための許可を聞く</li>
+              <li>「写真から選ぶ」の許可は、はじめてそれを押したときに聞く</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <!-- Flow C -->
+      <section>
+        <h2>C. アカウントを削除する</h2>
+        <p class="desc">設定から削除できる (App Store の審査ガイドライン 5.1.1)。消す前に、何が消えるかを見せて確かめる。</p>
+        <p class="scroll-hint">横にスクロールできます →</p>
+        <div class="row">
+          <div class="screen">
+            <p class="cap">設定 → アカウント</p>
+            <div class="phone">
+              <div class="top"><span class="x">‹</span><strong>アカウント</strong><span></span></div>
+              <div class="li"><span>Apple でサインイン中</span><small></small></div>
+              <div class="li"><span>ログアウト</span><small>記録はサーバーに残る</small></div>
+              <div class="spacer"></div>
+              <div class="li tap" data-tap="1"><span style="color: #b00">アカウントを削除</span></div>
+            </div>
+            <ol class="notes">
+              <li>設定はホームの右上から開く</li>
+              <li>ログアウトしても記録は残り、同じアカウントで入れば戻る</li>
+            </ol>
+          </div>
+          <div class="arrow"><span>アカウントを削除</span><span class="line"></span></div>
+          <div class="screen">
+            <p class="cap">削除の確認</p>
+            <div class="phone">
+              <div class="top"><span class="x">‹</span><strong>アカウントを削除</strong><span></span></div>
+              <p style="margin: 0">次のものがすべて消え、元に戻せません</p>
+              <div class="li"><span>記録 214 件と写真</span></div>
+              <div class="li"><span>スタンプとランキング</span></div>
+              <div class="li"><span>友だち 3 人とメッセージ</span></div>
+              <p class="hint" style="margin: 0">端末の写真アプリに残した写真は消えません</p>
+              <div class="spacer"></div>
+              <span class="btn block tap" data-tap="2" style="border-color: #b00; color: #b00">削除する</span>
+            </div>
+            <ol class="notes">
+              <li>消えるものを数で見せてから確かめる</li>
+              <li>友だちの側からも、その人の食事とメッセージが見えなくなる</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>この図で決めていないこと</h2>
+        <ul class="open">
+          <li>ようこそで見せる 3 行の言葉</li>
+          <li>運営からのお知らせの中身 (宣伝を含むか)</li>
+          <li>利用規約とプライバシーポリシーの中身</li>
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>
