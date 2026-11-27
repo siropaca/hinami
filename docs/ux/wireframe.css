@@ -665,7 +665,7 @@ a {
   flex: none;
   margin: auto -12px -14px;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   border-top: 1.5px solid #bbb;
   padding: 6px 0 10px;
   font-size: 9px;

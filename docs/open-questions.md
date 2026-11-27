@@ -13,7 +13,7 @@
 
 1. 種類の一覧そのもの (どの種類を、どの段に入れるか)。アプリを作るときに作り、境目 (「つけ麺」をラーメンと分けるか、など) は作り手が見る。持ち方と作り方は決めた ([`ux/kinds.md`](ux/kinds.md))
 2. つながる (SNS) の中身の残り。スタンプの種類 (見た目のデザインと一緒に決める)、運営からのお知らせの中身 (宣伝を含むか。含むなら通知のお願いの画面に別の同意を置く。[`ux/onboarding.md`](ux/onboarding.md)) ([`ux/connect.md`](ux/connect.md))
-3. 実績のタブの残り。スタンプの種類 (一旦の形はあり、あとで詰める) ([`ux/achievements.md`](ux/achievements.md))
+3. 実績のタブの残り。実績の種類 (一旦の形はあり、あとで詰める) ([`ux/achievements.md`](ux/achievements.md))
 
 ## 技術 (未確認)
 
