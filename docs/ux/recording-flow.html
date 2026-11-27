@@ -9,7 +9,7 @@
   <body>
     <main>
       <h1>記録の流れ — ワイヤーフレーム</h1>
-      <p class="status">状態: 合意 (2026-11-26)。2026-11-27 に、記録の入り口を右下の ＋ に移し、保存したあとはトーストで知らせる形に直した。「案」はもうない。決まりの本文は <a href="recording.md">recording.md</a></p>
+      <p class="status">状態: 合意 (2026-11-26)。2026-11-27 に、記録の入り口を右下の ＋ に移し、保存したあとはトーストで知らせる形に直した。買ったもの (まだ口にしていないもの) は記録しないことにした。「案」はもうない。決まりの本文は <a href="recording.md">recording.md</a></p>
 
       <p class="lead">
         その場で撮るなら最短 3 タップ (＋ → シャッター → 残す)。記録は右下の ＋ から、どの画面でも始められる。必須の入力はなく、AI の判定と場所の推定が違うときだけ直す。
@@ -155,7 +155,7 @@
               <span class="btn primary block tap" data-tap="3">残す</span>
             </div>
             <ol class="notes">
-              <li>種類は AI がその場で付ける (1 秒未満)。複数写っていれば複数。違えばタップで直す。食・飲は種類から裏で決まる</li>
+              <li>種類は AI がその場で付ける (1 秒未満を目指す。技術の確認で確かめる)。複数写っていれば複数。違えばタップで直す。食・飲は種類から裏で決まる</li>
               <li>場所には、店の推定に自信があるときだけ店名を出す</li>
               <li>メモは任意。品名は書かなくてよい</li>
               <li>× は記録をやめて、記録を始めた画面へ戻る。メモを書いていたときだけ確かめる</li>
@@ -184,7 +184,7 @@
             <ol class="notes">
               <li>記録を始めた画面に戻り、トーストで「残しました」を出す。記録はここで終わり</li>
               <li>解除した実績と、はじめての種類は、同じトーストに出す。タップは増えない (<a href="achievements.md">achievements.md</a>)</li>
-              <li>いくつも出たときは、上限を決めず、1 つずつ 2 秒ほどで入れ替える (この例では、次に「日本酒、お目見え」)。動きで解除の嬉しさを出す。動きの中身はデザインで決める</li>
+              <li>いくつも出たときは、上限を決めず、1 つずつ 2 秒ほどで入れ替える (この例では、次に「ラーメン、お目見え」)。動きで解除の嬉しさを出す。動きの中身はデザインで決める</li>
               <li>実績は、ユーモアのある名前と、淡々とした条件を出す (<a href="achievements.md">achievements.md</a> の「名前と条件の言葉」)。はじめての種類は実績にせず、行の頭を「実績」にして知らせる。地域は都道府県の単位にし、はじめての都道府県は実績の解除で返る</li>
               <li>取り消しは、トーストを出している間だけ出す。取り消すと実績の解除も消える</li>
               <li>比べるはここでは聞かない。食べたあと、次に開いたときに聞く (F)</li>
@@ -212,7 +212,7 @@
             </div>
             <ol class="notes">
               <li>店名の代わりに地域名と候補数を出す</li>
-              <li>選ばずに残しても記録は残る。店のランキングと地図には、店が決まってから載る</li>
+              <li>選ばずに残しても記録は残る。店のランキングには、店が決まってから載る。マップには、地域のあたりに置く</li>
             </ol>
           </div>
           <div class="arrow"><span>場所をタップ</span><span class="line"></span></div>
@@ -469,7 +469,7 @@
             <div class="phone">
               <div class="top"><span class="x">×</span><span class="meta">4 枚 · 2 回の食事</span></div>
               <div class="group">
-                <div class="gh"><span>11.21 金</span><span class="chip">鮨 はやし ▾</span></div>
+                <div class="gh"><span>11/21 土</span><span class="chip">鮨 はやし ▾</span></div>
                 <div class="item">
                   <div class="ph"></div>
                   <span class="chip">鮨 ▾</span><span class="remove">外す</span>
@@ -480,7 +480,7 @@
                 </div>
               </div>
               <div class="group">
-                <div class="gh"><span>11.22 土</span><span class="chip">家 ▾</span></div>
+                <div class="gh"><span>11/22 日</span><span class="chip">家 ▾</span></div>
                 <div class="item">
                   <div class="ph"></div>
                   <span class="chip">カレー ▾</span><span class="remove">外す</span>
@@ -671,7 +671,7 @@
               </tr>
               <tr>
                 <td rowspan="4">種類</td>
-                <td>判定中 (1 秒未満)</td>
+                <td>判定中 (1 秒未満を目指す)</td>
                 <td><span class="chip ghost">判定中</span></td>
                 <td>その場で結果に変わる</td>
                 <td>決まり</td>
@@ -702,7 +702,7 @@
       <section>
         <h2>この図で決めていないこと</h2>
         <ul class="open">
-          <li>なし (ホームの中身は <a href="navigation.md">navigation.md</a> で決めた)</li>
+          <li>種類の一覧の中身 (<a href="kinds.md">kinds.md</a>)</li>
         </ul>
       </section>
     </main>

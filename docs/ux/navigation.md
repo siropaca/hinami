@@ -96,4 +96,4 @@
 
 ## 決めていないこと
 
-- 実績の種類 (一旦の形はあり、あとで詰める)
+- 実績の種類 ([`achievements.md`](achievements.md))

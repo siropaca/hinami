@@ -6,15 +6,17 @@ HINAMI (日次 / ひなみ) は、食と飲みの「覚えておきたい体験�
 ## 現在地
 
 - 構想段階を終え、リポジトリを整備した段階。アプリのコードはまだない
-- 見た目のデザイン ([`docs/design/direction.md`](docs/design/direction.md)) の前に、ワイヤーフレームの画面遷移図で UX を詰めている ([`docs/ux/`](docs/ux/recording.md))。「ホームからいつもの記録」の流れ、続けたくなる仕組み (実績) の最初の一覧、比べる (ランキング)、履歴と検索、つながる (SNS)、画面の構成 (タブとホーム)、実績のタブとマップ、最初のチュートリアルとアカウント、種類の一覧の持ち方と作り方、食事の詳細に出す要素、お知らせと設定まで決めた
-- 最初の関門 (PHASE 1): 作り手自身が 4 週間、覚えておきたい食をすべて記録できること
+- UX (画面に出す要素と流れ) は、ワイヤーフレームの画面遷移図で一通り決めた ([`docs/ux/`](docs/ux/recording.md))。見た目は、このあとのデザインのフェーズで決める ([`docs/design/direction.md`](docs/design/direction.md))
+- 6 つの視点のレビューを受け、作り手の判断を反映した ([`docs/reviews/2026-11-27-review.md`](docs/reviews/2026-11-27-review.md))
+- 今は、記録アプリの最先端の事例と手法を調べ、取り入れる施策を決めている。そのあと、PHASE 1 で作るものと測るものを決める
+- 最初の関門 (PHASE 1): 作り手自身が 4 週間、覚えておきたい食をすべて記録できること。Expo のアプリを TestFlight で使う ([ADR-0002](docs/adr/0002-phase1-on-testflight.md))
 
 ## ドキュメントマップ
 
 | 知りたいこと                                | 場所                                                   |
 | ------------------------------------------- | ------------------------------------------------------ |
 | 何を作るか (コンセプト・前提・収益・進め方) | [`docs/concept.md`](docs/concept.md)                   |
-| 画面の流れ (UX)                             | [`docs/ux/`](docs/ux/recording.md)                     |
+| 画面の流れ (UX)。入口は「記録の流れ」       | [`docs/ux/recording.md`](docs/ux/recording.md)         |
 | 続けたくなる仕組み (実績)                   | [`docs/ux/achievements.md`](docs/ux/achievements.md)   |
 | 比べる (ランキング)                         | [`docs/ux/compare.md`](docs/ux/compare.md)             |
 | 種類の一覧                                  | [`docs/ux/kinds.md`](docs/ux/kinds.md)                 |
@@ -27,16 +29,16 @@ HINAMI (日次 / ひなみ) は、食と飲みの「覚えておきたい体験�
 | 判断待ち・未確認のこと                      | [`docs/open-questions.md`](docs/open-questions.md)     |
 | 外部の目でのレビューの記録                  | [`docs/reviews/`](docs/reviews/2026-11-27-review.md)   |
 | 意思決定の理由 (ADR)                        | [`docs/adr/index.md`](docs/adr/index.md)               |
-| 構想段階の経緯                              | [`docs/history.md`](docs/history.md)                   |
+| 構想段階の経緯                              | [`docs/concept-history.md`](docs/concept-history.md)   |
 | 構想段階のスライド (参照専用)               | [`docs/references/`](docs/references/README.md)        |
 
 ## ディレクトリ構成 (pnpm workspace)
 
-| ディレクトリ | 中身                                                                              |
-| ------------ | --------------------------------------------------------------------------------- |
-| `apps/`      | アプリ。web (Vite + React、プロトタイプ) とネイティブ (Expo) を置く予定           |
-| `packages/`  | web とネイティブで共有するライブラリ (デザイントークン、型、ドメインロジックなど) |
-| `docs/`      | 設計ドキュメント                                                                  |
+| ディレクトリ | 中身                                                                                                                                                      |
+| ------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `apps/`      | アプリ。ネイティブ (Expo) を置く予定。web (Vite + React) のプロトタイプを残すかは、技術の確認で決める ([ADR-0002](docs/adr/0002-phase1-on-testflight.md)) |
+| `packages/`  | web とネイティブで共有するライブラリ (デザイントークン、型、ドメインロジックなど)                                                                         |
+| `docs/`      | 設計ドキュメント                                                                                                                                          |
 
 ## コマンド
 
