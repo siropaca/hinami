@@ -12,7 +12,7 @@
   - iOS 27 の端末のモデルの画像入力 (`Attachment`)。対応端末 (iPhone 15 Pro、16 以降、Air、Duo。8〜14GB の空きが要る)
   - PCC を開発者が使えること (通信が要る。文脈 32K。TestFlight で試せる。将来は有料の枠ができる)
   - Claude と Gemini に同じ API で差し替えられること
-  - `expo-ai` (alpha)、`expo-widgets` (SDK 56 で stable)、`expo-app-intents` (alpha)
+  - `expo-ai` (アルファ版)、`expo-widgets` (SDK 56 で安定版)、`expo-app-intents` (アルファ版)
   - LockedCameraCapture の制約 (通信も App Group も使えない。申請の要る entitlement はない。`expo-apple-targets` は対応していない)
   - Place ID は保存の制限を受けない
   - PhotosPicker は埋め込めて、許可が要らない
@@ -34,7 +34,7 @@
 - 日本語は Apple Intelligence の対応言語。動くのは iPhone 15 Pro、16 以降など。端末モデルの文脈長は 4K 前後
 - iOS 27 で、Apple のサーバー (Private Cloud Compute、PCC) で動く大きいモデルが加わった。Small Business Program の開発者は無料で使える。申請が要り、利用者ごとに 1 日の上限がある
 - 同じ API のまま、モデルを Claude や Gemini に差し替えられる
-- Expo: `expo-ai` (alpha) が画像入力・構造化出力・tool を扱える。PCC は Expo Modules で自作する
+- Expo: `expo-ai` (アルファ版) が画像入力・構造化出力・tool calling を扱える。PCC は Expo Modules で自作する
 - 未確認: PCC が画像を受けるか。食の判定の精度。1 日の上限の数値
 - 出典: [WWDC26 #241](https://developer.apple.com/videos/play/wwdc2026/241)、[WWDC26 #319](https://developer.apple.com/videos/play/wwdc2026/319)、[PCC](https://developer.apple.com/private-cloud-compute/)、[Expo AI](https://docs.expo.dev/versions/unversioned/sdk/ai)
 
@@ -60,7 +60,7 @@
 - 撮影の拡張 (LockedCameraCapture) は、コントロールセンター・ロック画面・アクションボタンのコントロールから開く。Camera Control に出すにもこの拡張が要る
 - 拡張の制約: ネットワークを使えない。App Group も使えない。開いてすぐファインダーを出さないと終了させられる。撮ったものは、拡張を閉じたときにアプリへコピーされる。位置情報を使えるかは記載がない
 - iOS 27 の App Intents では、記録を schema で登録すると、Spotlight の意味の検索と Siri AI に載る。Siri AI は英語のベータで始まった
-- Expo: `expo-apple-targets` はコントロールを作れるが、撮影の拡張は Swift で自作する。`expo-app-intents` (alpha) は Spotlight への登録などに対応
+- Expo: `expo-apple-targets` はコントロールを作れるが、撮影の拡張は Swift で自作する。`expo-app-intents` (アルファ版) は Spotlight への登録などに対応
 - 出典: [WWDC24 #10204](https://developer.apple.com/videos/play/wwdc2024/10204)、[HIG](https://developer.apple.com/design/human-interface-guidelines/camera-control)、[Expo App Intents](https://docs.expo.dev/versions/latest/sdk/app-intents/)
 
 ### 5. ウィジェット、Live Activities
