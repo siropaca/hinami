@@ -29,7 +29,7 @@
 - ロック画面・コントロールセンター・アクションボタンから開く HINAMI のカメラ (iOS 18 の LockedCameraCapture) を、Expo で作れるか。撮ったあと、ロックを解除してから確認カードへ進む流れでよいか ([`ux/navigation.md`](ux/navigation.md))
 - アカウントがないと使えない作り ([`ux/onboarding.md`](ux/onboarding.md) で決めた) が、App Store の審査ガイドライン 5.1.1 で通るか。5.1.1 は「アカウントが中心の機能がないアプリは、ログインなしで使えるようにする」としている。記録をサーバーに置き、友だちの機能もあるので、通る見込み
 - ログインは、まず Google だけ ([`ux/onboarding.md`](ux/onboarding.md) で決めた)。App Store に出す前に、Sign in with Apple など同等のログインを足す。審査ガイドライン 4.8 は、名前とメールだけを集め、メールを隠せて、広告のための追跡をしないログインも出すことを求めている
-- 店の情報の提供元。Google Places は、ほかの地図と組み合わせられない、保存できるのは place_id だけ、という規約と、費用に課題がある。Foursquare、Apple MapKit と比べて ADR にする ([`reviews/2026-11-27-review.md`](reviews/2026-11-27-review.md))
+- 店の情報の提供元。Google Places は、ほかの地図と組み合わせられない、保存できるのは place_id だけ、という規約と、費用に課題がある。Foursquare、Apple MapKit と比べて ADR にする ([`reviews/2026-11-27-review.md`](reviews/2026-11-27-review.md))。提供元ごとの規約・料金・推薦への使い方は [`research/2026-11-28/places.md`](research/2026-11-28/places.md)
 - web (Vite + React) のプロトタイプを残すか ([ADR-0002](adr/0002-phase1-on-testflight.md))
 
 ## 法務 (未確認)
