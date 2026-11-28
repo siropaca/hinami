@@ -23,7 +23,7 @@
   ],
   "sections": {
     "s1": {
-      "description": "結論: 夜の帳面を、朝も夜も使える帳面に組み直す",
+      "description": "結論: 夜の帳面を、朝も夜も使える「日々の帳面」に組み直す",
       "start": "cover"
     },
     "s2": {
@@ -42,7 +42,7 @@
       "description": "OS との分担と、使いやすさの決まり",
       "start": "layers"
     },
-    "s6": { "description": "決めてほしいこと", "start": "decide" }
+    "s6": { "description": "決めたこと", "start": "decide" }
   },
   "faces": {
     "noto-serif-jp": {

@@ -1,6 +1,6 @@
 # デザインコンセプト (スライド)
 
-HINAMI のデザインの方向性を、スライドにまとめたもの。2026-11-28 に、前の案「夜の帳面」([`../../references/slides/design-deck/`](../../references/slides/design-deck/)) を、コンセプトの変更 (口にするものなら何でも、種類に偏らせない) に合わせて組み直す提案として作った。
+HINAMI のデザインの方向性を、スライドにまとめたもの。2026-11-28 に、前の案「夜の帳面」([`../../references/slides/design-deck/`](../../references/slides/design-deck/)) を、コンセプトの変更 (口にするものなら何でも、種類に偏らせない) に合わせて組み直す提案として作り、同じ日に作り手の判断 (世界観「日々の帳面」、明暗 2 つの紙面、金を残す、OS のヒラギノ、写真は仮置き) を反映した。
 
 - オンライン版 (claude.ai のアーティファクト。所有者のみ閲覧可): https://claude.ai/artifact/MvaKRnvLeE6RbQ3QuYKfQs
 - 中身の正は [`../direction.md`](../direction.md)。決まりが変わったら、スライドも直す

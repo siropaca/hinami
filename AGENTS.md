@@ -7,7 +7,7 @@ HINAMI (日次 / ひなみ) は、口にする食と飲みを 1 品ずつ記録�
 
 - 構想段階を終え、リポジトリを整備した段階。アプリのコードはまだない
 - UX (画面に出す要素と流れ) は、ワイヤーフレームの画面遷移図で一通り決めた ([`docs/ux/`](docs/ux/recording.md))。見た目は、このあとのデザインのフェーズで決める ([`docs/design/direction.md`](docs/design/direction.md))
-- デザインの方向性は、前の案「夜の帳面」を、時間帯と種類を選ばない帳面に組み直す提案を出し、作り手の判断を待っている ([`docs/design/deck/`](docs/design/deck/README.md))
+- デザインの方向性は、世界観「日々の帳面」に決めた。明暗 2 つの紙面、墨・生成り・金・朱の 4 色、OS のヒラギノ ([`docs/design/direction.md`](docs/design/direction.md)、スライドは [`docs/design/deck/`](docs/design/deck/README.md))
 - 6 つの視点のレビューを受け、作り手の判断を反映した ([`docs/reviews/2026-11-27-review.md`](docs/reviews/2026-11-27-review.md))
 - 最先端の事例と手法を調べ、3 つの施策 (撮ったら残る、どの品も名前まで残る、記録が好みを語る) を採った ([`docs/research/2026-11-28/README.md`](docs/research/2026-11-28/README.md))。次は、PHASE 1 で作るものと測るものを決める
 - 最初の関門 (PHASE 1): 作り手自身が 4 週間、覚えておきたい食をすべて記録できること。Expo のアプリを TestFlight で使う ([ADR-0002](docs/adr/0002-phase1-on-testflight.md))

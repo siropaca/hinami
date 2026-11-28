@@ -11,6 +11,8 @@
   --nsub: #a39b8f;
   --nrule: #3a342c;
   --shu-night: #d6694f;
+  --gold: #7e6a2c;
+  --gold-night: #b8995f;
 }
 body {
   font-family: "Noto Sans JP", Arial, sans-serif;
@@ -241,6 +243,7 @@ section.night .it-sub {
 .cover-logo {
   font-size: 128px;
   line-height: 1;
+  color: var(--gold);
 }
 .cover-tag {
   font-size: 60px;
