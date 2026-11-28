@@ -59,14 +59,15 @@ img { display: block; object-fit: cover; background: var(--surface); border-radi
 .top .actions { display: flex; gap: 10px; }
 .dot { position: absolute; top: 9px; right: 10px; width: 7px; height: 7px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 0 2px var(--bg); }
 
-.compare { background: var(--surface); border-radius: 6px; padding: 16px 14px 14px; margin-top: 8px; }
-.compare .q { display: flex; justify-content: space-between; align-items: baseline; padding: 0 2px 12px; }
-.compare .q b { font-size: 18px; }
-.pair { display: flex; gap: 10px; }
-.pick { flex: 1; }
-.pick img { width: 100%; height: 156px; }
-.pick .name { font-size: 14.5px; margin-top: 8px; }
-.pick .meta { font-size: 11px; color: var(--sub); margin-top: 2px; }
+/* feeling question: words only, no stars, hearts, faces or per-level colors */
+.feel { background: var(--surface); border-radius: 6px; padding: 14px; margin-top: 8px; }
+.feel .it { display: flex; gap: 12px; align-items: center; }
+.feel .it img { width: 64px; height: 64px; flex: none; }
+.feel .q { font-size: 17px; line-height: 1.45; }
+.feel .meta { font-size: 12px; color: var(--sub); margin-top: 2px; }
+.feel .opts { display: flex; gap: 6px; margin-top: 12px; }
+.feel .opts .chip { flex: 1 1 auto; justify-content: center; padding: 0 6px; background: var(--bg); }
+.entry .h .pickshop { color: var(--gold); font-style: normal; margin-right: 8px; }
 
 .sec { display: flex; justify-content: space-between; align-items: baseline; margin-top: 24px; padding-bottom: 10px; border-bottom: 1px solid var(--ink); }
 .sec b { font-size: 15px; }
@@ -112,6 +113,7 @@ img { display: block; object-fit: cover; background: var(--surface); border-radi
 .item .name { font-size: 18px; }
 .item .kind { font-size: 12px; color: var(--sub); margin-top: 3px; }
 .item .memo { font-size: 14px; margin-top: 8px; line-height: 1.6; }
+.item .row .chip { margin-left: auto; flex: none; height: 28px; padding: 0 12px; }
 
 /* records tab */
 .ltitle { font-size: 32px; margin-top: 4px; }
@@ -149,6 +151,8 @@ img { display: block; object-fit: cover; background: var(--surface); border-radi
 .rank { display: flex; align-items: center; gap: 12px; padding: 11px 0; border-bottom: 1px solid var(--rule); }
 .rank .r { font-size: 34px; width: 44px; text-align: center; line-height: 1; flex: none; color: var(--gold); }
 .rank .r.range { font-size: 21px; color: var(--sub); }
+.rank .r.yet { font-size: 20px; color: var(--sub); }
+.rhsec { margin-top: 16px; }
 .rank img { width: 58px; height: 58px; }
 .rank .name { font-size: 16px; }
 .rank .meta { font-size: 12px; color: var(--sub); margin-top: 3px; }
@@ -225,7 +229,7 @@ img { display: block; object-fit: cover; background: var(--surface); border-radi
     <div class="nav"><div class="circle glass"><svg aria-hidden="true"><use href="#i-back"/></svg></div><div class="circle glass"><svg aria-hidden="true"><use href="#i-more"/></svg></div></div>
     <div class="dhead2"><div class="dc"><div class="dd d-num">27</div><div class="wd">11月 · 金</div></div><div><b class="m">ビストロ ミモザ</b><div class="pl">恵比寿 · 19:30</div></div></div>
     <div class="item"><img alt="" data-u="1553361371-9b22f78e8b1d" data-w="700" data-h="874">
-      <div class="row"><div><div class="name m">ブルゴーニュ ピノ・ノワール</div><div class="kind">ワイン · 赤</div><div class="memo">軽やかで、酸がきれい。</div></div></div></div>
+      <div class="row"><div><div class="name m">ブルゴーニュ ピノ・ノワール</div><div class="kind">ワイン · 赤</div><div class="memo">軽やかで、酸がきれい。</div></div><div class="chip">大好き</div></div></div>
     <div class="item"><img alt="" data-u="1600891964092-4316c288032e" data-w="700" data-h="874"></div>
   </div>
   <div class="fab"><svg aria-hidden="true"><use href="#i-plus"/></svg></div>
@@ -256,15 +260,16 @@ img { display: block; object-fit: cover; background: var(--surface); border-radi
     <div class="rtitle"><div class="ltitle m">ラーメン</div><span class="t-sm">自分の順位 · 9 品</span></div>
     <div class="note">
       <div class="lab">記録から</div>
-      <p class="m">上位のラーメンは、<br>魚介の清湯が多いようです。</p>
+      <p class="m">大好きなラーメンは、<br>魚介の清湯が多いようです。</p>
       <div class="ev"><img alt="" data-u="1631709497146-a239ef373cf1" data-w="60" data-h="60"><img alt="" data-u="1569718212165-3a8278d5f624" data-w="60" data-h="60"><span>根拠の記録 2 件</span><span class="no">違う</span></div>
     </div>
-    <div style="margin-top:14px;border-top:1px solid var(--rule)"></div>
-    <div class="rank"><div class="r d-num range">1–3</div><img alt="" data-u="1557872943-16a5ac26437e" data-w="116" data-h="116"><div><div class="name m">特製醤油らーめん</div><div class="meta">麺屋 ひかり · 昨日</div></div></div>
+    <div class="hsec rhsec"><b class="m">大好き</b><span>2 品</span></div>
     <div class="rank"><div class="r d-num">1</div><img alt="" data-u="1631709497146-a239ef373cf1" data-w="116" data-h="116"><div><div class="name m">塩らーめん</div><div class="meta">麺処 澄 · 11/03</div></div></div>
     <div class="rank"><div class="r d-num">2</div><img alt="" data-u="1569718212165-3a8278d5f624" data-w="116" data-h="116"><div><div class="name m">中華そば</div><div class="meta">青葉 · 11/12</div></div></div>
-    <div class="rank"><div class="r d-num">3</div><img alt="" data-u="1591814468924-caf88d1232e1" data-w="116" data-h="116"><div><div class="name m">味噌らーめん</div><div class="meta">らーめん 熊 · 10/18</div></div></div>
-    <div class="rank"><div class="r d-num">4</div><img alt="" data-u="1617093727343-374698b1b08d" data-w="116" data-h="116"><div><div class="name m">担々麺</div><div class="meta">家 · 10/05</div></div></div>
+    <div class="hsec rhsec"><b class="m">好き</b><span>4 品</span></div>
+    <div class="rank"><div class="r d-num">1</div><img alt="" data-u="1591814468924-caf88d1232e1" data-w="116" data-h="116"><div><div class="name m">味噌らーめん</div><div class="meta">らーめん 熊 · 10/18</div></div></div>
+    <div class="rank"><div class="r d-num range">2–3</div><img alt="" data-u="1557872943-16a5ac26437e" data-w="116" data-h="116"><div><div class="name m">特製醤油らーめん</div><div class="meta">麺屋 ひかり · 昨日</div></div></div>
+    <div class="rank"><div class="r yet">・</div><img alt="" data-u="1617093727343-374698b1b08d" data-w="116" data-h="116"><div><div class="name m">担々麺</div><div class="meta">家 · 10/05 · まだ比べていない</div></div></div>
   </div>
   <div class="fab"><svg aria-hidden="true"><use href="#i-plus"/></svg></div>
   <div class="tabbar glass" data-tabs="1"></div><div class="homebar"></div>
@@ -347,19 +352,16 @@ img { display: block; object-fit: cover; background: var(--surface); border-radi
   <div class="content">
     <div class="top"><div class="logo">HINAMI</div>
       <div class="actions"><div class="circle glass" style="position:relative"><svg aria-hidden="true"><use href="#i-bell"/></svg><i class="dot"></i></div><div class="circle glass"><svg aria-hidden="true"><use href="#i-gear"/></svg></div></div></div>
-    <div class="compare">
-      <div class="q"><b class="m">どちらが好き?</b><span class="t-sm">ラーメン</span></div>
-      <div class="pair">
-        <div class="pick"><img alt="" data-u="1557872943-16a5ac26437e" data-w="320" data-h="320"><div class="name m">特製醤油らーめん</div><div class="meta">麺屋 ひかり · 昨日</div></div>
-        <div class="pick"><img alt="" data-u="1569718212165-3a8278d5f624" data-w="320" data-h="320"><div class="name m">中華そば</div><div class="meta">青葉 · 11/12</div></div>
-      </div>
+    <div class="feel">
+      <div class="it"><img alt="" data-u="1557872943-16a5ac26437e" data-w="128" data-h="128"><div><div class="q m">特製醤油らーめんは、<br>いかがでしたか?</div><div class="meta">麺屋 ひかり · 昨日</div></div></div>
+      <div class="opts"><div class="chip">大好き</div><div class="chip">好き</div><div class="chip">ふつう</div><div class="chip">合わなかった</div></div>
     </div>
     <div class="sec"><b class="m">最近の記録</b><span>すべて ›</span></div>
     <div class="ledger">
       <div class="dcol"><div class="mo">11月</div><div class="dd d-num">28</div><div class="wd">土</div><svg aria-hidden="true" data-stamp="ink" data-date="26.11.28" data-rot="-8"></svg></div>
       <div class="ecol">
-        <div class="entry"><div class="h"><b class="m">家</b><span>12:40</span></div>
-          <div class="thumbs"><img alt="" data-u="1559847844-5315695dadae" data-w="224" data-h="280"></div></div>
+        <div class="entry"><div class="h"><b class="m">道玄坂</b><span><i class="pickshop">店を選ぶ</i>12:40</span></div>
+          <div class="thumbs"><img alt="" data-u="1617093727343-374698b1b08d" data-w="224" data-h="280"></div></div>
         <div class="entry"><div class="h"><b class="m">ブーランジェリー ソル</b><span>8:12</span></div>
           <div class="thumbs"><img alt="" data-u="1555507036-ab1f4038808a" data-w="224" data-h="280"><img alt="" data-u="1495474472287-4d71bcdd2085" data-w="224" data-h="280"><img alt="" data-u="1586444248902-2f64eddc13df" data-w="224" data-h="280"></div></div>
       </div>
@@ -369,6 +371,8 @@ img { display: block; object-fit: cover; background: var(--surface); border-radi
       <div class="ecol">
         <div class="entry"><div class="h"><b class="m">バー 灯</b><span>21:40</span></div>
           <div class="thumbs"><img alt="" data-u="1514362545857-3bc16c4c7d1b" data-w="224" data-h="280"></div></div>
+        <div class="entry"><div class="h"><b class="m">家</b><span>19:05</span></div>
+          <div class="thumbs"><img alt="" data-u="1559847844-5315695dadae" data-w="224" data-h="280"></div></div>
       </div>
     </div>
   </div>

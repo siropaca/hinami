@@ -13,6 +13,7 @@ HINAMI の見た目の決まりの入口。どの資料に何があり、どれ�
 | 色           | 墨・生成り・金・朱の 4 つ。金は操作と順位、朱は印だけ。金は紙面ごとに明るさを変える             | [`direction.md`](direction.md)、[`tokens.md`](tokens.md) |
 | 書体         | 見出し・品名は OS のヒラギノ明朝、本文は OS の書体。大きな日付・順位・ロゴは Cormorant Garamond | [`direction.md`](direction.md)、[`tokens.md`](tokens.md) |
 | 写真         | 4:5 と 1:1 の 2 つ。写真には手を加えない。画面イメージの写真は仮置き                            | [`direction.md`](direction.md)                           |
+| 気持ち       | 言葉で示す。星やハート、段ごとの色を使わない。ランキングでは段の見出しにする                    | [`direction.md`](direction.md)                           |
 | ロゴ         | シンボル「皿と箸」、テキストロゴ、横組み・縦組みのセット、アプリのアイコン                      | [`logo/README.md`](logo/README.md)                       |
 | トークン     | 色 (明暗と高コントラストの 4 通り)、文字の段、余白、角丸、線、写真、印、動きと振動              | [`tokens.md`](tokens.md)                                 |
 | ブランドの金 | 代表色はアイコンの金。白や生成りの地では、明るい紙面の金に替える                                | [`tokens.md`](tokens.md)                                 |
