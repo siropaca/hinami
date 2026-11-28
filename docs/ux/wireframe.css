@@ -510,6 +510,11 @@ h2 {
   color: var(--mute);
   font-size: 10px;
 }
+.sh {
+  margin-top: 6px;
+  font-size: 10px;
+  color: var(--mute);
+}
 .li.sep {
   border-top: 1.5px solid #ccc;
   margin-top: 2px;

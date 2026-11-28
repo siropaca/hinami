@@ -581,6 +581,98 @@
           </div>
         </div>
       </section>
+      <!-- Flow G -->
+      <section>
+        <h2>G. 買ってきたものに、買った店を入れる</h2>
+        <p class="desc">家で食べるパンやケーキ、家でいれるコーヒーの豆、家で開けるボトルなどは、場所に買った店を選べる。別の欄は作らず、「場所」の欄にまとめる。食事は家のまま、その品だけが買った店を持つ。詳しくは <a href="recording.md">recording.md</a> の「買ってきたもの」。</p>
+        <p class="scroll-hint">横にスクロールできます →</p>
+        <div class="row">
+          <div class="screen">
+            <p class="cap">もとの画面 (家ではじめて)</p>
+            <div class="phone">
+              <div class="top"><span class="logo">HINAMI</span><span class="hint">お知らせ　設定</span></div>
+              <div class="cal-h"><strong>最近の記録</strong><span class="link">すべて</span></div>
+              <div class="ml"><div class="ml-h"><span>11/28</span><span>家</span></div><div class="ml-th"><div class="ph"></div></div></div>
+              <div class="ml"><div class="ml-h"><span>11/26</span><span>麺屋 ひかり</span></div><div class="ml-th"><div class="ph"></div></div></div>
+              <div class="spacer"></div>
+              <div class="toast">
+                <span>残しました<br />パン<br />家</span><span class="link tap" data-tap="1">直す</span><span class="link">取り消す</span>
+                <div class="unlock"><span class="k">ヒント</span><span>買ってきたものなら、<br />場所に買った店を<br />選べます</span></div>
+              </div>
+              <div class="fab-gap"></div>
+              <div class="tabbar"><span class="on">ホーム</span><span>記録</span><span>実績</span><span>友だち</span></div>
+              <span class="fab">＋</span>
+            </div>
+            <ol class="notes">
+              <li>家ではじめて残したときのトーストで、1 回だけヒントを出す。家の記録は店の候補を出さずに残るので、知らせないと気づけないため</li>
+              <li>はじめて残したときのヒント (<a href="onboarding-flow.html">onboarding-flow.html</a>) と重なったら、はじめの 1 つだけを出し、こちらは次に家で残したときに出す</li>
+              <li>種類を問わず出す。パンでも、ケーキでも、コーヒーの豆でも、ワインでも同じ</li>
+            </ol>
+          </div>
+          <div class="arrow"><span>直す</span><span class="line"></span></div>
+          <div class="screen">
+            <p class="cap">確認カード (家)</p>
+            <div class="phone">
+              <div class="top"><span class="x">×</span><span class="chip meal">新しい食事 ▾</span></div>
+              <div class="ph" style="height: 168px"><span>写真</span><span class="retake">撮り直す</span></div>
+              <div class="chips"><span class="chip">パン ▾</span><span class="hint">AI が判定</span></div>
+              <div class="kv"><span class="k">場所</span><span class="chip tap" data-tap="2">家 ▾</span></div>
+              <div class="memo">メモ (任意)</div>
+              <div class="spacer"></div>
+              <span class="btn primary block">完了</span>
+            </div>
+            <ol class="notes">
+              <li>家で撮った記録は、今までどおり店の候補を出さずに家にする</li>
+              <li>買った店は、場所をタップして選ぶ。保存したあとは、記録のタブの品の画面から選ぶ (<a href="history.md">history.md</a>)</li>
+            </ol>
+          </div>
+          <div class="arrow"><span>場所をタップ</span><span class="line"></span></div>
+          <div class="screen">
+            <p class="cap">場所を選ぶ (家で撮った)</p>
+            <div class="phone">
+              <div class="top"><span class="x">×</span><span class="chip meal">新しい食事 ▾</span></div>
+              <div class="ph" style="height: 168px"><span>写真</span></div>
+              <div class="dim"></div>
+              <div class="sheet">
+                <div class="grab"></div>
+                <strong style="font-size: 12px">場所を選ぶ</strong>
+                <div class="search">店名で検索</div>
+                <div class="sh">ここで食べた</div>
+                <div class="li"><span>家</span><small>いまの場所</small></div>
+                <div class="li"><span>店ではない</span><small></small></div>
+                <div class="sh">買ってきたもの · 買った店を選べます</div>
+                <div class="li tap ring" data-tap="3"><span>こむぎ堂</span><small>300 m · パン</small></div>
+                <div class="li"><span>洋菓子 ルポ</span><small>600 m · 洋菓子 · 行った</small></div>
+              </div>
+            </div>
+            <ol class="notes">
+              <li>「ここで食べた」と「買ってきたもの」に分けて出す。買った店も場所の欄で選べることが、見てわかるようにする</li>
+              <li>買ってきたものの候補は、撮った場所の近くの店を、AI が付けた種類と店の業種が合うか、行ったことがあるか、で並べる</li>
+              <li>遠くで買ったもの (旅先で買った品など) は、検索で選ぶ</li>
+              <li>家の外で撮ったときは、「買ってきたもの」には検索だけを出す (「買った店を検索」)</li>
+            </ol>
+          </div>
+          <div class="arrow"><span>選ぶ</span><span class="line"></span></div>
+          <div class="screen">
+            <p class="cap">確認カード (買った店が入った)</p>
+            <div class="phone">
+              <div class="top"><span class="x">×</span><span class="chip meal">新しい食事 ▾</span></div>
+              <div class="ph" style="height: 168px"><span>写真</span><span class="retake">撮り直す</span></div>
+              <div class="chips"><span class="chip">パン ▾</span><span class="hint">AI が判定</span></div>
+              <div class="kv"><span class="k">場所</span><span class="chip">こむぎ堂 ▾</span><span class="hint">買ってきた</span></div>
+              <div class="memo">メモ (任意)</div>
+              <div class="spacer"></div>
+              <span class="btn primary block tap" data-tap="4">完了</span>
+            </div>
+            <ol class="notes">
+              <li>買った店だと分かるように、「買ってきた」を添える</li>
+              <li>食事は家のまま分かれない。同じ食事のほかの品 (家でいれたお茶など) は家のまま</li>
+              <li>ランキングでは、品を買った店の名前で示す。マップでは、買った店にもピンを立てる</li>
+              <li>店を数える実績には買った店も入れ、地域の実績は撮った位置で数える (<a href="achievements.md">achievements.md</a>)</li>
+            </ol>
+          </div>
+        </div>
+      </section>
       <!-- States -->
       <section>
         <h2>欄の状態</h2>
@@ -612,7 +704,7 @@
                 <td>決まり</td>
               </tr>
               <tr>
-                <td rowspan="7">場所</td>
+                <td rowspan="8">場所</td>
                 <td>推定に自信がある</td>
                 <td><span class="chip">麺屋 ひかり ▾</span></td>
                 <td>店名を出す。合っていれば触らない</td>
@@ -633,7 +725,13 @@
               <tr>
                 <td>家で撮った</td>
                 <td><span class="chip">家 ▾</span></td>
-                <td>店の候補を出さない</td>
+                <td>店の候補を出さない。買ってきたものは、タップして買った店を選べる (G)</td>
+                <td>決まり</td>
+              </tr>
+              <tr>
+                <td>買ってきた店を選んだ</td>
+                <td><span class="chip">こむぎ堂 ▾</span><span class="hint">買ってきた</span></td>
+                <td>その品だけが買った店を持つ。食事は家のまま</td>
                 <td>決まり</td>
               </tr>
               <tr>
@@ -688,7 +786,7 @@
         <h2>この図で決めていないこと</h2>
         <ul class="open">
           <li>種類の一覧の中身 (<a href="kinds.md">kinds.md</a>)</li>
-          <li>確認カードを開かずに残した食事の、シェアの既定 (確かめるまで「自分だけ」にする案)</li>
+          <li>通販で取り寄せた品の買った店。地図にない店 (通販だけの店) は、場所の検索では選べない</li>
         </ul>
       </section>
     </main>
