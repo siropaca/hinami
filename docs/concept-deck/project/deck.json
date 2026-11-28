@@ -31,7 +31,7 @@
     "s2": { "description": "課題と機会", "start": "problem" },
     "s3": { "description": "提案するサービス", "start": "concept" },
     "s4": { "description": "事業としての成り立ち", "start": "model" },
-    "s5": { "description": "ご判断いただきたいこと", "start": "decide" },
+    "s5": { "description": "決めたことと、残る判断", "start": "decide" },
     "s6": { "description": "付録", "start": "screens" }
   },
   "faces": {
