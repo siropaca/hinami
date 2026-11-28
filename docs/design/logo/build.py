@@ -21,7 +21,7 @@ def _quad(x0, y0, x1, y1, wt, wh):
 RING, RIM, TIP_W, HANDLE_W, GAP = 4.2, 2.0, 1.8, 4.0, 3.0  # two weights: rim = handle, inner rim = half
 def _sticks(cx, cy, r):
     """The pair enters at the lower left (tips poke out past the rim) and leaves at the upper right (handles)."""
-    ang, shift, ext_l, ext_r = -24, 5, 7, 15
+    ang, shift, ext_l, ext_r = -24, 5, 7, 7  # tips and handles stick out past the rim by the same length
     a = math.radians(ang); ux, uy = math.cos(a), math.sin(a); nx, ny = -uy, ux
     bx, by = cx + nx * shift, cy + ny * shift
     tip = (bx - ux * (r + ext_l), by - uy * (r + ext_l)); end = (bx + ux * (r + ext_r), by + uy * (r + ext_r))
@@ -77,7 +77,7 @@ for key, fn in SYMBOLS.items():
         # horizontal: the band lines up with the middle of the capitals
         cap = 100; gap = 0.8 * cap; sw = WM_BOX[2] * cap / CAP
         k = 2.2
-        xmin, xmax = 14.0, 98.1   # drawn extent of the symbol inside its 100 box
+        xmin, xmax = 14.0, 91.0   # drawn extent of the symbol inside its 100 box
         ys = cap / 2 - k * band_y
         top = min(0, ys + k * t); bottom = max(cap, ys + k * b); shift = -top
         sym_w = (xmax - xmin) * k
