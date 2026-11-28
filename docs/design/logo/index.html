@@ -5,71 +5,67 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>HINAMI ロゴ</title>
 <style>
-/* Overview of the two logo candidates. Open in a browser. */
+/* Overview of the logo set. Open in a browser. */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { background: #cfc8bc; font-family: -apple-system, "Hiragino Sans", "Noto Sans JP", sans-serif; color: #16130f; padding: 28px; }
-h1 { font-size: 18px; font-weight: 600; margin: 8px 0 14px; }
-.set { margin-bottom: 36px; }
+h2 { font-size: 15px; font-weight: 600; margin: 0 0 12px; }
+.sheet { margin-bottom: 32px; display: inline-block; }
 .grid { display: flex; flex-wrap: wrap; gap: 14px; }
-.tile { border-radius: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; padding: 28px 32px; height: 230px; }
+.tile { border-radius: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; padding: 28px 32px; height: 260px; }
 .paper { background: #f3eee6; }
 .night { background: #16130f; color: #f2ede4; }
 .cap { font-size: 12px; opacity: 0.7; }
+.row { display: flex; align-items: center; gap: 16px; }
 .icon { border-radius: 22.37%; box-shadow: 0 10px 26px rgba(0, 0, 0, 0.22); }
-.home { width: 330px; height: 230px; padding: 26px 24px; border-radius: 22px; background: linear-gradient(160deg, #8d9aa6, #4d5560 60%, #2f3238); display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px 12px; }
+.home { width: 360px; height: 260px; padding: 30px 26px; border-radius: 22px; background: linear-gradient(160deg, #8d9aa6, #4d5560 60%, #2f3238); display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px 12px; }
 .app { display: flex; flex-direction: column; align-items: center; gap: 5px; color: #fff; font-size: 10px; }
-.ph { width: 54px; height: 54px; border-radius: 22.37%; }
+.ph { width: 60px; height: 60px; border-radius: 22.37%; }
 </style>
 </head>
 <body>
 
-<div class="set" id="set-chopsticks">
-<h1>A 皿と箸</h1>
+<div class="sheet" id="sheet-symbol">
+<h2>シンボル</h2>
 <div class="grid">
-  <div class="tile paper"><img src="chopsticks/symbol-gold.svg" width="140" height="140" alt="シンボル"><p class="cap">シンボル</p></div>
-  <div class="tile night"><img src="chopsticks/symbol-gold-dark.svg" width="140" height="140" alt="シンボル (暗い紙面)"><p class="cap">シンボル</p></div>
-  <div class="tile paper" style="width:470px"><img src="chopsticks/lockup-horizontal-gold.svg" height="64" alt="横組み"><p class="cap">横組み</p></div>
-  <div class="tile night" style="width:470px"><img src="chopsticks/lockup-horizontal-gold-dark.svg" height="64" alt="横組み (暗い紙面)"><p class="cap">横組み</p></div>
-  <div class="tile paper" style="width:330px"><img src="chopsticks/lockup-vertical-gold.svg" height="150" alt="縦組み"><p class="cap">縦組み</p></div>
-  <div class="tile paper" style="width:420px"><img src="chopsticks/wordmark-gold.svg" height="40" alt="テキストロゴ"><p class="cap">テキストロゴ</p></div>
-  <div class="tile paper" style="width:200px"><img class="icon" src="chopsticks/app-icon.svg" width="140" height="140" alt="アイコン"><p class="cap">アイコン</p></div>
-  <div class="tile night" style="width:200px"><img class="icon" src="chopsticks/app-icon-tinted.svg" width="140" height="140" alt="アイコン (色付き)" style="filter: sepia(1) saturate(2.2) hue-rotate(160deg) brightness(.95)"><p class="cap">色付き (例)</p></div>
-  <div class="home">
-    <div class="app"><div class="ph" style="background:#f4f4f4"></div>カレンダー</div>
-    <div class="app"><div class="ph" style="background:linear-gradient(#fbd24b,#f7a31b)"></div>メモ</div>
-    <div class="app"><img class="ph" src="chopsticks/app-icon.svg" alt="">HINAMI</div>
-    <div class="app"><div class="ph" style="background:linear-gradient(#5ad46b,#2fb24a)"></div>メッセージ</div>
-    <div class="app"><div class="ph" style="background:linear-gradient(#ff5f6d,#e83a50)"></div>ミュージック</div>
-    <div class="app"><div class="ph" style="background:linear-gradient(#6cc3ff,#2c8ef0)"></div>天気</div>
-    <div class="app"><div class="ph" style="background:#fff"></div>写真</div>
-    <div class="app"><div class="ph" style="background:linear-gradient(#ff9f43,#ff6b2c)"></div>グルメ</div>
-  </div>
-  <div class="tile paper" style="flex-direction:row;gap:16px;width:260px"><img class="icon" src="chopsticks/app-icon.svg" width="60" height="60" alt=""><img class="icon" src="chopsticks/app-icon.svg" width="40" height="40" alt=""><img class="icon" src="chopsticks/app-icon.svg" width="29" height="29" alt=""><img src="chopsticks/symbol-ink.svg" width="16" height="16" alt=""></div>
+  <div class="tile paper" style="width:260px"><img src="symbol-gold.svg" width="170" height="170" alt="シンボル (明るい紙面)"><p class="cap">金 #8F7832</p></div>
+  <div class="tile night" style="width:260px"><img src="symbol-gold-dark.svg" width="170" height="170" alt="シンボル (暗い紙面)"><p class="cap">金 #B8995F</p></div>
+  <div class="tile paper" style="width:300px"><div class="row"><img src="symbol-simple-ink.svg" width="32" height="32" alt=""><img src="symbol-simple-ink.svg" width="24" height="24" alt=""><img src="symbol-simple-ink.svg" width="16" height="16" alt=""></div><p class="cap">簡略版 (32 · 24 · 16 px)</p></div>
 </div>
 </div>
 
-<div class="set" id="set-seal">
-<h1>B 丸に日</h1>
+<div class="sheet" id="sheet-lockups">
+<h2>テキストロゴとセット</h2>
 <div class="grid">
-  <div class="tile paper"><img src="seal/symbol-gold.svg" width="140" height="140" alt="シンボル"><p class="cap">シンボル</p></div>
-  <div class="tile night"><img src="seal/symbol-gold-dark.svg" width="140" height="140" alt="シンボル (暗い紙面)"><p class="cap">シンボル</p></div>
-  <div class="tile paper" style="width:470px"><img src="seal/lockup-horizontal-gold.svg" height="64" alt="横組み"><p class="cap">横組み</p></div>
-  <div class="tile night" style="width:470px"><img src="seal/lockup-horizontal-gold-dark.svg" height="64" alt="横組み (暗い紙面)"><p class="cap">横組み</p></div>
-  <div class="tile paper" style="width:330px"><img src="seal/lockup-vertical-gold.svg" height="150" alt="縦組み"><p class="cap">縦組み</p></div>
-  <div class="tile paper" style="width:420px"><img src="seal/wordmark-gold.svg" height="40" alt="テキストロゴ"><p class="cap">テキストロゴ</p></div>
-  <div class="tile paper" style="width:200px"><img class="icon" src="seal/app-icon.svg" width="140" height="140" alt="アイコン"><p class="cap">アイコン</p></div>
-  <div class="tile night" style="width:200px"><img class="icon" src="seal/app-icon-tinted.svg" width="140" height="140" alt="アイコン (色付き)" style="filter: sepia(1) saturate(2.2) hue-rotate(160deg) brightness(.95)"><p class="cap">色付き (例)</p></div>
+  <div class="tile paper" style="width:440px;height:150px"><img src="wordmark-gold.svg" height="42" alt="テキストロゴ"><p class="cap">テキストロゴ</p></div>
+  <div class="tile night" style="width:440px;height:150px"><img src="wordmark-gold-dark.svg" height="42" alt="テキストロゴ (暗い紙面)"><p class="cap">テキストロゴ</p></div>
+</div>
+<div class="grid" style="margin-top:14px">
+  <div class="tile paper" style="width:440px;height:200px"><img src="lockup-horizontal-gold.svg" height="62" alt="横組み"><p class="cap">横組み</p></div>
+  <div class="tile night" style="width:440px;height:200px"><img src="lockup-horizontal-gold-dark.svg" height="62" alt="横組み (暗い紙面)"><p class="cap">横組み</p></div>
+</div>
+<div class="grid" style="margin-top:14px">
+  <div class="tile paper" style="width:290px;height:280px"><img src="lockup-vertical-gold.svg" height="170" alt="縦組み"><p class="cap">縦組み</p></div>
+  <div class="tile night" style="width:290px;height:280px"><img src="lockup-vertical-gold-dark.svg" height="170" alt="縦組み (暗い紙面)"><p class="cap">縦組み</p></div>
+  <div class="tile paper" style="width:290px;height:280px"><img src="lockup-vertical-ink.svg" height="170" alt="縦組み (墨 1 色)"><p class="cap">1 色 (墨)</p></div>
+</div>
+</div>
+
+<div class="sheet" id="sheet-icon">
+<h2>アプリのアイコン</h2>
+<div class="grid">
+  <div class="tile paper" style="width:240px"><img class="icon" src="app-icon.svg" width="170" height="170" alt="アイコン"><p class="cap">標準 · ダーク</p></div>
+  <div class="tile night" style="width:240px"><img class="icon" src="app-icon-tinted.svg" width="170" height="170" alt="アイコン (色付き)" style="filter: sepia(1) saturate(2.2) hue-rotate(160deg) brightness(.95)"><p class="cap">色付き (OS が色を付けた例)</p></div>
   <div class="home">
     <div class="app"><div class="ph" style="background:#f4f4f4"></div>カレンダー</div>
     <div class="app"><div class="ph" style="background:linear-gradient(#fbd24b,#f7a31b)"></div>メモ</div>
-    <div class="app"><img class="ph" src="seal/app-icon.svg" alt="">HINAMI</div>
+    <div class="app"><img class="ph" src="app-icon.svg" alt="">HINAMI</div>
     <div class="app"><div class="ph" style="background:linear-gradient(#5ad46b,#2fb24a)"></div>メッセージ</div>
     <div class="app"><div class="ph" style="background:linear-gradient(#ff5f6d,#e83a50)"></div>ミュージック</div>
     <div class="app"><div class="ph" style="background:linear-gradient(#6cc3ff,#2c8ef0)"></div>天気</div>
     <div class="app"><div class="ph" style="background:#fff"></div>写真</div>
     <div class="app"><div class="ph" style="background:linear-gradient(#ff9f43,#ff6b2c)"></div>グルメ</div>
   </div>
-  <div class="tile paper" style="flex-direction:row;gap:16px;width:260px"><img class="icon" src="seal/app-icon.svg" width="60" height="60" alt=""><img class="icon" src="seal/app-icon.svg" width="40" height="40" alt=""><img class="icon" src="seal/app-icon.svg" width="29" height="29" alt=""><img src="seal/symbol-ink.svg" width="16" height="16" alt=""></div>
+  <div class="tile paper" style="width:240px"><div class="row"><img class="icon" src="app-icon.svg" width="60" height="60" alt=""><img class="icon" src="app-icon.svg" width="40" height="40" alt=""><img class="icon" src="app-icon.svg" width="29" height="29" alt=""></div><p class="cap">60 · 40 · 29 px</p></div>
 </div>
 </div>
 

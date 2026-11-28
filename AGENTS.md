@@ -30,6 +30,7 @@ HINAMI (日次 / ひなみ) は、口にする食と飲みを 1 品ずつ記録�
 | つながる (SNS)                              | [`docs/ux/connect.md`](docs/ux/connect.md)             |
 | デザインの方向性                            | [`docs/design/direction.md`](docs/design/direction.md) |
 | デザインコンセプト (スライドと画面イメージ) | [`docs/design/deck/`](docs/design/deck/README.md)      |
+| ロゴ (シンボル、セット、アイコン)           | [`docs/design/logo/`](docs/design/logo/README.md)      |
 | 判断待ち・未確認のこと                      | [`docs/open-questions.md`](docs/open-questions.md)     |
 | 外部の目でのレビューの記録                  | [`docs/reviews/`](docs/reviews/2026-11-27-review.md)   |
 | 最先端の事例と手法の調査                    | [`docs/research/`](docs/research/2026-11-28/README.md) |

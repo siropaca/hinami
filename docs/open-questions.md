@@ -51,10 +51,12 @@
 
 1. 残りの画面 (マップ、年間ふりかえり、つながる) を同じ方向で起こす
 2. ふだんスマホで撮る写真での見え方を、PHASE 1 の実機で確かめる
+3. ロゴ「皿と箸」が、16px で「∅」の記号に見えないか、和食に寄って見えないか ([`design/logo/README.md`](design/logo/README.md) の「確かめること」)
 
 ## サービス名の確認 (早めに行う)
 
 - [ ] 商標: J-PlatPat で称呼検索。区分 9 / 42 / 45、必要なら 43
+- [ ] ロゴの図形 (円と箸) の商標: J-PlatPat で図形を調べる。出願は HINAMI の文字と組み合わせた形を基本にする ([`design/logo/README.md`](design/logo/README.md))
 - [ ] App Store / Google Play の同名アプリ
 - [ ] ドメイン
 - [ ] SNS ハンドル

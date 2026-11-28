@@ -19,6 +19,10 @@
     "note",
     "layers",
     "access",
+    "logo",
+    "logo-set",
+    "logo-icon",
+    "logo-explored",
     "decide"
   ],
   "sections": {
@@ -41,6 +45,10 @@
     "s5": {
       "description": "OS との分担と、使いやすさの決まり",
       "start": "layers"
+    },
+    "s7": {
+      "description": "ロゴ: 皿と箸、テキストロゴ、アイコン",
+      "start": "logo"
     },
     "s6": { "description": "決めたこと", "start": "decide" }
   },

@@ -432,6 +432,39 @@ section.night table {
   line-height: 1.6;
 }
 
+/* logo */
+.logo-hero {
+  position: absolute;
+  left: 150px;
+  top: 250px;
+  width: 700px;
+  height: 533px;
+  object-fit: contain;
+}
+.logo-text {
+  margin-left: 860px;
+  width: 804px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.logo-card {
+  background: var(--paper);
+  border-radius: 20px;
+  padding: 44px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.logo-caps {
+  display: flex;
+  gap: 72px;
+}
+.logo-caps .col {
+  width: 362px;
+  gap: 8px;
+}
+
 /* decide */
 .pick {
   font-weight: 700;
