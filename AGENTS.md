@@ -27,6 +27,7 @@ HINAMI (日次 / ひなみ) は、口にする食と飲みを 1 品ずつ記録�
 | お知らせと設定                              | [`docs/ux/settings.md`](docs/ux/settings.md)           |
 | 記録のタブ (履歴と検索)                     | [`docs/ux/history.md`](docs/ux/history.md)             |
 | 記録が好みを語る (好みの分析と次に試すもの) | [`docs/ux/taste.md`](docs/ux/taste.md)                 |
+| 長く使うほど返るもの (前にも、帳面、歳時記) | [`docs/ux/memory.md`](docs/ux/memory.md)               |
 | 記録にためるもの (データの原則と同意)       | [`docs/data.md`](docs/data.md)                         |
 | つながる (SNS)                              | [`docs/ux/connect.md`](docs/ux/connect.md)             |
 | デザインの入口 (決めたこと、資料の地図)     | [`docs/design/README.md`](docs/design/README.md)       |

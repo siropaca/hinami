@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>長く使うほど返るもの — ワイヤーフレーム | HINAMI</title>
+    <link rel="stylesheet" href="wireframe.css" />
+  </head>
+  <body>
+    <main>
+      <h1>長く使うほど返るもの — ワイヤーフレーム</h1>
+      <p class="status">状態: 方針を決めた (2026-11-28)。決まりの本文は <a href="memory.md">memory.md</a></p>
+
+      <p class="lead">
+        実績の見返りは最初の数週に厚く、2〜3 か月目から減る。そこで「記憶している」と「育つ」を、時期で分けた 3 つで返す。数週からの「前にも」、3 か月目からの「季節と年の帳面」、1 年目からの「自分の歳時記」。どれも通知で押さず、自分だけに見せる。出す要素だけを決め、見た目はデザインのフェーズで決める。
+      </p>
+
+      <ul class="legend">
+        <li><span class="sw"></span>決まった流れ・機能</li>
+        <li><span class="sw tapmark">1</span>タップの順番</li>
+      </ul>
+      <p class="legend-note">画面の中の配置や大きさは、すべて仮。言葉も仮。</p>
+
+      <!-- Flow A -->
+      <section>
+        <h2>A. 前にも (数週から)</h2>
+        <p class="desc">前にも記録した品や店に出会うと、前回の時期と気持ち、何度目かを 1 行で出す。保存のトーストには出さない。</p>
+        <p class="scroll-hint">横にスクロールできます →</p>
+        <div class="row">
+          <div class="screen">
+            <p class="cap">確認カード (名前が入った)</p>
+            <div class="phone">
+              <div class="top"><span class="x">×</span><span class="chip meal">新しい食事 ▾</span></div>
+              <div class="ph" style="height: 150px"><span>写真</span><span class="retake">撮り直す</span></div>
+              <div class="chips"><span class="chip">日本酒 ▾</span><span class="hint">AI が判定</span></div>
+              <div class="kv"><span class="k">場所</span><span class="chip">バー 灯 ▾</span></div>
+              <div class="memo">獺祭 純米大吟醸 45</div>
+              <div class="li tap" data-tap="1"><span>前にも · 2025/3 · 大好き</span><small>3 度目 ›</small></div>
+              <div class="spacer"></div>
+              <span class="btn primary block">完了</span>
+            </div>
+            <ol class="notes">
+              <li>確認カード、品の画面、写真なしで残す画面に出す。名前が入ったときや、店が決まったときに出る</li>
+              <li>同じ名前 (読みを含む) の品を先に当てる。名前がないときは、同じ店の同じ種類の品に当てる</li>
+              <li>いちばん新しい前回の時期と気持ち、何度目かを出す。前回が「合わなかった」でも、事実だけを出す</li>
+              <li>トーストには出さない。トーストは混んでいて、保存の時点では名前が分からないことも多いため</li>
+            </ol>
+          </div>
+          <div class="arrow"><span>前にも</span><span class="line"></span></div>
+          <div class="screen">
+            <p class="cap">前の記録 (食事の詳細)</p>
+            <div class="phone">
+              <div class="top"><span class="x">‹</span><span class="meta">2025/3/14 金 · 21:05</span><span>…</span></div>
+              <div class="kv"><span class="k">場所</span><span class="chip">バー 灯 ▾</span></div>
+              <div class="kv"><span class="k">メモ</span><span class="hl">昇進のお祝い</span></div>
+              <div class="it"><div class="ph"></div><div class="body"><span class="chip">日本酒 ▾</span><span class="hl">獺祭 純米大吟醸 45 · 大好き</span></div></div>
+              <div class="spacer"></div>
+              <div class="fab-gap"></div>
+              <div class="tabbar"><span>ホーム</span><span class="on">記録</span><span>実績</span><span>友だち</span></div>
+              <span class="fab">＋</span>
+            </div>
+            <ol class="notes">
+              <li>前の記録を開く。そのときの食事のメモも見返せる</li>
+              <li>自分だけに見せる。友だちには見せない</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <!-- Flow B -->
+      <section>
+        <h2>B. 季節と年の帳面 (3 か月目から)</h2>
+        <p class="desc">季節や年が終わったあと、次に開いたときにホームのカードで知らせる。前もって予告しない。記録が足りる期間だけ出す (今の案: 季節は 10 件、年は 30 件)。</p>
+        <p class="scroll-hint">横にスクロールできます →</p>
+        <div class="row">
+          <div class="screen">
+            <p class="cap">ホーム (秋が終わったあと)</p>
+            <div class="phone">
+              <div class="top"><span class="logo">HINAMI</span><span class="hint">お知らせ　設定</span></div>
+              <div class="cmp">
+                <div class="cmp-h"><span>秋の帳面ができました</span><span class="link tap" data-tap="1">開く</span></div>
+                <div class="ml-th"><div class="ph"></div><div class="ph"></div><div class="ph"></div></div>
+              </div>
+              <div class="cal-h"><strong>最近の記録</strong><span class="link">すべて</span></div>
+              <div class="ml"><div class="ml-h"><span>12/02</span><span>家</span></div><div class="ml-th"><div class="ph"></div></div></div>
+              <div class="spacer"></div>
+              <div class="fab-gap"></div>
+              <div class="tabbar"><span class="on">ホーム</span><span>記録</span><span>実績</span><span>友だち</span></div>
+              <span class="fab">＋</span>
+            </div>
+            <ol class="notes">
+              <li>通知は使わない。開いたときにだけ出す</li>
+              <li>記録の少ない季節は、何も言わずに出さない</li>
+              <li>過去の帳面は、記録のタブから開ける (置き方は作りながら決める)</li>
+            </ol>
+          </div>
+          <div class="arrow"><span>開く</span><span class="line"></span></div>
+          <div class="screen">
+            <p class="cap">秋の帳面</p>
+            <div class="phone">
+              <div class="top"><span class="x">×</span><strong style="font-size: 12px">2026 秋の帳面</strong><span>…</span></div>
+              <div class="sh">新しく出会った</div>
+              <div class="ml-th"><div class="ph"></div><div class="ph"></div><div class="ph"></div></div>
+              <div class="sh">戻ってきた</div>
+              <div class="ml-th"><div class="ph"></div><div class="ph"></div></div>
+              <div class="sh">ずっと好き</div>
+              <div class="ml-th"><div class="ph"></div><div class="ph"></div><div class="ph"></div></div>
+              <div class="sh">行った都道府県</div>
+              <div class="hl">京都府、石川県</div>
+              <div class="sh">好みの移り変わり</div>
+              <div class="hl">コーヒーは、浅煎りに寄ってきたようです</div>
+              <div class="memo tap" data-tap="2">この季節に一言 (任意)</div>
+              <div class="spacer"></div>
+            </div>
+            <ol class="notes">
+              <li>「新しく出会った」「戻ってきた」「ずっと好き」で、大好きや好きの品の写真を見せる</li>
+              <li>数字は控えめにする。件数を大きく出さず、量の多さを称えない</li>
+              <li>見出しや一言を足せる。頁ごとに外せる (右上の …)</li>
+              <li>記録の空白、「合わなかった」の多さ、体調や酒をやめたことの推測には触れない</li>
+              <li>人に見せる 1 枚は、外への共有を入れるときに決める</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <!-- Flow C -->
+      <section>
+        <h2>C. 自分の歳時記 (1 年目から)</h2>
+        <p class="desc">毎年同じ季節に口にしている、大好きな品を、その季節に入ったらホームのカードで出す。1 つの季節に 1〜2 回まで。「○年前の今日」は出さない。</p>
+        <p class="scroll-hint">横にスクロールできます →</p>
+        <div class="row">
+          <div class="screen">
+            <p class="cap">ホーム (1 年以上、秋に入ったころ)</p>
+            <div class="phone">
+              <div class="top"><span class="logo">HINAMI</span><span class="hint">お知らせ　設定</span></div>
+              <div class="cmp">
+                <div class="cmp-h"><span>去年の秋も、栗のモンブランを<br />大好きと残しています</span></div>
+                <div class="ph tap" data-tap="1" style="height: 64px"><span>2025/10 · 菓子工房 くり</span></div>
+                <span class="link" style="align-self: flex-end; font-size: 10px">もう出さない</span>
+              </div>
+              <div class="cal-h"><strong>最近の記録</strong><span class="link">すべて</span></div>
+              <div class="ml"><div class="ml-h"><span>9/03</span><span>家</span></div><div class="ml-th"><div class="ph"></div></div></div>
+              <div class="spacer"></div>
+              <div class="fab-gap"></div>
+              <div class="tabbar"><span class="on">ホーム</span><span>記録</span><span>実績</span><span>友だち</span></div>
+              <span class="fab">＋</span>
+            </div>
+            <ol class="notes">
+              <li>去年や一昨年の同じ季節に、大好きか好きを付けた品を出す。毎年残しているもの (新酒、栗の菓子、鮎、おせちなど) を先に出す</li>
+              <li>「合わなかった」の品は出さない</li>
+              <li>「もう出さない」を押すと、その品は歳時記に二度と出ない。理由は聞かない</li>
+              <li>写真をタップすると、去年の記録を開く</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <!-- Flow D -->
+      <section>
+        <h2>D. 思い出に出さない</h2>
+        <p class="desc">嫌な思い出を不意に見せないため、食事・期間・店の単位で「思い出に出さない」にできる。前にも、帳面、歳時記のどれにも出なくなる。記録のタブと検索には残る。</p>
+        <p class="scroll-hint">横にスクロールできます →</p>
+        <div class="row">
+          <div class="screen">
+            <p class="cap">食事の詳細 (右上の …)</p>
+            <div class="phone">
+              <div class="top"><span class="x">‹</span><span class="meta">2025/4/02 水 · 19:30</span><span>…</span></div>
+              <div class="kv"><span class="k">場所</span><span class="chip">洋食 こみち ▾</span></div>
+              <div class="it"><div class="ph"></div><div class="body"><span class="chip">オムライス ▾</span><span class="hl">メモなし</span></div></div>
+              <div class="dim"></div>
+              <div class="sheet short">
+                <div class="grab"></div>
+                <div class="li tap" data-tap="1"><span>思い出に出さない</span><small></small></div>
+                <div class="li"><span>この店を思い出に出さない</span><small></small></div>
+                <div class="li"><span>期間を選んで出さない</span><small></small></div>
+                <div class="li sep"><span>食事を消す</span><small></small></div>
+              </div>
+            </div>
+            <ol class="notes">
+              <li>消すのではなく、思い出として出さないだけ。記録のタブと検索には残る</li>
+              <li>人で自動に外すことはしない。写真の顔を見分けた結果を持たないため</li>
+              <li>「好みに入れない」とは別。好みの材料から外すかと、思い出に出すかは別のこと</li>
+            </ol>
+          </div>
+          <div class="arrow"><span>設定から</span><span class="line"></span></div>
+          <div class="screen">
+            <p class="cap">設定 → 思い出に出さない</p>
+            <div class="phone">
+              <div class="top"><span class="x">‹</span><strong style="font-size: 12px">思い出に出さない</strong><span></span></div>
+              <div class="li"><span>2025/4/02 洋食 こみち</span><small>戻す</small></div>
+              <div class="li"><span>店: 喫茶 ほとり</span><small>戻す</small></div>
+              <div class="li"><span>2024/6〜2024/8</span><small>戻す</small></div>
+              <div class="spacer"></div>
+            </div>
+            <ol class="notes">
+              <li>一覧で見て、戻せる</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>この図で決めていないこと</h2>
+        <ul class="open">
+          <li>帳面の見た目、頁の数、出す条件の件数</li>
+          <li>人に見せる 1 枚 (外への共有を入れるとき)</li>
+          <li>帳面を有料にするか (収益の方針と一緒に決める)</li>
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>
