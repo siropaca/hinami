@@ -76,7 +76,7 @@
               <div class="ml-month">食べる</div>
               <div class="stpgrid"><span class="stp arc tap" data-tap="1" style="--p: 48"><b>麺</b>ラーメン<small class="sub">12/25</small></span><span class="stp arc" style="--p: 52"><b>鮨</b>寿司<small class="sub">26/50</small></span><span class="stp arc" style="--p: 50"><b>串</b>焼き鳥<small class="sub">5/10</small></span><span class="stp arc" style="--p: 80"><b>珈</b>コーヒー<small class="sub">8/10</small></span></div>
               <div class="ml-month">めぐる</div>
-              <div class="stpgrid"><span class="stp arc" style="--p: 50"><b>軒</b>お店<small class="sub">5/10</small></span><span class="stp arc tap" data-tap="2" style="--p: 9"><b>県</b>都道府県<small class="sub">4/47</small></span><span class="stp arc" style="--p: 60"><b>店</b>麺屋 ひかり<small class="sub">3/5</small></span><span class="stp on"><b>家</b>家ごはん<small class="sub">解除</small></span></div>
+              <div class="stpgrid"><span class="stp arc" style="--p: 50"><b>軒</b>お店<small class="sub">5/10</small></span><span class="stp arc tap" data-tap="2" style="--p: 9"><b>県</b>都道府県<small class="sub">4/47</small></span><span class="stp arc" style="--p: 60"><b>店</b>同じ店<small class="sub">3/5</small></span><span class="stp on"><b>家</b>家ごはん<small class="sub">解除</small></span></div>
               <div class="ml-month">シークレット</div>
               <div class="stpgrid"><span class="stp on"><b>◎</b>月だけが見ていた<small class="sub">解除</small></span><span class="stp"><b>?</b>シークレット<small class="sub"></small></span><span class="stp"><b>?</b>シークレット<small class="sub"></small></span></div>
               <div class="spacer"></div>
@@ -89,6 +89,7 @@
               <li>解除した実績は塗りつぶし。シークレットは解除するまで「?」を残りの数だけ並べる</li>
               <li>「食べる」「めぐる」「シークレット」の並びは固定し、空いた枠が見えるようにする</li>
               <li>種類の実績は、その種類をはじめて記録したときに現れる</li>
+              <li>同じ店の回数は 1 つの実績。いちばん多く記録した店の回数で進み、どの店で伸ばしても次の段が解除される。店ごとには作らない</li>
             </ol>
           </div>
           <div class="arrow"><span>ラーメンを<br />タップ</span><span class="line"></span></div>
@@ -169,9 +170,10 @@
             <div class="phone">
               <div class="top"><span class="x">‹</span><span class="btn">比べる</span></div>
               <div class="rank">
-                <div class="sh">好き</div>
+                <div class="sh">大好き</div>
                 <div class="li"><span>1</span><span>中華そば 青葉</span><small></small></div>
-                <div class="li"><span>2</span><span>らーめん 凪</span><small></small></div>
+                <div class="sh">好き</div>
+                <div class="li"><span>1</span><span>らーめん 凪</span><small></small></div>
                 <div class="li range"><span>・</span><span>麺屋 ひかり</span><small>まだ比べていない</small></div>
                 <div class="sh">ふつう</div>
                 <div class="li range"><span>・</span><span>麺処 さわ</span><small></small></div>
