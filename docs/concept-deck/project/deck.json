@@ -1,0 +1,48 @@
+{
+  "v": 5,
+  "createdOnFiles": { "v": 1, "at": "2026-11-28T05:28:05Z" },
+  "lists": "css",
+  "format": { "v": 1, "shared": ["project/deck.css"] },
+  "title": "HINAMI 事業コンセプト提案 (改訂版)",
+  "order": [
+    "cover",
+    "summary",
+    "problem",
+    "position",
+    "win",
+    "target",
+    "concept",
+    "journey",
+    "record",
+    "compare",
+    "grow",
+    "search",
+    "taste",
+    "social",
+    "principles",
+    "model",
+    "roadmap",
+    "naming",
+    "decide",
+    "screens"
+  ],
+  "sections": {
+    "s1": { "description": "結論", "start": "cover" },
+    "s2": { "description": "課題と機会", "start": "problem" },
+    "s3": { "description": "提案するサービス", "start": "concept" },
+    "s4": { "description": "事業としての成り立ち", "start": "model" },
+    "s5": { "description": "ご判断いただきたいこと", "start": "decide" },
+    "s6": { "description": "付録", "start": "screens" }
+  },
+  "faces": {
+    "noto-sans-jp": {
+      "family": "Noto Sans JP",
+      "href": "https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Inter:wght@400;600;700&display=swap"
+    },
+    "inter": {
+      "family": "Inter",
+      "href": "https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Inter:wght@400;600;700&display=swap"
+    }
+  },
+  "designSystems": []
+}

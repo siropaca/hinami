@@ -16,6 +16,7 @@ HINAMI (日次 / ひなみ) は、食と飲みの「覚えておきたい体験�
 | 知りたいこと                                | 場所                                                   |
 | ------------------------------------------- | ------------------------------------------------------ |
 | 何を作るか (コンセプト・前提・収益・進め方) | [`docs/concept.md`](docs/concept.md)                   |
+| 事業コンセプト提案書 (スライド)             | [`docs/concept-deck/`](docs/concept-deck/README.md)    |
 | 画面の流れ (UX)。入口は「記録の流れ」       | [`docs/ux/recording.md`](docs/ux/recording.md)         |
 | 続けたくなる仕組み (実績)                   | [`docs/ux/achievements.md`](docs/ux/achievements.md)   |
 | 比べる (ランキング)                         | [`docs/ux/compare.md`](docs/ux/compare.md)             |

@@ -3,7 +3,7 @@
 HINAMI (日次 / ひなみ) は、食と飲みの「覚えておきたい体験」を記録する個人向けスマホアプリ。
 「人に見せる食レビュー」ではなく「自分のための、育つ食と酒の記録帳」。自分だけの「おいしかった」を集めていく。
 
-提案書の全体は [`references/slides/concept-deck/`](references/slides/concept-deck/) を参照 (`view.html` をブラウザで開く)。
+提案書 (スライド) は [`concept-deck/`](concept-deck/README.md) にある。2026-11-28 に、UX の決定と 3 つの施策を反映して書き直した。構想段階の版は [`references/slides/concept-deck/`](references/slides/concept-deck/) に残している。
 
 ## 確定している前提
 

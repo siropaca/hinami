@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HINAMI 事業コンセプト提案 — 確かめ用ビューア</title>
+    <style>
+      * { margin: 0 }
+      html { background: #cfd4dc }
+      body { font: 32px/1.2 sans-serif; padding: 20px }
+      .frame { position: relative; overflow: hidden; margin: 0 auto 20px; box-shadow: 0 2px 12px #0003 }
+      .frame > section { width: 1920px; height: 1080px; overflow: hidden; box-sizing: border-box; position: relative; isolation: isolate; transform-origin: 0 0 }
+      section[hidden], aside, noscript { display: none }
+      h1 { font-size: 96px; font-weight: 600 }
+      h2 { font-size: 64px; font-weight: 600 }
+      h3 { font-size: 44px; font-weight: 600 }
+      p, li, h1, h2, h3, td, th { overflow-wrap: break-word; text-wrap: pretty }
+      table { width: 100%; border-collapse: separate; border-spacing: 0; border: solid #0003; border-width: 2px 0 0 2px }
+      th, td { padding: .35em .6em; text-align: left; border: solid #0003; border-width: 0 2px 2px 0 }
+      x-shape, x-icon, x-embed { display: block }
+      x-shape { border-radius: 2px }
+    </style>
+    <!-- The deck's own rules come after the defaults, as in Slides -->
+    <link rel="stylesheet" href="project/deck.css" />
+  </head>
+  <body>
+    <script>
+      // Local preview only: the published deck lives in the claude.ai artifact.
+      async function main() {
+        const deck = await (await fetch("project/deck.json")).json();
+        const hrefs = new Set(Object.values(deck.faces || {}).map((face) => face.href).filter(Boolean));
+        for (const href of hrefs) {
+          const link = document.createElement("link");
+          link.rel = "stylesheet";
+          link.href = href;
+          document.head.appendChild(link);
+        }
+        const scale = Math.min(1, (window.innerWidth - 40) / 1920);
+        for (const id of deck.order) {
+          const html = await (await fetch(`project/slides/${id}.html`)).text();
+          const frame = document.createElement("div");
+          frame.className = "frame";
+          frame.style.width = `${1920 * scale}px`;
+          frame.style.height = `${1080 * scale}px`;
+          frame.innerHTML = html;
+          const section = frame.querySelector("section");
+          section.style.transform = `scale(${scale})`;
+          document.body.appendChild(frame);
+        }
+      }
+      main();
+    </script>
+  </body>
+</html>

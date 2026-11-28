@@ -15,6 +15,21 @@
       ],
       "port": 4173,
       "url": "http://127.0.0.1:4173"
+    },
+    {
+      "name": "concept-deck",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": [
+        "-m",
+        "http.server",
+        "4174",
+        "--bind",
+        "127.0.0.1",
+        "--directory",
+        "docs/concept-deck"
+      ],
+      "port": 4174,
+      "url": "http://127.0.0.1:4174"
     }
   ]
 }

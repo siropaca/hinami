@@ -4,7 +4,7 @@
 
 | パス | 中身 |
 |---|---|
-| `slides/concept-deck/` | 事業コンセプト提案書 (16 枚) |
+| `slides/concept-deck/` | 事業コンセプト提案書 (16 枚)。構想段階の版。改訂版は [`../concept-deck/`](../concept-deck/README.md) |
 | `slides/design-deck/` | デザインの方向性 (8 枚) |
 | `slides/*/view.html` | ブラウザで開けば全スライドを縦に並べて見られる簡易ビューア |
 
@@ -17,5 +17,5 @@
 
 オンライン版 (claude.ai のアーティファクト。所有者のみ閲覧可):
 
-- 事業コンセプト提案書: https://claude.ai/artifact/JRg5GNcNXj2hpbVMBpKpKt
+- 事業コンセプト提案書: https://claude.ai/artifact/JRg5GNcNXj2hpbVMBpKpKt (構想段階の版。改訂版は別のアーティファクト。[`../concept-deck/`](../concept-deck/README.md))
 - デザインの方向性: https://claude.ai/artifact/PYSNWeWn99ZucWaDkoypho
