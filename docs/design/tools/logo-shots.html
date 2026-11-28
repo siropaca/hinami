@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>ロゴのスライド用の画像</title>
+<style>
+/* Logo pictures for the design deck. Render with shoot.js (--transparent --webp --trim --prefix logo-). */
+body { margin: 0; font-family: "Noto Sans JP", sans-serif; }
+.blk { display: inline-flex; padding: 30px; }
+.icon { border-radius: 22.37%; box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28); }
+.home { width: 520px; height: 360px; padding: 40px 36px; border-radius: 30px; background: linear-gradient(160deg, #8d9aa6, #4d5560 60%, #2f3238); display: grid; grid-template-columns: repeat(4, 1fr); gap: 26px 18px; }
+.app { display: flex; flex-direction: column; align-items: center; gap: 7px; color: #fff; font-size: 14px; }
+.ph { width: 86px; height: 86px; border-radius: 22.37%; }
+</style>
+</head>
+<body>
+<div class="blk" id="sym-light"><img src="../logo/symbol-gold.svg" width="520" height="520" alt=""></div>
+<div class="blk" id="sym-dark"><img src="../logo/symbol-gold-dark.svg" width="520" height="520" alt=""></div>
+<div class="blk" id="lh-light"><img src="../logo/lockup-horizontal-gold.svg" height="150" alt=""></div>
+<div class="blk" id="lh-dark"><img src="../logo/lockup-horizontal-gold-dark.svg" height="150" alt=""></div>
+<div class="blk" id="lv-light"><img src="../logo/lockup-vertical-gold.svg" height="360" alt=""></div>
+<div class="blk" id="lv-dark"><img src="../logo/lockup-vertical-gold-dark.svg" height="360" alt=""></div>
+<div class="blk" id="icon"><img class="icon" src="../logo/app-icon.svg" width="420" height="420" alt=""></div>
+<div class="blk" id="tinted"><img class="icon" src="../logo/app-icon-tinted.svg" width="260" height="260" alt="" style="filter: sepia(1) saturate(2.2) hue-rotate(160deg) brightness(0.95)"></div>
+<div class="blk" id="small"><div style="display:flex;gap:28px;align-items:center"><img class="icon" src="../logo/app-icon.svg" width="120" height="120" alt=""><img class="icon" src="../logo/app-icon.svg" width="80" height="80" alt=""><img class="icon" src="../logo/app-icon.svg" width="58" height="58" alt=""></div></div>
+<div class="blk" id="home"><div class="home">
+  <div class="app"><div class="ph" style="background:#f4f4f4"></div>カレンダー</div>
+  <div class="app"><div class="ph" style="background:linear-gradient(#fbd24b,#f7a31b)"></div>メモ</div>
+  <div class="app"><img class="ph" src="../logo/app-icon.svg" alt="">HINAMI</div>
+  <div class="app"><div class="ph" style="background:linear-gradient(#5ad46b,#2fb24a)"></div>メッセージ</div>
+  <div class="app"><div class="ph" style="background:linear-gradient(#ff5f6d,#e83a50)"></div>ミュージック</div>
+  <div class="app"><div class="ph" style="background:linear-gradient(#6cc3ff,#2c8ef0)"></div>天気</div>
+  <div class="app"><div class="ph" style="background:#fff"></div>写真</div>
+  <div class="app"><div class="ph" style="background:linear-gradient(#ff9f43,#ff6b2c)"></div>グルメ</div>
+</div></div>
+</body>
+</html>

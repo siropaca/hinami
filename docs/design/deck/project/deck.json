@@ -1,0 +1,70 @@
+{
+  "v": 5,
+  "createdOnFiles": { "v": 1, "at": "2026-11-28T09:00:00Z" },
+  "lists": "css",
+  "format": { "v": 1, "shared": ["project/deck.css"] },
+  "title": "HINAMI デザインコンセプト",
+  "order": [
+    "cover",
+    "summary",
+    "why",
+    "keep",
+    "lightdark",
+    "color",
+    "type",
+    "photo",
+    "ledger",
+    "stamp",
+    "touch",
+    "note",
+    "layers",
+    "access",
+    "logo",
+    "logo-set",
+    "logo-icon",
+    "logo-explored",
+    "decide"
+  ],
+  "sections": {
+    "s1": {
+      "description": "結論: 夜の帳面を、朝も夜も使える「日々の帳面」に組み直す",
+      "start": "cover"
+    },
+    "s2": {
+      "description": "なぜ組み直すか、何を残して何を変えるか",
+      "start": "why"
+    },
+    "s3": {
+      "description": "紙面の基本: 明暗、色、書体、写真",
+      "start": "lightdark"
+    },
+    "s4": {
+      "description": "帳面の作法: 日付の欄、印、手触り、余白の書き込み",
+      "start": "ledger"
+    },
+    "s5": {
+      "description": "OS との分担と、使いやすさの決まり",
+      "start": "layers"
+    },
+    "s7": {
+      "description": "ロゴ: 皿と箸、テキストロゴ、アイコン",
+      "start": "logo"
+    },
+    "s6": { "description": "決めたこと", "start": "decide" }
+  },
+  "faces": {
+    "noto-serif-jp": {
+      "family": "Noto Serif JP",
+      "href": "https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;600&display=swap"
+    },
+    "noto-sans-jp": {
+      "family": "Noto Sans JP",
+      "href": "https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap"
+    },
+    "cormorant-garamond": {
+      "family": "Cormorant Garamond",
+      "href": "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&display=swap"
+    }
+  },
+  "designSystems": []
+}

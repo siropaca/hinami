@@ -1,0 +1,501 @@
+:root {
+  --paper: #f3eee6;
+  --paper2: #eae4d9;
+  --ink: #16130f;
+  --sub: #6b645b;
+  --rule: #d6cec0;
+  --shu: #a23f2e;
+  --night: #16130f;
+  --night2: #221e19;
+  --kinari: #f2ede4;
+  --nsub: #a39b8f;
+  --nrule: #3a342c;
+  --shu-night: #d6694f;
+  --gold: #8f7832;
+  --gold-night: #b8995f;
+}
+body {
+  font-family: "Noto Sans JP", Arial, sans-serif;
+  color: var(--ink);
+}
+section {
+  background: var(--paper);
+  color: var(--ink);
+  padding: 128px 128px 160px;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  counter-increment: page;
+}
+section.night {
+  background: var(--night);
+  color: var(--kinari);
+}
+section.paper2 {
+  background: var(--paper2);
+}
+.eyebrow {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: 6px;
+  color: var(--sub);
+}
+section.night .eyebrow {
+  color: var(--nsub);
+}
+.head {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+h1 {
+  font-family: "Noto Serif JP", Georgia, serif;
+  font-weight: 500;
+}
+h2 {
+  font-family: "Noto Serif JP", Georgia, serif;
+  font-size: 52px;
+  font-weight: 500;
+  line-height: 1.45;
+}
+h3 {
+  font-family: "Noto Serif JP", Georgia, serif;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1.45;
+}
+.lead {
+  font-size: 30px;
+  line-height: 1.7;
+  color: var(--sub);
+}
+.body {
+  font-size: 26px;
+  line-height: 1.7;
+  color: var(--sub);
+}
+.small {
+  font-size: 24px;
+  line-height: 1.6;
+  color: var(--sub);
+}
+section.night .lead,
+section.night .body,
+section.night .small {
+  color: var(--nsub);
+}
+.mincho {
+  font-family: "Noto Serif JP", Georgia, serif;
+}
+.logo {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 500;
+  letter-spacing: 24px;
+}
+
+/* footer */
+.foot {
+  position: absolute;
+  left: 128px;
+  width: 1664px;
+  bottom: 64px;
+  display: flex;
+  justify-content: space-between;
+}
+.foot p {
+  font-size: 24px;
+  color: var(--sub);
+}
+section.night .foot p {
+  color: var(--nsub);
+}
+.pg::after {
+  content: counter(page);
+}
+
+/* columns */
+.textcol {
+  width: 820px;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+.widecol {
+  width: 1200px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.row {
+  display: flex;
+  gap: 48px;
+}
+.col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.grow {
+  flex: 1;
+}
+.rule-top {
+  border-top: 2px solid var(--ink);
+  padding-top: 24px;
+}
+section.night .rule-top {
+  border-top: 2px solid var(--kinari);
+}
+.item {
+  display: flex;
+  gap: 24px;
+  border-top: 1px solid var(--rule);
+  padding-top: 18px;
+}
+section.night .item {
+  border-top: 1px solid var(--nrule);
+}
+.no {
+  font-family: "Noto Serif JP", Georgia, serif;
+  font-size: 26px;
+  font-weight: 500;
+  color: var(--sub);
+  width: 44px;
+}
+section.night .no {
+  color: var(--nsub);
+}
+.it {
+  font-size: 27px;
+  line-height: 1.6;
+}
+.it-sub {
+  font-size: 24px;
+  line-height: 1.6;
+  color: var(--sub);
+}
+section.night .it-sub {
+  color: var(--nsub);
+}
+.src {
+  font-size: 24px;
+  color: var(--sub);
+}
+
+/* phone images (900x1864 with baked shadow) */
+.ph-r1 {
+  position: absolute;
+  left: 1396px;
+  top: 128px;
+  width: 396px;
+  height: 820px;
+  object-fit: contain;
+}
+.ph-r2a {
+  position: absolute;
+  left: 1000px;
+  top: 128px;
+  width: 396px;
+  height: 820px;
+  object-fit: contain;
+}
+.ph-r2b {
+  position: absolute;
+  left: 1396px;
+  top: 128px;
+  width: 396px;
+  height: 820px;
+  object-fit: contain;
+}
+
+/* cover */
+.cover-ph1 {
+  position: absolute;
+  left: 1010px;
+  top: 128px;
+  width: 396px;
+  height: 820px;
+  object-fit: contain;
+}
+.cover-ph2 {
+  position: absolute;
+  left: 1396px;
+  top: 128px;
+  width: 396px;
+  height: 820px;
+  object-fit: contain;
+}
+.cover-stamp {
+  position: absolute;
+  left: 770px;
+  top: 168px;
+  width: 168px;
+  height: 168px;
+  object-fit: contain;
+}
+.cover-col {
+  width: 860px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  margin-top: 60px;
+}
+.cover-logo {
+  font-size: 128px;
+  line-height: 1;
+  color: var(--gold);
+}
+.cover-tag {
+  font-size: 60px;
+  line-height: 1.5;
+}
+
+/* summary columns */
+.pillars {
+  display: flex;
+  gap: 48px;
+}
+.pillar {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* tables */
+table {
+  font-size: 26px;
+  color: var(--ink);
+}
+section.night table {
+  color: var(--kinari);
+}
+
+/* swatches */
+.swrow {
+  display: flex;
+  gap: 24px;
+}
+.swband {
+  background: var(--night);
+  border-radius: 24px;
+  padding: 28px 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.swlab {
+  font-size: 24px;
+  color: var(--sub);
+}
+.swband .swlab {
+  color: var(--nsub);
+}
+.sw {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.chip {
+  height: 84px;
+  border-radius: 16px;
+}
+.chip-line {
+  border: 2px solid var(--rule);
+}
+.swband .chip-line {
+  border: 2px solid var(--nrule);
+}
+.swname {
+  font-family: "Noto Serif JP", Georgia, serif;
+  font-size: 28px;
+  font-weight: 600;
+}
+.swband .swname {
+  color: var(--kinari);
+}
+.swval {
+  font-size: 24px;
+  color: var(--sub);
+}
+.swband .swval {
+  color: var(--nsub);
+}
+
+/* type specimen */
+.spec {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  border-top: 1px solid var(--rule);
+  padding-top: 24px;
+}
+.spec-label {
+  width: 420px;
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.spec-name {
+  font-size: 26px;
+  font-weight: 700;
+}
+.spec-use {
+  font-size: 24px;
+  color: var(--sub);
+}
+.spec-mincho {
+  font-family: "Noto Serif JP", Georgia, serif;
+  font-size: 56px;
+  font-weight: 500;
+}
+.spec-latin {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 72px;
+  font-weight: 500;
+  letter-spacing: 8px;
+}
+.spec-sans {
+  font-size: 40px;
+}
+
+/* stamps */
+.stamprow {
+  display: flex;
+  gap: 36px;
+  align-items: flex-start;
+}
+.stampcell {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+.stampimg {
+  width: 170px;
+  height: 170px;
+  object-fit: contain;
+}
+.stampcap {
+  font-size: 24px;
+  line-height: 1.5;
+  text-align: center;
+  color: var(--sub);
+}
+
+/* layer diagram */
+.layer {
+  border-radius: 28px;
+  padding: 28px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.layer-glass {
+  background: #dcd5ca;
+  border: 2px solid #ffffff;
+}
+.layer-paper {
+  background: var(--paper);
+  border: 2px solid var(--ink);
+  border-radius: 4px;
+}
+.layer-t {
+  font-family: "Noto Serif JP", Georgia, serif;
+  font-size: 32px;
+  font-weight: 600;
+}
+.layer-d {
+  font-size: 26px;
+  line-height: 1.6;
+  color: var(--sub);
+}
+
+/* margin note sample */
+.note {
+  border-left: 3px solid var(--ink);
+  padding-left: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.note-lab {
+  font-size: 24px;
+  color: var(--sub);
+}
+.note-text {
+  font-family: "Noto Serif JP", Georgia, serif;
+  font-size: 36px;
+  line-height: 1.6;
+}
+
+/* logo */
+.logo-hero {
+  position: absolute;
+  left: 150px;
+  top: 250px;
+  width: 700px;
+  height: 533px;
+  object-fit: contain;
+}
+.logo-text {
+  margin-left: 860px;
+  width: 804px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.logo-card {
+  background: var(--paper);
+  border-radius: 20px;
+  padding: 44px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.logo-caps {
+  display: flex;
+  gap: 72px;
+}
+.logo-caps .col {
+  width: 362px;
+  gap: 8px;
+}
+
+/* decide */
+.pick {
+  font-weight: 700;
+}
+
+/* arrival motion */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.rise {
+  animation: rise 600ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  animation-delay: calc(var(--i, 0) * 120ms);
+}
+@keyframes press {
+  from {
+    opacity: 0;
+    transform: scale(1.18) rotate(-4deg);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+.press {
+  animation: press 280ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  animation-delay: 450ms;
+}

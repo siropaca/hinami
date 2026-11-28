@@ -12,6 +12,7 @@
 # 依存
 node_modules/
 .pnpm-store/
+.venv/
 
 # ビルド成果物
 dist/
