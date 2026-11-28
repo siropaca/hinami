@@ -29,7 +29,7 @@ def _sticks(cx, cy, r):
     return [_quad(tip[0] + nx * k * st, tip[1] + ny * k * st, end[0] + nx * k * sh, end[1] + ny * k * sh, TIP_W, HANDLE_W) for k in (-1, 1)]
 def chopsticks(c):
     """A plate seen from above, crossed by a pair of chopsticks: tips to the lower left, handles to the upper right."""
-    cx, cy, r = 44, 50, 33
+    cx, cy, r = 50, 50, 33  # the plate sits in the middle of the square
     sticks = _sticks(cx, cy, r)
     holes = ''.join(f'<path d="{d}" fill="black" stroke="black" stroke-width="4" stroke-linejoin="round"/>' for d in sticks)
     body = (f'<defs><mask id="gap" maskUnits="userSpaceOnUse" x="-10" y="-10" width="120" height="120">'
@@ -40,7 +40,7 @@ def chopsticks(c):
     return body, cy, (cy - r - RING / 2, cy + r + RING / 2)
 def chopsticks_simple(c):
     """For 16-32 px: no inner rim, heavier strokes."""
-    cx, cy, r = 44, 50, 33
+    cx, cy, r = 50, 50, 33  # the plate sits in the middle of the square
     sticks = _sticks(cx, cy, r)
     holes = ''.join(f'<path d="{d}" fill="black" stroke="black" stroke-width="5" stroke-linejoin="round"/>' for d in sticks)
     return (f'<defs><mask id="gap" maskUnits="userSpaceOnUse" x="-10" y="-10" width="120" height="120">'
@@ -77,7 +77,7 @@ for key, fn in SYMBOLS.items():
         # horizontal: the band lines up with the middle of the capitals
         cap = 100; gap = 0.8 * cap; sw = WM_BOX[2] * cap / CAP
         k = 2.2
-        xmin, xmax = 8.0, 92.1   # drawn extent of the symbol inside its 100 box
+        xmin, xmax = 14.0, 98.1   # drawn extent of the symbol inside its 100 box
         ys = cap / 2 - k * band_y
         top = min(0, ys + k * t); bottom = max(cap, ys + k * b); shift = -top
         sym_w = (xmax - xmin) * k
@@ -86,7 +86,7 @@ for key, fn in SYMBOLS.items():
         open(os.path.join(d, f'lockup-horizontal-{cname}.svg'), 'w').write(svg(sym_w + gap + sw, bottom - top, body_h))
         # vertical: symbol above, wordmark below
         kv = 3.4; gapv = 0.9 * cap; w = max((xmax - xmin) * kv, sw)
-        sx = (w - 100 * kv) / 2 + (50 - 47) * kv
+        sx = (w - 100 * kv) / 2  # the plate center sits on the axis
         body_v = (f'<g transform="translate({sx:.2f} {-t * kv:.2f}) scale({kv})">{body}</g>'
                   + wordmark(c, (w - sw) / 2, (b - t) * kv + gapv, cap))
         open(os.path.join(d, f'lockup-vertical-{cname}.svg'), 'w').write(svg(w, (b - t) * kv + gapv + cap, body_v))
