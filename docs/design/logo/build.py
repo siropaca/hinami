@@ -19,15 +19,18 @@ def _quad(x0, y0, x1, y1, wt, wh):
     return (f'M{p[0][0]:.2f} {p[0][1]:.2f} L{p[1][0]:.2f} {p[1][1]:.2f} L{p[2][0]:.2f} {p[2][1]:.2f} '
             f'L{p[3][0]:.2f} {p[3][1]:.2f} A{wt / 2:.2f} {wt / 2:.2f} 0 0 1 {p[0][0]:.2f} {p[0][1]:.2f} Z')
 RING, RIM, TIP_W, HANDLE_W, GAP = 4.2, 2.0, 1.8, 4.0, 3.0  # two weights: rim = handle, inner rim = half
-def _sticks(cx, cy):
-    ang = -24; a = math.radians(ang); ux, uy = math.cos(a), math.sin(a); nx, ny = -uy, ux
-    tip = (cx - 10 * ux, cy - 10 * uy + 4); end = (tip[0] + ux * 70, tip[1] + uy * 70)
+def _sticks(cx, cy, r):
+    """The pair enters at the lower left (tips poke out past the rim) and leaves at the upper right (handles)."""
+    ang, shift, ext_l, ext_r = -24, 5, 7, 15
+    a = math.radians(ang); ux, uy = math.cos(a), math.sin(a); nx, ny = -uy, ux
+    bx, by = cx + nx * shift, cy + ny * shift
+    tip = (bx - ux * (r + ext_l), by - uy * (r + ext_l)); end = (bx + ux * (r + ext_r), by + uy * (r + ext_r))
     st, sh = (TIP_W + GAP) / 2, (HANDLE_W + GAP) / 2  # keep the visible gap between the two sticks constant
     return [_quad(tip[0] + nx * k * st, tip[1] + ny * k * st, end[0] + nx * k * sh, end[1] + ny * k * sh, TIP_W, HANDLE_W) for k in (-1, 1)]
 def chopsticks(c):
-    """A plate seen from above with a pair of chopsticks resting on it: tips on the plate (left), handles over the right rim."""
-    cx, cy, r = 39, 50, 33
-    sticks = _sticks(cx, cy)
+    """A plate seen from above, crossed by a pair of chopsticks: tips to the lower left, handles to the upper right."""
+    cx, cy, r = 44, 50, 33
+    sticks = _sticks(cx, cy, r)
     holes = ''.join(f'<path d="{d}" fill="black" stroke="black" stroke-width="4" stroke-linejoin="round"/>' for d in sticks)
     body = (f'<defs><mask id="gap" maskUnits="userSpaceOnUse" x="-10" y="-10" width="120" height="120">'
             f'<rect x="-10" y="-10" width="120" height="120" fill="white"/>{holes}</mask></defs>'
@@ -36,9 +39,9 @@ def chopsticks(c):
             + ''.join(f'<path d="{d}" fill="{c}"/>' for d in sticks))
     return body, cy, (cy - r - RING / 2, cy + r + RING / 2)
 def chopsticks_simple(c):
-    """For 16-32 px: no inner rim, no cut gap, heavier strokes."""
-    cx, cy, r = 39, 50, 33
-    sticks = _sticks(cx, cy)
+    """For 16-32 px: no inner rim, heavier strokes."""
+    cx, cy, r = 44, 50, 33
+    sticks = _sticks(cx, cy, r)
     holes = ''.join(f'<path d="{d}" fill="black" stroke="black" stroke-width="5" stroke-linejoin="round"/>' for d in sticks)
     return (f'<defs><mask id="gap" maskUnits="userSpaceOnUse" x="-10" y="-10" width="120" height="120">'
             f'<rect x="-10" y="-10" width="120" height="120" fill="white"/>{holes}</mask></defs>'
@@ -74,7 +77,7 @@ for key, fn in SYMBOLS.items():
         # horizontal: the band lines up with the middle of the capitals
         cap = 100; gap = 0.8 * cap; sw = WM_BOX[2] * cap / CAP
         k = 2.2
-        xmin, xmax = 3.9, 96.3   # drawn extent of the symbol inside its 100 box
+        xmin, xmax = 8.0, 92.1   # drawn extent of the symbol inside its 100 box
         ys = cap / 2 - k * band_y
         top = min(0, ys + k * t); bottom = max(cap, ys + k * b); shift = -top
         sym_w = (xmax - xmin) * k
@@ -83,7 +86,7 @@ for key, fn in SYMBOLS.items():
         open(os.path.join(d, f'lockup-horizontal-{cname}.svg'), 'w').write(svg(sym_w + gap + sw, bottom - top, body_h))
         # vertical: symbol above, wordmark below
         kv = 3.4; gapv = 0.9 * cap; w = max((xmax - xmin) * kv, sw)
-        sx = (w - 100 * kv) / 2 + (50 - 45) * kv
+        sx = (w - 100 * kv) / 2 + (50 - 47) * kv
         body_v = (f'<g transform="translate({sx:.2f} {-t * kv:.2f}) scale({kv})">{body}</g>'
                   + wordmark(c, (w - sw) / 2, (b - t) * kv + gapv, cap))
         open(os.path.join(d, f'lockup-vertical-{cname}.svg'), 'w').write(svg(w, (b - t) * kv + gapv + cap, body_v))
