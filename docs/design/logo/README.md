@@ -70,7 +70,7 @@
 
 ## 作り直す
 
-ロゴのファイルは [`build.py`](build.py) で書き出している。形や字間を直すときは、ここを直して書き出し直す。
+ロゴのファイルは [`build.py`](build.py) で書き出している。形や字間を直すときは、ここを直して書き出し直す。スライドに載せる画像の撮り直しは [`../tools/README.md`](../tools/README.md)。
 
 ```bash
 python3 -m venv .venv && .venv/bin/pip install fonttools
