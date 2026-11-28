@@ -10,7 +10,7 @@ HINAMI (日次 / ひなみ) は、口にする食と飲みを 1 品ずつ記録�
 - デザインの方向性は、世界観「日々の帳面」に決めた。明暗 2 つの紙面、墨・生成り・金・朱の 4 色、OS のヒラギノ ([`docs/design/direction.md`](docs/design/direction.md)、スライドは [`docs/design/deck/`](docs/design/deck/README.md))
 - 6 つの視点のレビューを受け、作り手の判断を反映した ([`docs/reviews/2026-11-27-review.md`](docs/reviews/2026-11-27-review.md))
 - 最先端の事例と手法を調べ、3 つの施策 (撮ったら残る、どの品も名前まで残る、記録が好みを語る) を採った ([`docs/research/2026-11-28/README.md`](docs/research/2026-11-28/README.md))。次は、PHASE 1 で作るものと測るものを決める
-- 最初の関門 (PHASE 1): 作り手自身が 4 週間、覚えておきたい食をすべて記録できること。Expo のアプリを TestFlight で使う ([ADR-0002](docs/adr/0002-phase1-on-testflight.md))
+- 最初の関門 (PHASE 1): 作り手自身が 4 週間使い、このまま使い続けたいと思えること。数えずに、作り手の手応えで決める。Expo のアプリを TestFlight で使う ([ADR-0002](docs/adr/0002-phase1-on-testflight.md))
 
 ## ドキュメントマップ
 
