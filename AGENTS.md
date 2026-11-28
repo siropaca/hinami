@@ -7,6 +7,7 @@ HINAMI (日次 / ひなみ) は、口にする食と飲みを 1 品ずつ記録�
 
 - 構想段階を終え、リポジトリを整備した段階。アプリのコードはまだない
 - UX (画面に出す要素と流れ) は、ワイヤーフレームの画面遷移図で一通り決めた ([`docs/ux/`](docs/ux/recording.md))。見た目は、このあとのデザインのフェーズで決める ([`docs/design/direction.md`](docs/design/direction.md))
+- デザインの方向性は、前の案「夜の帳面」を、時間帯と種類を選ばない帳面に組み直す提案を出し、作り手の判断を待っている ([`docs/design/deck/`](docs/design/deck/README.md))
 - 6 つの視点のレビューを受け、作り手の判断を反映した ([`docs/reviews/2026-11-27-review.md`](docs/reviews/2026-11-27-review.md))
 - 最先端の事例と手法を調べ、3 つの施策 (撮ったら残る、どの品も名前まで残る、記録が好みを語る) を採った ([`docs/research/2026-11-28/README.md`](docs/research/2026-11-28/README.md))。次は、PHASE 1 で作るものと測るものを決める
 - 最初の関門 (PHASE 1): 作り手自身が 4 週間、覚えておきたい食をすべて記録できること。Expo のアプリを TestFlight で使う ([ADR-0002](docs/adr/0002-phase1-on-testflight.md))
@@ -28,6 +29,7 @@ HINAMI (日次 / ひなみ) は、口にする食と飲みを 1 品ずつ記録�
 | 記録が好みを語る (好みの分析と次に試すもの) | [`docs/ux/taste.md`](docs/ux/taste.md)                 |
 | つながる (SNS)                              | [`docs/ux/connect.md`](docs/ux/connect.md)             |
 | デザインの方向性                            | [`docs/design/direction.md`](docs/design/direction.md) |
+| デザインコンセプト (スライドと画面イメージ) | [`docs/design/deck/`](docs/design/deck/README.md)      |
 | 判断待ち・未確認のこと                      | [`docs/open-questions.md`](docs/open-questions.md)     |
 | 外部の目でのレビューの記録                  | [`docs/reviews/`](docs/reviews/2026-11-27-review.md)   |
 | 最先端の事例と手法の調査                    | [`docs/research/`](docs/research/2026-11-28/README.md) |

@@ -4,53 +4,52 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>HINAMI 画面イメージ</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;600&family=Shippori+Mincho:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;600&family=Noto+Serif+JP:wght@500;600&display=swap">
 <style>
 /* Sample screens for the design concept. Not production code.
-   Photos are Unsplash placeholders. Noto Sans JP stands in for the iOS system font (Hiragino Sans). */
+   Photos are Unsplash placeholders. On non-Apple machines, Noto Sans JP and Noto Serif JP stand in for
+   the iOS system fonts Hiragino Sans and Hiragino Mincho. */
 * { box-sizing: border-box; margin: 0; padding: 0; }
-body { background: #CFC8BC; font-family: -apple-system, "Hiragino Sans", "Noto Sans JP", sans-serif; padding: 24px; display: flex; flex-wrap: wrap; gap: 8px; font-variant-numeric: lining-nums; }
-/* proportional kana for the mincho face */
-.compare .q b, .pick .name, .sec b, .meal .h b, .place b, .item .name, .ltitle, .note p, .rank .name, .st .nm, .hsec b, .toast .r2 .nm { font-feature-settings: "palt" 1; letter-spacing: 0; }
+body { background: #CFC8BC; font-family: -apple-system, "Hiragino Sans", "Noto Sans JP", sans-serif; padding: 24px; display: flex; flex-wrap: wrap; align-items: flex-start; gap: 8px; font-variant-numeric: lining-nums tabular-nums; }
 
 .light { --bg:#F3EEE6; --surface:#EAE4D9; --ink:#16130F; --sub:#6B645B; --rule:#D6CEC0; --shu:#A23F2E;
-  --glass:rgba(250,247,242,.58); --glass-line:rgba(255,255,255,.85); --glass-shadow:rgba(22,19,15,.14); --frame:rgba(22,19,15,.10); --pill:rgba(22,19,15,.07); }
-.dark { --bg:#16130F; --surface:#221E19; --ink:#F2EDE4; --sub:#A39B8F; --rule:#3A342C; --shu:#C8583F;
-  --glass:rgba(52,47,41,.58); --glass-line:rgba(255,255,255,.16); --glass-shadow:rgba(0,0,0,.45); --frame:rgba(255,255,255,.08); --pill:rgba(255,255,255,.10); }
+  --glass:rgba(250,247,242,.62); --glass-line:rgba(255,255,255,.85); --glass-shadow:rgba(22,19,15,.14); --frame:rgba(22,19,15,.10); --pill:rgba(22,19,15,.07); --toast:rgba(247,243,236,.88); --fab:rgba(22,19,15,.86); }
+.dark { --bg:#16130F; --surface:#221E19; --ink:#F2EDE4; --sub:#A39B8F; --rule:#3A342C; --shu:#D6694F;
+  --glass:rgba(52,47,41,.62); --glass-line:rgba(255,255,255,.16); --glass-shadow:rgba(0,0,0,.45); --frame:rgba(255,255,255,.08); --pill:rgba(255,255,255,.10); --toast:rgba(40,36,31,.90); --fab:rgba(226,219,207,.78); }
 
 .shot { padding: 36px 30px 52px; display: inline-block; }
 .phone { width: 390px; height: 844px; border-radius: 54px; overflow: hidden; position: relative;
   background: var(--bg); color: var(--ink);
   box-shadow: 0 0 0 1px var(--frame), 0 22px 48px rgba(22,19,15,.20), 0 4px 10px rgba(22,19,15,.08); }
 
-.mincho { font-family: "Shippori Mincho", "Hiragino Mincho ProN", serif; }
-.num { font-family: "Cormorant Garamond", "Shippori Mincho", serif; font-variant-numeric: lining-nums; }
+/* type roles */
+.m { font-family: "Hiragino Mincho ProN", "Noto Serif JP", serif; font-weight: 500; }
+.d-num { font-family: "Cormorant Garamond", serif; font-weight: 500; font-variant-numeric: lining-nums; }
 .sub { color: var(--sub); }
+.t-sm { font-size: 12px; color: var(--sub); }
 
 /* status bar */
-.status { position: absolute; top: 0; left: 0; right: 0; height: 54px; display: flex; align-items: center; justify-content: space-between; padding: 6px 34px 0 42px; z-index: 20; font-size: 16px; font-weight: 600; letter-spacing: .01em; }
-.status svg { height: 12px; }
+.status { position: absolute; top: 0; left: 0; right: 0; height: 54px; display: flex; align-items: center; justify-content: space-between; padding: 6px 34px 0 42px; z-index: 20; font-size: 16px; font-weight: 600; }
 .status .icons { display: flex; gap: 6px; align-items: center; }
-
 .content { position: absolute; top: 54px; left: 0; right: 0; bottom: 0; padding: 0 20px; overflow: hidden; }
 
-/* glass */
-.glass { background: var(--glass); backdrop-filter: blur(22px) saturate(1.7); -webkit-backdrop-filter: blur(22px) saturate(1.7);
+/* glass (control layer): no tint of its own */
+.glass { background: var(--glass); backdrop-filter: blur(24px) saturate(1.5); -webkit-backdrop-filter: blur(24px) saturate(1.5);
   box-shadow: inset 0 0 0 .75px var(--glass-line), 0 10px 28px var(--glass-shadow); }
 .circle { width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
 .circle svg { width: 20px; height: 20px; }
-
-/* tab bar + floating add button */
 .tabbar { position: absolute; left: 18px; right: 18px; bottom: 22px; height: 64px; border-radius: 32px; display: flex; padding: 5px; z-index: 30; }
 .tab { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; border-radius: 27px; color: var(--sub); font-size: 10.5px; font-weight: 500; }
 .tab svg { width: 24px; height: 24px; }
 .tab.on { background: var(--pill); color: var(--ink); }
-.fab { position: absolute; right: 20px; bottom: 102px; width: 60px; height: 60px; border-radius: 50%; background: var(--ink); color: var(--bg);
-  display: flex; align-items: center; justify-content: center; z-index: 30; box-shadow: 0 10px 24px rgba(22,19,15,.28); }
+.fab { position: absolute; right: 20px; bottom: 102px; width: 60px; height: 60px; border-radius: 50%; background: var(--fab); color: var(--bg);
+  backdrop-filter: blur(20px) saturate(1.4); -webkit-backdrop-filter: blur(20px) saturate(1.4);
+  display: flex; align-items: center; justify-content: center; z-index: 30; box-shadow: inset 0 0 0 .75px rgba(255,255,255,.28), 0 10px 24px rgba(22,19,15,.28); }
 .fab svg { width: 24px; height: 24px; }
 .homebar { position: absolute; bottom: 8px; left: 50%; width: 136px; height: 5px; margin-left: -68px; border-radius: 3px; background: var(--ink); opacity: .85; z-index: 31; }
 
-img { display: block; object-fit: cover; background: var(--surface); }
+/* paper layer: photos keep nearly square corners, like prints */
+img { display: block; object-fit: cover; background: var(--surface); border-radius: 3px; }
 
 /* home */
 .top { display: flex; align-items: center; justify-content: space-between; height: 56px; }
@@ -58,56 +57,62 @@ img { display: block; object-fit: cover; background: var(--surface); }
 .top .actions { display: flex; gap: 10px; }
 .dot { position: absolute; top: 9px; right: 10px; width: 7px; height: 7px; border-radius: 50%; background: var(--ink); box-shadow: 0 0 0 2px var(--bg); }
 
-.compare { background: var(--surface); border-radius: 22px; padding: 16px 14px 14px; margin-top: 8px; }
+.compare { background: var(--surface); border-radius: 6px; padding: 16px 14px 14px; margin-top: 8px; }
 .compare .q { display: flex; justify-content: space-between; align-items: baseline; padding: 0 2px 12px; }
-.compare .q b { font-family: "Shippori Mincho", serif; font-weight: 500; font-size: 18px; }
-.compare .q span { font-size: 12px; color: var(--sub); }
+.compare .q b { font-size: 18px; }
 .pair { display: flex; gap: 10px; }
 .pick { flex: 1; }
-.pick img { width: 100%; height: 118px; border-radius: 14px; }
-.pick .name { font-family: "Shippori Mincho", serif; font-size: 14.5px; font-weight: 500; margin-top: 8px; }
+.pick img { width: 100%; height: 156px; }
+.pick .name { font-size: 14.5px; margin-top: 8px; }
 .pick .meta { font-size: 11px; color: var(--sub); margin-top: 2px; }
 
-.sec { display: flex; justify-content: space-between; align-items: baseline; margin-top: 26px; }
-.sec b { font-family: "Shippori Mincho", serif; font-weight: 500; font-size: 15px; }
+.sec { display: flex; justify-content: space-between; align-items: baseline; margin-top: 24px; padding-bottom: 10px; border-bottom: 1px solid var(--ink); }
+.sec b { font-size: 15px; }
 .sec span { font-size: 13px; color: var(--sub); }
 
-.day { display: flex; align-items: flex-end; gap: 10px; margin-top: 14px; padding-bottom: 8px; border-bottom: 1px solid var(--rule); }
-.day .d { font-family: "Cormorant Garamond", serif; font-weight: 500; font-size: 46px; line-height: .8; }
-.day .w { font-size: 11px; color: var(--sub); line-height: 1.35; padding-bottom: 1px; }
-.meal { margin-top: 14px; }
-.meal .h { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; }
-.meal .h b { font-family: "Shippori Mincho", serif; font-weight: 500; font-size: 16px; }
-.meal .h span { font-family: "Cormorant Garamond", serif; font-size: 16px; color: var(--sub); }
-.thumbs { display: flex; gap: 6px; }
-.thumbs img { width: 112px; height: 140px; border-radius: 10px; }
-.thumbwrap { position: relative; }
+/* ledger: date column + entries */
+.ledger { display: flex; border-bottom: 1px solid var(--rule); }
+.ledger .dcol { width: 52px; flex: none; border-right: 1px solid var(--rule); padding-top: 12px; }
+.ledger .dcol .mo { font-size: 10.5px; color: var(--sub); }
+.ledger .dcol .dd { font-size: 36px; line-height: .95; }
+.ledger .dcol .wd { font-size: 11px; color: var(--sub); margin-top: 4px; }
+.ledger .dcol svg { width: 46px; height: 46px; margin: 12px 0 0 -3px; opacity: .78; display: block; }
+.ledger .dcol svg.now { opacity: 1; }
+.ledger .ecol { flex: 1; padding: 12px 0 14px 12px; min-width: 0; }
+.entry + .entry { margin-top: 14px; }
+.entry .h { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; }
+.entry .h b { font-size: 16px; }
+.entry .h span { font-size: 12px; color: var(--sub); }
+.thumbs { display: flex; gap: 5px; overflow: hidden; }
+.thumbs img { width: 112px; height: 140px; flex: none; }
+.thumbwrap { position: relative; flex: none; }
 
-.friends { display: flex; align-items: center; gap: 10px; margin-top: 18px; font-size: 13px; }
-.avs { display: flex; }
-.av { width: 24px; height: 24px; border-radius: 50%; margin-right: -6px; box-shadow: 0 0 0 2px var(--bg); font-size: 10px; display: flex; align-items: center; justify-content: center; color: var(--bg); background: var(--sub); }
-
-/* nav for pushed screens */
+/* pushed screens */
 .nav { display: flex; justify-content: space-between; align-items: center; height: 56px; }
 .capsule { height: 44px; border-radius: 22px; padding: 0 18px; display: flex; align-items: center; font-size: 15px; font-weight: 500; }
 
 /* detail */
 .dhead { display: flex; align-items: flex-end; gap: 12px; margin-top: 10px; }
-.dhead .d { font-family: "Cormorant Garamond", serif; font-weight: 500; font-size: 60px; line-height: .78; }
-.dhead .w { font-size: 12px; color: var(--sub); line-height: 1.45; }
+.dhead .dd { font-size: 60px; line-height: .78; }
+.dhead .w { font-size: 12px; color: var(--sub); line-height: 1.5; }
+.dhead2 { display: flex; align-items: center; gap: 14px; margin-top: 4px; padding-bottom: 12px; border-bottom: 1px solid var(--rule); }
+.dhead2 .dc { width: 62px; border-right: 1px solid var(--rule); }
+.dhead2 .dd { font-size: 44px; line-height: .9; }
+.dhead2 .wd { font-size: 11px; color: var(--sub); margin-top: 4px; }
+.dhead2 b { font-size: 22px; }
+.dhead2 .pl { font-size: 13px; color: var(--sub); margin-top: 4px; }
 .place { margin-top: 16px; padding-bottom: 14px; border-bottom: 1px solid var(--rule); display: flex; justify-content: space-between; align-items: baseline; }
-.place b { font-family: "Shippori Mincho", serif; font-weight: 500; font-size: 23px; }
+.place b { font-size: 23px; }
 .place span { font-size: 13px; color: var(--sub); }
 .item { margin-top: 16px; }
-.item img { width: 350px; height: 420px; border-radius: 16px; }
+.item img { width: 350px; height: 437px; }
 .item .row { display: flex; gap: 10px; margin-top: 12px; align-items: baseline; }
-.item .ord { font-family: "Cormorant Garamond", serif; font-size: 18px; color: var(--sub); width: 14px; }
-.item .name { font-family: "Shippori Mincho", serif; font-size: 18px; font-weight: 500; }
+.item .name { font-size: 18px; }
 .item .kind { font-size: 12px; color: var(--sub); margin-top: 3px; }
 .item .memo { font-size: 14px; margin-top: 8px; line-height: 1.6; }
 
-/* calendar */
-.ltitle { font-family: "Shippori Mincho", serif; font-weight: 500; font-size: 32px; margin-top: 4px; }
+/* records tab */
+.ltitle { font-size: 32px; margin-top: 4px; }
 .search { margin-top: 12px; height: 40px; border-radius: 12px; background: var(--surface); display: flex; align-items: center; gap: 8px; padding: 0 12px; font-size: 15px; color: var(--sub); }
 .search svg { width: 17px; height: 17px; }
 .chips { display: flex; gap: 7px; margin-top: 12px; }
@@ -117,16 +122,16 @@ img { display: block; object-fit: cover; background: var(--surface); }
 .seg div { flex: 1; display: flex; align-items: center; justify-content: center; border-radius: 14px; color: var(--sub); }
 .seg .on { background: var(--bg); color: var(--ink); box-shadow: 0 1px 4px rgba(22,19,15,.10); font-weight: 500; }
 .month { display: flex; justify-content: space-between; align-items: flex-end; margin-top: 18px; }
-.month .m { display: flex; align-items: flex-end; gap: 6px; }
-.month .m .n { font-family: "Cormorant Garamond", serif; font-weight: 500; font-size: 46px; line-height: .8; }
-.month .m .y { font-size: 12px; color: var(--sub); line-height: 1.4; }
+.month .mm { display: flex; align-items: flex-end; gap: 6px; }
+.month .mm .n { font-size: 46px; line-height: .8; }
+.month .mm .y { font-size: 12px; color: var(--sub); line-height: 1.4; }
 .month .arrows { display: flex; gap: 18px; color: var(--sub); font-size: 20px; }
 .summary { font-size: 12px; color: var(--sub); margin-top: 8px; padding-bottom: 10px; border-bottom: 1px solid var(--rule); }
 .cal { display: grid; grid-template-columns: repeat(7, 1fr); column-gap: 4px; row-gap: 6px; margin-top: 8px; }
-.cal .wd { font-size: 10.5px; color: var(--sub); text-align: center; padding-bottom: 2px; }
+.cal .wdh { font-size: 10.5px; color: var(--sub); text-align: center; padding-bottom: 2px; }
 .cell { height: 64px; position: relative; display: flex; flex-direction: column; align-items: center; }
-.cell .n { font-family: "Cormorant Garamond", serif; font-size: 14px; color: var(--sub); height: 16px; line-height: 16px; }
-.cell img { width: 44px; height: 44px; border-radius: 9px; margin-top: 2px; }
+.cell .n { font-size: 11px; color: var(--sub); height: 16px; line-height: 16px; }
+.cell img { width: 44px; height: 44px; margin-top: 2px; }
 .cell .c { position: absolute; right: 0; bottom: 0; min-width: 16px; height: 16px; border-radius: 8px; background: var(--bg); font-size: 10px; display: flex; align-items: center; justify-content: center; padding: 0 4px; box-shadow: 0 0 0 1px var(--rule); }
 .cell.today .n { color: var(--ink); font-weight: 600; }
 .cell.today img { box-shadow: 0 0 0 2px var(--bg), 0 0 0 3.5px var(--ink); }
@@ -134,74 +139,71 @@ img { display: block; object-fit: cover; background: var(--surface); }
 /* ranking + margin note */
 .rtitle { display: flex; align-items: baseline; justify-content: space-between; }
 .note { margin-top: 16px; padding: 2px 0 2px 14px; border-left: 1.5px solid var(--ink); }
-.note .lab { font-size: 11px; color: var(--sub); letter-spacing: .04em; }
-.note p { font-family: "Shippori Mincho", serif; font-size: 16.5px; line-height: 1.75; margin-top: 4px; }
+.note .lab { font-size: 11px; color: var(--sub); }
+.note p { font-size: 16.5px; line-height: 1.75; margin-top: 4px; }
 .note .ev { display: flex; align-items: center; gap: 6px; margin-top: 10px; font-size: 11.5px; color: var(--sub); }
-.note .ev img { width: 30px; height: 30px; border-radius: 6px; }
-.note .ev .no { margin-left: auto; font-size: 12.5px; color: var(--sub); text-decoration: underline; text-underline-offset: 3px; }
+.note .ev img { width: 30px; height: 30px; }
+.note .ev .no { margin-left: auto; font-size: 12.5px; text-decoration: underline; text-underline-offset: 3px; }
 .rank { display: flex; align-items: center; gap: 12px; padding: 11px 0; border-bottom: 1px solid var(--rule); }
-.rank .r { font-family: "Cormorant Garamond", serif; font-size: 34px; font-weight: 500; width: 30px; text-align: center; line-height: 1; }
-.rank img { width: 58px; height: 58px; border-radius: 10px; }
-.rank .name { font-family: "Shippori Mincho", serif; font-size: 16px; font-weight: 500; }
+.rank .r { font-size: 34px; width: 44px; text-align: center; line-height: 1; flex: none; }
+.rank .r.range { font-size: 21px; }
+.rank img { width: 58px; height: 58px; }
+.rank .name { font-size: 16px; }
 .rank .meta { font-size: 12px; color: var(--sub); margin-top: 3px; }
 
 /* achievements */
 .stamps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px 8px; margin-top: 14px; }
 .st { display: flex; flex-direction: column; align-items: center; text-align: center; }
 .st svg { width: 92px; height: 92px; }
-.st .nm { font-family: "Shippori Mincho", serif; font-size: 13px; font-weight: 500; line-height: 1.45; margin-top: 6px; }
+.st .nm { font-size: 13px; line-height: 1.45; margin-top: 6px; }
 .st.off .nm { color: var(--sub); }
-.st .cd { font-size: 10.5px; color: var(--sub); margin-top: 2px; }
+.st .cd { font-size: 11px; color: var(--sub); margin-top: 2px; }
 .hsec { display: flex; justify-content: space-between; align-items: baseline; margin-top: 22px; padding-bottom: 8px; border-bottom: 1px solid var(--rule); }
-.hsec b { font-family: "Shippori Mincho", serif; font-weight: 500; font-size: 15px; }
+.hsec b { font-size: 15px; }
 .hsec span { font-size: 12px; color: var(--sub); }
 
 /* toast */
-.toast { position: absolute; left: 14px; right: 14px; bottom: 176px; border-radius: 26px; padding: 14px 16px; z-index: 32; }
-.light .toast { background: rgba(247,243,236,.86); }
-.dark .toast { background: rgba(40,36,31,.86); }
+.toast { position: absolute; left: 14px; right: 14px; bottom: 176px; border-radius: 24px; padding: 12px 16px; z-index: 32; background: var(--toast); }
 .toast .r1 { display: flex; align-items: center; gap: 10px; }
 .toast .r1 .t { font-size: 14.5px; font-weight: 600; }
 .toast .r1 .t span { font-weight: 400; color: var(--sub); }
 .toast .btns { margin-left: auto; display: flex; gap: 14px; font-size: 13.5px; font-weight: 500; }
-.toast hr { border: 0; border-top: 1px solid var(--rule); margin: 12px 0; opacity: .8; }
+.toast hr { border: 0; border-top: 1px solid var(--rule); margin: 10px 0; }
 .toast .r2 { display: flex; align-items: center; gap: 10px; }
 .toast .r2 .lab { font-size: 11px; color: var(--sub); }
-.toast .r2 .nm { font-family: "Shippori Mincho", serif; font-size: 16px; font-weight: 500; margin-top: 1px; }
+.toast .r2 .nm { font-size: 16px; margin-top: 1px; }
 .toast .r2 .cd { font-size: 11.5px; color: var(--sub); margin-top: 2px; }
-.toast svg.mini { width: 40px; height: 40px; flex: none; }
-.pressed { position: absolute; right: -16px; top: -18px; width: 60px; height: 60px; }
+.toast svg.mini { width: 38px; height: 38px; flex: none; }
 
 /* camera */
-.cam img.view { position: absolute; inset: 0; width: 390px; height: 844px; }
+.cam img.view { position: absolute; inset: 0; width: 390px; height: 844px; border-radius: 0; }
 .cam .shade { position: absolute; left: 0; right: 0; bottom: 0; height: 250px; background: linear-gradient(180deg, rgba(10,9,7,0) 0%, rgba(10,9,7,.72) 100%); }
 .cam .topbar { position: absolute; top: 60px; left: 20px; right: 20px; display: flex; justify-content: space-between; z-index: 5; }
 .cam .bottom { position: absolute; left: 0; right: 0; bottom: 62px; display: flex; align-items: center; justify-content: space-between; padding: 0 36px; z-index: 5; }
 .shutter { width: 80px; height: 80px; border-radius: 50%; box-shadow: inset 0 0 0 4px #F2EDE4; display: flex; align-items: center; justify-content: center; }
 .shutter div { width: 64px; height: 64px; border-radius: 50%; background: #F2EDE4; }
-.lib { width: 50px; height: 50px; border-radius: 12px; overflow: hidden; box-shadow: 0 0 0 2px rgba(242,237,228,.9); }
-.lib img { width: 50px; height: 50px; }
-.cam .hint { position: absolute; left: 0; right: 0; bottom: 160px; text-align: center; font-size: 12px; color: rgba(242,237,228,.8); z-index: 5; }
+.lib { width: 50px; height: 50px; color: #F2EDE4; }
+.lib svg { width: 24px; height: 24px; }
 </style>
 </head>
 <body>
 
-<!-- ============ Shared SVG symbols ============ -->
-<svg width="0" height="0" style="position:absolute">
+<svg aria-hidden="true" width="0" height="0" style="position:absolute">
   <defs>
     <symbol id="i-home" viewBox="0 0 24 24"><path d="M4 10.5 12 4l8 6.5V20h-5.2v-5.5H9.2V20H4z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></symbol>
     <symbol id="i-book" viewBox="0 0 24 24"><rect x="4.5" y="4.5" width="15" height="15.5" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M4.5 9h15M8.5 3v3M15.5 3v3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
-    <symbol id="i-seal" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M5 10h14M5 14h14" stroke="currentColor" stroke-width="1.2"/></symbol>
+    <symbol id="i-rosette" viewBox="0 0 24 24"><circle cx="12" cy="9.5" r="5.8" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8.6 14.2 7 21l3.4-1.8L12 21.5M15.4 14.2 17 21l-3.4-1.8L12 21.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></symbol>
     <symbol id="i-people" viewBox="0 0 24 24"><circle cx="9" cy="9" r="3.2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M3.5 19c.6-3.2 2.8-5 5.5-5s4.9 1.8 5.5 5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="16.5" cy="9.5" r="2.6" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M16 14.2c2.4 0 4 1.5 4.6 4.3" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></symbol>
     <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 4v16M4 12h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
     <symbol id="i-bell" viewBox="0 0 24 24"><path d="M6.5 16.5V11a5.5 5.5 0 0 1 11 0v5.5l1.5 1.5H5z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M10 20.5h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
-    <symbol id="i-gear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M12 3.5v2.2M12 18.3v2.2M3.5 12h2.2M18.3 12h2.2M6 6l1.6 1.6M16.4 16.4 18 18M6 18l1.6-1.6M16.4 7.6 18 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+    <symbol id="i-gear" viewBox="0 0 24 24"><path d="M10.3 3h3.4l.5 2.4 1.6.9 2.3-.8 1.7 2.9-1.8 1.6v1.9l1.8 1.6-1.7 2.9-2.3-.8-1.6.9-.5 2.5h-3.4l-.5-2.5-1.6-.9-2.3.8-1.7-2.9 1.8-1.6v-1.9L4.2 8.4l1.7-2.9 2.3.8 1.6-.9z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><circle cx="12" cy="12" r="2.8" fill="none" stroke="currentColor" stroke-width="1.4"/></symbol>
     <symbol id="i-back" viewBox="0 0 24 24"><path d="M14.5 5 8 12l6.5 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
     <symbol id="i-more" viewBox="0 0 24 24"><circle cx="6" cy="12" r="1.6" fill="currentColor"/><circle cx="12" cy="12" r="1.6" fill="currentColor"/><circle cx="18" cy="12" r="1.6" fill="currentColor"/></symbol>
     <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m15 15 5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
     <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
     <symbol id="i-flash" viewBox="0 0 24 24"><path d="M13 3 6 13.5h5L10 21l8-11h-5z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></symbol>
     <symbol id="i-flip" viewBox="0 0 24 24"><path d="M4 9a8 8 0 0 1 14.5-3M20 15a8 8 0 0 1-14.5 3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M18.5 2.5v3.8h-3.8M5.5 21.5v-3.8h3.8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-photos" viewBox="0 0 24 24"><rect x="3.5" y="6.5" width="14" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M7 4.5h11.5a2 2 0 0 1 2 2V15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="m4 16.5 4-4 3.5 3.5 2-2 3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></symbol>
     <filter id="inkgrain" x="-10%" y="-10%" width="120%" height="120%">
       <feTurbulence type="fractalNoise" baseFrequency="1.1" numOctaves="2" seed="7" result="n"/>
       <feColorMatrix in="n" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -0.9 1.45" result="m"/>
@@ -210,252 +212,244 @@ img { display: block; object-fit: cover; background: var(--surface); }
   </defs>
 </svg>
 
-<!-- ============ 1. Home (light) ============ -->
-<div class="shot" id="home-light"><div class="phone light">
-  <div class="status"><span>9:41</span><span class="icons" data-status></span></div>
-  <div class="content">
-    <div class="top"><div class="logo">HINAMI</div>
-      <div class="actions"><div class="circle glass" style="position:relative"><svg><use href="#i-bell"/></svg><i class="dot"></i></div><div class="circle glass"><svg><use href="#i-gear"/></svg></div></div></div>
-    <div class="compare">
-      <div class="q"><b>どちらが好き?</b><span>コーヒー</span></div>
-      <div class="pair">
-        <div class="pick"><img data-u="1495474472287-4d71bcdd2085" data-w="320" data-h="240"><div class="name">カフェラテ</div><div class="meta">ブーランジェリー ソル · 今朝</div></div>
-        <div class="pick"><img data-u="1442512595331-e89e73853f31" data-w="320" data-h="240"><div class="name">エチオピア ナチュラル</div><div class="meta">喫茶 灯 · 11/12</div></div>
-      </div>
-    </div>
-    <div class="sec"><b>最近の記録</b><span>すべて ›</span></div>
-    <div class="day"><div class="d">28</div><div class="w">11月<br>土曜日</div></div>
-    <div class="meal"><div class="h"><b>ブーランジェリー ソル</b><span>8:12</span></div>
-      <div class="thumbs"><img data-u="1555507036-ab1f4038808a" data-w="224" data-h="280"><img data-u="1495474472287-4d71bcdd2085" data-w="224" data-h="280"><img data-u="1586444248902-2f64eddc13df" data-w="224" data-h="280"></div></div>
-    <div class="meal"><div class="h"><b>家</b><span>12:40</span></div>
-      <div class="thumbs"><img data-u="1559847844-5315695dadae" data-w="224" data-h="280"></div></div>
-  </div>
-  <div class="fab"><svg><use href="#i-plus"/></svg></div>
-  <div class="tabbar glass" data-tabs="0"></div><div class="homebar"></div>
-</div></div>
+<!-- Home is rendered from one template in light and dark (see script) -->
+<div class="shot" id="home-light"><div class="phone light" data-home></div></div>
+<div class="shot" id="home-dark"><div class="phone dark" data-home></div></div>
 
-<!-- ============ 2. Home (dark) ============ -->
-<div class="shot" id="home-dark"><div class="phone dark">
+<!-- Meal detail (light) -->
+<div class="shot" id="detail-light"><div class="phone light">
   <div class="status"><span>9:41</span><span class="icons" data-status></span></div>
   <div class="content">
-    <div class="top"><div class="logo">HINAMI</div>
-      <div class="actions"><div class="circle glass" style="position:relative"><svg><use href="#i-bell"/></svg><i class="dot"></i></div><div class="circle glass"><svg><use href="#i-gear"/></svg></div></div></div>
-    <div class="compare">
-      <div class="q"><b>どちらが好き?</b><span>コーヒー</span></div>
-      <div class="pair">
-        <div class="pick"><img data-u="1495474472287-4d71bcdd2085" data-w="320" data-h="240"><div class="name">カフェラテ</div><div class="meta">ブーランジェリー ソル · 今朝</div></div>
-        <div class="pick"><img data-u="1442512595331-e89e73853f31" data-w="320" data-h="240"><div class="name">エチオピア ナチュラル</div><div class="meta">喫茶 灯 · 11/12</div></div>
-      </div>
-    </div>
-    <div class="sec"><b>最近の記録</b><span>すべて ›</span></div>
-    <div class="day"><div class="d">28</div><div class="w">11月<br>土曜日</div></div>
-    <div class="meal"><div class="h"><b>ブーランジェリー ソル</b><span>8:12</span></div>
-      <div class="thumbs"><img data-u="1555507036-ab1f4038808a" data-w="224" data-h="280"><img data-u="1495474472287-4d71bcdd2085" data-w="224" data-h="280"><img data-u="1586444248902-2f64eddc13df" data-w="224" data-h="280"></div></div>
-    <div class="meal"><div class="h"><b>家</b><span>12:40</span></div>
-      <div class="thumbs"><img data-u="1559847844-5315695dadae" data-w="224" data-h="280"></div></div>
+    <div class="nav"><div class="circle glass"><svg aria-hidden="true"><use href="#i-back"/></svg></div><div class="circle glass"><svg aria-hidden="true"><use href="#i-more"/></svg></div></div>
+    <div class="dhead2"><div class="dc"><div class="dd d-num">27</div><div class="wd">11月 · 金</div></div><div><b class="m">ビストロ ミモザ</b><div class="pl">恵比寿 · 19:30</div></div></div>
+    <div class="item"><img alt="" data-u="1553361371-9b22f78e8b1d" data-w="700" data-h="874">
+      <div class="row"><div><div class="name m">ブルゴーニュ ピノ・ノワール</div><div class="kind">ワイン · 赤</div><div class="memo">軽やかで、酸がきれい。</div></div></div></div>
+    <div class="item"><img alt="" data-u="1600891964092-4316c288032e" data-w="700" data-h="874"></div>
   </div>
-  <div class="fab"><svg><use href="#i-plus"/></svg></div>
-  <div class="tabbar glass" data-tabs="0"></div><div class="homebar"></div>
-</div></div>
-
-<!-- ============ 3. Meal detail (dark) ============ -->
-<div class="shot" id="detail-dark"><div class="phone dark">
-  <div class="status"><span>9:41</span><span class="icons" data-status></span></div>
-  <div class="content">
-    <div class="nav"><div class="circle glass"><svg><use href="#i-back"/></svg></div><div class="circle glass"><svg><use href="#i-more"/></svg></div></div>
-    <div class="dhead"><div class="d">27</div><div class="w">11月 · 金曜日<br><span class="num" style="font-size:16px">19:30</span></div></div>
-    <div class="place"><b>ビストロ ミモザ</b><span>恵比寿 · 3 品</span></div>
-    <div class="item"><img data-u="1553361371-9b22f78e8b1d" data-w="700" data-h="840">
-      <div class="row"><span class="ord">1</span><div><div class="name">ブルゴーニュ ピノ・ノワール</div><div class="kind">ワイン · 赤</div><div class="memo">軽やかで、酸がきれい。もう一度頼みたい。</div></div></div></div>
-    <div class="item"><img data-u="1600891964092-4316c288032e" data-w="700" data-h="840"></div>
-  </div>
-  <div class="fab"><svg><use href="#i-plus"/></svg></div>
+  <div class="fab"><svg aria-hidden="true"><use href="#i-plus"/></svg></div>
   <div class="tabbar glass" data-tabs="1"></div><div class="homebar"></div>
 </div></div>
 
-<!-- ============ 4. Records tab: calendar (light) ============ -->
+<!-- Records tab: calendar (light) -->
 <div class="shot" id="calendar-light"><div class="phone light">
-  <div class="status"><span>9:41</span><span class="icons" data-status></span></div>
+  <div class="status"><span>22:10</span><span class="icons" data-status></span></div>
   <div class="content">
-    <div class="ltitle">記録</div>
-    <div class="search"><svg><use href="#i-search"/></svg>店名・メモ・地域で検索</div>
-    <div class="chips"><div class="chip on">すべて</div><div class="chip">コーヒー</div><div class="chip">パン</div><div class="chip">ラーメン</div><div class="chip">ワイン</div><div class="chip">▾</div></div>
+    <div class="ltitle m">記録</div>
+    <div class="search"><svg aria-hidden="true"><use href="#i-search"/></svg>店名・メモ・地域で検索</div>
+    <div class="chips"><div class="chip on">すべて</div><div class="chip">ラーメン</div><div class="chip">コーヒー</div><div class="chip">ワイン</div><div class="chip">日本酒</div><div class="chip">▾</div></div>
     <div class="seg"><div class="on">カレンダー</div><div>マップ</div></div>
-    <div class="month"><div class="m"><span class="n">11</span><span class="y">月<br>2026</span></div><div class="arrows"><span>‹</span><span>›</span></div></div>
+    <div class="month"><div class="mm"><span class="n d-num">11</span><span class="y">月<br>2026</span></div><div class="arrows"><span>‹</span><span>›</span></div></div>
     <div class="summary">記録 18 件 · 外食 9 回 · 7 軒</div>
     <div class="cal" id="cal"></div>
   </div>
-  <div class="fab"><svg><use href="#i-plus"/></svg></div>
+  <div class="fab"><svg aria-hidden="true"><use href="#i-plus"/></svg></div>
   <div class="tabbar glass" data-tabs="1"></div><div class="homebar"></div>
 </div></div>
 
-<!-- ============ 5. Ranking with a margin note (light) ============ -->
-<div class="shot" id="ranking-light"><div class="phone light">
+<!-- Ranking with a margin note (dark) -->
+<div class="shot" id="ranking-dark"><div class="phone dark">
   <div class="status"><span>9:41</span><span class="icons" data-status></span></div>
   <div class="content">
-    <div class="nav"><div class="circle glass"><svg><use href="#i-back"/></svg></div><div class="capsule glass">比べる</div></div>
-    <div class="rtitle"><div class="ltitle">コーヒー</div><span class="sub" style="font-size:12px">自分の順位 · 12 杯</span></div>
+    <div class="nav"><div class="circle glass"><svg aria-hidden="true"><use href="#i-back"/></svg></div><div class="capsule glass">比べる</div></div>
+    <div class="rtitle"><div class="ltitle m">ラーメン</div><span class="t-sm">自分の順位 · 9 品</span></div>
     <div class="note">
       <div class="lab">記録から</div>
-      <p>上位のコーヒーは、浅煎りに寄っているようです。</p>
-      <div class="ev"><img data-u="1442512595331-e89e73853f31" data-w="60" data-h="60"><img data-u="1497515114629-f71d768fd07c" data-w="60" data-h="60"><img data-u="1509042239860-f550ce710b93" data-w="60" data-h="60"><span>根拠の記録 3 件</span><span class="no">違う</span></div>
+      <p class="m">上位のラーメンは、<br>魚介の清湯が多いようです。</p>
+      <div class="ev"><img alt="" data-u="1631709497146-a239ef373cf1" data-w="60" data-h="60"><img alt="" data-u="1569718212165-3a8278d5f624" data-w="60" data-h="60"><span>根拠の記録 2 件</span><span class="no">違う</span></div>
     </div>
     <div style="margin-top:14px;border-top:1px solid var(--rule)"></div>
-    <div class="rank"><div class="r">1</div><img data-u="1442512595331-e89e73853f31" data-w="116" data-h="116"><div><div class="name">エチオピア ナチュラル</div><div class="meta">喫茶 灯 · 11/12</div></div></div>
-    <div class="rank"><div class="r">2</div><img data-u="1497515114629-f71d768fd07c" data-w="116" data-h="116"><div><div class="name">ケニア 浅煎り</div><div class="meta">ロースタリー 森 · 10/30</div></div></div>
-    <div class="rank"><div class="r">3</div><img data-u="1509042239860-f550ce710b93" data-w="116" data-h="116"><div><div class="name">コロンビア</div><div class="meta">カフェ ミナト · 11/02</div></div></div>
-    <div class="rank"><div class="r">4</div><img data-u="1495474472287-4d71bcdd2085" data-w="116" data-h="116"><div><div class="name">カフェラテ</div><div class="meta">ブーランジェリー ソル · 11/28</div></div></div>
-    <div class="rank"><div class="r">5</div><img data-u="1517701604599-bb29b565090c" data-w="116" data-h="116"><div><div class="name">アイスラテ</div><div class="meta">家 · 11/08</div></div></div>
+    <div class="rank"><div class="r d-num range">1–3</div><img alt="" data-u="1557872943-16a5ac26437e" data-w="116" data-h="116"><div><div class="name m">特製醤油らーめん</div><div class="meta">麺屋 ひかり · 昨日</div></div></div>
+    <div class="rank"><div class="r d-num">1</div><img alt="" data-u="1631709497146-a239ef373cf1" data-w="116" data-h="116"><div><div class="name m">塩らーめん</div><div class="meta">麺処 澄 · 11/03</div></div></div>
+    <div class="rank"><div class="r d-num">2</div><img alt="" data-u="1569718212165-3a8278d5f624" data-w="116" data-h="116"><div><div class="name m">中華そば</div><div class="meta">青葉 · 11/12</div></div></div>
+    <div class="rank"><div class="r d-num">3</div><img alt="" data-u="1591814468924-caf88d1232e1" data-w="116" data-h="116"><div><div class="name m">味噌らーめん</div><div class="meta">らーめん 熊 · 10/18</div></div></div>
+    <div class="rank"><div class="r d-num">4</div><img alt="" data-u="1617093727343-374698b1b08d" data-w="116" data-h="116"><div><div class="name m">担々麺</div><div class="meta">家 · 10/05</div></div></div>
   </div>
-  <div class="fab"><svg><use href="#i-plus"/></svg></div>
+  <div class="fab"><svg aria-hidden="true"><use href="#i-plus"/></svg></div>
   <div class="tabbar glass" data-tabs="1"></div><div class="homebar"></div>
 </div></div>
 
-<!-- ============ 6. Achievements (light) ============ -->
+<!-- Achievements (light) -->
 <div class="shot" id="achievements-light"><div class="phone light">
   <div class="status"><span>9:41</span><span class="icons" data-status></span></div>
   <div class="content">
-    <div class="ltitle" style="margin-top:10px">実績</div>
-    <div class="sub" style="font-size:12px;margin-top:4px">解除した実績 9 · シークレット あと 3 個</div>
-    <div class="hsec"><b>積み重ね</b><span>種類と店</span></div>
+    <div class="ltitle m" style="margin-top:10px">実績</div>
+    <div class="hsec"><b class="m">初めて</b><span>土地と場面は小判</span></div>
     <div class="stamps">
-      <div class="st"><svg data-stamp="on" data-top="コーヒー" data-date="26.11.28" data-bot="5 回" data-rot="-5"></svg><div class="nm">コーヒーに<br>呼ばれている</div></div>
-      <div class="st"><svg data-stamp="on" data-top="パン" data-date="26.11.21" data-bot="3 回" data-rot="4"></svg><div class="nm">パン、<br>またしても</div></div>
-      <div class="st"><svg data-stamp="on" data-top="ラーメン" data-date="26.11.26" data-bot="2 回" data-rot="-2"></svg><div class="nm">ラーメン、<br>ふたたび</div></div>
-      <div class="st"><svg data-stamp="on" data-top="麺屋 ひかり" data-date="26.11.26" data-bot="2 回" data-rot="6"></svg><div class="nm">二度あることは</div></div>
-      <div class="st off"><svg data-stamp="off" data-top="ワイン" data-bot="1 / 2" data-p="0.5"></svg><div class="nm">ワイン、<br>ふたたび</div></div>
-      <div class="st off"><svg data-stamp="off" data-top="ケーキ" data-bot="1 / 2" data-p="0.5"></svg><div class="nm">ケーキ、<br>ふたたび</div></div>
+      <div class="st"><svg aria-hidden="true" data-stamp="on" data-shape="oval" data-top="京都府" data-date="26.10.03" data-bot="はじめて" data-rot="-4"></svg><div class="nm m">京都府、<br>いただきました</div><div class="cd">10/03</div></div>
+      <div class="st"><svg aria-hidden="true" data-stamp="on" data-shape="oval" data-top="家ごはん" data-date="26.11.02" data-bot="はじめて" data-rot="3"></svg><div class="nm m">本日の店:<br>わが家</div><div class="cd">11/02</div></div>
+      <div class="st off"><svg aria-hidden="true" data-stamp="secret"></svg><div class="nm m">シークレット</div><div class="cd">あと 3 個</div></div>
     </div>
-    <div class="hsec"><b>初めて</b><span>土地と場面</span></div>
+    <div class="hsec"><b class="m">積み重ね</b><span>種類は丸、店は角</span></div>
     <div class="stamps">
-      <div class="st"><svg data-stamp="on" data-top="京都府" data-date="26.10.03" data-bot="はじめて" data-rot="-4"></svg><div class="nm">京都府、<br>いただきました</div></div>
-      <div class="st"><svg data-stamp="on" data-top="家ごはん" data-date="26.11.02" data-bot="はじめて" data-rot="3"></svg><div class="nm">本日の店:<br>わが家</div></div>
-      <div class="st off"><svg data-stamp="secret"></svg><div class="nm">シークレット</div></div>
+      <div class="st"><svg aria-hidden="true" data-stamp="on" data-shape="circle" data-top="コーヒー" data-date="26.11.28" data-bot="5 回" data-rot="-5"></svg><div class="nm m">コーヒーに<br>呼ばれている</div><div class="cd">5 回 · 11/28</div></div>
+      <div class="st"><svg aria-hidden="true" data-stamp="on" data-shape="circle" data-top="日本酒" data-date="26.11.14" data-bot="3 回" data-rot="4"></svg><div class="nm m">日本酒、<br>またしても</div><div class="cd">3 回 · 11/14</div></div>
+      <div class="st"><svg aria-hidden="true" data-stamp="on" data-shape="circle" data-top="ラーメン" data-date="26.11.27" data-bot="2 回" data-rot="-2"></svg><div class="nm m">ラーメン、<br>ふたたび</div><div class="cd">2 回 · 11/27</div></div>
+      <div class="st"><svg aria-hidden="true" data-stamp="on" data-shape="square" data-top="麺屋 ひかり" data-date="26.11.28" data-bot="2 回" data-rot="3"></svg><div class="nm m">二度あることは</div><div class="cd">2 回 · 11/28</div></div>
+      <div class="st off"><svg aria-hidden="true" data-stamp="off" data-shape="circle" data-top="ワイン" data-bot="1 / 2" data-p="0.5"></svg><div class="nm m">ワイン、<br>ふたたび</div><div class="cd">1 / 2 回</div></div>
+      <div class="st off"><svg aria-hidden="true" data-stamp="off" data-shape="circle" data-top="パン" data-bot="2 / 3" data-p="0.67"></svg><div class="nm m">パン、<br>またしても</div><div class="cd">2 / 3 回</div></div>
     </div>
   </div>
-  <div class="fab"><svg><use href="#i-plus"/></svg></div>
+  <div class="fab"><svg aria-hidden="true"><use href="#i-plus"/></svg></div>
   <div class="tabbar glass" data-tabs="2"></div><div class="homebar"></div>
 </div></div>
 
-<!-- ============ 7. Just saved: toast (light) ============ -->
-<div class="shot" id="saved-light"><div class="phone light">
-  <div class="status"><span>9:41</span><span class="icons" data-status></span></div>
+<!-- Just saved: toast (dark) -->
+<div class="shot" id="saved-dark"><div class="phone dark">
+  <div class="status"><span>12:31</span><span class="icons" data-status></span></div>
   <div class="content">
     <div class="top"><div class="logo">HINAMI</div>
-      <div class="actions"><div class="circle glass"><svg><use href="#i-bell"/></svg></div><div class="circle glass"><svg><use href="#i-gear"/></svg></div></div></div>
-    <div class="sec" style="margin-top:10px"><b>最近の記録</b><span>すべて ›</span></div>
-    <div class="day"><div class="d">28</div><div class="w">11月<br>土曜日</div></div>
-    <div class="meal"><div class="h"><b>ブーランジェリー ソル</b><span>8:31</span></div>
-      <div class="thumbs"><img data-u="1555507036-ab1f4038808a" data-w="224" data-h="280"><img data-u="1495474472287-4d71bcdd2085" data-w="224" data-h="280"><div class="thumbwrap"><img data-u="1586444248902-2f64eddc13df" data-w="224" data-h="280"><svg class="pressed" data-stamp="ink" data-date="26.11.28" data-rot="-10"></svg></div></div></div>
-    <div class="day" style="margin-top:22px"><div class="d">27</div><div class="w">11月<br>金曜日</div></div>
-    <div class="meal"><div class="h"><b>ビストロ ミモザ</b><span>19:30</span></div>
-      <div class="thumbs"><img data-u="1553361371-9b22f78e8b1d" data-w="224" data-h="280"><img data-u="1600891964092-4316c288032e" data-w="224" data-h="280"><img data-u="1571877227200-a0d98ea607e9" data-w="224" data-h="280"></div></div>
+      <div class="actions"><div class="circle glass"><svg aria-hidden="true"><use href="#i-bell"/></svg></div><div class="circle glass"><svg aria-hidden="true"><use href="#i-gear"/></svg></div></div></div>
+    <div class="sec" style="margin-top:6px"><b class="m">最近の記録</b><span>すべて ›</span></div>
+    <div class="ledger">
+      <div class="dcol"><div class="mo">11月</div><div class="dd d-num">28</div><div class="wd">土</div><svg aria-hidden="true" class="now" data-stamp="ink" data-date="26.11.28" data-rot="-8"></svg></div>
+      <div class="ecol">
+        <div class="entry"><div class="h"><b class="m">麺屋 ひかり</b><span>12:30</span></div>
+          <div class="thumbs"><img alt="" data-u="1557872943-16a5ac26437e" data-w="224" data-h="280"><img alt="" data-u="1496116218417-1a781b1c416c" data-w="224" data-h="280"></div></div>
+        <div class="entry"><div class="h"><b class="m">ブーランジェリー ソル</b><span>8:12</span></div>
+          <div class="thumbs"><img alt="" data-u="1555507036-ab1f4038808a" data-w="224" data-h="280"><img alt="" data-u="1495474472287-4d71bcdd2085" data-w="224" data-h="280"><img alt="" data-u="1586444248902-2f64eddc13df" data-w="224" data-h="280"></div></div>
+      </div>
+    </div>
   </div>
   <div class="toast glass">
-    <div class="r1"><svg class="mini" data-stamp="ink" data-date="26.11.28" data-rot="-8"></svg><div class="t">残しました <span>· ソル</span></div><div class="btns"><span>直す</span><span class="sub">取り消す</span></div></div>
+    <div class="r1"><div class="t">残しました <span>· 麺屋 ひかり</span></div><div class="btns"><span>直す</span><span class="sub">取り消す</span></div></div>
     <hr>
-    <div class="r2"><svg class="mini" data-stamp="on" data-top="パン" data-date="26.11.28" data-bot="3 回" data-rot="5"></svg><div><div class="lab">実績を解除</div><div class="nm">パン、またしても</div><div class="cd">パンを 3 回記録しました</div></div></div>
+    <div class="r2"><svg aria-hidden="true" class="mini" data-stamp="on" data-shape="square" data-top="麺屋 ひかり" data-date="26.11.28" data-bot="2 回" data-rot="4"></svg><div><div class="lab">実績を解除</div><div class="nm m">二度あることは</div><div class="cd">麺屋 ひかり で 2 回記録しました</div></div></div>
   </div>
-  <div class="fab"><svg><use href="#i-plus"/></svg></div>
+  <div class="fab"><svg aria-hidden="true"><use href="#i-plus"/></svg></div>
   <div class="tabbar glass" data-tabs="0"></div><div class="homebar"></div>
 </div></div>
 
-<!-- ============ 8. Camera (always dark) ============ -->
+<!-- Camera (always dark) -->
 <div class="shot" id="camera"><div class="phone dark cam">
-  <img class="view" data-u="1586444248902-2f64eddc13df" data-w="780" data-h="1688">
+  <img alt="" class="view" data-u="1557872943-16a5ac26437e" data-w="780" data-h="1688">
   <div class="shade"></div>
-  <div class="status" style="color:#F2EDE4"><span>9:41</span><span class="icons" data-status></span></div>
-  <div class="topbar"><div class="circle glass" style="color:#F2EDE4"><svg><use href="#i-close"/></svg></div><div class="circle glass" style="color:#F2EDE4"><svg><use href="#i-flash"/></svg></div></div>
-  <div class="bottom"><div class="lib"><img data-u="1555507036-ab1f4038808a" data-w="100" data-h="100"></div><div class="shutter"><div></div></div><div class="circle glass" style="color:#F2EDE4;width:50px;height:50px"><svg><use href="#i-flip"/></svg></div></div>
+  <div class="status" style="color:#F2EDE4"><span>12:30</span><span class="icons" data-status></span></div>
+  <div class="topbar"><div class="circle glass" style="color:#F2EDE4"><svg aria-hidden="true"><use href="#i-close"/></svg></div><div class="circle glass" style="color:#F2EDE4"><svg aria-hidden="true"><use href="#i-flash"/></svg></div></div>
+  <div class="bottom"><div class="lib circle glass"><svg aria-hidden="true"><use href="#i-photos"/></svg></div><div class="shutter"><div></div></div><div class="circle glass" style="color:#F2EDE4;width:50px;height:50px"><svg aria-hidden="true"><use href="#i-flip"/></svg></div></div>
   <div class="homebar" style="background:#F2EDE4"></div>
 </div></div>
 
-<!-- ============ 9. The three stamps (for the concept deck) ============ -->
+<!-- The stamps, large (for the concept deck) -->
 <div class="shot light" id="stamps" style="background:transparent">
-  <div id="stamps-row" style="display:flex;gap:56px;align-items:flex-start;padding:8px 12px;color:var(--ink);font-family:'Shippori Mincho',serif">
-    <div style="text-align:center"><svg data-stamp="ink" data-date="26.11.28" data-rot="-6" style="width:200px;height:200px"></svg></div>
-    <div style="text-align:center"><svg data-stamp="on" data-top="パン" data-date="26.11.28" data-bot="3 回" data-rot="5" style="width:200px;height:200px"></svg></div>
-    <div style="text-align:center"><svg data-stamp="off" data-top="ワイン" data-bot="1 / 2" data-p="0.5" style="width:200px;height:200px"></svg></div>
+  <div id="stamps-row" style="display:flex;gap:48px;align-items:center;padding:8px 12px;color:var(--ink)">
+    <svg aria-hidden="true" data-stamp="ink" data-date="26.11.28" data-rot="-6" style="width:200px;height:200px"></svg>
+    <svg aria-hidden="true" data-stamp="on" data-shape="circle" data-top="ウイスキー" data-date="26.11.28" data-bot="2 回" data-rot="5" style="width:200px;height:200px"></svg>
+    <svg aria-hidden="true" data-stamp="on" data-shape="square" data-top="麺屋 ひかり" data-date="26.11.27" data-bot="2 回" data-rot="-3" style="width:200px;height:200px"></svg>
+    <svg aria-hidden="true" data-stamp="on" data-shape="oval" data-top="京都府" data-date="26.10.03" data-bot="はじめて" data-rot="4" style="width:200px;height:200px"></svg>
+    <svg aria-hidden="true" data-stamp="off" data-shape="circle" data-top="ワイン" data-bot="1 / 2" data-p="0.5" style="width:200px;height:200px"></svg>
   </div>
 </div>
 
+<template id="home-tpl">
+  <div class="status"><span>13:05</span><span class="icons" data-status></span></div>
+  <div class="content">
+    <div class="top"><div class="logo">HINAMI</div>
+      <div class="actions"><div class="circle glass" style="position:relative"><svg aria-hidden="true"><use href="#i-bell"/></svg><i class="dot"></i></div><div class="circle glass"><svg aria-hidden="true"><use href="#i-gear"/></svg></div></div></div>
+    <div class="compare">
+      <div class="q"><b class="m">どちらが好き?</b><span class="t-sm">ラーメン</span></div>
+      <div class="pair">
+        <div class="pick"><img alt="" data-u="1557872943-16a5ac26437e" data-w="320" data-h="320"><div class="name m">特製醤油らーめん</div><div class="meta">麺屋 ひかり · 昨日</div></div>
+        <div class="pick"><img alt="" data-u="1569718212165-3a8278d5f624" data-w="320" data-h="320"><div class="name m">中華そば</div><div class="meta">青葉 · 11/12</div></div>
+      </div>
+    </div>
+    <div class="sec"><b class="m">最近の記録</b><span>すべて ›</span></div>
+    <div class="ledger">
+      <div class="dcol"><div class="mo">11月</div><div class="dd d-num">28</div><div class="wd">土</div><svg aria-hidden="true" data-stamp="ink" data-date="26.11.28" data-rot="-8"></svg></div>
+      <div class="ecol">
+        <div class="entry"><div class="h"><b class="m">家</b><span>12:40</span></div>
+          <div class="thumbs"><img alt="" data-u="1559847844-5315695dadae" data-w="224" data-h="280"></div></div>
+        <div class="entry"><div class="h"><b class="m">ブーランジェリー ソル</b><span>8:12</span></div>
+          <div class="thumbs"><img alt="" data-u="1555507036-ab1f4038808a" data-w="224" data-h="280"><img alt="" data-u="1495474472287-4d71bcdd2085" data-w="224" data-h="280"><img alt="" data-u="1586444248902-2f64eddc13df" data-w="224" data-h="280"></div></div>
+      </div>
+    </div>
+    <div class="ledger">
+      <div class="dcol"><div class="dd d-num">27</div><div class="wd">金</div><svg aria-hidden="true" data-stamp="ink" data-date="26.11.27" data-rot="5"></svg></div>
+      <div class="ecol">
+        <div class="entry"><div class="h"><b class="m">バー 灯</b><span>21:40</span></div>
+          <div class="thumbs"><img alt="" data-u="1514362545857-3bc16c4c7d1b" data-w="224" data-h="280"></div></div>
+      </div>
+    </div>
+  </div>
+  <div class="fab"><svg aria-hidden="true"><use href="#i-plus"/></svg></div>
+  <div class="tabbar glass" data-tabs="0"></div><div class="homebar"></div>
+</template>
+
 <script>
-// Unsplash placeholder photos (cropped with entropy, a stand-in for saliency cropping)
-document.querySelectorAll('img[data-u]').forEach(function (im) {
-  var w = im.dataset.w || 400, h = im.dataset.h || 400;
-  im.src = 'https://images.unsplash.com/photo-' + im.dataset.u + '?w=' + w + '&h=' + h + '&fit=crop&crop=entropy&q=80&auto=format';
+// home: one template, two lights
+document.querySelectorAll('[data-home]').forEach((el) => {
+  el.innerHTML = document.getElementById('home-tpl').innerHTML;
+});
+
+// Unsplash placeholder photos (entropy crop stands in for saliency cropping)
+document.querySelectorAll('img[data-u]').forEach((im) => {
+  const w = im.dataset.w || 400, h = im.dataset.h || 400;
+  im.src = `https://images.unsplash.com/photo-${im.dataset.u}?w=${w}&h=${h}&fit=crop&crop=entropy&q=80&auto=format`;
   im.alt = '';
 });
 
-// status bar icons
-var statusSvg = '<svg viewBox="0 0 18 12" width="18"><rect x="0" y="8" width="3" height="4" rx="1" fill="currentColor"/><rect x="5" y="5.5" width="3" height="6.5" rx="1" fill="currentColor"/><rect x="10" y="3" width="3" height="9" rx="1" fill="currentColor"/><rect x="15" y="0" width="3" height="12" rx="1" fill="currentColor"/></svg>' +
-  '<svg viewBox="0 0 16 12" width="16"><path d="M8 11.5 5.6 9a3.4 3.4 0 0 1 4.8 0zM3.4 6.8a6.6 6.6 0 0 1 9.2 0l-1.4 1.4a4.6 4.6 0 0 0-6.4 0zM1 4.4a10 10 0 0 1 14 0l-1.4 1.4a8 8 0 0 0-11.2 0z" fill="currentColor"/></svg>' +
-  '<svg viewBox="0 0 27 13" width="27"><rect x=".5" y=".5" width="23" height="12" rx="3.5" fill="none" stroke="currentColor" opacity=".4"/><rect x="2" y="2" width="17" height="9" rx="2" fill="currentColor"/><path d="M25 4.5v4c.8-.3 1.3-1.1 1.3-2s-.5-1.7-1.3-2z" fill="currentColor" opacity=".45"/></svg>';
-document.querySelectorAll('[data-status]').forEach(function (el) { el.innerHTML = statusSvg; });
+const statusSvg = '<svg aria-hidden="true" viewBox="0 0 18 12" width="18" height="12"><rect x="0" y="8" width="3" height="4" rx="1" fill="currentColor"/><rect x="5" y="5.5" width="3" height="6.5" rx="1" fill="currentColor"/><rect x="10" y="3" width="3" height="9" rx="1" fill="currentColor"/><rect x="15" y="0" width="3" height="12" rx="1" fill="currentColor"/></svg>' +
+  '<svg aria-hidden="true" viewBox="0 0 16 12" width="16" height="12"><path d="M8 11.5 5.6 9a3.4 3.4 0 0 1 4.8 0zM3.4 6.8a6.6 6.6 0 0 1 9.2 0l-1.4 1.4a4.6 4.6 0 0 0-6.4 0zM1 4.4a10 10 0 0 1 14 0l-1.4 1.4a8 8 0 0 0-11.2 0z" fill="currentColor"/></svg>' +
+  '<svg aria-hidden="true" viewBox="0 0 27 13" width="27" height="13"><rect x=".5" y=".5" width="23" height="12" rx="3.5" fill="none" stroke="currentColor" opacity=".4"/><rect x="2" y="2" width="17" height="9" rx="2" fill="currentColor"/><path d="M25 4.5v4c.8-.3 1.3-1.1 1.3-2s-.5-1.7-1.3-2z" fill="currentColor" opacity=".45"/></svg>';
+document.querySelectorAll('[data-status]').forEach((el) => { el.innerHTML = statusSvg; });
 
-// tab bar
-var tabs = [['i-home', 'ホーム'], ['i-book', '記録'], ['i-seal', '実績'], ['i-people', '友だち']];
-document.querySelectorAll('[data-tabs]').forEach(function (el) {
-  var on = +el.dataset.tabs;
-  el.innerHTML = tabs.map(function (t, i) {
-    return '<div class="tab' + (i === on ? ' on' : '') + '"><svg><use href="#' + t[0] + '"/></svg><span>' + t[1] + '</span></div>';
-  }).join('');
+const tabs = [['i-home', 'ホーム'], ['i-book', '記録'], ['i-rosette', '実績'], ['i-people', '友だち']];
+document.querySelectorAll('[data-tabs]').forEach((el) => {
+  const on = +el.dataset.tabs;
+  el.innerHTML = tabs.map((t, i) => `<div class="tab${i === on ? ' on' : ''}"><svg aria-hidden="true"><use href="#${t[0]}"/></svg><span>${t[1]}</span></div>`).join('');
 });
 
-// date stamps (a "data stamp" used on ledgers: name above, date in the band, note below)
+// Data stamps: the dated seal used on ledgers. Name above, date in the band, note below.
+// Shapes: circle = kind, square = shop, oval = land and scene.
+const SH = {
+  circle: { outer: '<circle r="46" pathLength="100"/>', inner: '<circle r="41"/>', band: 11, half: 39.5, ty: -19, dy: 5, by: 29 },
+  square: { outer: '<rect x="-44" y="-44" width="88" height="88" rx="9" pathLength="100"/>', inner: '<rect x="-39.5" y="-39.5" width="79" height="79" rx="6"/>', band: 11, half: 39.5, ty: -20, dy: 5, by: 30 },
+  oval: { outer: '<ellipse rx="48" ry="38" pathLength="100"/>', inner: '<ellipse rx="43.5" ry="33.5"/>', band: 10, half: 41.5, ty: -16, dy: 5, by: 25 }
+};
+const F = { mincho: 'font-family="Hiragino Mincho ProN, Noto Serif JP, serif"', num: 'font-family="Cormorant Garamond, serif" style="font-variant-numeric:lining-nums"', sans: 'font-family="Noto Sans JP, sans-serif"' };
+function txt(y, face, size, weight, fill, s, ls) {
+  return `<text x="0" y="${y}" text-anchor="middle" ${F[face]} font-size="${size}" font-weight="${weight}"${ls ? ` letter-spacing="${ls}"` : ''} fill="${fill}">${s}</text>`;
+}
 function stamp(el) {
-  var kind = el.dataset.stamp, rot = el.dataset.rot || 0;
+  const kind = el.dataset.stamp, rot = el.dataset.rot || 0, sh = SH[el.dataset.shape || 'circle'];
   el.setAttribute('viewBox', '-50 -50 100 100');
-  var R = 46, r = 41, band = 11, half = Math.sqrt(r * r - band * band).toFixed(1);
-  var mincho = 'font-family="Shippori Mincho, serif"', num = 'font-family="Cormorant Garamond, serif"', sans = 'font-family="Noto Sans JP, sans-serif"';
-  var top = el.dataset.top || '', bot = el.dataset.bot || '', date = el.dataset.date || '';
-  var topSize = top.length > 4 ? 9.5 : 11.5;
+  const top = el.dataset.top || '', bot = el.dataset.bot || '', date = el.dataset.date || '';
+  const topSize = top.length > 4 ? 9.5 : 11.5;
+  const bandPath = `<path d="M-${sh.half} -${sh.band}H${sh.half}M-${sh.half} ${sh.band}H${sh.half}"/>`;
   if (kind === 'on' || kind === 'ink') {
-    var col = kind === 'on' ? 'var(--shu)' : 'var(--ink)';
-    var inner = kind === 'ink'
-      ? '<text x="0" y="-19" text-anchor="middle" ' + num + ' font-size="10.5" font-weight="600" letter-spacing="1.6" fill="' + col + '">HINAMI</text>' +
-        '<text x="0" y="5" text-anchor="middle" ' + num + ' font-size="17" font-weight="600" letter-spacing=".6" fill="' + col + '">' + date + '</text>' +
-        '<text x="0" y="28" text-anchor="middle" ' + sans + ' font-size="9" font-weight="500" letter-spacing="1" fill="' + col + '">日次</text>'
-      : '<text x="0" y="-19" text-anchor="middle" ' + mincho + ' font-size="' + topSize + '" font-weight="600" fill="' + col + '">' + top + '</text>' +
-        '<text x="0" y="5" text-anchor="middle" ' + num + ' font-size="16" font-weight="600" letter-spacing=".5" fill="' + col + '">' + date + '</text>' +
-        '<text x="0" y="29" text-anchor="middle" ' + sans + ' font-size="9.5" font-weight="500" fill="' + col + '">' + bot + '</text>';
+    const col = kind === 'on' ? 'var(--shu)' : 'var(--ink)';
+    const inner = kind === 'ink'
+      ? txt(sh.ty, 'num', 10.5, 600, col, 'HINAMI', 1.6) + txt(sh.dy, 'num', 17, 600, col, date, .6) + txt(sh.by - 1, 'sans', 9, 500, col, '日次', 1)
+      : txt(sh.ty, 'mincho', topSize, 600, col, top) + txt(sh.dy, 'num', 16, 600, col, date, .5) + txt(sh.by, 'sans', 9.5, 500, col, bot);
     el.innerHTML = '<g transform="rotate(' + rot + ')" filter="url(#inkgrain)">' +
-      '<circle r="' + R + '" fill="none" stroke="' + col + '" stroke-width="2.6"/>' +
-      '<circle r="' + r + '" fill="none" stroke="' + col + '" stroke-width=".9"/>' +
-      '<path d="M-' + half + ' -' + band + 'H' + half + 'M-' + half + ' ' + band + 'H' + half + '" stroke="' + col + '" stroke-width=".9"/>' +
-      inner + '</g>';
+      '<g fill="none" stroke="' + col + '" stroke-width="2.6">' + sh.outer + '</g>' +
+      '<g fill="none" stroke="' + col + '" stroke-width=".9">' + sh.inner + bandPath + '</g>' + inner + '</g>';
   } else if (kind === 'off') {
-    var p = +el.dataset.p || 0, C = 2 * Math.PI * R;
-    el.innerHTML = '<circle r="' + R + '" fill="none" stroke="var(--rule)" stroke-width="2.6"/>' +
-      '<circle r="' + R + '" fill="none" stroke="var(--shu)" stroke-width="2.6" stroke-linecap="round" stroke-dasharray="' + (C * p).toFixed(1) + ' ' + C.toFixed(1) + '" transform="rotate(-90)"/>' +
-      '<circle r="' + r + '" fill="none" stroke="var(--rule)" stroke-width=".9" stroke-dasharray="2 3"/>' +
-      '<path d="M-' + half + ' -' + band + 'H' + half + 'M-' + half + ' ' + band + 'H' + half + '" stroke="var(--rule)" stroke-width=".9"/>' +
-      '<text x="0" y="-19" text-anchor="middle" ' + mincho + ' font-size="' + topSize + '" font-weight="600" fill="var(--sub)">' + top + '</text>' +
-      '<text x="0" y="5" text-anchor="middle" ' + num + ' font-size="16" fill="var(--rule)">– . – . –</text>' +
-      '<text x="0" y="29" text-anchor="middle" ' + num + ' font-size="13" font-weight="600" fill="var(--sub)">' + bot + '</text>';
+    const p = +el.dataset.p || 0;
+    el.innerHTML = '<g fill="none" stroke="var(--rule)" stroke-width="2.6">' + sh.outer + '</g>' +
+      '<g fill="none" stroke="var(--shu)" stroke-width="2.6" stroke-linecap="round" stroke-dasharray="' + (p * 100).toFixed(1) + ' 100" transform="rotate(-90)">' + sh.outer + '</g>' +
+      '<g fill="none" stroke="var(--rule)" stroke-width=".9" stroke-dasharray="2 3">' + sh.inner + '</g>' +
+      '<g stroke="var(--rule)" stroke-width=".9">' + bandPath + '</g>' +
+      txt(sh.ty, 'mincho', topSize, 600, 'var(--sub)', top) + txt(sh.dy, 'num', 16, 400, 'var(--rule)', '– . – . –') + txt(sh.by, 'num', 13, 600, 'var(--sub)', bot);
   } else if (kind === 'secret') {
-    el.innerHTML = '<circle r="' + R + '" fill="none" stroke="var(--rule)" stroke-width="2.6" stroke-dasharray="3 4"/>' +
-      '<circle r="' + r + '" fill="none" stroke="var(--rule)" stroke-width=".9" stroke-dasharray="2 3"/>' +
-      '<path d="M-' + half + ' -' + band + 'H' + half + 'M-' + half + ' ' + band + 'H' + half + '" stroke="var(--rule)" stroke-width=".9"/>' +
-      '<text x="0" y="6" text-anchor="middle" ' + num + ' font-size="18" fill="var(--sub)">?</text>';
+    el.innerHTML = '<g fill="none" stroke="var(--rule)" stroke-width="2.6" stroke-dasharray="3 4"><circle r="46"/></g>' +
+      '<g fill="none" stroke="var(--rule)" stroke-width=".9" stroke-dasharray="2 3"><circle r="41"/></g>' +
+      '<g stroke="var(--rule)" stroke-width=".9"><path d="M-39.5 -11H39.5M-39.5 11H39.5"/></g>' + txt(6, 'num', 18, 500, 'var(--sub)', '?');
   }
 }
 document.querySelectorAll('svg[data-stamp]').forEach(stamp);
 
 // calendar: November 2026 starts on Sunday
-(function () {
-  var cal = document.getElementById('cal');
-  var wd = ['日', '月', '火', '水', '木', '金', '土'];
-  var rec = { 2: ['1525351484163-7529414344d8', 1], 3: ['1569718212165-3a8278d5f624', 2], 5: ['1496116218417-1a781b1c416c', 1], 7: ['1514362545857-3bc16c4c7d1b', 2],
+(() => {
+  const cal = document.getElementById('cal');
+  const rec = { 2: ['1525351484163-7529414344d8', 1], 3: ['1569718212165-3a8278d5f624', 2], 5: ['1496116218417-1a781b1c416c', 1], 7: ['1514362545857-3bc16c4c7d1b', 2],
     8: ['1517701604599-bb29b565090c', 1], 11: ['1578985545062-69928b1d9587', 1], 12: ['1442512595331-e89e73853f31', 2], 14: ['1617196034796-73dfa7b1fd56', 3],
     18: ['1580442151529-343f2f6e0e27', 1], 21: ['1509440159596-0249088772ff', 1], 22: ['1535958636474-b021ee887b13', 2], 26: ['1591814468924-caf88d1232e1', 1],
-    27: ['1553361371-9b22f78e8b1d', 3], 28: ['1559847844-5315695dadae', 3] };
-  var html = wd.map(function (d) { return '<div class="wd">' + d + '</div>'; }).join('');
-  for (var d = 1; d <= 30; d++) {
-    var r = rec[d];
+    27: ['1514362545857-3bc16c4c7d1b', 3], 28: ['1559847844-5315695dadae', 3] };
+  let html = ['日', '月', '火', '水', '木', '金', '土'].map((d) => `<div class="wdh">${d}</div>`).join('');
+  for (let d = 1; d <= 30; d++) {
+    const r = rec[d];
     html += '<div class="cell' + (d === 28 ? ' today' : '') + '"><span class="n">' + d + '</span>' +
-      (r ? '<img src="https://images.unsplash.com/photo-' + r[0] + '?w=96&h=96&fit=crop&crop=entropy&q=80&auto=format" alt="">' + (r[1] > 1 ? '<span class="c num">' + r[1] + '</span>' : '') : '') +
-      '</div>';
+      (r ? `<img src="https://images.unsplash.com/photo-${r[0]}?w=96&h=96&fit=crop&crop=entropy&q=80&auto=format" alt="">${r[1] > 1 ? `<span class="c">${r[1]}</span>` : ''}` : '') + '</div>';
   }
   cal.innerHTML = html;
 })();

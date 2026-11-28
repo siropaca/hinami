@@ -10,7 +10,7 @@
   --kinari: #f2ede4;
   --nsub: #a39b8f;
   --nrule: #3a342c;
-  --shu-night: #c8583f;
+  --shu-night: #d6694f;
 }
 body {
   font-family: "Noto Sans JP", Arial, sans-serif;
@@ -22,7 +22,7 @@ section {
   padding: 128px 128px 160px;
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 36px;
   counter-increment: page;
 }
 section.night {
@@ -45,21 +45,21 @@ section.night .eyebrow {
 .head {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 16px;
 }
 h1 {
-  font-family: "Shippori Mincho", Georgia, serif;
+  font-family: "Noto Serif JP", Georgia, serif;
   font-weight: 500;
 }
 h2 {
-  font-family: "Shippori Mincho", Georgia, serif;
-  font-size: 58px;
+  font-family: "Noto Serif JP", Georgia, serif;
+  font-size: 52px;
   font-weight: 500;
-  line-height: 1.4;
+  line-height: 1.45;
 }
 h3 {
-  font-family: "Shippori Mincho", Georgia, serif;
-  font-size: 34px;
+  font-family: "Noto Serif JP", Georgia, serif;
+  font-size: 32px;
   font-weight: 600;
   line-height: 1.45;
 }
@@ -84,7 +84,7 @@ section.night .small {
   color: var(--nsub);
 }
 .mincho {
-  font-family: "Shippori Mincho", Georgia, serif;
+  font-family: "Noto Serif JP", Georgia, serif;
 }
 .logo {
   font-family: "Cormorant Garamond", Georgia, serif;
@@ -112,7 +112,19 @@ section.night .foot p {
   content: counter(page);
 }
 
-/* layout helpers */
+/* columns */
+.textcol {
+  width: 820px;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+.widecol {
+  width: 1200px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
 .row {
   display: flex;
   gap: 48px;
@@ -120,7 +132,7 @@ section.night .foot p {
 .col {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 16px;
 }
 .grow {
   flex: 1;
@@ -132,46 +144,119 @@ section.night .foot p {
 section.night .rule-top {
   border-top: 2px solid var(--kinari);
 }
-.rule-thin {
+.item {
+  display: flex;
+  gap: 24px;
   border-top: 1px solid var(--rule);
-  padding-top: 20px;
+  padding-top: 18px;
 }
-section.night .rule-thin {
+section.night .item {
   border-top: 1px solid var(--nrule);
 }
 .no {
-  font-family: "Shippori Mincho", Georgia, serif;
-  font-size: 30px;
+  font-family: "Noto Serif JP", Georgia, serif;
+  font-size: 26px;
   font-weight: 500;
   color: var(--sub);
+  width: 44px;
 }
 section.night .no {
   color: var(--nsub);
 }
-
-/* phone images */
-.phones {
-  display: flex;
-  gap: 8px;
-  align-items: flex-start;
+.it {
+  font-size: 27px;
+  line-height: 1.6;
 }
-.phone {
-  width: 366px;
-  height: 758px;
-  object-fit: contain;
+.it-sub {
+  font-size: 24px;
+  line-height: 1.6;
+  color: var(--sub);
 }
-.phone-s {
-  width: 330px;
-  height: 684px;
-  object-fit: contain;
+section.night .it-sub {
+  color: var(--nsub);
 }
-.cap {
+.src {
   font-size: 24px;
   color: var(--sub);
-  text-align: center;
 }
-section.night .cap {
-  color: var(--nsub);
+
+/* phone images (900x1864 with baked shadow) */
+.ph-r1 {
+  position: absolute;
+  left: 1396px;
+  top: 128px;
+  width: 396px;
+  height: 820px;
+  object-fit: contain;
+}
+.ph-r2a {
+  position: absolute;
+  left: 1000px;
+  top: 128px;
+  width: 396px;
+  height: 820px;
+  object-fit: contain;
+}
+.ph-r2b {
+  position: absolute;
+  left: 1396px;
+  top: 128px;
+  width: 396px;
+  height: 820px;
+  object-fit: contain;
+}
+
+/* cover */
+.cover-ph1 {
+  position: absolute;
+  left: 1010px;
+  top: 128px;
+  width: 396px;
+  height: 820px;
+  object-fit: contain;
+}
+.cover-ph2 {
+  position: absolute;
+  left: 1396px;
+  top: 128px;
+  width: 396px;
+  height: 820px;
+  object-fit: contain;
+}
+.cover-stamp {
+  position: absolute;
+  left: 770px;
+  top: 168px;
+  width: 168px;
+  height: 168px;
+  object-fit: contain;
+}
+.cover-col {
+  width: 860px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  margin-top: 60px;
+}
+.cover-logo {
+  font-size: 128px;
+  line-height: 1;
+}
+.cover-tag {
+  font-size: 60px;
+  line-height: 1.5;
+}
+
+/* summary columns */
+.pillars {
+  display: flex;
+  gap: 48px;
+}
+.pillar {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
 }
 
 /* tables */
@@ -184,57 +269,169 @@ section.night table {
 }
 
 /* swatches */
-.sw {
+.swrow {
+  display: flex;
+  gap: 24px;
+}
+.swband {
+  background: var(--night);
+  border-radius: 24px;
+  padding: 28px 28px 24px;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 16px;
+}
+.swlab {
+  font-size: 24px;
+  color: var(--sub);
+}
+.swband .swlab {
+  color: var(--nsub);
+}
+.sw {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 .chip {
-  height: 150px;
-  border-radius: 20px;
+  height: 84px;
+  border-radius: 16px;
 }
 .chip-line {
   border: 2px solid var(--rule);
 }
+.swband .chip-line {
+  border: 2px solid var(--nrule);
+}
 .swname {
-  font-family: "Shippori Mincho", Georgia, serif;
-  font-size: 32px;
+  font-family: "Noto Serif JP", Georgia, serif;
+  font-size: 28px;
   font-weight: 600;
+}
+.swband .swname {
+  color: var(--kinari);
 }
 .swval {
   font-size: 24px;
   color: var(--sub);
 }
-section.night .swval {
+.swband .swval {
   color: var(--nsub);
 }
 
 /* type specimen */
 .spec {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   gap: 48px;
   border-top: 1px solid var(--rule);
-  padding-top: 26px;
+  padding-top: 24px;
 }
 .spec-label {
-  width: 360px;
+  width: 420px;
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.spec-name {
+  font-size: 26px;
+  font-weight: 700;
+}
+.spec-use {
   font-size: 24px;
+  color: var(--sub);
+}
+.spec-mincho {
+  font-family: "Noto Serif JP", Georgia, serif;
+  font-size: 56px;
+  font-weight: 500;
+}
+.spec-latin {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 72px;
+  font-weight: 500;
+  letter-spacing: 8px;
+}
+.spec-sans {
+  font-size: 40px;
+}
+
+/* stamps */
+.stamprow {
+  display: flex;
+  gap: 36px;
+  align-items: flex-start;
+}
+.stampcell {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+.stampimg {
+  width: 170px;
+  height: 170px;
+  object-fit: contain;
+}
+.stampcap {
+  font-size: 24px;
+  line-height: 1.5;
+  text-align: center;
+  color: var(--sub);
+}
+
+/* layer diagram */
+.layer {
+  border-radius: 28px;
+  padding: 28px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.layer-glass {
+  background: #dcd5ca;
+  border: 2px solid #ffffff;
+}
+.layer-paper {
+  background: var(--paper);
+  border: 2px solid var(--ink);
+  border-radius: 4px;
+}
+.layer-t {
+  font-family: "Noto Serif JP", Georgia, serif;
+  font-size: 32px;
+  font-weight: 600;
+}
+.layer-d {
+  font-size: 26px;
+  line-height: 1.6;
   color: var(--sub);
 }
 
 /* margin note sample */
 .note {
   border-left: 3px solid var(--ink);
-  padding-left: 32px;
+  padding-left: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.note-lab {
+  font-size: 24px;
+  color: var(--sub);
+}
+.note-text {
+  font-family: "Noto Serif JP", Georgia, serif;
+  font-size: 36px;
+  line-height: 1.6;
 }
 
-/* stamps image */
-.stamps {
-  width: 900px;
-  height: 270px;
-  object-fit: contain;
+/* decide */
+.pick {
+  font-weight: 700;
 }
 
 /* arrival motion */
@@ -263,6 +460,6 @@ section.night .swval {
   }
 }
 .press {
-  animation: press 260ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
-  animation-delay: 500ms;
+  animation: press 280ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  animation-delay: 450ms;
 }
