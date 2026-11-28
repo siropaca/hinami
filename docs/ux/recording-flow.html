@@ -9,16 +9,16 @@
   <body>
     <main>
       <h1>記録の流れ — ワイヤーフレーム</h1>
-      <p class="status">状態: 合意 (2026-11-26)。2026-11-27 に、記録の入り口を右下の ＋ に移し、保存したあとはトーストで知らせる形に直した。買ったもの (まだ口にしていないもの) は記録しないことにした。「案」はもうない。決まりの本文は <a href="recording.md">recording.md</a></p>
+      <p class="status">状態: 合意 (2026-11-26)。2026-11-27 に、記録の入り口を右下の ＋ に移し、保存したあとはトーストで知らせる形に直した。買ったもの (まだ口にしていないもの) は記録しないことにした。2026-11-28 に、シャッターだけで記録になる形 (撮ったら残る) にした。決まりの本文は <a href="recording.md">recording.md</a></p>
 
       <p class="lead">
-        その場で撮るなら最短 3 タップ (＋ → シャッター → 残す)。記録は右下の ＋ から、どの画面でも始められる。必須の入力はなく、AI の判定と場所の推定が違うときだけ直す。
+        その場で撮るなら最短 2 タップ (＋ → シャッター)。シャッターを押した時点で記録になり、AI の判定と場所の推定が違うときだけ、「直す」から確認カードを開く。記録は右下の ＋ から、どの画面でも始められる。必須の入力はない。
       </p>
 
       <ul class="legend">
         <li><span class="sw"></span>決まった流れ・機能</li>
         <li><span class="sw plan"></span><span class="plan-tag">案</span> まだ確かめていない流れ・機能</li>
-        <li><span class="sw tapmark">1</span>タップの順番 (品ごとに数える)</li>
+        <li><span class="sw tapmark">1</span>タップの順番 (品ごとに数える。B〜D は確認カードを開いてから数える)</li>
       </ul>
       <p class="legend-note">画面の中の配置や大きさは、すべて仮。</p>
 
@@ -40,7 +40,9 @@
                 <g stroke="#444" stroke-width="1.8" fill="none" marker-end="url(#ah)">
                   <path d="M130 172 H145 V62 H226" />
                   <path d="M290 84 V216" />
-                  <path d="M350 62 H406" />
+                  <path d="M350 56 H406" />
+                  <path d="M410 72 H354" />
+                  <path d="M330 40 V22 H830 V36" />
                   <path d="M455 84 V126" />
                   <path d="M485 126 V88" />
                   <path d="M350 242 H406" />
@@ -55,8 +57,11 @@
                 <g font-size="11" fill="#555">
                   <text x="152" y="54">＋</text>
                   <text x="298" y="154">写真から選ぶ</text>
-                  <text x="353" y="54">シャッター</text>
-                  <text x="560" y="54">残す</text>
+                  <text x="362" y="50">直す</text>
+                  <text x="358" y="88">閉じる</text>
+                  <text x="560" y="16">×</text>
+                  <text x="232" y="34">シャッターで残る</text>
+                  <text x="560" y="54">残す (写真から 1 枚)</text>
                   <text x="820" y="104" text-anchor="end">食べたあと、</text>
                   <text x="820" y="118" text-anchor="end">次に開いたとき</text>
                   <text x="449" y="110" text-anchor="end">場所をタップ</text>
@@ -82,8 +87,8 @@
                 </g>
                 <g text-anchor="middle" dominant-baseline="central">
                   <text x="70" y="172" font-weight="700">＋ (右下)</text>
-                  <text x="290" y="62">カメラ</text>
-                  <text x="470" y="62" font-weight="700">確認カード</text>
+                  <text x="290" y="62" font-weight="700">カメラ</text>
+                  <text x="470" y="62">確認カード</text>
                   <text x="830" y="152">比べる (ホーム)</text>
                   <text x="830" y="62">もとの画面</text>
                   <text x="470" y="152">場所を選ぶ</text>
@@ -100,7 +105,7 @@
       <!-- Flow A -->
       <section>
         <h2>A. その場で撮る (1 品目)</h2>
-        <p class="desc">いつもの記録。AI の判定も場所の推定も合っていれば、どこも触らずに終わる。</p>
+        <p class="desc">いつもの記録。シャッターを押した時点で記録になる。AI の判定も場所の推定も合っていれば、どこも触らずに終わる。</p>
         <p class="scroll-hint">横にスクロールできます →</p>
         <div class="row">
           <div class="screen">
@@ -135,59 +140,55 @@
               </div>
             </div>
             <ol class="notes">
-              <li>アプリ内のカメラ。＋ を押すとすぐ開く。撮ったらすぐ確認カードへ進む</li>
+              <li>アプリ内のカメラ。＋ を押すとすぐ開く</li>
               <li>左下から、端末の写真を選べる (E)</li>
               <li>撮った写真は端末の写真アプリにも残す。ほかの SNS にはそこから上げる</li>
             </ol>
           </div>
           <div class="arrow"><span>シャッター</span><span class="line"></span></div>
           <div class="screen">
-            <p class="cap">確認カード</p>
+            <p class="cap">カメラ (残した直後)</p>
             <div class="phone">
-              <div class="top"><span class="x">×</span><span class="chip meal">新しい食事 ▾</span></div>
-              <div class="ph" style="height: 168px"><span>写真</span><span class="retake">撮り直す</span></div>
-              <div class="chips">
-                <span class="chip">ラーメン ▾</span><span class="hint">AI が判定</span>
+              <div class="top"><span class="x">×</span><span></span></div>
+              <div class="ph viewfinder"><span>ファインダー</span></div>
+              <div class="toast">
+                <span>残しました<br />ラーメン<br />麺屋 ひかり</span><span class="link">直す</span><span class="link">取り消す</span>
+                <div class="unlock">
+                  <span class="k">実績を解除</span><span>のれんをくぐる癖<br /><small>5 軒で食べた</small></span>
+                </div>
               </div>
-              <div class="kv"><span class="k">場所</span><span class="chip">麺屋 ひかり ▾</span></div>
-              <div class="memo">メモ (任意)</div>
-              <div class="spacer"></div>
-              <span class="btn primary block tap" data-tap="3">残す</span>
+              <div class="actions">
+                <span class="btn side">写真から<br />選ぶ</span>
+                <div class="shutter"></div>
+                <span></span>
+              </div>
             </div>
             <ol class="notes">
-              <li>種類は AI がその場で付ける (1 秒未満を目指す。技術の確認で確かめる)。複数写っていれば複数。違えばタップで直す。食・飲は種類から裏で決まる</li>
-              <li>場所には、店の推定に自信があるときだけ店名を出す</li>
-              <li>メモは任意。品名は書かなくてよい</li>
-              <li>× は記録をやめて、記録を始めた画面へ戻る。メモを書いていたときだけ確かめる</li>
-              <li>撮り直しは写真の上から</li>
+              <li>シャッターを押した時点で記録になる (撮ったら残る)。記録はここで終わり</li>
+              <li>カメラは開いたままで、続けて撮れる (標準のカメラと同じ。案)</li>
+              <li>トーストに「残しました」と、付いた種類と場所を出す。種類と場所は保存のあとに付く</li>
+              <li>違うときだけ「直す」で確認カードを開く (B〜D)。品には、名前を読む写真 (ラベル、札、包装) を足せる</li>
+              <li>解除した実績と、はじめての種類も同じトーストに出す。いくつも出たら 2 秒ほどで入れ替える (この例では、次に「ラーメン、お目見え」)。動きで嬉しさを出す。動きの中身はデザインで決める (<a href="achievements.md">achievements.md</a>)</li>
+              <li>実績は、ユーモアのある名前と、淡々とした条件を出す。地域は都道府県の単位</li>
+              <li>取り消しは、トーストを出している間だけ出す。取り消すと実績の解除も消える</li>
+              <li>比べるはここでは聞かない。食べたあと、次に開いたときに聞く (F)</li>
             </ol>
           </div>
-          <div class="arrow"><span>残す</span><span class="line"></span></div>
+          <div class="arrow"><span>×</span><span class="line"></span></div>
           <div class="screen">
-            <p class="cap">もとの画面 (保存後)</p>
+            <p class="cap">もとの画面 (戻ったあと)</p>
             <div class="phone">
               <div class="top"><span class="logo">HINAMI</span><span class="hint">お知らせ　設定</span></div>
               <div class="cal-h"><strong>最近の記録</strong><span class="link">すべて</span></div>
               <div class="ml"><div class="ml-h"><span>11/26</span><span>麺屋 ひかり</span></div><div class="ml-th"><div class="ph"></div></div></div>
               <div class="ml"><div class="ml-h"><span>11/25</span><span>家</span></div><div class="ml-th"><div class="ph"></div></div></div>
               <div class="spacer"></div>
-              <div class="toast">
-                <span>残しました<br />麺屋 ひかり</span><span class="link">取り消す</span>
-                <div class="unlock">
-                  <span class="k">実績を解除</span><span>のれんをくぐる癖<br /><small>5 軒で食べた</small></span>
-                </div>
-              </div>
               <div class="fab-gap"></div>
               <div class="tabbar"><span class="on">ホーム</span><span>記録</span><span>実績</span><span>友だち</span></div>
               <span class="fab">＋</span>
             </div>
             <ol class="notes">
-              <li>記録を始めた画面に戻り、トーストで「残しました」を出す。記録はここで終わり</li>
-              <li>解除した実績と、はじめての種類は、同じトーストに出す。タップは増えない (<a href="achievements.md">achievements.md</a>)</li>
-              <li>いくつも出たときは、上限を決めず、1 つずつ 2 秒ほどで入れ替える (この例では、次に「ラーメン、お目見え」)。動きで解除の嬉しさを出す。動きの中身はデザインで決める</li>
-              <li>実績は、ユーモアのある名前と、淡々とした条件を出す (<a href="achievements.md">achievements.md</a> の「名前と条件の言葉」)。はじめての種類は実績にせず、行の頭を「実績」にして知らせる。地域は都道府県の単位にし、はじめての都道府県は実績の解除で返る</li>
-              <li>取り消しは、トーストを出している間だけ出す。取り消すと実績の解除も消える</li>
-              <li>比べるはここでは聞かない。食べたあと、次に開いたときに聞く (F)</li>
+              <li>× で、記録を始めた画面に戻る。最近の記録に、今の食事が増えている</li>
             </ol>
           </div>
         </div>
@@ -196,7 +197,7 @@
       <!-- Flow B -->
       <section>
         <h2>B. 場所を直す (ビルの中の店など)</h2>
-        <p class="desc">候補が複数あるときは店を決め打ちせず、地域名を出す。今選んでも、後でもよい。</p>
+        <p class="desc">撮って残したあと、トーストの「直す」から確認カードを開く。候補が複数あるときは店を決め打ちせず、地域名を出す。今選んでも、後でもよい。</p>
         <p class="scroll-hint">横にスクロールできます →</p>
         <div class="row">
           <div class="screen">
@@ -205,14 +206,15 @@
               <div class="top"><span class="x">×</span><span class="chip meal">新しい食事 ▾</span></div>
               <div class="ph" style="height: 168px"><span>写真</span><span class="retake">撮り直す</span></div>
               <div class="chips"><span class="chip">焼き鳥 ▾</span><span class="hint">AI が判定</span></div>
-              <div class="kv"><span class="k">場所</span><span class="chip ghost tap" data-tap="3">道玄坂 · 候補 3 件 ▾</span></div>
+              <div class="kv"><span class="k">場所</span><span class="chip ghost tap" data-tap="1">道玄坂 · 候補 3 件 ▾</span></div>
               <div class="memo">メモ (任意)</div>
               <div class="spacer"></div>
-              <span class="btn primary block">残す</span>
+              <span class="btn primary block">完了</span>
             </div>
             <ol class="notes">
               <li>店名の代わりに地域名と候補数を出す</li>
-              <li>選ばずに残しても記録は残る。店のランキングには、店が決まってから載る。マップには、地域のあたりに置く</li>
+              <li>選ばなくても、記録はもう残っている。ランキングには、店が決まってから載る (家の記録も載る)。マップには、地域のあたりに置く</li>
+              <li>完了で閉じる。確認カードで直したことは、その場で記録に入る</li>
             </ol>
           </div>
           <div class="arrow"><span>場所をタップ</span><span class="line"></span></div>
@@ -226,7 +228,7 @@
                 <div class="grab"></div>
                 <strong style="font-size: 12px">場所を選ぶ</strong>
                 <div class="search">店名で検索</div>
-                <div class="li tap ring" data-tap="4"><span>焼鳥 とり平</span><small>20 m · 焼鳥</small></div>
+                <div class="li tap ring" data-tap="2"><span>焼鳥 とり平</span><small>20 m · 焼鳥</small></div>
                 <div class="li"><span>鮨 はやし</span><small>25 m · 鮨 · 行った</small></div>
                 <div class="li"><span>バー 灯</span><small>30 m · バー</small></div>
                 <div class="li sep"><span>家</span><small></small></div>
@@ -250,7 +252,7 @@
               <div class="kv"><span class="k">場所</span><span class="chip">焼鳥 とり平 ▾</span></div>
               <div class="memo">メモ (任意)</div>
               <div class="spacer"></div>
-              <span class="btn primary block tap" data-tap="5">残す</span>
+              <span class="btn primary block tap" data-tap="3">完了</span>
             </div>
             <ol class="notes">
               <li>選んだ店は、同じ食事の次の品に引き継ぐ</li>
@@ -264,7 +266,7 @@
       <!-- Flow C -->
       <section>
         <h2>C. 同じ食事の 2 品目と、はしご</h2>
-        <p class="desc">同じ食事と判定されたら、前の品で選んだ店を最初から入れておく。店が変わったときだけ選び直す。</p>
+        <p class="desc">同じ食事と判定されたら、前の品で選んだ店が最初から入る。店が変わったとき (同じビルの別の店へのはしごなど) だけ、「直す」から選び直す。</p>
         <p class="scroll-hint">横にスクロールできます →</p>
         <div class="row">
           <div class="screen">
@@ -277,11 +279,12 @@
               <div class="memo">メモ (任意)</div>
               <div class="suggest"><span class="meta">候補</span><span class="chip">＋ サッポロラガー</span></div>
               <div class="spacer"></div>
-              <span class="btn primary block tap" data-tap="3">残す</span>
+              <span class="btn primary block tap" data-tap="1">完了</span>
             </div>
             <ol class="notes">
               <li>前の品で選んだ店が入っている。合っていれば触らない</li>
-              <li>AI がラベルの銘柄を読めたので、メモの候補に出す。タップで入る。読めなければ出さない</li>
+              <li>AI がラベルの名前を読めたので、メモの候補に出す。タップで入る。読めなければ出さない。どの種類の品でも同じ</li>
+              <li>名前を読む写真 (ラベル、札、包装) を、品の 2 枚目として足せる</li>
               <li>同じ食事: 直前の記録から数時間以内で、その食事の最初の記録から近い</li>
             </ol>
           </div>
@@ -292,10 +295,10 @@
               <div class="top"><span class="x">×</span><span class="chip meal">同じ食事 · 3 品目 ▾</span></div>
               <div class="ph" style="height: 168px"><span>写真</span><span class="retake">撮り直す</span></div>
               <div class="chips"><span class="chip">ウイスキー ▾</span><span class="hint">AI が判定</span></div>
-              <div class="kv"><span class="k">場所</span><span class="chip tap ring" data-tap="3">焼鳥 とり平 ▾</span></div>
+              <div class="kv"><span class="k">場所</span><span class="chip tap ring" data-tap="1">焼鳥 とり平 ▾</span></div>
               <div class="memo">メモ (任意)</div>
               <div class="spacer"></div>
-              <span class="btn primary block">残す</span>
+              <span class="btn primary block">完了</span>
             </div>
             <ol class="notes">
               <li>時間も場所も近いので同じ食事と判定され、前の店が入っている</li>
@@ -314,7 +317,7 @@
                 <strong style="font-size: 12px">場所を選ぶ</strong>
                 <div class="search">店名で検索</div>
                 <div class="li"><span>焼鳥 とり平</span><small>いまの店</small></div>
-                <div class="li tap ring" data-tap="4"><span>バー 灯</span><small>30 m · バー</small></div>
+                <div class="li tap ring" data-tap="2"><span>バー 灯</span><small>30 m · バー</small></div>
                 <div class="li"><span>鮨 はやし</span><small>25 m · 鮨</small></div>
                 <div class="li sep"><span>家</span><small></small></div>
                 <div class="li"><span>店ではない</span><small></small></div>
@@ -334,7 +337,7 @@
               <div class="kv"><span class="k">場所</span><span class="chip">バー 灯 ▾</span></div>
               <div class="memo">メモ (任意)</div>
               <div class="spacer"></div>
-              <span class="btn primary block tap" data-tap="5">残す</span>
+              <span class="btn primary block tap" data-tap="3">完了</span>
             </div>
             <ol class="notes">
               <li>別の店を選ぶと、この品から新しい食事に分かれる</li>
@@ -346,19 +349,19 @@
       <!-- Flow D -->
       <section>
         <h2>D. 自動のまとまりを直す</h2>
-        <p class="desc">場所で分けられないとき (家で朝と昼を食べた、など) は、食事の表示をタップして分ける。</p>
+        <p class="desc">場所で分けられないとき (家で朝と昼を食べた、など) は、「直す」から開いた確認カードで、食事の表示をタップして分ける。</p>
         <p class="scroll-hint">横にスクロールできます →</p>
         <div class="row">
           <div class="screen">
             <p class="cap">確認カード (家で昼)</p>
             <div class="phone">
-              <div class="top"><span class="x">×</span><span class="chip meal tap ring" data-tap="3">同じ食事 · 2 品目 ▾</span></div>
+              <div class="top"><span class="x">×</span><span class="chip meal tap ring" data-tap="1">同じ食事 · 2 品目 ▾</span></div>
               <div class="ph" style="height: 168px"><span>写真</span><span class="retake">撮り直す</span></div>
               <div class="chips"><span class="chip">パスタ ▾</span><span class="hint">AI が判定</span></div>
               <div class="kv"><span class="k">場所</span><span class="chip">家 ▾</span></div>
               <div class="memo">メモ (任意)</div>
               <div class="spacer"></div>
-              <span class="btn primary block">残す</span>
+              <span class="btn primary block">完了</span>
             </div>
             <ol class="notes">
               <li>朝食から数時間しか空いておらず、同じ食事と判定された</li>
@@ -376,7 +379,7 @@
                 <div class="grab"></div>
                 <strong style="font-size: 12px">どの食事に入れるか</strong>
                 <div class="li"><span>前の食事に入れる</span><small>家 · 08:10 から</small></div>
-                <div class="li tap ring" data-tap="4"><span>新しい食事にする</span><small></small></div>
+                <div class="li tap ring" data-tap="2"><span>新しい食事にする</span><small></small></div>
               </div>
             </div>
             <ol class="notes">
@@ -393,7 +396,7 @@
               <div class="kv"><span class="k">場所</span><span class="chip">家 ▾</span></div>
               <div class="memo">メモ (任意)</div>
               <div class="spacer"></div>
-              <span class="btn primary block tap" data-tap="5">残す</span>
+              <span class="btn primary block tap" data-tap="3">完了</span>
             </div>
           </div>
         </div>
@@ -534,8 +537,8 @@
               <div class="cmp">
                 <div class="cmp-h"><span>どちらが好き?</span><span class="meta">ラーメン</span></div>
                 <div class="cmp-row">
-                  <div class="ph tap" data-tap="1"><span>今回<br />麺屋 ひかり</span></div>
-                  <div class="ph"><span>前の<br />中華そば 青葉</span></div>
+                  <div class="ph tap" data-tap="1"><span>今回 · 特製醤油<br />麺屋 ひかり</span></div>
+                  <div class="ph"><span>前の · 11/12<br />中華そば 青葉</span></div>
                 </div>
               </div>
               <div class="cal-h"><strong>最近の記録</strong><span class="link">すべて</span></div>
@@ -549,6 +552,7 @@
             <ol class="notes">
               <li>開いたときに 1 問だけ。プッシュ通知は使わない</li>
               <li>聞くのは、順位の幅がいちばん広い品。同じ種類に相手がいる品だけ</li>
+              <li>品は写真と「名前 → 店 → 日付」の順で示す。名前がないときは店と日付</li>
               <li>「残しました」のトーストとは同時に出さない</li>
               <li>触らなければ流れる。「未回答 N 件」はためない</li>
             </ol>
@@ -685,7 +689,7 @@
               <tr>
                 <td>判定できない</td>
                 <td><span class="chip ghost">種類を選ぶ ▾</span></td>
-                <td>種類を付けずに出し、手で選ぶ。選ばなくても残せる</td>
+                <td>種類を付けずに残る。「直す」から手で選べる。選ばなくてもよい</td>
                 <td>決まり</td>
               </tr>
               <tr>
@@ -703,6 +707,8 @@
         <h2>この図で決めていないこと</h2>
         <ul class="open">
           <li>種類の一覧の中身 (<a href="kinds.md">kinds.md</a>)</li>
+          <li>撮ったあとカメラのままにするか (今は案)</li>
+          <li>確認カードを開かずに残した食事の、シェアの既定 (確かめるまで「自分だけ」にする案)</li>
         </ul>
       </section>
     </main>

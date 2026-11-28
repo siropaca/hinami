@@ -8,7 +8,7 @@ HINAMI (日次 / ひなみ) は、食と飲みの「覚えておきたい体験�
 - 構想段階を終え、リポジトリを整備した段階。アプリのコードはまだない
 - UX (画面に出す要素と流れ) は、ワイヤーフレームの画面遷移図で一通り決めた ([`docs/ux/`](docs/ux/recording.md))。見た目は、このあとのデザインのフェーズで決める ([`docs/design/direction.md`](docs/design/direction.md))
 - 6 つの視点のレビューを受け、作り手の判断を反映した ([`docs/reviews/2026-11-27-review.md`](docs/reviews/2026-11-27-review.md))
-- 今は、記録アプリの最先端の事例と手法を調べ、取り入れる施策を決めている。そのあと、PHASE 1 で作るものと測るものを決める
+- 最先端の事例と手法を調べ、3 つの施策 (撮ったら残る、どの品も名前まで残る、記録が好みを語る) を採った ([`docs/research/2026-11-28/README.md`](docs/research/2026-11-28/README.md))。次は、PHASE 1 で作るものと測るものを決める
 - 最初の関門 (PHASE 1): 作り手自身が 4 週間、覚えておきたい食をすべて記録できること。Expo のアプリを TestFlight で使う ([ADR-0002](docs/adr/0002-phase1-on-testflight.md))
 
 ## ドキュメントマップ
@@ -24,6 +24,7 @@ HINAMI (日次 / ひなみ) は、食と飲みの「覚えておきたい体験�
 | 画面の構成 (タブとホーム)                   | [`docs/ux/navigation.md`](docs/ux/navigation.md)       |
 | お知らせと設定                              | [`docs/ux/settings.md`](docs/ux/settings.md)           |
 | 記録のタブ (履歴と検索)                     | [`docs/ux/history.md`](docs/ux/history.md)             |
+| 記録が好みを語る (好みの分析と次に試すもの) | [`docs/ux/taste.md`](docs/ux/taste.md)                 |
 | つながる (SNS)                              | [`docs/ux/connect.md`](docs/ux/connect.md)             |
 | デザインの方向性                            | [`docs/design/direction.md`](docs/design/direction.md) |
 | 判断待ち・未確認のこと                      | [`docs/open-questions.md`](docs/open-questions.md)     |

@@ -106,7 +106,7 @@
       <!-- Flow B -->
       <section>
         <h2>B. はじめての記録</h2>
-        <p class="desc">カメラと位置情報は、はじめて ＋ を押したときに聞く。はじめての確認カードでだけ、ヒントを 1 つ出す。</p>
+        <p class="desc">カメラと位置情報は、はじめて ＋ を押したときに聞く。はじめて残したときのトーストでだけ、ヒントを 1 つ出す。</p>
         <p class="scroll-hint">横にスクロールできます →</p>
         <div class="row">
           <div class="screen">
@@ -146,22 +146,24 @@
           </div>
           <div class="arrow"><span>シャッター</span><span class="line"></span></div>
           <div class="screen">
-            <p class="cap">はじめての確認カード</p>
+            <p class="cap">はじめて残したとき</p>
             <div class="phone">
-              <div class="top"><span class="x">×</span><span class="chip meal">新しい食事 ▾</span></div>
-              <div class="ph" style="height: 150px"><span>写真</span></div>
-              <div class="chips">
-                <span class="chip">ラーメン ▾</span><span class="hint">AI が判定</span>
+              <div class="top"><span class="x">×</span><span></span></div>
+              <div class="ph viewfinder"><span>ファインダー</span></div>
+              <div class="toast">
+                <span>残しました<br />ラーメン<br />麺屋 ひかり</span><span class="link">直す</span><span class="link">取り消す</span>
+                <div class="unlock"><span class="k">ヒント</span><span>種類と場所は自動で入ります。<br />違うときだけ「直す」から</span></div>
               </div>
-              <div class="kv"><span class="k">場所</span><span class="chip">麺屋 ひかり ▾</span></div>
-              <div class="hintbox">種類と場所は自動で入ります。<br />違うときだけ直してください <span class="link">OK</span></div>
-              <div class="memo">メモ (任意)</div>
-              <div class="spacer"></div>
-              <span class="btn primary block tap" data-tap="3">残す</span>
+              <div class="actions">
+                <span class="btn side">写真から<br />選ぶ</span>
+                <div class="shutter"></div>
+                <span></span>
+              </div>
             </div>
             <ol class="notes">
-              <li>はじめての確認カードで 1 回だけヒントを出す。2 回目からは出さない</li>
-              <li>はじめて「残す」を押したときに、撮った写真を端末に残すための許可を聞く</li>
+              <li>シャッターを押した時点で記録になる (撮ったら残る。<a href="recording.md">recording.md</a>)</li>
+              <li>はじめて残したときのトーストで、1 回だけヒントを出す。2 回目からは出さない</li>
+              <li>はじめてシャッターを押したときに、撮った写真を端末に残すための許可を聞く</li>
               <li>「写真から選ぶ」の許可は、はじめてそれを押したときに聞く</li>
             </ol>
           </div>
