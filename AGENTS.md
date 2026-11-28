@@ -7,7 +7,7 @@ HINAMI (日次 / ひなみ) は、口にする食と飲みを 1 品ずつ記録�
 
 - 構想段階を終え、リポジトリを整備した段階。アプリのコードはまだない
 - UX (画面に出す要素と流れ) は、ワイヤーフレームの画面遷移図で一通り決めた ([`docs/ux/`](docs/ux/recording.md))。見た目は、このあとのデザインのフェーズで決める ([`docs/design/direction.md`](docs/design/direction.md))
-- デザインの方向性は、世界観「日々の帳面」に決めた。明暗 2 つの紙面、墨・生成り・金・朱の 4 色、OS のヒラギノ ([`docs/design/direction.md`](docs/design/direction.md)、スライドは [`docs/design/deck/`](docs/design/deck/README.md))
+- デザインは、方向性 (世界観「日々の帳面」。明暗 2 つの紙面、墨・生成り・金・朱の 4 色、OS のヒラギノ)、ロゴ「皿と箸」、デザイントークン、ブランドの金を決めた ([`docs/design/`](docs/design/README.md))
 - 6 つの視点のレビューを受け、作り手の判断を反映した ([`docs/reviews/2026-11-27-review.md`](docs/reviews/2026-11-27-review.md))
 - 最先端の事例と手法を調べ、3 つの施策 (撮ったら残る、どの品も名前まで残る、記録が好みを語る) を採った ([`docs/research/2026-11-28/README.md`](docs/research/2026-11-28/README.md))。次は、PHASE 1 で作るものと測るものを決める
 - 最初の関門 (PHASE 1): 作り手自身が 4 週間使い、このまま使い続けたいと思えること。数えずに、作り手の手応えで決める。友だちの機能まで入れ、家族とも使う。Expo のアプリを TestFlight で使う ([ADR-0002](docs/adr/0002-phase1-on-testflight.md))
@@ -29,10 +29,10 @@ HINAMI (日次 / ひなみ) は、口にする食と飲みを 1 品ずつ記録�
 | 記録が好みを語る (好みの分析と次に試すもの) | [`docs/ux/taste.md`](docs/ux/taste.md)                 |
 | 記録にためるもの (データの原則と同意)       | [`docs/data.md`](docs/data.md)                         |
 | つながる (SNS)                              | [`docs/ux/connect.md`](docs/ux/connect.md)             |
-| デザインの方向性                            | [`docs/design/direction.md`](docs/design/direction.md) |
-| デザインコンセプト (スライドと画面イメージ) | [`docs/design/deck/`](docs/design/deck/README.md)      |
+| デザインの入口 (決めたこと、資料の地図)     | [`docs/design/README.md`](docs/design/README.md)       |
+| デザインの方向性 (考え方と理由)             | [`docs/design/direction.md`](docs/design/direction.md) |
+| デザイントークン (色、文字、余白などの値)   | [`docs/design/tokens.md`](docs/design/tokens.md)       |
 | ロゴ (シンボル、セット、アイコン)           | [`docs/design/logo/`](docs/design/logo/README.md)      |
-| デザイントークン (色、文字、余白など)       | [`docs/design/tokens.md`](docs/design/tokens.md)       |
 | 判断待ち・未確認のこと                      | [`docs/open-questions.md`](docs/open-questions.md)     |
 | 外部の目でのレビューの記録                  | [`docs/reviews/`](docs/reviews/2026-11-27-review.md)   |
 | 最先端の事例と手法の調査                    | [`docs/research/`](docs/research/2026-11-28/README.md) |
