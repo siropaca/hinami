@@ -40,8 +40,6 @@
                 <g stroke="#444" stroke-width="1.8" fill="none" marker-end="url(#ah)">
                   <path d="M130 172 H145 V62 H226" />
                   <path d="M290 84 V216" />
-                  <path d="M350 56 H406" />
-                  <path d="M410 72 H354" />
                   <path d="M330 40 V22 H830 V36" />
                   <path d="M455 84 V126" />
                   <path d="M485 126 V88" />
@@ -49,7 +47,8 @@
                   <path d="M530 248 H766" />
                   <path d="M455 220 V178" />
                   <path d="M485 178 V216" />
-                  <path d="M530 62 H766" />
+                  <path d="M530 56 H766" />
+                  <path d="M766 74 H534" />
                   <path d="M830 84 V126" />
                   <path d="M530 230 H556 V78 H534" marker-start="url(#ah)" />
                 </g>
@@ -57,11 +56,9 @@
                 <g font-size="11" fill="#555">
                   <text x="152" y="54">＋</text>
                   <text x="298" y="154">写真から選ぶ</text>
-                  <text x="362" y="50">直す</text>
-                  <text x="358" y="88">閉じる</text>
-                  <text x="560" y="16">×</text>
-                  <text x="232" y="34">シャッターで残る</text>
-                  <text x="560" y="54">残す (写真から 1 枚)</text>
+                  <text x="470" y="16">シャッター (その場で残る)</text>
+                  <text x="640" y="88">直す</text>
+                  <text x="560" y="50">残す (写真から 1 枚)</text>
                   <text x="820" y="104" text-anchor="end">食べたあと、</text>
                   <text x="820" y="118" text-anchor="end">次に開いたとき</text>
                   <text x="449" y="110" text-anchor="end">場所をタップ</text>
@@ -147,48 +144,32 @@
           </div>
           <div class="arrow"><span>シャッター</span><span class="line"></span></div>
           <div class="screen">
-            <p class="cap">カメラ (残した直後)</p>
-            <div class="phone">
-              <div class="top"><span class="x">×</span><span></span></div>
-              <div class="ph viewfinder"><span>ファインダー</span></div>
-              <div class="toast">
-                <span>残しました<br />ラーメン<br />麺屋 ひかり</span><span class="link">直す</span><span class="link">取り消す</span>
-                <div class="unlock">
-                  <span class="k">実績を解除</span><span>のれんをくぐる癖<br /><small>5 軒で食べた</small></span>
-                </div>
-              </div>
-              <div class="actions">
-                <span class="btn side">写真から<br />選ぶ</span>
-                <div class="shutter"></div>
-                <span></span>
-              </div>
-            </div>
-            <ol class="notes">
-              <li>シャッターを押した時点で記録になる (撮ったら残る)。記録はここで終わり</li>
-              <li>カメラは開いたままで、続けて撮れる (標準のカメラと同じ。案)</li>
-              <li>トーストに「残しました」と、付いた種類と場所を出す。種類と場所は保存のあとに付く</li>
-              <li>違うときだけ「直す」で確認カードを開く (B〜D)。品には、名前を読む写真 (ラベル、札、包装) を足せる</li>
-              <li>解除した実績と、はじめての種類も同じトーストに出す。いくつも出たら 2 秒ほどで入れ替える (この例では、次に「ラーメン、お目見え」)。動きで嬉しさを出す。動きの中身はデザインで決める (<a href="achievements.md">achievements.md</a>)</li>
-              <li>実績は、ユーモアのある名前と、淡々とした条件を出す。地域は都道府県の単位</li>
-              <li>取り消しは、トーストを出している間だけ出す。取り消すと実績の解除も消える</li>
-              <li>比べるはここでは聞かない。食べたあと、次に開いたときに聞く (F)</li>
-            </ol>
-          </div>
-          <div class="arrow"><span>×</span><span class="line"></span></div>
-          <div class="screen">
-            <p class="cap">もとの画面 (戻ったあと)</p>
+            <p class="cap">もとの画面 (保存後)</p>
             <div class="phone">
               <div class="top"><span class="logo">HINAMI</span><span class="hint">お知らせ　設定</span></div>
               <div class="cal-h"><strong>最近の記録</strong><span class="link">すべて</span></div>
               <div class="ml"><div class="ml-h"><span>11/26</span><span>麺屋 ひかり</span></div><div class="ml-th"><div class="ph"></div></div></div>
               <div class="ml"><div class="ml-h"><span>11/25</span><span>家</span></div><div class="ml-th"><div class="ph"></div></div></div>
               <div class="spacer"></div>
+              <div class="toast">
+                <span>残しました<br />ラーメン<br />麺屋 ひかり</span><span class="link">直す</span><span class="link">取り消す</span>
+                <div class="unlock">
+                  <span class="k">実績を解除</span><span>のれんをくぐる癖<br /><small>5 軒で食べた</small></span>
+                </div>
+              </div>
               <div class="fab-gap"></div>
               <div class="tabbar"><span class="on">ホーム</span><span>記録</span><span>実績</span><span>友だち</span></div>
               <span class="fab">＋</span>
             </div>
             <ol class="notes">
-              <li>× で、記録を始めた画面に戻る。最近の記録に、今の食事が増えている</li>
+              <li>シャッターを押した時点で記録になり、記録を始めた画面に戻る (撮ったら残る)。記録はここで終わり</li>
+              <li>ロック画面などから開いたときは、ホームに戻る</li>
+              <li>トーストに「残しました」と、付いた種類と場所を出す。種類と場所は保存のあとに付く</li>
+              <li>違うときだけ「直す」で確認カードを開く (B〜D)。品には、名前を読む写真 (ラベル、札、包装) を足せる</li>
+              <li>解除した実績と、はじめての種類も同じトーストに出す。いくつも出たら 2 秒ほどで入れ替える (この例では、次に「ラーメン、お目見え」)。動きで嬉しさを出す。動きの中身はデザインで決める (<a href="achievements.md">achievements.md</a>)</li>
+              <li>実績は、ユーモアのある名前と、淡々とした条件を出す。地域は都道府県の単位</li>
+              <li>取り消しは、トーストを出している間だけ出す。取り消すと実績の解除も消える</li>
+              <li>比べるはここでは聞かない。食べたあと、次に開いたときに聞く (F)</li>
             </ol>
           </div>
         </div>
@@ -707,7 +688,6 @@
         <h2>この図で決めていないこと</h2>
         <ul class="open">
           <li>種類の一覧の中身 (<a href="kinds.md">kinds.md</a>)</li>
-          <li>撮ったあとカメラのままにするか (今は案)</li>
           <li>確認カードを開かずに残した食事の、シェアの既定 (確かめるまで「自分だけ」にする案)</li>
         </ul>
       </section>
