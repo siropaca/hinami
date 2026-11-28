@@ -14,32 +14,32 @@ HINAMI (日次 / ひなみ) は、口にする食と飲みを 1 品ずつ記録�
 
 ## ドキュメントマップ
 
-| 知りたいこと                                | 場所                                                   |
-| ------------------------------------------- | ------------------------------------------------------ |
-| 何を作るか (コンセプト・前提・収益・進め方) | [`docs/concept.md`](docs/concept.md)                   |
-| 事業コンセプト提案書 (スライド)             | [`docs/concept-deck/`](docs/concept-deck/README.md)    |
-| 画面の流れ (UX)。入口は「記録の流れ」       | [`docs/ux/recording.md`](docs/ux/recording.md)         |
-| 続けたくなる仕組み (実績)                   | [`docs/ux/achievements.md`](docs/ux/achievements.md)   |
-| 気持ちと比べる (ランキング)                 | [`docs/ux/compare.md`](docs/ux/compare.md)             |
-| 種類の一覧                                  | [`docs/ux/kinds.md`](docs/ux/kinds.md)                 |
-| 最初のチュートリアルとアカウント            | [`docs/ux/onboarding.md`](docs/ux/onboarding.md)       |
-| 画面の構成 (タブとホーム)                   | [`docs/ux/navigation.md`](docs/ux/navigation.md)       |
-| お知らせと設定                              | [`docs/ux/settings.md`](docs/ux/settings.md)           |
-| 記録のタブ (履歴と検索)                     | [`docs/ux/history.md`](docs/ux/history.md)             |
-| 記録が好みを語る (好みの分析と次に試すもの) | [`docs/ux/taste.md`](docs/ux/taste.md)                 |
-| 長く使うほど返るもの (前にも、帳面、歳時記) | [`docs/ux/memory.md`](docs/ux/memory.md)               |
-| 記録にためるもの (データの原則と同意)       | [`docs/data.md`](docs/data.md)                         |
-| つながる (SNS)                              | [`docs/ux/connect.md`](docs/ux/connect.md)             |
-| デザインの入口 (決めたこと、資料の地図)     | [`docs/design/README.md`](docs/design/README.md)       |
-| デザインの方向性 (考え方と理由)             | [`docs/design/direction.md`](docs/design/direction.md) |
-| デザイントークン (色、文字、余白などの値)   | [`docs/design/tokens.md`](docs/design/tokens.md)       |
-| ロゴ (シンボル、セット、アイコン)           | [`docs/design/logo/`](docs/design/logo/README.md)      |
-| 判断待ち・未確認のこと                      | [`docs/open-questions.md`](docs/open-questions.md)     |
-| 外部の目でのレビューの記録                  | [`docs/reviews/`](docs/reviews/2026-11-27-review.md)   |
-| 最先端の事例と手法の調査                    | [`docs/research/`](docs/research/2026-11-28/README.md) |
-| 意思決定の理由 (ADR)                        | [`docs/adr/index.md`](docs/adr/index.md)               |
-| 構想段階の経緯                              | [`docs/concept-history.md`](docs/concept-history.md)   |
-| 構想段階のスライド (参照専用)               | [`docs/references/`](docs/references/README.md)        |
+| 知りたいこと                                          | 場所                                                   |
+| ----------------------------------------------------- | ------------------------------------------------------ |
+| 何を作るか (コンセプト・前提・収益・進め方)           | [`docs/concept.md`](docs/concept.md)                   |
+| 事業コンセプト提案書 (スライド)                       | [`docs/concept-deck/`](docs/concept-deck/README.md)    |
+| 画面の流れ (UX)。入口は「記録の流れ」                 | [`docs/ux/recording.md`](docs/ux/recording.md)         |
+| 続けたくなる仕組み (実績)                             | [`docs/ux/achievements.md`](docs/ux/achievements.md)   |
+| 気持ちと比べる (ランキング)                           | [`docs/ux/compare.md`](docs/ux/compare.md)             |
+| 種類の一覧                                            | [`docs/ux/kinds.md`](docs/ux/kinds.md)                 |
+| 最初のチュートリアルとアカウント                      | [`docs/ux/onboarding.md`](docs/ux/onboarding.md)       |
+| 画面の構成 (タブとホーム)                             | [`docs/ux/navigation.md`](docs/ux/navigation.md)       |
+| お知らせと設定                                        | [`docs/ux/settings.md`](docs/ux/settings.md)           |
+| 記録のタブ (履歴と検索)                               | [`docs/ux/history.md`](docs/ux/history.md)             |
+| 記録が好みを語る (好みの分析と次に試すもの)           | [`docs/ux/taste.md`](docs/ux/taste.md)                 |
+| 長く使うほど返るもの (前にも、アルバム、毎年の楽しみ) | [`docs/ux/memory.md`](docs/ux/memory.md)               |
+| 記録にためるもの (データの原則と同意)                 | [`docs/data.md`](docs/data.md)                         |
+| つながる (SNS)                                        | [`docs/ux/connect.md`](docs/ux/connect.md)             |
+| デザインの入口 (決めたこと、資料の地図)               | [`docs/design/README.md`](docs/design/README.md)       |
+| デザインの方向性 (考え方と理由)                       | [`docs/design/direction.md`](docs/design/direction.md) |
+| デザイントークン (色、文字、余白などの値)             | [`docs/design/tokens.md`](docs/design/tokens.md)       |
+| ロゴ (シンボル、セット、アイコン)                     | [`docs/design/logo/`](docs/design/logo/README.md)      |
+| 判断待ち・未確認のこと                                | [`docs/open-questions.md`](docs/open-questions.md)     |
+| 外部の目でのレビューの記録                            | [`docs/reviews/`](docs/reviews/2026-11-27-review.md)   |
+| 最先端の事例と手法の調査                              | [`docs/research/`](docs/research/2026-11-28/README.md) |
+| 意思決定の理由 (ADR)                                  | [`docs/adr/index.md`](docs/adr/index.md)               |
+| 構想段階の経緯                                        | [`docs/concept-history.md`](docs/concept-history.md)   |
+| 構想段階のスライド (参照専用)                         | [`docs/references/`](docs/references/README.md)        |
 
 ## ディレクトリ構成 (pnpm workspace)
 
