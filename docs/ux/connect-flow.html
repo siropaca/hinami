@@ -152,7 +152,7 @@
       <!-- Flow B -->
       <section>
         <h2>B. 食事をシェアする</h2>
-        <p class="desc">友だちがいると、確認カード (トーストの「直す」から開く) と食事の詳細に「シェア」の欄が出る。撮ったら残る形なので、確認カードを開かずに残した食事のシェアの既定は未決 (確かめるまで「自分だけ」にする案。<a href="recording.md">recording.md</a>)。</p>
+        <p class="desc">友だちがいると、確認カード (トーストの「直す」から開く) と食事の詳細に「シェア」の欄が出る。既定は設定で選べ、最初は「自分だけ」(<a href="settings-flow.html">settings-flow.html</a>)。</p>
         <p class="scroll-hint">横にスクロールできます →</p>
         <div class="row">
           <div class="screen">
@@ -164,14 +164,14 @@
                 <span class="chip">日本酒 ▾</span><span class="hint">AI が判定</span>
               </div>
               <div class="kv"><span class="k">場所</span><span class="chip">鮨 はやし ▾</span></div>
-              <div class="kv"><span class="k">シェア</span><span class="chip tap" data-tap="1">友だち ▾</span></div>
+              <div class="kv"><span class="k">シェア</span><span class="chip tap" data-tap="1">自分だけ ▾</span></div>
               <div class="memo">獺祭 純米大吟醸 45</div>
               <div class="spacer"></div>
               <span class="btn primary block">完了</span>
             </div>
             <ol class="notes">
               <li>「シェア」は、友だちが 1 人もいないあいだは出さない。一人で使うときの画面は変わらない</li>
-              <li>既定は「友だち」。シェアしたくない食事だけ切り替える</li>
+              <li>既定は設定で選べ、最初は「自分だけ」。見せたい食事だけ「友だち」に切り替える</li>
             </ol>
           </div>
           <div class="arrow"><span>シェア</span><span class="line"></span></div>
@@ -184,8 +184,8 @@
               <div class="sheet short">
                 <div class="grab"></div>
                 <strong>この食事をシェアする相手</strong>
-                <div class="li"><span>友だち</span><span>✓</span></div>
-                <div class="li"><span>自分だけ</span><span></span></div>
+                <div class="li tap" data-tap="2"><span>友だち</span><span></span></div>
+                <div class="li"><span>自分だけ</span><span>✓</span></div>
                 <p class="hint">この食事の品すべてに効きます</p>
               </div>
             </div>
