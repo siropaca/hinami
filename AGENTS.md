@@ -9,7 +9,8 @@ HINAMI (日次 / ひなみ) は、口にする食と飲みを 1 品ずつ記録�
 - UX (画面に出す要素と流れ) は、ワイヤーフレームの画面遷移図で一通り決めた ([`docs/ux/`](docs/ux/recording.md))。見た目は、このあとのデザインのフェーズで決める ([`docs/design/direction.md`](docs/design/direction.md))
 - デザインは、方向性 (世界観「日々の帳面」。明暗 2 つの紙面、墨・生成り・金・朱の 4 色、OS のヒラギノ)、ロゴ「皿と箸」、デザイントークン、ブランドの金を決めた ([`docs/design/`](docs/design/README.md))
 - 6 つの視点のレビューを受け、作り手の判断を反映した ([`docs/reviews/2026-11-27-review.md`](docs/reviews/2026-11-27-review.md))
-- 最先端の事例と手法を調べ、3 つの施策 (撮ったら残る、どの品も名前まで残る、記録が好みを語る) を採った ([`docs/research/2026-11-28/README.md`](docs/research/2026-11-28/README.md))。次は、PHASE 1 で作るものと測るものを決める
+- 最先端の事例と手法を調べ、3 つの施策 (撮ったら残る、どの品も名前まで残る、記録が好みを語る) を採った ([`docs/research/2026-11-28/README.md`](docs/research/2026-11-28/README.md))
+- サービスの本質の論点を詰めた: 記録の単位 (品と写真、写真なし。[`docs/ux/recording.md`](docs/ux/recording.md))、そのときの気持ちと比べる ([`docs/ux/compare.md`](docs/ux/compare.md))、長く使うほど返るもの ([`docs/ux/memory.md`](docs/ux/memory.md))、記録にためるもの ([`docs/data.md`](docs/data.md))。次は、技術の確認に進む ([`docs/open-questions.md`](docs/open-questions.md) の「技術」)
 - 最初の関門 (PHASE 1): 作り手自身が 4 週間使い、このまま使い続けたいと思えること。数えずに、作り手の手応えで決める。友だちの機能まで入れ、家族とも使う。Expo のアプリを TestFlight で使う ([ADR-0002](docs/adr/0002-phase1-on-testflight.md))
 
 ## ドキュメントマップ

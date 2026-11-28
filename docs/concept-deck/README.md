@@ -1,6 +1,6 @@
 # 事業コンセプト提案書 (改訂版)
 
-HINAMI の事業コンセプトを、スライド 20 枚 (付録 1 枚を含む) にまとめたもの。2026-11-28 に、UX の決定、6 つの視点のレビュー、最先端の事例と手法の調査から採った 3 つの施策を反映して書き直した。構想段階の版は [`../references/slides/concept-deck/`](../references/slides/concept-deck/) に残している。
+HINAMI の事業コンセプトを、スライド 21 枚 (付録 1 枚を含む) にまとめたもの。2026-11-28 に、UX の決定、6 つの視点のレビュー、最先端の事例と手法の調査から採った 3 つの施策を反映して書き直した。同じ日のうちに、PHASE 1 の関門と範囲、そのときの気持ち、記録の単位 (写真なし)、長く使うほど返るものも反映した。構想段階の版は [`../references/slides/concept-deck/`](../references/slides/concept-deck/) に残している。
 
 - オンライン版 (claude.ai のアーティファクト。所有者のみ閲覧可): https://claude.ai/artifact/FevqCwUA1VGmWV7FGanJuT
 - 構想段階の版のアーティファクトは、別のもの (https://claude.ai/artifact/JRg5GNcNXj2hpbVMBpKpKt) としてそのまま残している

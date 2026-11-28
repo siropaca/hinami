@@ -9,7 +9,7 @@
   <body>
     <main>
       <h1>記録のタブ (履歴と検索) — ワイヤーフレーム</h1>
-      <p class="status">状態: 合意 (2026-11-26)。2026-11-27 に、マップをこのタブに移した。決まりの本文は <a href="history.md">history.md</a></p>
+      <p class="status">状態: 合意 (2026-11-26)。2026-11-27 に、マップをこのタブに移した。2026-11-28 に、食事の詳細に食事の気持ち・食事の写真・品を足す・思い出に出さないを足し、品の画面を描いた。決まりの本文は <a href="history.md">history.md</a></p>
 
       <p class="lead">
         記録のタブ 1 つで、カレンダーと検索とマップを兼ねる (タブの名前ははじめ「履歴」だった)。絞っていないときはカレンダー、種類か言葉で絞ったら食事単位の一覧に切り替える。カレンダー・一覧とマップは、上の切り替えで行き来する。
@@ -71,7 +71,7 @@
                   <text x="360" y="130">その日の食事</text>
                   <text x="360" y="218">一覧 (食事単位)</text>
                   <text x="610" y="130">食事の詳細</text>
-                  <text x="830" y="130">確認カードで直す</text>
+                  <text x="830" y="130">品の画面で直す</text>
                   <text x="360" y="306">マップ</text>
                   <text x="610" y="306">場所の一覧 (シート)</text>
                 </g>
@@ -142,7 +142,7 @@
             <ol class="notes">
               <li>絞っていないときの最初の画面。日付ごとに、その日最後の食事の 1 枚目と件数を出す</li>
               <li>日付をタップすると、その日の記録が食事ごとに出る</li>
-              <li>月のまとめ: 外食は食事単位で数え、家は数えない。店が決まっていない食事は回数に入れ、軒数には入れない</li>
+              <li>月のまとめ: 外食は食事単位で数え、家と品のない食事は数えない。店が決まっていない食事は回数に入れ、軒数には入れない。買ってきた品の買った店は軒数に入れる</li>
               <li>種類はよく記録する順に並べる。▾ で階層つきの一覧から選べる</li>
               <li>上の切り替えで、同じ記録をマップで見られる (下の D)</li>
             </ol>
@@ -182,14 +182,15 @@
             <p class="cap">食事の詳細</p>
             <div class="phone">
               <div class="top"><span class="x">‹</span><span class="meta">11/21 土 · 19:10</span><span>…</span></div>
+              <div class="sh" style="margin-top: 0">この食事</div>
               <div class="kv"><span class="k">場所</span><span class="chip">鮨 はやし ▾</span></div>
               <div class="kv"><span class="k">シェア</span><span class="chip">友だち ▾</span></div>
               <div class="kv"><span class="k">メモ</span><span class="hl">父の誕生日。4 人で</span></div>
               <div class="kv"><span class="k">気持ち</span><span class="chip">大好き ▾</span></div>
-              <div class="it"><div class="ph"></div><div class="body"><span class="chip">日本酒 ▾</span><span class="hl">獺祭 純米大吟醸 45</span></div></div>
-              <div class="it"><div class="ph"></div><div class="body"><span class="chip">鮨 ▾</span><span class="hl">中トロ</span></div></div>
-              <div class="ml-month">反応</div>
-              <div class="li"><span class="who"><span class="av"></span>まい</span><span>◯</span></div>
+              <div class="kv"><span class="k">写真</span><span class="hl">のれん 1 枚 ›</span></div>
+              <div class="sh">品</div>
+              <div class="it tap" data-tap="2"><div class="ph"></div><div class="body"><span class="chip">日本酒 ▾</span><span class="hl">獺祭 純米大吟醸 45</span></div></div>
+              <span class="link" style="align-self: flex-start; padding: 2px 0">＋ 品を足す</span>
               <div class="spacer"></div>
               <div class="fab-gap"></div>
               <div class="tabbar"><span>ホーム</span><span class="on">記録</span><span>実績</span><span>友だち</span></div>
@@ -198,10 +199,37 @@
             <ol class="notes">
               <li>出す要素だけを決めた。写真の大きさや並べ方は、デザインのフェーズで決める (<a href="history.md">history.md</a>)</li>
               <li>品は撮った順に並ぶ。品をタップすると、確認カードと同じ形で直せる。品を消すのもそこから</li>
-              <li>右上の … から食事を消す。シェアは友だちがいるときだけ、反応は届いたときだけ出す</li>
+              <li>「この食事」は食事全体のもの。気持ちは食事全体の気持ち (コースやおまかせなど)、写真は品にしていない食事の写真 (のれん、メニューなど)</li>
+              <li>「品を足す」で、写真なしでも、写真から選んでも、この食事に品を足せる</li>
+              <li>右上の … から、思い出に出さない・食事を消す (<a href="memory-flow.html">memory-flow.html</a> の D)。シェアは友だちがいるときだけ、反応は届いたときだけ出す (<a href="connect-flow.html">connect-flow.html</a>)</li>
               <li>場所は食事ごとにまとめて直す。選んだ場所は、同じ食事の品すべてに入る</li>
               <li>食事全体の気持ち (大好き / 好き / ふつう / 合わなかった) も付けられる。コースやおまかせなど、食事全体で覚えておきたいとき。付けなくてよい</li>
               <li>店が決まっていない食事は、場所に「道玄坂 · 候補 3 件」と出し、タップで確認カードと同じ候補から選ぶ</li>
+            </ol>
+          </div>
+          <div class="arrow"><span>品をタップ</span><span class="line"></span></div>
+          <div class="screen">
+            <p class="cap">品の画面</p>
+            <div class="phone">
+              <div class="top"><span class="x">‹</span><span class="meta">11/21 · 鮨 はやし</span><span>…</span></div>
+              <div class="ph" style="height: 130px"><span>写真</span></div>
+              <span class="link" style="align-self: flex-start; padding: 2px 0">＋ 名前を読む写真を足す</span>
+              <div class="chips"><span class="chip">日本酒 ▾</span><span class="hint">AI が判定</span></div>
+              <div class="kv"><span class="k">気持ち</span><span class="chip">大好き ▾</span></div>
+              <div class="memo">獺祭 純米大吟醸 45</div>
+              <div class="hint">前にも · 2025/3 · 大好き (3 度目) ›</div>
+              <div class="hint">一緒に写っているもの</div>
+              <div class="chips"><span class="chip ghost">ぐい呑み ＋</span></div>
+              <div class="chip meal" style="align-self: flex-start">同じ食事 · 1 品目 ▾</div>
+              <div class="spacer"></div>
+            </div>
+            <ol class="notes">
+              <li>確認カードと同じ形。保存したあとに直すのはここから</li>
+              <li>気持ちは、ホームで聞かれなかった品にも、ここで付けられる (<a href="compare.md">compare.md</a>)</li>
+              <li>前にも記録した品なら「前にも」を出す (<a href="memory-flow.html">memory-flow.html</a>)。一緒に写っているものは、タップで品になる</li>
+              <li>買ってきた品なら、場所の欄で買った店を選べる (<a href="recording-flow.html">recording-flow.html</a> の G)</li>
+              <li>右上の … から、まとめる (前の品に、1 品に)、品にしない (食事の写真に戻す)、品を消す</li>
+              <li>食事の表示で、新しい食事にする / 前の食事に入れる、を選べる</li>
             </ol>
           </div>
         </div>
@@ -310,7 +338,7 @@
               <span class="fab">＋</span>
             </div>
             <ol class="notes">
-              <li>食べた場所にピンを立てる。数字はその場所の回数。近いピンは、縮めるとまとまる</li>
+              <li>食べた場所にピンを立てる。買ってきた品は、買った店にも立てる。数字はその場所の回数。近いピンは、縮めるとまとまる</li>
               <li>店が決まっていない食事は、地域のあたりに置く。家も自分のマップには出す (自分にしか見えない)</li>
               <li>毎回、現在地 (白い小さな点) を中心に、近くのピンが見える広さで開く。位置情報が使えないときは、すべてのピンが入る範囲で開く</li>
               <li>期間では区切らない。カレンダーの月とは連動しない</li>

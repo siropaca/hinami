@@ -9,7 +9,7 @@
   <body>
     <main>
       <h1>記録の流れ — ワイヤーフレーム</h1>
-      <p class="status">状態: 合意 (2026-11-26)。2026-11-27 に、記録の入り口を右下の ＋ に移し、保存したあとはトーストで知らせる形に直した。買ったもの (まだ口にしていないもの) は記録しないことにした。2026-11-28 に、シャッターだけで記録になる形 (撮ったら残る) にした。決まりの本文は <a href="recording.md">recording.md</a></p>
+      <p class="status">状態: 合意 (2026-11-26)。2026-11-27 に、記録の入り口を右下の ＋ に移し、保存したあとはトーストで知らせる形に直した。買ったもの (まだ口にしていないもの) は記録しないことにした。2026-11-28 に、シャッターだけで記録になる形 (撮ったら残る) にした。同じ日に、食べたあとに聞くのを気持ちにし (F)、買ってきたもの (G)、写真なしで残す (H)、1 枚に写っているもの (I) を足した。決まりの本文は <a href="recording.md">recording.md</a></p>
 
       <p class="lead">
         その場で撮るなら最短 2 タップ (＋ → シャッター)。シャッターを押した時点で記録になり、AI の判定と場所の推定が違うときだけ、「直す」から確認カードを開く。記録は右下の ＋ から、どの画面でも始められる。必須の入力はない。
@@ -29,7 +29,7 @@
         <p class="scroll-hint">横にスクロールできます →</p>
         <div class="scroll">
           <div class="overview">
-            <svg viewBox="0 0 900 280" role="img" aria-label="記録に関わる画面の遷移図">
+            <svg viewBox="0 0 900 370" role="img" aria-label="記録に関わる画面の遷移図">
               <defs>
                 <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
                   <path d="M0 0 L10 5 L0 10 z" fill="#444" />
@@ -51,6 +51,10 @@
                   <path d="M766 74 H534" />
                   <path d="M830 84 V126" />
                   <path d="M530 230 H556 V78 H534" marker-start="url(#ah)" />
+                  <path d="M70 194 V332 H226" />
+                  <path d="M250 84 V310" />
+                  <path d="M350 332 H830 V274" />
+                  <path d="M350 226 H380 V72 H406" />
                 </g>
                 <!-- edge labels -->
                 <g font-size="11" fill="#555">
@@ -69,6 +73,10 @@
                   <text x="492" y="204">選ぶ</text>
                   <text x="562" y="150">品をタップ</text>
                   <text x="562" y="164">/ 戻る</text>
+                  <text x="78" y="324">長押し</text>
+                  <text x="244" y="300" text-anchor="end">写真なし</text>
+                  <text x="600" y="324">残す</text>
+                  <text x="386" y="196">1 枚</text>
                 </g>
                 <!-- nodes -->
                 <g stroke="#444" stroke-width="2" fill="#fff">
@@ -77,6 +85,7 @@
                   <rect x="410" y="40" width="120" height="44" rx="8" />
                   <rect x="770" y="40" width="120" height="44" rx="8" />
                   <rect x="410" y="130" width="120" height="44" rx="8" />
+                  <rect x="230" y="310" width="120" height="44" rx="8" />
                   <rect x="230" y="220" width="120" height="44" rx="8" />
                   <rect x="770" y="226" width="120" height="44" rx="8" />
                   <rect x="410" y="220" width="120" height="44" rx="8" />
@@ -86,12 +95,13 @@
                   <text x="70" y="172" font-weight="700">＋ (右下)</text>
                   <text x="290" y="62" font-weight="700">カメラ</text>
                   <text x="470" y="62">確認カード</text>
-                  <text x="830" y="152">比べる (ホーム)</text>
+                  <text x="830" y="152">気持ち (ホーム)</text>
                   <text x="830" y="62">もとの画面</text>
                   <text x="470" y="152">場所を選ぶ</text>
                   <text x="290" y="242">写真の選択</text>
                   <text x="470" y="242">確認 (複数枚)</text>
                   <text x="830" y="248">もとの画面</text>
+                  <text x="290" y="332">写真なしで残す</text>
                 </g>
               </g>
             </svg>
@@ -169,7 +179,7 @@
               <li>解除した実績と、はじめての種類も同じトーストに出す。いくつも出たら 2 秒ほどで入れ替える (この例では、次に「ラーメン、お目見え」)。動きで嬉しさを出す。動きの中身はデザインで決める (<a href="achievements.md">achievements.md</a>)</li>
               <li>実績は、ユーモアのある名前と、淡々とした条件を出す。地域は都道府県の単位</li>
               <li>取り消しは、トーストを出している間だけ出す。取り消すと実績の解除も消える</li>
-              <li>比べるはここでは聞かない。食べたあと、次に開いたときに聞く (F)</li>
+              <li>気持ちはここでは聞かない。食べたあと、次に開いたときに聞く (F)</li>
             </ol>
           </div>
         </div>
@@ -471,7 +481,7 @@
                 </div>
                 <div class="item">
                   <div class="ph"></div>
-                  <span class="chip">パン ▾</span><span class="chip">ワイン ▾</span><span class="remove">外す</span>
+                  <span class="chip">パン ▾</span><span class="chip ghost">ワイン ＋</span><span class="remove">外す</span>
                 </div>
               </div>
               <div class="spacer"></div>
@@ -543,23 +553,23 @@
               <div class="top"><span class="x">‹</span><span class="btn tap" data-tap="2">比べる</span></div>
               <div class="rank">
                 <div class="sh">大好き</div>
-                <div class="li"><span>1</span><span>中華そば 青葉</span><small></small></div>
+                <div class="li"><span>1</span><span>中華そば · 青葉</span><small></small></div>
                 <div class="sh">好き</div>
-                <div class="li"><span>1</span><span>らーめん 凪</span><small></small></div>
-                <div class="li range"><span>・</span><span>麺屋 ひかり</span><small>まだ比べていない</small></div>
+                <div class="li"><span>1</span><span>塩 · らーめん 凪</span><small></small></div>
+                <div class="li range"><span>・</span><span>特製醤油 · 麺屋 ひかり</span><small></small></div>
                 <div class="sh">ふつう</div>
-                <div class="li range"><span>・</span><span>麺処 さわ</span><small></small></div>
+                <div class="li range"><span>・</span><span>味噌 · 麺処 さわ</span><small></small></div>
                 <div class="sh">合わなかった</div>
-                <div class="li range"><span>・</span><span>つけ麺 環</span><small></small></div>
+                <div class="li range"><span>・</span><span>つけ麺 · 環</span><small></small></div>
                 <div class="sh">まだ</div>
-                <div class="li range"><span>・</span><span>中華 宝来</span><small>気持ちがまだ</small></div>
+                <div class="li range"><span>・</span><span>11/20 · 中華 宝来</span><small></small></div>
               </div>
               <div class="spacer"></div>
               <span class="link">並べ替える</span>
             </div>
             <ol class="notes">
               <li>「大好き → 好き → ふつう → 合わなかった → まだ」の順に並ぶ</li>
-              <li>同じ気持ちの中で、比べて順番が決まった品は番号で、まだ比べていない品は新しい順で並ぶ</li>
+              <li>同じ気持ちの中で、比べて順番が決まった品は番号で、まだ比べていない品は「・」で新しい順に並ぶ。品は「名前 → 店 → 日付」で示す</li>
               <li>順番を決めたい人だけが「比べる」か「並べ替える」を使う。使わなくても、ランキングは気持ちで並ぶ</li>
               <li>記録のタブを種類で絞ったとき、一覧の上の入口から開く。その種類の品が 2 つ以上になってから出す</li>
             </ol>
@@ -711,13 +721,14 @@
               <div class="top"><span class="x">×</span><span class="btn primary tap" data-tap="2">残す</span></div>
               <div class="memo">獺祭 純米大吟醸 45</div>
               <div class="chips"><span class="chip">日本酒 ▾</span><span class="hint">名前から AI が推す</span></div>
+              <div class="hint">前にも · 2025/3 · 大好き (3 度目)</div>
               <div class="kv"><span class="k">場所</span><span class="chip">鮨 はやし ▾</span></div>
               <div class="kv"><span class="k">時刻</span><span class="chip">いま ▾</span></div>
               <div class="spacer"></div>
               <div class="ph" style="height: 112px"><span>キーボード</span></div>
             </div>
             <ol class="notes">
-              <li>名前か種類のどちらかを入れれば残せる。名前を入れると、AI が種類を推す</li>
+              <li>名前か種類のどちらかを入れれば残せる。名前を入れると、AI が種類を推す。前にも記録した品なら「前にも」を出す (<a href="memory-flow.html">memory-flow.html</a>)</li>
               <li>場所と食事は、撮ったときと同じく今の位置と時刻から決まる。同じ食事に写真の品があれば、そこに入る</li>
               <li>家に帰ってから残すときは、場所の欄で今日の食事の場所や検索から選び直し、時刻も今日の中で直す。食事の詳細の「品を足す」からも残せる</li>
             </ol>
@@ -738,7 +749,7 @@
             </div>
             <ol class="notes">
               <li>写真のない品は、写真の代わりに種類を出す。見た目はデザインで決める</li>
-              <li>比べるとランキングにも入る。名前 → 店 → 日付で示す</li>
+              <li>気持ちの問いとランキングにも入る。名前 → 店 → 日付で示す</li>
               <li>あとから品の画面で写真を足せる</li>
             </ol>
           </div>
@@ -797,7 +808,7 @@
               <div class="ml"><div class="ml-h"><span>11/28</span><span>バー 灯</span></div><div class="ml-th"><div class="ph"></div></div></div>
               <div class="ml"><div class="ml-h"><span>11/26</span><span>麺屋 ひかり</span></div><div class="ml-th"><div class="ph"></div></div></div>
               <div class="spacer"></div>
-              <div class="toast"><span>残しました<br />店の写真 (メニュー)</span><span class="link">品にする</span><span class="link">取り消す</span></div>
+              <div class="toast"><span>残しました<br />食事の写真 (メニュー)</span><span class="link">品にする</span><span class="link">取り消す</span></div>
               <div class="fab-gap"></div>
               <div class="tabbar"><span class="on">ホーム</span><span>記録</span><span>実績</span><span>友だち</span></div>
               <span class="fab">＋</span>
@@ -937,7 +948,7 @@
         <h2>この図で決めていないこと</h2>
         <ul class="open">
           <li>種類の一覧の中身 (<a href="kinds.md">kinds.md</a>)</li>
-          <li>コース全体どうしを比べる受け皿 (おまかせの鮨の店どうしなど)。今は品どうしだけを比べる</li>
+          <li>食事の気持ちの使い道 (コースやおまかせの店どうしを並べるかなど)</li>
           <li>通販で取り寄せた品の買った店。地図にない店 (通販だけの店) は、場所の検索では選べない</li>
         </ul>
       </section>
