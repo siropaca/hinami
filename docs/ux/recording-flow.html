@@ -507,8 +507,8 @@
 
       <!-- Flow F -->
       <section>
-        <h2>F. 比べる (食べたあと)</h2>
-        <p class="desc">保存した直後には聞かない。食べたあと、次にアプリを開いたときに、ホームのカードで 1 問だけ聞く。詳しくは <a href="compare.md">compare.md</a>。</p>
+        <h2>F. 気持ちと比べる (食べたあと)</h2>
+        <p class="desc">保存した直後には聞かない。食べたあと、次にアプリを開いたときに、ホームのカードで気持ち (好き / ふつう / 合わなかった) を 1 問だけ聞く。2 択は、好きなものどうしの順番を決めたい人が、ランキングの画面で自分から使う。詳しくは <a href="compare.md">compare.md</a>。</p>
         <p class="scroll-hint">横にスクロールできます →</p>
         <div class="row">
           <div class="screen">
@@ -516,69 +516,74 @@
             <div class="phone">
               <div class="top"><span class="logo">HINAMI</span><span class="hint">お知らせ　設定</span></div>
               <div class="cmp">
-                <div class="cmp-h"><span>どちらが好き?</span><span class="meta">ラーメン</span></div>
-                <div class="cmp-row">
-                  <div class="ph tap" data-tap="1"><span>今回 · 特製醤油<br />麺屋 ひかり</span></div>
-                  <div class="ph"><span>前の · 11/12<br />中華そば 青葉</span></div>
-                </div>
-                <span class="link" style="align-self: flex-end; font-size: 10px">比べられない</span>
+                <div class="cmp-h"><span>いかがでしたか?</span><span class="meta">ラーメン</span></div>
+                <div class="ph" style="height: 44px"><span>特製醤油 · 麺屋 ひかり</span></div>
+                <div class="feel"><span class="btn tap" data-tap="1">好き</span><span class="btn">ふつう</span><span class="btn">合わなかった</span></div>
               </div>
               <div class="cal-h"><strong>最近の記録</strong><span class="link">すべて</span></div>
               <div class="ml"><div class="ml-h"><span>11/26</span><span>麺屋 ひかり</span></div><div class="ml-th"><div class="ph"></div></div></div>
-              <div class="ml"><div class="ml-h"><span>11/25</span><span>家</span></div><div class="ml-th"><div class="ph"></div></div></div>
               <div class="spacer"></div>
               <div class="fab-gap"></div>
               <div class="tabbar"><span class="on">ホーム</span><span>記録</span><span>実績</span><span>友だち</span></div>
               <span class="fab">＋</span>
             </div>
             <ol class="notes">
-              <li>開いたときに 1 問だけ。プッシュ通知は使わない</li>
-              <li>聞くのは、食べてから日が浅い品 (今の案: 7 日以内) を新しい順に。同じ種類に相手がいる品だけ。古い品はランキングの画面から比べる</li>
+              <li>開いたときに 1 問だけ。プッシュ通知は使わない。答えるとカードが消える</li>
+              <li>聞くのは、食べてから日が浅い品 (今の案: 7 日以内) のうち、気持ちがまだない品を新しい順に。相手のいない品 (はじめての種類) にも聞く。前に気持ちを付けた品と同じ名前なら聞き直さない</li>
               <li>品は写真と「名前 → 店 → 日付」の順で示す。名前がないときは店と日付</li>
-              <li>「残しました」のトーストとは同時に出さない</li>
-              <li>触らなければ流れる。「未回答 N 件」はためない</li>
-              <li>比べにくい組み合わせ (赤ワインと白、手作りの品と店の品など) は「比べられない」を押す。その組み合わせは二度と聞かず、その場で別の相手に替える。相手は、細かい種類 (赤、白など) が同じ品を先に選ぶ</li>
-            </ol>
-          </div>
-          <div class="arrow"><span>答える</span><span class="line"></span></div>
-          <div class="screen">
-            <p class="cap">ホーム (答えたあと)</p>
-            <div class="phone">
-              <div class="top"><span class="logo">HINAMI</span><span class="hint">お知らせ　設定</span></div>
-              <div class="toast"><span>3〜4 位まで<br />絞れました</span><span class="link">続けて比べる</span></div>
-              <div class="cal-h"><strong>最近の記録</strong><span class="link">すべて</span></div>
-              <div class="ml"><div class="ml-h"><span>11/26</span><span>麺屋 ひかり</span></div><div class="ml-th"><div class="ph"></div></div></div>
-              <div class="ml"><div class="ml-h"><span>11/25</span><span>家</span></div><div class="ml-th"><div class="ph"></div></div></div>
-              <div class="spacer"></div>
-              <div class="fab-gap"></div>
-              <div class="tabbar"><span class="on">ホーム</span><span>記録</span><span>実績</span><span>友だち</span></div>
-              <span class="fab">＋</span>
-            </div>
-            <ol class="notes">
-              <li>続けて比べるは押さなくてよい。押せばその場で順位を決めきれる</li>
-              <li>写真から選んで残した記録 (もう食べ終えている) は、保存後のトーストが消えたらすぐに聞いてよい</li>
+              <li>「残しました」のトーストとは同時に出さない。触らなければ流れる。「未回答 N 件」はためない</li>
+              <li>「合わなかった」は、料理の出来を責めず、自分に合わなかったと言う言葉。家族や自分が作った料理にも付くため。言葉は今の案</li>
+              <li>気持ちは数字にせず、友だちにも見せない</li>
             </ol>
           </div>
           <div class="arrow"><span>記録のタブを<br />種類で絞って</span><span class="line"></span></div>
           <div class="screen">
             <p class="cap">ランキング (ラーメン)</p>
             <div class="phone">
-              <div class="top"><span class="x">‹</span><span class="btn">比べる</span></div>
+              <div class="top"><span class="x">‹</span><span class="btn tap" data-tap="2">比べる</span></div>
               <div class="rank">
+                <div class="sh">好き</div>
                 <div class="li"><span>1</span><span>中華そば 青葉</span><small></small></div>
                 <div class="li"><span>2</span><span>らーめん 凪</span><small></small></div>
-                <div class="li range"><span>3〜4</span><span>麺屋 ひかり</span><small>決まっていない</small></div>
-                <div class="li range"><span>3〜4</span><span>麺処 さわ</span><small>決まっていない</small></div>
-                <div class="li"><span>5</span><span>つけ麺 環</span><small></small></div>
-                <div class="li"><span>6</span><span>中華 宝来</span><small></small></div>
+                <div class="li range"><span>・</span><span>麺屋 ひかり</span><small>まだ比べていない</small></div>
+                <div class="sh">ふつう</div>
+                <div class="li range"><span>・</span><span>麺処 さわ</span><small></small></div>
+                <div class="sh">合わなかった</div>
+                <div class="li range"><span>・</span><span>つけ麺 環</span><small></small></div>
+                <div class="sh">まだ</div>
+                <div class="li range"><span>・</span><span>中華 宝来</span><small>気持ちがまだ</small></div>
               </div>
               <div class="spacer"></div>
               <span class="link">並べ替える</span>
             </div>
             <ol class="notes">
-              <li>順位が決まった品は番号、決まっていない品は幅で見せる</li>
-              <li>いつでも比べられる。手で並べ替えられる (好みが変わったとき、答えを間違えたとき)</li>
-              <li>記録のタブを種類で絞ったとき、一覧の上の入口から開く (<a href="achievements-flow.html">achievements-flow.html</a>)</li>
+              <li>「好き → ふつう → 合わなかった → まだ」の順に並ぶ</li>
+              <li>同じ気持ちの中で、比べて順番が決まった品は番号で、まだ比べていない品は新しい順で並ぶ</li>
+              <li>順番を決めたい人だけが「比べる」か「並べ替える」を使う。使わなくても、ランキングは気持ちで並ぶ</li>
+              <li>記録のタブを種類で絞ったとき、一覧の上の入口から開く。その種類の品が 2 つ以上になってから出す</li>
+            </ol>
+          </div>
+          <div class="arrow"><span>比べる</span><span class="line"></span></div>
+          <div class="screen">
+            <p class="cap">比べる (好きのラーメン)</p>
+            <div class="phone">
+              <div class="top"><span class="x">×</span><span class="hint">好き · ラーメン</span></div>
+              <div class="cmp">
+                <div class="cmp-h"><span>どちらが好き?</span><span class="meta">1〜3 位のどこか</span></div>
+                <div class="cmp-row">
+                  <div class="ph tap" data-tap="3"><span>特製醤油<br />麺屋 ひかり</span></div>
+                  <div class="ph"><span>11/12<br />らーめん 凪</span></div>
+                </div>
+                <span class="link" style="align-self: flex-end; font-size: 10px">比べられない</span>
+              </div>
+              <div class="spacer"></div>
+              <span class="link">やめる</span>
+            </div>
+            <ol class="notes">
+              <li>同じ気持ちの中だけで比べる。まだ比べていない品を、順番が決まった品の中に二分で挿し込む</li>
+              <li>相手は、細かい種類 (赤、白など) が同じ品を先に選ぶ</li>
+              <li>比べにくい組み合わせ (赤ワインと白、手作りの品と店の品など) は「比べられない」を押す。その組み合わせは二度と聞かず、別の相手に替える</li>
+              <li>いつでもやめられる。途中までの答えは残り、その品は「1〜3 位」のように幅で見せる</li>
             </ol>
           </div>
         </div>
@@ -595,7 +600,6 @@
               <div class="top"><span class="logo">HINAMI</span><span class="hint">お知らせ　設定</span></div>
               <div class="cal-h"><strong>最近の記録</strong><span class="link">すべて</span></div>
               <div class="ml"><div class="ml-h"><span>11/28</span><span>家</span></div><div class="ml-th"><div class="ph"></div></div></div>
-              <div class="ml"><div class="ml-h"><span>11/26</span><span>麺屋 ひかり</span></div><div class="ml-th"><div class="ph"></div></div></div>
               <div class="spacer"></div>
               <div class="toast">
                 <span>残しました<br />パン<br />家</span><span class="link tap" data-tap="1">直す</span><span class="link">取り消す</span>

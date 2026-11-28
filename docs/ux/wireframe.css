@@ -535,6 +535,14 @@ h2 {
   align-items: center;
   font-weight: 600;
 }
+.feel {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.4fr;
+  gap: 6px;
+}
+.feel .btn {
+  padding: 4px 2px;
+}
 .cmp-row {
   display: grid;
   grid-template-columns: 1fr 1fr;

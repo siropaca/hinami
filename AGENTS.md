@@ -20,7 +20,7 @@ HINAMI (日次 / ひなみ) は、口にする食と飲みを 1 品ずつ記録�
 | 事業コンセプト提案書 (スライド)             | [`docs/concept-deck/`](docs/concept-deck/README.md)    |
 | 画面の流れ (UX)。入口は「記録の流れ」       | [`docs/ux/recording.md`](docs/ux/recording.md)         |
 | 続けたくなる仕組み (実績)                   | [`docs/ux/achievements.md`](docs/ux/achievements.md)   |
-| 比べる (ランキング)                         | [`docs/ux/compare.md`](docs/ux/compare.md)             |
+| 気持ちと比べる (ランキング)                 | [`docs/ux/compare.md`](docs/ux/compare.md)             |
 | 種類の一覧                                  | [`docs/ux/kinds.md`](docs/ux/kinds.md)                 |
 | 最初のチュートリアルとアカウント            | [`docs/ux/onboarding.md`](docs/ux/onboarding.md)       |
 | 画面の構成 (タブとホーム)                   | [`docs/ux/navigation.md`](docs/ux/navigation.md)       |
