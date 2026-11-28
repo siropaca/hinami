@@ -978,6 +978,26 @@ a {
 .avs .av + .av {
   margin-left: -7px;
 }
+.pop {
+  position: absolute;
+  right: 12px;
+  bottom: 88px;
+  background: #fff;
+  border: 1.5px solid var(--line);
+  border-radius: 10px;
+  padding: 6px 10px;
+  font-size: 11px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+}
+.area {
+  position: absolute;
+  right: 18px;
+  top: 22px;
+  width: 52px;
+  height: 92px;
+  border: 2px dashed var(--ink);
+  border-radius: 6px;
+}
 .fab-gap {
   flex: none;
   height: 44px;
